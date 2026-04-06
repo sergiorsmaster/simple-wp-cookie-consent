@@ -1,5 +1,5 @@
 /**
- * SCC — GTM Consent Mode v2 bridge (Basic mode)
+ * SCC — GTM Consent Mode v2 bridge (Basic + Advanced mode)
  *
  * Translates SCC consent categories into GTM consent signals and calls
  * gtag('consent', 'update', ...) whenever the visitor's choices change.
@@ -10,6 +10,18 @@
  *   functional → functionality_storage, personalization_storage
  *   necessary  → security_storage (always 'granted')
  *
+ * Modes (set via sccSettings.gtmMode):
+ *
+ *   basic    — Google tags do NOT fire before consent. After consent,
+ *              tags fire normally. Strictest compliance, some data loss
+ *              for non-consenting users.
+ *
+ *   advanced — Google tags fire immediately in a limited, cookieless mode.
+ *              After consent update, full data collection resumes.
+ *              Additionally pushes a custom dataLayer event ('scc_consent_update')
+ *              so GTM triggers can react to consent changes and Google can
+ *              use statistical modeling for non-consenting users.
+ *
  * The gtag('consent', 'default', {...}) call is handled server-side by PHP
  * (class-scc-public.php) and is injected before this script loads.
  */
@@ -18,13 +30,18 @@
 
 	'use strict';
 
-	var log = window.SimpleCookieConsent && window.SimpleCookieConsent.log
+	var log     = window.SimpleCookieConsent && window.SimpleCookieConsent.log
 		? window.SimpleCookieConsent.log.bind( window.SimpleCookieConsent )
 		: function () {};
+	var gtmMode = window.sccSettings && window.sccSettings.gtmMode
+		? window.sccSettings.gtmMode
+		: 'basic';
 
 	// Ensure dataLayer and gtag are available (GTM may not be present on page).
 	window.dataLayer = window.dataLayer || [];
 	function gtag() { window.dataLayer.push( arguments ); }
+
+	log( 'GTM mode:', gtmMode );
 
 	/**
 	 * Convert SCC consent categories to GTM signal map.
@@ -48,6 +65,8 @@
 
 	/**
 	 * Push a consent update to GTM.
+	 * In Advanced mode, also pushes a custom dataLayer event so GTM triggers
+	 * can react and Google can model data for non-consenting users.
 	 *
 	 * @param {Object} consent  SCC consent object
 	 */
@@ -55,6 +74,14 @@
 		var signals = toGtmSignals( consent );
 		log( 'GTM consent update →', signals );
 		gtag( 'consent', 'update', signals );
+
+		if ( gtmMode === 'advanced' ) {
+			window.dataLayer.push( {
+				event:   'scc_consent_update',
+				consent: signals,
+			} );
+			log( 'GTM advanced: pushed scc_consent_update event to dataLayer' );
+		}
 	}
 
 	// On page load: if the visitor already has a stored consent, update GTM

@@ -65,9 +65,10 @@ gtag('set', 'url_passthrough', false);
 			false // load in <head>
 		);
 
-		// Pass settings to JS (debug flag, etc.)
+		// Pass settings to JS
 		wp_localize_script( 'scc-consent', 'sccSettings', array(
-			'debug' => (bool) get_option( 'scc_debug', '0' ),
+			'debug'   => (bool) get_option( 'scc_debug', '0' ),
+			'gtmMode' => get_option( 'scc_gtm_mode', 'basic' ),
 		) );
 
 		// GTM bridge (only when GTM integration is enabled)

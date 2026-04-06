@@ -29,7 +29,7 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 ### Phase 1 — Core consent engine
 - [x] FEAT-03: Cookie consent storage (JS cookie read/write + PHP reader)
 - [x] FEAT-04: GTM Consent Mode v2 — default + update signals (Basic mode)
-- [ ] FEAT-05: GTM Advanced mode support
+- [x] FEAT-05: GTM Advanced mode support
 
 ### Phase 2 — Banner UI
 - [ ] FEAT-06: Banner HTML template + CSS (position, colors, responsive)
