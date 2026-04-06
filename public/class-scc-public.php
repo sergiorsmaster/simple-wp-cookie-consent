@@ -53,11 +53,11 @@ gtag('set', 'url_passthrough', false);
 
 	/**
 	 * Enqueue frontend scripts.
+	 *
+	 * CSS and JS always load so the modal and [scc_preferences] shortcode
+	 * work regardless of the "enable banner" toggle.
 	 */
 	public static function enqueue_scripts() {
-		if ( ! get_option( 'scc_enabled', '1' ) ) {
-			return;
-		}
 
 		// Core consent storage (always loaded)
 		wp_enqueue_script(

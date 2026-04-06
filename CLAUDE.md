@@ -37,8 +37,8 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 - [x] FEAT-08: Re-open preferences via footer link
 
 ### Phase 3 — Admin settings
-- [ ] FEAT-09: Admin menu + General settings tab (texts, logo, legal page links)
-- [ ] FEAT-10: Appearance tab (position, colors, custom CSS)
+- [x] FEAT-09: Admin menu + General settings tab (texts, logo, legal page links)
+- [x] FEAT-10: Appearance tab (position, colors, custom CSS)
 - [ ] FEAT-11: Jurisdiction tab (GDPR / LGPD / CCPA selector)
 - [ ] FEAT-12: Integrations tab (GTM toggle + mode, Site Kit info)
 
@@ -53,6 +53,7 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 - [ ] FEAT-18: [scc_cookie_list] shortcode
 
 ### Phase 6 — Polish & release
+- [ ] FEAT-21: Banner & modal style review (minor visual issues noted during FEAT-09 testing)
 - [ ] FEAT-19: Uninstall cleanup (drop table, delete options)
 - [ ] FEAT-20: readme.txt for WordPress.org
 
