@@ -207,6 +207,106 @@ hr {
 }
 
 /* -----------------------------------------------------------------------------
+   Integrations tab
+   ----------------------------------------------------------------------------- */
+
+.scc-section-title {
+	font-size:     14px;
+	font-weight:   600;
+	margin:        20px 0 4px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid #dcdcde;
+	color:         #1d2327;
+}
+
+.scc-radio-group {
+	display:        flex;
+	flex-direction: column;
+	gap:            10px;
+}
+
+.scc-radio-card {
+	display:       block;
+	border:        2px solid #dcdcde;
+	border-radius: 6px;
+	padding:       12px 14px;
+	cursor:        pointer;
+	transition:    border-color .15s ease, background .15s ease;
+	background:    #fff;
+}
+
+.scc-radio-card:hover {
+	border-color: #2271b1;
+}
+
+.scc-radio-card.is-selected {
+	border-color: #2271b1;
+	background:   #f0f6fc;
+}
+
+.scc-radio-card__header {
+	display:       flex;
+	align-items:   center;
+	gap:           8px;
+	margin-bottom: 4px;
+}
+
+.scc-radio-card__title {
+	font-weight: 600;
+	font-size:   13px;
+	flex:        1;
+}
+
+.scc-radio-card__desc {
+	margin:    0 0 0 22px;
+	font-size: 12px;
+	color:     #50575e;
+}
+
+.scc-badge {
+	font-size:      11px;
+	font-weight:    600;
+	padding:        2px 7px;
+	border-radius:  20px;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+}
+
+.scc-badge--blue {
+	background: #d0e8f8;
+	color:      #0a4b78;
+}
+
+/* Signal mapping table */
+.scc-signal-table {
+	max-width: 480px;
+	font-size: 13px;
+}
+
+.scc-signal-table code {
+	font-size: 12px;
+}
+
+/* Status notices */
+.scc-notice {
+	display:       inline-block;
+	padding:       8px 12px;
+	border-radius: 4px;
+	font-size:     13px;
+	margin:        0;
+}
+
+.scc-notice--success {
+	background: #d7f0e0;
+	color:      #1a6b3c;
+}
+
+.scc-notice--info {
+	background: #e8f0fb;
+	color:      #0a4b78;
+}
+
+/* -----------------------------------------------------------------------------
    Responsive — collapse 2-col to 1-col on small screens
    ----------------------------------------------------------------------------- */
 

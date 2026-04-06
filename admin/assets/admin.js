@@ -53,6 +53,21 @@
 		$btn.hide();
 	} );
 
+	// GTM toggle — show/hide GTM options block
+	$( document ).on( 'change', '#scc_gtm_enabled', function () {
+		if ( $( this ).is( ':checked' ) ) {
+			$( '.scc-gtm-options' ).show();
+		} else {
+			$( '.scc-gtm-options' ).hide();
+		}
+	} );
+
+	// GTM mode cards — highlight selected
+	$( document ).on( 'change', '.scc-gtm-mode-radio', function () {
+		$( '.scc-radio-card' ).removeClass( 'is-selected' );
+		$( this ).closest( '.scc-radio-card' ).addClass( 'is-selected' );
+	} );
+
 	// Jurisdiction cards — highlight selected + show/hide CCPA field
 	$( document ).on( 'change', '.scc-jurisdiction-radio', function () {
 		$( '.scc-jurisdiction-card' ).removeClass( 'is-selected' );
