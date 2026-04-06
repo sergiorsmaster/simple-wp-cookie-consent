@@ -33,7 +33,7 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 
 ### Phase 2 — Banner UI
 - [x] FEAT-06: Banner HTML template + CSS (position, colors, responsive)
-- [ ] FEAT-07: Accept All / Deny All / Preferences modal
+- [x] FEAT-07: Accept All / Deny All / Preferences modal
 - [ ] FEAT-08: Re-open preferences via footer link
 
 ### Phase 3 — Admin settings

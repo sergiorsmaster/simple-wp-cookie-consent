@@ -9,6 +9,7 @@ class SCC_Public {
 		add_action( 'wp_head',             array( __CLASS__, 'inject_gtm_consent_defaults' ), 1 );
 		add_action( 'wp_enqueue_scripts',  array( __CLASS__, 'enqueue_scripts' ) );
 		add_action( 'wp_footer',           array( __CLASS__, 'render_banner' ) );
+		add_action( 'wp_footer',           array( __CLASS__, 'render_modal' ) );
 	}
 
 	/**
@@ -117,6 +118,15 @@ gtag('set', 'url_passthrough', false);
 			SCC_VERSION,
 			true // footer
 		);
+
+		// Preferences modal JS
+		wp_enqueue_script(
+			'scc-modal',
+			SCC_PLUGIN_URL . 'public/assets/scc-modal.js',
+			array( 'scc-banner' ),
+			SCC_VERSION,
+			true // footer
+		);
 	}
 
 	/**
@@ -148,5 +158,22 @@ gtag('set', 'url_passthrough', false);
 		$logo_url     = get_option( 'scc_logo_url', '' );
 
 		include SCC_PLUGIN_DIR . 'public/views/banner.php';
+	}
+
+	/**
+	 * Render the preferences modal HTML in wp_footer.
+	 */
+	public static function render_modal() {
+		if ( ! get_option( 'scc_enabled', '1' ) ) {
+			return;
+		}
+
+		$jurisdiction = get_option( 'scc_jurisdiction', 'gdpr' );
+		$privacy_page = (int) get_option( 'scc_privacy_policy_page', 0 );
+		$cookie_page  = (int) get_option( 'scc_cookie_policy_page', 0 );
+		$privacy_url  = $privacy_page ? get_permalink( $privacy_page ) : '';
+		$cookie_url   = $cookie_page  ? get_permalink( $cookie_page )  : '';
+
+		include SCC_PLUGIN_DIR . 'public/views/modal.php';
 	}
 }
