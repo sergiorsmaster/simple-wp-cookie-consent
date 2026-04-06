@@ -205,6 +205,32 @@ $debug        = get_option( 'scc_debug', '0' );
 	<hr>
 
 	<!-- =========================================================
+	     Polylang
+	     ========================================================= -->
+	<h2 class="scc-section-title">
+		<?php esc_html_e( 'Polylang', 'simple-cookie-consent' ); ?>
+	</h2>
+
+	<div class="scc-field">
+		<label class="scc-field__label">
+			<?php esc_html_e( 'Compatibility', 'simple-cookie-consent' ); ?>
+		</label>
+		<div class="scc-field__control">
+			<?php if ( SCC_Polylang::is_active() ) : ?>
+				<p class="scc-notice scc-notice--success">
+					&#10003; <?php esc_html_e( 'Polylang is active. Banner strings are registered for translation under Languages → String Translations.', 'simple-cookie-consent' ); ?>
+				</p>
+			<?php else : ?>
+				<p class="scc-notice scc-notice--info">
+					<?php esc_html_e( 'Polylang is not active. When installed, banner title, text, and button labels will be translatable per language.', 'simple-cookie-consent' ); ?>
+				</p>
+			<?php endif; ?>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- =========================================================
 	     Debug
 	     ========================================================= -->
 	<h2 class="scc-section-title">

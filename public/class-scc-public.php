@@ -150,12 +150,12 @@ gtag('set', 'url_passthrough', false);
 		$cookie_url  = $cookie_page  ? get_permalink( $cookie_page )  : '';
 		$imprint_url = $imprint_page ? get_permalink( $imprint_page ) : '';
 
-		$title       = get_option( 'scc_banner_title',      __( 'We use cookies', 'simple-cookie-consent' ) );
-		$text        = get_option( 'scc_banner_text',       __( 'We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'simple-cookie-consent' ) );
-		$accept_label = get_option( 'scc_accept_label',    __( 'Accept All', 'simple-cookie-consent' ) );
-		$deny_label   = get_option( 'scc_deny_label',      __( 'Deny All', 'simple-cookie-consent' ) );
-		$prefs_label  = get_option( 'scc_preferences_label', __( 'Preferences', 'simple-cookie-consent' ) );
-		$ccpa_text    = get_option( 'scc_ccpa_opt_out_text', __( 'Do Not Sell My Personal Information', 'simple-cookie-consent' ) );
+		$title        = SCC_Polylang::translate( 'scc_banner_title',      __( 'We use cookies', 'simple-cookie-consent' ) );
+		$text         = SCC_Polylang::translate( 'scc_banner_text',       __( 'We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'simple-cookie-consent' ) );
+		$accept_label = SCC_Polylang::translate( 'scc_accept_label',      __( 'Accept All', 'simple-cookie-consent' ) );
+		$deny_label   = SCC_Polylang::translate( 'scc_deny_label',        __( 'Deny All', 'simple-cookie-consent' ) );
+		$prefs_label  = SCC_Polylang::translate( 'scc_preferences_label', __( 'Preferences', 'simple-cookie-consent' ) );
+		$ccpa_text    = SCC_Polylang::translate( 'scc_ccpa_opt_out_text', __( 'Do Not Sell My Personal Information', 'simple-cookie-consent' ) );
 		$logo_url     = get_option( 'scc_logo_url', '' );
 
 		include SCC_PLUGIN_DIR . 'public/views/banner.php';
