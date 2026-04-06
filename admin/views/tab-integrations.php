@@ -162,6 +162,49 @@ $debug        = get_option( 'scc_debug', '0' );
 	<hr>
 
 	<!-- =========================================================
+	     WP Consent Level API
+	     ========================================================= -->
+	<h2 class="scc-section-title">
+		<?php esc_html_e( 'WP Consent Level API', 'simple-cookie-consent' ); ?>
+	</h2>
+
+	<div class="scc-field">
+		<label class="scc-field__label">
+			<?php esc_html_e( 'Compatibility', 'simple-cookie-consent' ); ?>
+		</label>
+		<div class="scc-field__control">
+			<?php if ( SCC_WP_Consent_API::is_active() ) : ?>
+				<p class="scc-notice scc-notice--success">
+					&#10003; <?php esc_html_e( 'WP Consent Level API is active. Consent is synced automatically on every page load.', 'simple-cookie-consent' ); ?>
+				</p>
+			<?php else : ?>
+				<p class="scc-notice scc-notice--info">
+					<?php
+					printf(
+						/* translators: 1: opening <a> tag, 2: closing </a> tag */
+						esc_html__( 'WP Consent Level API is not active. %1$sInstall the plugin%2$s to allow third-party plugins to read consent without extra configuration.', 'simple-cookie-consent' ),
+						'<a href="https://github.com/wordpress/wp-consent-level-api" target="_blank" rel="noopener noreferrer">',
+						'</a>'
+					);
+					?>
+				</p>
+			<?php endif; ?>
+			<p class="description" style="margin-top:8px">
+				<?php
+				printf(
+					/* translators: 1: opening <a> tag, 2: closing </a> tag */
+					esc_html__( 'The %1$sWP Consent Level API%2$s is a standard interface that lets plugins like Site Kit read consent without knowing anything about this plugin.', 'simple-cookie-consent' ),
+					'<a href="https://github.com/wordpress/wp-consent-level-api" target="_blank" rel="noopener noreferrer">',
+					'</a>'
+				);
+				?>
+			</p>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- =========================================================
 	     Debug
 	     ========================================================= -->
 	<h2 class="scc-section-title">
