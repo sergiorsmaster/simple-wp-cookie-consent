@@ -12,6 +12,7 @@ class SCC_Admin {
 		'jurisdiction' => 'scc_jurisdiction',
 		'integrations' => 'scc_integrations',
 		'cookies'      => null, // no settings group — custom UI
+		'help'         => null, // no settings group — documentation only
 	);
 
 	const TAB_LABELS = array(
@@ -20,6 +21,7 @@ class SCC_Admin {
 		'jurisdiction' => 'Jurisdiction',
 		'integrations' => 'Integrations',
 		'cookies'      => 'Cookies',
+		'help'         => 'Help',
 	);
 
 	public static function init() {
