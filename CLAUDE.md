@@ -23,8 +23,8 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 
 ### Phase 0 — Project setup
 - [x] CLAUDE.md: Working agreement and task list
-- [ ] FEAT-01: Docker dev environment (docker-compose.yml + .env.example)
-- [ ] FEAT-02: Plugin scaffold (main file, activator, deactivator, uninstall)
+- [x] FEAT-01: Docker dev environment (docker-compose.yml + .env.example)
+- [x] FEAT-02: Plugin scaffold (main file, activator, deactivator, uninstall)
 
 ### Phase 1 — Core consent engine
 - [ ] FEAT-03: Cookie consent storage (JS cookie read/write + PHP reader)
