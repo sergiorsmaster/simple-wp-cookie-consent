@@ -123,11 +123,15 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 			<?php esc_html_e('Cookie List', 'simple-cookie-consent'); ?>
 		</h2>
 		<?php if (!$edit_cookie): ?>
+			<button type="button" class="button" id="scc-scan-btn">
+				<?php esc_html_e('Run Scanner', 'simple-cookie-consent'); ?>
+			</button>
 			<button type="button" class="button button-primary" id="scc-add-cookie-btn">
 				<?php esc_html_e('+ Add Cookie', 'simple-cookie-consent'); ?>
 			</button>
 		<?php endif; ?>
 	</div>
+	<div id="scc-scan-result" style="display:none;margin-top:8px"></div>
 
 	<!-- Cookie table -->
 	<?php $cookies = $wpdb->get_results("SELECT * FROM {$table} ORDER BY category, cookie_name"); ?>

@@ -28,6 +28,7 @@ require_once SCC_PLUGIN_DIR . 'includes/class-scc-activator.php';
 require_once SCC_PLUGIN_DIR . 'includes/class-scc-deactivator.php';
 require_once SCC_PLUGIN_DIR . 'includes/class-scc-consent-store.php';
 require_once SCC_PLUGIN_DIR . 'includes/class-scc-shortcodes.php';
+require_once SCC_PLUGIN_DIR . 'includes/class-scc-cookie-scanner.php';
 require_once SCC_PLUGIN_DIR . 'public/class-scc-public.php';
 require_once SCC_PLUGIN_DIR . 'admin/class-scc-admin.php';
 

@@ -27,6 +27,43 @@ class SCC_Admin {
 		add_action( 'admin_init',            array( __CLASS__, 'register_settings' ) );
 		add_action( 'admin_init',            array( __CLASS__, 'handle_cookie_actions' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
+
+		// Cookie scanner ajax endpoints (admin-only)
+		add_action( 'wp_ajax_scc_scan_server',  array( __CLASS__, 'ajax_scan_server' ) );
+		add_action( 'wp_ajax_scc_scan_client',  array( __CLASS__, 'ajax_scan_client' ) );
+	}
+
+	// -------------------------------------------------------------------------
+	// Scanner ajax handlers
+	// -------------------------------------------------------------------------
+
+	public static function ajax_scan_server() {
+		check_ajax_referer( 'scc_scanner_nonce', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Forbidden', 403 );
+		}
+
+		require_once SCC_PLUGIN_DIR . 'includes/class-scc-cookie-scanner.php';
+		$result = SCC_Cookie_Scanner::run_server_scan();
+
+		if ( isset( $result['error'] ) ) {
+			wp_send_json_error( $result['error'] );
+		}
+		wp_send_json_success( $result );
+	}
+
+	public static function ajax_scan_client() {
+		check_ajax_referer( 'scc_scanner_nonce', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'Forbidden', 403 );
+		}
+
+		$names = isset( $_POST['cookies'] ) ? (array) $_POST['cookies'] : array();
+
+		require_once SCC_PLUGIN_DIR . 'includes/class-scc-cookie-scanner.php';
+		$result = SCC_Cookie_Scanner::save_from_client( $names );
+
+		wp_send_json_success( $result );
 	}
 
 	// -------------------------------------------------------------------------
@@ -181,6 +218,17 @@ class SCC_Admin {
 			SCC_VERSION,
 			true
 		);
+
+		wp_localize_script( 'scc-admin', 'sccAdmin', array(
+			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+			'nonce'   => wp_create_nonce( 'scc_scanner_nonce' ),
+			'i18n'    => array(
+				'scanning'  => __( 'Scanning…', 'simple-cookie-consent' ),
+				'scanDone'  => __( 'Scan complete.', 'simple-cookie-consent' ),
+				'scanError' => __( 'Scan failed. Please try again.', 'simple-cookie-consent' ),
+				'added'     => __( 'new cookie(s) found.', 'simple-cookie-consent' ),
+			),
+		) );
 	}
 
 	// -------------------------------------------------------------------------

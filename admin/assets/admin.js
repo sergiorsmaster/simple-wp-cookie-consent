@@ -80,6 +80,72 @@
 		}
 	} );
 
+	// Cookies tab — Run Scanner
+	$( document ).on( 'click', '#scc-scan-btn', function () {
+		var $btn    = $( this );
+		var $result = $( '#scc-scan-result' );
+		var i18n    = ( window.sccAdmin && sccAdmin.i18n ) ? sccAdmin.i18n : {};
+
+		$btn.prop( 'disabled', true ).text( i18n.scanning || 'Scanning…' );
+		$result.hide();
+
+		var totalAdded   = 0;
+		var serverNotice = ''; // non-fatal server scan warning
+
+		// Helper: run the JS client-side scan and finish
+		function runClientScan() {
+			var cookieNames = document.cookie
+				.split( ';' )
+				.map( function ( c ) { return c.trim().split( '=' )[0]; } )
+				.filter( function ( n ) { return n !== ''; } );
+
+			$.post( sccAdmin.ajaxUrl, {
+				action:  'scc_scan_client',
+				nonce:   sccAdmin.nonce,
+				cookies: cookieNames,
+			} )
+			.always( function ( res ) {
+				if ( res && res.success ) {
+					totalAdded += res.data.added || 0;
+				}
+				finish();
+			} );
+		}
+
+		function finish() {
+			$btn.prop( 'disabled', false ).text( 'Run Scanner' );
+
+			var msg = ( i18n.scanDone || 'Scan complete.' ) +
+				' ' + totalAdded + ' ' + ( i18n.added || 'new cookie(s) found.' );
+			if ( serverNotice ) {
+				msg += ' (Server scan: ' + serverNotice + ')';
+			}
+
+			$result
+				.attr( 'class', 'scc-notice scc-notice--success' )
+				.text( msg )
+				.show();
+
+			if ( totalAdded > 0 ) {
+				setTimeout( function () { window.location.reload(); }, 1500 );
+			}
+		}
+
+		// Step 1: PHP server-side scan (failure is non-fatal — still run client scan)
+		$.post( sccAdmin.ajaxUrl, {
+			action: 'scc_scan_server',
+			nonce:  sccAdmin.nonce,
+		} )
+		.always( function ( res ) {
+			if ( res && res.success ) {
+				totalAdded += res.data.added || 0;
+			} else if ( res && ! res.success && res.data ) {
+				serverNotice = res.data; // show as a note, not a blocker
+			}
+			runClientScan();
+		} );
+	} );
+
 	// Cookies tab — "Add Cookie" button toggle
 	$( document ).on( 'click', '#scc-add-cookie-btn', function () {
 		var $wrap = $( '#scc-cookie-form-wrap' );
