@@ -45,7 +45,7 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 ### Phase 4 — Cookie scanner
 - [x] FEAT-13: DB table for cookies + admin cookie list UI
 - [x] FEAT-14: Cookie scanner (PHP header scan + JS client scan via admin-ajax)
-- [ ] FEAT-15: cookiedatabase.org API lookup + internal fallback list
+- [x] FEAT-15: Open Cookie Database (bundled CSV) lookup + built-in fallback list
 
 ### Phase 5 — Integrations & shortcode
 - [ ] FEAT-16: WP Consent Level API integration

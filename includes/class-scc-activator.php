@@ -8,6 +8,8 @@ class SCC_Activator {
 	public static function activate() {
 		self::create_tables();
 		self::set_default_options();
+		// Flush cached cookie DB index so it is rebuilt with the current CSV.
+		delete_transient( 'scc_cookie_db_index' );
 	}
 
 	private static function create_tables() {

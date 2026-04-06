@@ -326,6 +326,13 @@ hr {
    Cookies tab
    ----------------------------------------------------------------------------- */
 
+.scc-cookie-db-status {
+	color:       #646970;
+	font-size:   12px;
+	margin-top:  16px;
+	margin-bottom: 0;
+}
+
 .scc-table-header {
 	display:     flex;
 	align-items: center;
