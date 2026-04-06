@@ -433,3 +433,54 @@
 .scc-preferences-link {
 	cursor: pointer;
 }
+
+/* =============================================================================
+   [scc_cookie_list] shortcode
+   Intentionally minimal — table appearance is inherited from the active theme.
+   Only structural/functional rules are defined here.
+   ============================================================================= */
+
+.scc-cookie-list__group {
+	margin-bottom: 2em;
+}
+
+/* Category badge headings */
+.scc-cookie-list__heading {
+	font-size:     1em;
+	font-weight:   700;
+	padding:       .3em .7em;
+	border-radius: 4px;
+	margin-bottom: .75em;
+	display:       inline-block;
+}
+
+.scc-cookie-list__heading--necessary  { background: #d7f0e0; color: #1a6b3c; }
+.scc-cookie-list__heading--analytics  { background: #d0e8f8; color: #0a4b78; }
+.scc-cookie-list__heading--marketing  { background: #fde8c8; color: #7a4500; }
+.scc-cookie-list__heading--functional { background: #ede8fd; color: #3a1a7a; }
+
+/* Scroll wrapper — horizontal scroll on narrow viewports */
+.scc-cookie-list__scroll {
+	width:                      100%;
+	overflow-x:                 auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* min-width triggers the scroll before columns become unreadable */
+.scc-cookie-list__table {
+	min-width: 520px;
+}
+
+/* Duration cell — never break mid-value */
+.scc-cookie-list__duration {
+	white-space: nowrap;
+}
+
+/* Cookie name — allow long names to break so they don't blow the layout */
+.scc-cookie-list__name {
+	word-break: break-all;
+}
+
+.scc-cookie-list__empty {
+	font-style: italic;
+}
