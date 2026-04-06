@@ -25,7 +25,67 @@ class SCC_Admin {
 	public static function init() {
 		add_action( 'admin_menu',            array( __CLASS__, 'add_menu' ) );
 		add_action( 'admin_init',            array( __CLASS__, 'register_settings' ) );
+		add_action( 'admin_init',            array( __CLASS__, 'handle_cookie_actions' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
+	}
+
+	// -------------------------------------------------------------------------
+	// Cookie CRUD actions
+	// -------------------------------------------------------------------------
+
+	public static function handle_cookie_actions() {
+		if ( empty( $_REQUEST['page'] ) || $_REQUEST['page'] !== 'scc-cookie-consent' ) {
+			return;
+		}
+		if ( empty( $_REQUEST['tab'] ) || $_REQUEST['tab'] !== 'cookies' ) {
+			return;
+		}
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		global $wpdb;
+		$table    = $wpdb->prefix . 'scc_cookies';
+		$redirect = admin_url( 'options-general.php?page=scc-cookie-consent&tab=cookies' );
+
+		// Add or Edit
+		if ( ! empty( $_POST['scc_cookie_nonce'] ) ) {
+			if ( ! wp_verify_nonce( $_POST['scc_cookie_nonce'], 'scc_save_cookie' ) ) {
+				wp_die( 'Security check failed.' );
+			}
+
+			$data = array(
+				'cookie_name' => sanitize_text_field( $_POST['cookie_name'] ?? '' ),
+				'category'    => sanitize_key( $_POST['category'] ?? 'necessary' ),
+				'service'     => sanitize_text_field( $_POST['service'] ?? '' ),
+				'description' => sanitize_textarea_field( $_POST['description'] ?? '' ),
+				'duration'    => sanitize_text_field( $_POST['duration'] ?? '' ),
+				'source'      => 'manual',
+			);
+
+			$cookie_id = absint( $_POST['cookie_id'] ?? 0 );
+
+			if ( $cookie_id ) {
+				$wpdb->update( $table, $data, array( 'id' => $cookie_id ) );
+				$redirect .= '&scc_msg=updated';
+			} else {
+				$wpdb->insert( $table, $data );
+				$redirect .= '&scc_msg=added';
+			}
+
+			wp_redirect( $redirect );
+			exit;
+		}
+
+		// Delete
+		if ( ! empty( $_GET['action'] ) && $_GET['action'] === 'delete_cookie' ) {
+			if ( ! wp_verify_nonce( $_GET['_wpnonce'] ?? '', 'scc_delete_cookie' ) ) {
+				wp_die( 'Security check failed.' );
+			}
+			$wpdb->delete( $table, array( 'id' => absint( $_GET['cookie_id'] ) ) );
+			wp_redirect( $redirect . '&scc_msg=deleted' );
+			exit;
+		}
 	}
 
 	// -------------------------------------------------------------------------
@@ -150,10 +210,10 @@ class SCC_Admin {
 				<?php endforeach; ?>
 			</nav>
 
+			<?php if ( $settings_group ) : ?>
 			<form method="post" action="options.php" class="scc-settings-form">
-				<?php if ( $settings_group ) : ?>
-					<?php settings_fields( $settings_group ); ?>
-				<?php endif; ?>
+				<?php settings_fields( $settings_group ); ?>
+			<?php endif; ?>
 
 				<?php
 				$view = SCC_PLUGIN_DIR . 'admin/views/tab-' . $active_tab . '.php';
@@ -164,10 +224,10 @@ class SCC_Admin {
 				}
 				?>
 
-				<?php if ( $settings_group ) : ?>
-					<?php submit_button(); ?>
-				<?php endif; ?>
+			<?php if ( $settings_group ) : ?>
+				<?php submit_button(); ?>
 			</form>
+			<?php endif; ?>
 		</div>
 		<?php
 	}

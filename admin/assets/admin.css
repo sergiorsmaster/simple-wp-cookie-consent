@@ -316,3 +316,73 @@ hr {
 		gap: 4px;
 	}
 }
+
+/* -----------------------------------------------------------------------------
+   Cookies tab
+   ----------------------------------------------------------------------------- */
+
+.scc-table-header {
+	display:     flex;
+	align-items: center;
+	gap:         12px;
+	margin-top:  24px;
+}
+
+.scc-table-header .scc-section-title {
+	flex:   1;
+	margin: 0;
+}
+
+.scc-cookie-form-wrap {
+	background:    #fff;
+	border:        1px solid #dcdcde;
+	border-radius: 4px;
+	padding:       20px 24px;
+	margin-bottom: 24px;
+}
+
+.scc-form-actions {
+	display:    flex;
+	gap:        8px;
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid #f0f0f1;
+}
+
+.scc-cookie-table {
+	margin-top: 12px;
+}
+
+.scc-cookie-table th,
+.scc-cookie-table td {
+	vertical-align: middle;
+}
+
+.scc-row-actions a {
+	text-decoration: none;
+}
+
+.scc-delete-link {
+	color: #b32d2e !important;
+}
+
+.scc-delete-link:hover {
+	color: #8a1f1f !important;
+}
+
+/* Category badges */
+
+.scc-cat-badge {
+	display:        inline-block;
+	font-size:      11px;
+	font-weight:    600;
+	padding:        2px 8px;
+	border-radius:  20px;
+	text-transform: capitalize;
+	letter-spacing: .03em;
+}
+
+.scc-cat-necessary  { background: #d7f0e0; color: #1a6b3c; }
+.scc-cat-analytics  { background: #d0e8f8; color: #0a4b78; }
+.scc-cat-marketing  { background: #fde8c8; color: #7a4500; }
+.scc-cat-functional { background: #ede8fd; color: #3a1a7a; }

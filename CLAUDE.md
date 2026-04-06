@@ -43,7 +43,7 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 - [x] FEAT-12: Integrations tab (GTM toggle + mode, Site Kit info)
 
 ### Phase 4 — Cookie scanner
-- [ ] FEAT-13: DB table for cookies + admin cookie list UI
+- [x] FEAT-13: DB table for cookies + admin cookie list UI
 - [ ] FEAT-14: Cookie scanner (PHP header scan + JS client scan via admin-ajax)
 - [ ] FEAT-15: cookiedatabase.org API lookup + internal fallback list
 

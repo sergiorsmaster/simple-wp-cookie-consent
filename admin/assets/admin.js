@@ -80,4 +80,20 @@
 		}
 	} );
 
+	// Cookies tab — "Add Cookie" button toggle
+	$( document ).on( 'click', '#scc-add-cookie-btn', function () {
+		var $wrap = $( '#scc-cookie-form-wrap' );
+		$wrap.show();
+		$( this ).hide();
+		$wrap.find( 'input[name="cookie_name"]' ).focus();
+	} );
+
+	// Cookies tab — confirm delete
+	$( document ).on( 'click', '.scc-delete-link', function ( e ) {
+		var name = $( this ).data( 'name' );
+		if ( ! window.confirm( 'Delete cookie "' + name + '"?' ) ) {
+			e.preventDefault();
+		}
+	} );
+
 } )( jQuery );
