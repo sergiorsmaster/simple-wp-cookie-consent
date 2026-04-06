@@ -117,6 +117,20 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 		</form>
 	</div>
 
+	<!-- Cookie DB status -->
+	<?php
+	$db_count = SCC_Cookie_Scanner::db_count();
+	?>
+	<p class="scc-cookie-db-status">
+		<?php
+		printf(
+			/* translators: %d: number of cookies in bundled database */
+			esc_html__( 'Cookie database: %d entries loaded.', 'simple-cookie-consent' ),
+			$db_count
+		);
+		?>
+	</p>
+
 	<!-- Table header -->
 	<div class="scc-table-header">
 		<h2 class="scc-section-title" style="margin-top:0">
