@@ -49,7 +49,7 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 
 ### Phase 5 — Integrations & shortcode
 - [x] FEAT-16: WP Consent Level API integration
-- [ ] FEAT-17: Polylang compatibility (pll_register_string)
+- [x] FEAT-17: Polylang compatibility (pll_register_string)
 - [ ] FEAT-18: [scc_cookie_list] shortcode
 
 ### Phase 6 — Polish & release

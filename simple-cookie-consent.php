@@ -30,6 +30,7 @@ require_once SCC_PLUGIN_DIR . 'includes/class-scc-consent-store.php';
 require_once SCC_PLUGIN_DIR . 'includes/class-scc-shortcodes.php';
 require_once SCC_PLUGIN_DIR . 'includes/class-scc-cookie-scanner.php';
 require_once SCC_PLUGIN_DIR . 'includes/class-scc-wp-consent-api.php';
+require_once SCC_PLUGIN_DIR . 'includes/class-scc-polylang.php';
 require_once SCC_PLUGIN_DIR . 'public/class-scc-public.php';
 require_once SCC_PLUGIN_DIR . 'admin/class-scc-admin.php';
 
@@ -41,6 +42,7 @@ register_deactivation_hook(__FILE__, array('SCC_Deactivator', 'deactivate'));
 SCC_Public::init();
 SCC_Shortcodes::init();
 SCC_WP_Consent_API::init();
+SCC_Polylang::init();
 
 // Boot admin
 if ( is_admin() ) {
