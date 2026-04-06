@@ -21,6 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
+<?php if ( 'center-modal' === $position ) : ?>
+<div class="scc-banner-overlay" aria-hidden="true" style="display:none"></div>
+<?php endif; ?>
 <div id="scc-banner"
 	class="scc-banner scc-position-<?php echo esc_attr( $position ); ?>"
 	role="dialog"
@@ -30,16 +33,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="scc-banner__inner">
 
-		<?php if ( ! empty( $logo_url ) ) : ?>
-			<div class="scc-banner__logo">
-				<img src="<?php echo esc_url( $logo_url ); ?>" alt="" aria-hidden="true">
-			</div>
-		<?php endif; ?>
-
 		<div class="scc-banner__content">
-			<p class="scc-banner__title" id="scc-banner-title">
-				<?php echo esc_html( $title ); ?>
-			</p>
+			<div class="scc-banner__header">
+				<?php if ( ! empty( $logo_url ) ) : ?>
+					<img class="scc-banner__logo" src="<?php echo esc_url( $logo_url ); ?>" alt="" aria-hidden="true">
+				<?php endif; ?>
+				<p class="scc-banner__title" id="scc-banner-title">
+					<?php echo esc_html( $title ); ?>
+				</p>
+			</div>
 			<p class="scc-banner__text">
 				<?php echo esc_html( $text ); ?>
 			</p>

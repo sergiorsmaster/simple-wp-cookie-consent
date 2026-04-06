@@ -53,7 +53,7 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 - [x] FEAT-18: [scc_cookie_list] shortcode
 
 ### Phase 6 — Polish & release
-- [ ] FEAT-21: Banner & modal style review (minor visual issues noted during FEAT-09 testing)
+- [x] FEAT-21: Banner & modal style review + expanded appearance settings
 - [x] FEAT-19: Uninstall cleanup (drop table, delete options)
 - [x] FEAT-20: readme.txt for WordPress.org
 

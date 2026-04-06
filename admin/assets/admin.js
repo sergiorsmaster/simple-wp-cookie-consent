@@ -80,6 +80,21 @@
 		}
 	} );
 
+	// Appearance tab — button style radio cards
+	$( document ).on( 'change', '.scc-btn-style-radio', function () {
+		$( '.scc-radio-card' ).removeClass( 'is-selected' );
+		$( this ).closest( '.scc-radio-card' ).addClass( 'is-selected' );
+	} );
+
+	// Appearance tab — logo source radio → show/hide custom upload field
+	$( document ).on( 'change', '.scc-logo-source-radio', function () {
+		if ( $( this ).val() === 'custom' ) {
+			$( '.scc-logo-custom-field' ).show();
+		} else {
+			$( '.scc-logo-custom-field' ).hide();
+		}
+	} );
+
 	// Cookies tab — Run Scanner
 	$( document ).on( 'click', '#scc-scan-btn', function () {
 		var $btn    = $( this );

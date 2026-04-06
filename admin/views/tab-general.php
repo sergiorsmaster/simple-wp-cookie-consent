@@ -47,35 +47,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</div>
 
-	<!-- Logo -->
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_logo_url">
-			<?php esc_html_e( 'Logo', 'simple-cookie-consent' ); ?>
-		</label>
-		<div class="scc-field__control">
-			<div class="scc-media-field">
-				<input type="text" id="scc_logo_url" name="scc_logo_url" class="regular-text"
-					value="<?php echo esc_attr( get_option( 'scc_logo_url', '' ) ); ?>"
-					placeholder="https://">
-				<button type="button" class="button scc-media-select" data-target="#scc_logo_url">
-					<?php esc_html_e( 'Select Image', 'simple-cookie-consent' ); ?>
-				</button>
-				<button type="button" class="button scc-media-remove" data-target="#scc_logo_url"
-					<?php echo get_option( 'scc_logo_url' ) ? '' : 'style="display:none"'; ?>>
-					<?php esc_html_e( 'Remove', 'simple-cookie-consent' ); ?>
-				</button>
-			</div>
-			<?php $logo = get_option( 'scc_logo_url', '' ); ?>
-			<?php if ( $logo ) : ?>
-				<img src="<?php echo esc_url( $logo ); ?>" class="scc-logo-preview" alt="">
-			<?php else : ?>
-				<img src="" class="scc-logo-preview" alt="" style="display:none">
-			<?php endif; ?>
-		</div>
-	</div>
-
-	<hr>
-
 	<!-- Button labels -->
 	<div class="scc-field">
 		<label class="scc-field__label" for="scc_accept_label">

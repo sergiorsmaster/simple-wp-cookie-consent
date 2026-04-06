@@ -151,7 +151,6 @@ class SCC_Admin {
 			'scc_enabled'               => 'scc_sanitize_checkbox',
 			'scc_banner_title'          => 'sanitize_text_field',
 			'scc_banner_text'           => 'sanitize_textarea_field',
-			'scc_logo_url'              => 'esc_url_raw',
 			'scc_accept_label'          => 'sanitize_text_field',
 			'scc_deny_label'            => 'sanitize_text_field',
 			'scc_preferences_label'     => 'sanitize_text_field',
@@ -165,11 +164,18 @@ class SCC_Admin {
 
 		// Appearance
 		foreach ( array(
-			'scc_position'    => 'sanitize_text_field',
-			'scc_color_bg'    => 'sanitize_hex_color',
-			'scc_color_text'  => 'sanitize_hex_color',
-			'scc_color_accent'=> 'sanitize_hex_color',
-			'scc_custom_css'  => 'wp_strip_all_tags',
+			'scc_position'            => 'sanitize_text_field',
+			'scc_logo_source'         => 'sanitize_text_field',
+			'scc_logo_url'            => 'esc_url_raw',
+			'scc_color_bg'            => 'sanitize_hex_color',
+			'scc_color_text'          => 'sanitize_hex_color',
+			'scc_color_accent'        => 'sanitize_hex_color',
+			'scc_border_radius'       => 'absint',
+			'scc_banner_max_width'    => 'scc_sanitize_px',
+			'scc_banner_border_width' => 'scc_sanitize_px',
+			'scc_banner_border_color' => 'sanitize_hex_color',
+			'scc_button_style'        => 'sanitize_text_field',
+			'scc_custom_css'          => 'wp_strip_all_tags',
 		) as $option => $cb ) {
 			register_setting( 'scc_appearance', $option, array( 'sanitize_callback' => $cb ) );
 		}
@@ -284,4 +290,11 @@ class SCC_Admin {
 // Sanitization helper for checkboxes (not a built-in WP function).
 function scc_sanitize_checkbox( $value ) {
 	return $value ? '1' : '0';
+}
+
+// Sanitization helper for pixel values — returns '' when empty so absint
+// doesn't convert blank fields to 0 and break CSS or form min validation.
+function scc_sanitize_px( $value ) {
+	$int = absint( $value );
+	return $int > 0 ? (string) $int : '';
 }

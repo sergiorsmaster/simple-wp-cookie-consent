@@ -13,20 +13,24 @@
 	var SCC = window.SimpleCookieConsent;
 	if ( ! SCC ) return;
 
-	var banner = document.getElementById( 'scc-banner' );
+	var banner  = document.getElementById( 'scc-banner' );
 	if ( ! banner ) return;
 
-	// Show banner only if the visitor has not yet made a choice.
+	var overlay = document.querySelector( '.scc-banner-overlay' );
+
+	// Show banner (and overlay if present) only if visitor hasn't chosen yet.
 	if ( ! SCC.hasInteracted() ) {
 		banner.style.display = '';
+		if ( overlay ) overlay.style.display = '';
 		SCC.log( 'Banner: showing (no prior consent)' );
 	} else {
 		SCC.log( 'Banner: hidden (consent already stored)' );
 	}
 
-	// Hide banner whenever consent is saved (accept, deny, or preferences).
+	// Hide banner + overlay whenever consent is saved.
 	document.addEventListener( 'scc:consentUpdated', function () {
 		banner.style.display = 'none';
+		if ( overlay ) overlay.style.display = 'none';
 		SCC.log( 'Banner: hidden after consent update' );
 	} );
 
