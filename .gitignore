@@ -1,0 +1,13 @@
+# Environment
+.env
+
+# WordPress debug log
+*.log
+debug.log
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
