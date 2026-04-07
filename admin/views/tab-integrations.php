@@ -239,7 +239,7 @@ $debug        = get_option( 'scc_debug', '0' );
 
 	<div class="scc-field">
 		<div class="scc-field__control">
-			<div class="notice notice-info inline" style="margin:0; padding: 10px 14px;">
+			<div class="notice notice-info inline" style="margin:0; padding: 10px 14px; width:440px;">
 				<p style="margin:0 0 8px;">
 					<strong><?php esc_html_e( 'Need to fire Facebook Pixel, TikTok, Hotjar or other scripts based on consent?', 'simple-cookie-consent' ); ?></strong>
 				</p>
