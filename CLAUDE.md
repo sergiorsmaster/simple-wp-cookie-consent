@@ -64,8 +64,10 @@ Tasks are tracked in order below. Status: [ ] pending | [~] in progress | [x] do
 - [x] FEAT-25: Admin Help tab (CSS classes, shortcodes, JS API reference)
 - [x] FEAT-26: Accessibility review (focus trap, tabindex, aria-checked)
 - [x] FEAT-27: README.md for developers (Docker setup, contributing, AI workflow)
-- [~] FEAT-28: GitHub Actions release workflow (zip + GitHub Release on tag push)
-- [ ] FEAT-29: License fix (GPL v2) + CODE_OF_CONDUCT.md
+- [x] FEAT-28: GitHub Actions release workflow (zip + GitHub Release on tag push)
+- [x] FEAT-29: License fix (GPL v2) + CODE_OF_CONDUCT.md
+- [x] FEAT-30: UX improvements — focus, button order, modal text, openBanner()
+- [x] FEAT-31: i18n — PT and DE translations, POT file, load_plugin_textdomain()
 
 ## Code conventions
 
