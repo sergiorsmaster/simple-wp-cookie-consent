@@ -1,0 +1,662 @@
+# German translation for Simple Cookie Consent
+# Copyright (C) 2026 Sergio Ricardo
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Cookie Consent 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-cookie-consent\n"
+"PO-Revision-Date: 2026-04-07 00:00+0000\n"
+"Last-Translator: Sergio Ricardo\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: simple-cookie-consent\n"
+
+#. Plugin Name of the plugin
+msgid "Simple Cookie Consent"
+msgstr "Simple Cookie Consent"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/sergiorsmaster/simple-wp-cookie-consent"
+msgstr "https://github.com/sergiorsmaster/simple-wp-cookie-consent"
+
+#. Description of the plugin
+msgid "A simple, free, and open-source cookie consent banner. No hidden Pro features, no subscription."
+msgstr "Ein einfaches, kostenloses und quelloffenes Cookie-Einwilligungs-Banner. Keine versteckten Pro-Funktionen, keine Abo-Modelle."
+
+#. Author of the plugin
+msgid "Sergio Ricardo"
+msgstr "Sergio Ricardo" 
+
+msgid "We use cookies"
+msgstr "Wir verwenden Cookies"
+
+msgid "We use cookies to improve your experience on our website. Please choose your cookie preferences below."
+msgstr "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Bitte wählen Sie Ihre Cookie-Einstellungen unten."
+
+msgid "Accept All"
+msgstr "Alle akzeptieren"
+
+msgid "Deny All"
+msgstr "Alle ablehnen"
+
+msgid "Preferences"
+msgstr "Einstellungen"
+
+msgid "Cookie Preferences"
+msgstr "Cookie-Einstellungen"
+
+msgid "Choose which cookies you allow. You can change your preferences at any time."
+msgstr "Wählen Sie, welche Cookies Sie erlauben. Sie können Ihre Einstellungen jederzeit ändern."
+
+msgid "Save Preferences"
+msgstr "Einstellungen speichern"
+
+msgid "Always active"
+msgstr "Immer aktiv"
+
+msgid "Necessary"
+msgstr "Notwendig"
+
+msgid "Required for the website to function properly. These cookies cannot be disabled."
+msgstr "Für die ordnungsgemäße Funktion der Website erforderlich. Diese Cookies können nicht deaktiviert werden."
+
+msgid "Analytics"
+msgstr "Analyse"
+
+msgid "Help us understand how visitors interact with the website by collecting anonymous data."
+msgstr "Helfen uns zu verstehen, wie Besucher mit der Website interagieren, indem sie anonyme Daten sammeln."
+
+msgid "Marketing"
+msgstr "Marketing"
+
+msgid "Used to track visitors across websites to display relevant and personalized advertisements."
+msgstr "Werden verwendet, um Besucher websiteübergreifend zu verfolgen und relevante, personalisierte Werbung anzuzeigen."
+
+msgid "Functional"
+msgstr "Funktional"
+
+msgid "Allow the website to remember your preferences such as language or region."
+msgstr "Ermöglichen der Website, Ihre Einstellungen wie Sprache oder Region zu speichern."
+
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+msgid "Cookie Policy"
+msgstr "Cookie-Richtlinie"
+
+msgid "Imprint"
+msgstr "Impressum"
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Cookie Settings"
+msgstr "Cookie-Einstellungen"
+
+msgid "Do Not Sell My Personal Information"
+msgstr "Meine persönlichen Daten nicht verkaufen"
+
+msgid "Cookie Consent Settings"
+msgstr "Cookie-Einwilligungseinstellungen"
+
+msgid "Cookie Consent"
+msgstr "Cookie-Einwilligung"
+
+msgid "Enable Cookie Banner"
+msgstr "Cookie-Banner aktivieren"
+
+msgid "Show the cookie consent banner on the frontend."
+msgstr "Das Cookie-Einwilligungs-Banner im Frontend anzeigen."
+
+msgid "Banner Title"
+msgstr "Banner-Titel"
+
+msgid "Banner Text"
+msgstr "Banner-Text"
+
+msgid "Accept Button Label"
+msgstr "Beschriftung der Schaltfläche „Akzeptieren""
+
+msgid "Deny Button Label"
+msgstr "Beschriftung der Schaltfläche „Ablehnen""
+
+msgid "Preferences Button Label"
+msgstr "Beschriftung der Schaltfläche „Einstellungen""
+
+msgid "Preferences Dialog"
+msgstr "Einstellungs-Dialog"
+
+msgid "Dialog Title"
+msgstr "Dialog-Titel"
+
+msgid "Dialog Description"
+msgstr "Dialog-Beschreibung"
+
+msgid "Save Button Label"
+msgstr "Beschriftung der Schaltfläche „Speichern""
+
+msgid "Privacy Policy Page"
+msgstr "Datenschutzseite"
+
+msgid "Cookie Policy Page"
+msgstr "Cookie-Richtlinienseite"
+
+msgid "Imprint Page"
+msgstr "Impressumsseite"
+
+msgid "Floating Preferences Icon"
+msgstr "Schwebendes Einstellungssymbol"
+
+msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [scc_preferences] shortcode instead."
+msgstr "Nach dem Speichern der Einwilligung ein kleines Cookie-Symbol auf der Seite anzeigen, damit Besucher ihre Einstellungen jederzeit ändern können. Sie können auch den Shortcode [scc_preferences] verwenden."
+
+msgid "Banner Position"
+msgstr "Banner-Position"
+
+msgid "Bottom Bar (full width)"
+msgstr "Untere Leiste (volle Breite)"
+
+msgid "Top Bar (full width)"
+msgstr "Obere Leiste (volle Breite)"
+
+msgid "Bottom Left (corner box)"
+msgstr "Unten links (Eckenfeld)"
+
+msgid "Bottom Right (corner box)"
+msgstr "Unten rechts (Eckenfeld)"
+
+msgid "Center Modal"
+msgstr "Zentriertes Modal"
+
+msgid "Background Color"
+msgstr "Hintergrundfarbe"
+
+msgid "Text Color"
+msgstr "Textfarbe"
+
+msgid "Accent Color"
+msgstr "Akzentfarbe"
+
+msgid "Used for the Accept button and toggle switch."
+msgstr "Wird für die Schaltfläche „Akzeptieren" und den Umschalter verwendet."
+
+msgid "Applies to banner, modal, and buttons."
+msgstr "Gilt für Banner, Modal und Schaltflächen."
+
+msgid "Border & Shape"
+msgstr "Rahmen und Form"
+
+msgid "Corner Radius (px)"
+msgstr "Eckenradius (px)"
+
+msgid "Border Width (px)"
+msgstr "Rahmenbreite (px)"
+
+msgid "Border Color"
+msgstr "Rahmenfarbe"
+
+msgid "Banner Width (px)"
+msgstr "Banner-Breite (px)"
+
+msgid "Applies to corner and center modal positions (px). Set to 0 or leave empty to use the default width."
+msgstr "Gilt für Ecken- und zentrierte Modal-Positionen (px). Auf 0 setzen oder leer lassen, um die Standardbreite zu verwenden."
+
+msgid "Buttons"
+msgstr "Schaltflächen"
+
+msgid "Secondary Button Style"
+msgstr "Stil der sekundären Schaltfläche"
+
+msgid "Outline"
+msgstr "Umriss"
+
+msgid "Ghost"
+msgstr "Geist"
+
+msgid "Deny and Preferences buttons appear as outlined buttons alongside Accept."
+msgstr "Die Schaltflächen „Ablehnen" und „Einstellungen" erscheinen als umrandete Schaltflächen neben „Akzeptieren"."
+
+msgid "Deny and Preferences appear as text links with underline, keeping the Accept button as the only visual button."
+msgstr "„Ablehnen" und „Einstellungen" erscheinen als unterstrichene Textlinks, wobei „Akzeptieren" die einzige visuelle Schaltfläche bleibt."
+
+msgid "The Accept button is always filled with the Accent color."
+msgstr "Die Schaltfläche „Akzeptieren" ist immer mit der Akzentfarbe gefüllt."
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Logo Source"
+msgstr "Logo-Quelle"
+
+msgid "No logo"
+msgstr "Kein Logo"
+
+msgid "Use site logo (set in Customizer)"
+msgstr "Website-Logo verwenden (im Customizer festgelegt)"
+
+msgid "Custom upload"
+msgstr "Benutzerdefinierter Upload"
+
+msgid "Upload Logo"
+msgstr "Logo hochladen"
+
+msgid "Select Image"
+msgstr "Bild auswählen"
+
+msgid "Remove"
+msgstr "Entfernen"
+
+msgid "Custom CSS"
+msgstr "Benutzerdefiniertes CSS"
+
+msgid "Add custom CSS to override the default banner styles."
+msgstr "Benutzerdefiniertes CSS hinzufügen, um die Standard-Banner-Stile zu überschreiben."
+
+msgid "Preview Banner"
+msgstr "Banner-Vorschau"
+
+msgid "Preview"
+msgstr "Vorschau"
+
+msgid "Open Preview"
+msgstr "Vorschau öffnen"
+
+msgid "Opens your site homepage in a new tab and forces the cookie banner to appear, even if you have already given consent. This preview is only visible to logged-in administrators — regular visitors are never affected by this URL parameter."
+msgstr "Öffnet die Startseite Ihrer Website in einem neuen Tab und erzwingt das Erscheinen des Cookie-Banners, auch wenn Sie bereits zugestimmt haben. Diese Vorschau ist nur für angemeldete Administratoren sichtbar — normale Besucher werden von diesem URL-Parameter nie beeinflusst."
+
+msgid "GDPR — European Union"
+msgstr "DSGVO — Europäische Union"
+
+msgid "LGPD — Brazil"
+msgstr "LGPD — Brasilien"
+
+msgid "CCPA — United States (California)"
+msgstr "CCPA — Vereinigte Staaten (Kalifornien)"
+
+msgid "Non-essential cookies are blocked until the visitor explicitly accepts them. Required for websites targeting users in the EU/EEA."
+msgstr "Nicht wesentliche Cookies werden blockiert, bis der Besucher sie ausdrücklich akzeptiert. Erforderlich für Websites, die sich an Nutzer in der EU/EWR richten."
+
+msgid "Same opt-in model as GDPR. Required for websites targeting users in Brazil."
+msgstr "Gleiches Opt-in-Modell wie die DSGVO. Erforderlich für Websites, die sich an Nutzer in Brasilien richten."
+
+msgid "Cookies are allowed by default. Visitors can opt out of the sale of their personal data. Required for businesses targeting California residents above certain thresholds."
+msgstr "Cookies sind standardmäßig erlaubt. Besucher können dem Verkauf ihrer persönlichen Daten widersprechen. Erforderlich für Unternehmen, die sich an Einwohner Kaliforniens über bestimmten Schwellenwerten richten."
+
+msgid "Applicable Law"
+msgstr "Anwendbares Recht"
+
+msgid "Select the privacy law that applies to your website. This controls whether the banner uses an opt-in or opt-out model."
+msgstr "Wählen Sie das Datenschutzgesetz aus, das für Ihre Website gilt. Dies steuert, ob das Banner ein Opt-in- oder Opt-out-Modell verwendet."
+
+msgid "Opt-in"
+msgstr "Opt-in"
+
+msgid "Opt-out"
+msgstr "Opt-out"
+
+msgid "Cookies blocked until consent is granted"
+msgstr "Cookies werden blockiert, bis die Einwilligung erteilt wird"
+
+msgid "Cookies are NOT blocked before interaction"
+msgstr "Cookies werden VOR der Interaktion NICHT blockiert"
+
+msgid "Banner shown on first visit"
+msgstr "Banner wird beim ersten Besuch angezeigt"
+
+msgid "Banner shown as an informational notice"
+msgstr "Banner wird als Informationshinweis angezeigt"
+
+msgid "Preferences button hidden"
+msgstr "Einstellungsschaltfläche ausgeblendet"
+
+msgid "Accept All / Deny All / Preferences buttons shown"
+msgstr "Schaltflächen „Alle akzeptieren" / „Alle ablehnen" / „Einstellungen" werden angezeigt"
+
+msgid "\"Do Not Sell My Personal Information\" opt-out shown"
+msgstr "Opt-out „Meine persönlichen Daten nicht verkaufen" wird angezeigt"
+
+msgid "\"Do Not Sell\" Button Label"
+msgstr "Beschriftung der Schaltfläche „Nicht verkaufen""
+
+msgid "Label for the opt-out button shown in the banner when CCPA mode is active."
+msgstr "Beschriftung für die Opt-out-Schaltfläche, die im Banner angezeigt wird, wenn der CCPA-Modus aktiv ist."
+
+msgid "Enable GTM Consent Mode v2"
+msgstr "GTM Consent Mode v2 aktivieren"
+
+msgid "Injects gtag consent defaults before GTM loads and updates signals when the visitor makes a choice."
+msgstr "Fügt gtag-Einwilligungsstandards ein, bevor GTM lädt, und aktualisiert die Signale, wenn der Besucher eine Auswahl trifft."
+
+msgid "Consent Mode"
+msgstr "Einwilligungsmodus"
+
+msgid "Basic"
+msgstr "Einfach"
+
+msgid "Advanced"
+msgstr "Erweitert"
+
+msgid "Recommended"
+msgstr "Empfohlen"
+
+msgid "Google tags fire in a limited cookieless mode before consent. Enables statistical modelling for non-consenting users. Requires GTM to be configured accordingly."
+msgstr "Google-Tags werden vor der Einwilligung in einem eingeschränkten Cookie-freien Modus ausgelöst. Ermöglicht statistische Modellierung für nicht einwilligende Nutzer. Erfordert entsprechende GTM-Konfiguration."
+
+msgid "Google tags do not fire before the visitor consents. Strictest compliance, but no data modelling for non-consenting users."
+msgstr "Google-Tags werden nicht ausgelöst, bevor der Besucher einwilligt. Strengste Konformität, aber keine Datenmodellierung für nicht einwilligende Nutzer."
+
+msgid "GTM Signals"
+msgstr "GTM-Signale"
+
+msgid "Signal Mapping"
+msgstr "Signal-Zuordnung"
+
+msgid "Wait for Update (ms)"
+msgstr "Auf Aktualisierung warten (ms)"
+
+msgid "How long (in milliseconds) GTM waits for a consent update before firing tags. Default: 500."
+msgstr "Wie lange (in Millisekunden) GTM auf eine Einwilligungsaktualisierung wartet, bevor Tags ausgelöst werden. Standard: 500."
+
+msgid "Google Tag Manager"
+msgstr "Google Tag Manager"
+
+msgid "Debug Mode"
+msgstr "Debug-Modus"
+
+msgid "Log all consent actions to the browser console prefixed with [SCC]. Disable on production."
+msgstr "Alle Einwilligungsaktionen in der Browser-Konsole mit dem Präfix [SCC] protokollieren. In der Produktion deaktivieren."
+
+msgid "Debug"
+msgstr "Fehlersuche"
+
+msgid "Compatibility"
+msgstr "Kompatibilität"
+
+msgid "WP Consent Level API"
+msgstr "WP Consent Level API"
+
+msgid "The %1$sWP Consent Level API%2$s is a standard interface that lets plugins like Site Kit read consent without knowing anything about this plugin."
+msgstr "Die %1$sWP Consent Level API%2$s ist eine Standardschnittstelle, die Plugins wie Site Kit ermöglicht, die Einwilligung zu lesen, ohne etwas über dieses Plugin wissen zu müssen."
+
+msgid "WP Consent Level API is active. Consent is synced automatically on every page load."
+msgstr "Die WP Consent Level API ist aktiv. Die Einwilligung wird bei jedem Seitenaufruf automatisch synchronisiert."
+
+msgid "WP Consent Level API is not active. %1$sInstall the plugin%2$s to allow third-party plugins to read consent without extra configuration."
+msgstr "Die WP Consent Level API ist nicht aktiv. %1$sInstallieren Sie das Plugin%2$s, um Drittanbieter-Plugins das Lesen der Einwilligung ohne zusätzliche Konfiguration zu ermöglichen."
+
+msgid "Polylang"
+msgstr "Polylang"
+
+msgid "Polylang is active. Banner strings are registered for translation under Languages → String Translations."
+msgstr "Polylang ist aktiv. Banner-Texte sind für die Übersetzung unter Sprachen → Zeichenketten-Übersetzungen registriert."
+
+msgid "Polylang is not active. When installed, banner title, text, and button labels will be translatable per language."
+msgstr "Polylang ist nicht aktiv. Bei Installation können Bannertitel, -text und Schaltflächenbeschriftungen pro Sprache übersetzt werden."
+
+msgid "Site Kit by Google"
+msgstr "Site Kit by Google"
+
+msgid "Site Kit is active. Consent is passed automatically via GTM Consent Mode v2 signals and the WP Consent API."
+msgstr "Site Kit ist aktiv. Die Einwilligung wird automatisch über GTM Consent Mode v2-Signale und die WP Consent API übermittelt."
+
+msgid "Site Kit is not active. When installed, it will automatically respect GTM Consent Mode v2 signals set by this plugin."
+msgstr "Site Kit ist nicht aktiv. Bei Installation werden die von diesem Plugin gesetzten GTM Consent Mode v2-Signale automatisch respektiert."
+
+msgid "Consent stored for 1 year"
+msgstr "Einwilligung für 1 Jahr gespeichert"
+
+msgid "Cookie"
+msgstr "Cookie"
+
+msgid "Cookie Name"
+msgstr "Cookie-Name"
+
+msgid "Cookie Category"
+msgstr "Cookie-Kategorie"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Service"
+msgstr "Dienst"
+
+msgid "Source"
+msgstr "Quelle"
+
+msgid "Duration"
+msgstr "Dauer"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Actions"
+msgstr "Aktionen"
+
+msgid "Cookie List"
+msgstr "Cookie-Liste"
+
+msgid "Cookie DB"
+msgstr "Cookie-Datenbank"
+
+msgid "Add Cookie"
+msgstr "Cookie hinzufügen"
+
+msgid "+ Add Cookie"
+msgstr "+ Cookie hinzufügen"
+
+msgid "Edit Cookie"
+msgstr "Cookie bearbeiten"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Update Cookie"
+msgstr "Cookie aktualisieren"
+
+msgid "No cookies have been added yet."
+msgstr "Es wurden noch keine Cookies hinzugefügt."
+
+msgid "No cookies yet. Add one manually or run the scanner."
+msgstr "Noch keine Cookies. Fügen Sie eines manuell hinzu oder führen Sie den Scanner aus."
+
+msgid "Cookie added."
+msgstr "Cookie hinzugefügt."
+
+msgid "Cookie updated."
+msgstr "Cookie aktualisiert."
+
+msgid "Cookie deleted."
+msgstr "Cookie gelöscht."
+
+msgid "Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s."
+msgstr "Cookie-Datenbank: %1$d Einträge aus der %2$sOpen Cookie Database%3$s geladen."
+
+msgid "Run Scanner"
+msgstr "Scanner ausführen"
+
+msgid "Scan"
+msgstr "Scannen"
+
+msgid "Scanning…"
+msgstr "Wird gescannt…"
+
+msgid "Scan complete."
+msgstr "Scan abgeschlossen."
+
+msgid "Scan failed. Please try again."
+msgstr "Scan fehlgeschlagen. Bitte versuchen Sie es erneut."
+
+msgid "new cookie(s) found."
+msgstr "neue(s) Cookie(s) gefunden."
+
+msgid "Manual"
+msgstr "Manuell"
+
+msgid "e.g. Google Analytics"
+msgstr "z.B. Google Analytics"
+
+msgid "e.g. 2 years"
+msgstr "z.B. 2 Jahre"
+
+msgid "— None —"
+msgstr "— Keine —"
+
+msgid "all"
+msgstr "alle"
+
+msgid "CSS Classes &amp; Custom Properties"
+msgstr "CSS-Klassen und benutzerdefinierte Eigenschaften"
+
+msgid "Key selectors"
+msgstr "Wichtige Selektoren"
+
+msgid "Selector"
+msgstr "Selektor"
+
+msgid "CSS custom properties"
+msgstr "Benutzerdefinierte CSS-Eigenschaften"
+
+msgid "Property"
+msgstr "Eigenschaft"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Use the Appearance tab's Custom CSS field to target these selectors, or enqueue your own stylesheet."
+msgstr "Verwenden Sie das Feld „Benutzerdefiniertes CSS" im Reiter „Erscheinungsbild", um diese Selektoren anzusprechen, oder fügen Sie Ihr eigenes Stylesheet ein."
+
+msgid "These are set on :root and control the visual theme. Override them in Custom CSS or with the Appearance settings."
+msgstr "Diese sind auf :root gesetzt und steuern das visuelle Thema. Überschreiben Sie sie in benutzerdefiniertem CSS oder in den Erscheinungsbild-Einstellungen."
+
+msgid "The main banner container"
+msgstr "Der Haupt-Banner-Container"
+
+msgid "Banner headline text"
+msgstr "Banner-Überschriftentext"
+
+msgid "Banner body text"
+msgstr "Banner-Fließtext"
+
+msgid "Accept All button"
+msgstr "Schaltfläche „Alle akzeptieren""
+
+msgid "Deny All button"
+msgstr "Schaltfläche „Alle ablehnen""
+
+msgid "Preferences button"
+msgstr "Einstellungsschaltfläche"
+
+msgid "Legal page links (Privacy Policy, Cookie Policy, Imprint)"
+msgstr "Links zu rechtlichen Seiten (Datenschutzerklärung, Cookie-Richtlinie, Impressum)"
+
+msgid "Preferences modal container"
+msgstr "Einstellungs-Modal-Container"
+
+msgid "Floating cookie icon button"
+msgstr "Schwebendes Cookie-Symbol"
+
+msgid "Full-screen backdrop shown behind the center-modal banner position"
+msgstr "Vollbild-Hintergrund hinter der zentrierten Modal-Banner-Position"
+
+msgid "Banner background color"
+msgstr "Banner-Hintergrundfarbe"
+
+msgid "Banner text color"
+msgstr "Banner-Textfarbe"
+
+msgid "Accent color (Accept button, toggles)"
+msgstr "Akzentfarbe (Schaltfläche „Akzeptieren", Umschalter)"
+
+msgid "Border radius for banner and buttons"
+msgstr "Eckenradius für Banner und Schaltflächen"
+
+msgid "Banner border (width + color)"
+msgstr "Banner-Rahmen (Breite + Farbe)"
+
+msgid "Shortcodes"
+msgstr "Shortcodes"
+
+msgid "Renders a table of all cookies grouped by category. Inherits your theme's table styles."
+msgstr "Zeigt eine Tabelle aller Cookies gruppiert nach Kategorie an. Übernimmt die Tabellenstile Ihres Themes."
+
+msgid "Attribute"
+msgstr "Attribut"
+
+msgid "Filter to a single category: necessary, analytics, marketing, or functional."
+msgstr "Auf eine einzelne Kategorie filtern: notwendig, analyse, marketing oder funktional."
+
+msgid "Examples:"
+msgstr "Beispiele:"
+
+msgid "Renders a link (or button) that opens the preferences modal. Useful in footer menus or privacy pages."
+msgstr "Zeigt einen Link (oder eine Schaltfläche) an, der das Einstellungs-Modal öffnet. Nützlich in Fußzeilenmenüs oder Datenschutzseiten."
+
+msgid "The visible link text."
+msgstr "Der sichtbare Link-Text."
+
+msgid "Additional CSS class(es) to add to the link element."
+msgstr "Zusätzliche CSS-Klasse(n), die dem Link-Element hinzugefügt werden."
+
+msgid "JavaScript API"
+msgstr "JavaScript-API"
+
+msgid "All methods are available on the global"
+msgstr "Alle Methoden sind global verfügbar auf"
+
+msgid "object."
+msgstr "Objekt."
+
+msgid "Method / Event"
+msgstr "Methode / Ereignis"
+
+msgid "Grant consent for all cookie categories and hide the banner."
+msgstr "Einwilligung für alle Cookie-Kategorien erteilen und Banner ausblenden."
+
+msgid "Deny consent for all non-necessary categories and hide the banner."
+msgstr "Einwilligung für alle nicht notwendigen Kategorien verweigern und Banner ausblenden."
+
+msgid "Save a partial consent object. Example:"
+msgstr "Ein teilweises Einwilligungsobjekt speichern. Beispiel:"
+
+msgid "Programmatically open the preferences modal."
+msgstr "Das Einstellungs-Modal programmgesteuert öffnen."
+
+msgid "Programmatically show the consent banner (e.g. from a \"Review cookie settings\" link)."
+msgstr "Das Einwilligungs-Banner programmgesteuert anzeigen (z.B. über einen Link „Cookie-Einstellungen überprüfen")."
+
+msgid "Returns true if consent has been granted for the given category (e.g. \"analytics\")."
+msgstr "Gibt „true" zurück, wenn die Einwilligung für die angegebene Kategorie erteilt wurde (z.B. „analytics")."
+
+msgid "Returns true if the visitor has already made a consent choice (banner was actioned)."
+msgstr "Gibt „true" zurück, wenn der Besucher bereits eine Einwilligungsentscheidung getroffen hat (Banner wurde bedient)."
+
+msgid "Fired on document after any consent save. Listen with:"
+msgstr "Wird nach jedem Speichern einer Einwilligung am Dokument ausgelöst. Abhören mit:"
+
+msgid "(CustomEvent on document)"
+msgstr "(CustomEvent am Dokument)"
+
+msgid "Usage example"
+msgstr "Verwendungsbeispiel"
+
+msgid "Colors"
+msgstr "Farben"
+
+msgid "Layout"
+msgstr "Layout"
+
+msgid "This tab is coming soon."
+msgstr "Dieser Reiter wird bald verfügbar sein."

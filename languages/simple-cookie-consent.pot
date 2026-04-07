@@ -1,0 +1,948 @@
+# Copyright (C) 2026 Sergio Ricardo
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Cookie Consent 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-cookie-consent\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-07T18:08:10+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: simple-cookie-consent\n"
+
+#. Plugin Name of the plugin
+#: simple-cookie-consent.php
+msgid "Simple Cookie Consent"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: simple-cookie-consent.php
+msgid "https://github.com/sergiorsmaster/simple-wp-cookie-consent"
+msgstr ""
+
+#. Description of the plugin
+#: simple-cookie-consent.php
+msgid "A simple, free, and open-source cookie consent banner. No hidden Pro features, no subscription."
+msgstr ""
+
+#. Author of the plugin
+#: simple-cookie-consent.php
+msgid "Sergio Ricardo"
+msgstr ""
+
+#: admin/class-scc-admin.php:136
+#: admin/class-scc-admin.php:262
+msgid "Cookie Consent Settings"
+msgstr ""
+
+#: admin/class-scc-admin.php:137
+msgid "Cookie Consent"
+msgstr ""
+
+#: admin/class-scc-admin.php:238
+msgid "Scanning…"
+msgstr ""
+
+#: admin/class-scc-admin.php:239
+msgid "Scan complete."
+msgstr ""
+
+#: admin/class-scc-admin.php:240
+msgid "Scan failed. Please try again."
+msgstr ""
+
+#: admin/class-scc-admin.php:241
+msgid "new cookie(s) found."
+msgstr ""
+
+#: admin/class-scc-admin.php:283
+msgid "This tab is coming soon."
+msgstr ""
+
+#: admin/views/tab-appearance.php:7
+msgid "Bottom Bar (full width)"
+msgstr ""
+
+#: admin/views/tab-appearance.php:8
+msgid "Top Bar (full width)"
+msgstr ""
+
+#: admin/views/tab-appearance.php:9
+msgid "Bottom Left (corner box)"
+msgstr ""
+
+#: admin/views/tab-appearance.php:10
+msgid "Bottom Right (corner box)"
+msgstr ""
+
+#: admin/views/tab-appearance.php:11
+msgid "Center Modal"
+msgstr ""
+
+#: admin/views/tab-appearance.php:19
+msgid "Layout"
+msgstr ""
+
+#: admin/views/tab-appearance.php:24
+msgid "Banner Position"
+msgstr ""
+
+#: admin/views/tab-appearance.php:41
+msgid "Banner Width (px)"
+msgstr ""
+
+#: admin/views/tab-appearance.php:48
+msgid "Applies to corner and center modal positions (px). Set to 0 or leave empty to use the default width."
+msgstr ""
+
+#: admin/views/tab-appearance.php:58
+msgid "Colors"
+msgstr ""
+
+#: admin/views/tab-appearance.php:62
+msgid "Background Color"
+msgstr ""
+
+#: admin/views/tab-appearance.php:72
+msgid "Text Color"
+msgstr ""
+
+#: admin/views/tab-appearance.php:82
+msgid "Accent Color"
+msgstr ""
+
+#: admin/views/tab-appearance.php:88
+msgid "Used for the Accept button and toggle switch."
+msgstr ""
+
+#: admin/views/tab-appearance.php:98
+msgid "Border & Shape"
+msgstr ""
+
+#: admin/views/tab-appearance.php:103
+msgid "Corner Radius (px)"
+msgstr ""
+
+#: admin/views/tab-appearance.php:112
+msgid "Applies to banner, modal, and buttons."
+msgstr ""
+
+#: admin/views/tab-appearance.php:120
+msgid "Border Width (px)"
+msgstr ""
+
+#: admin/views/tab-appearance.php:132
+msgid "Border Color"
+msgstr ""
+
+#: admin/views/tab-appearance.php:145
+msgid "Buttons"
+msgstr ""
+
+#: admin/views/tab-appearance.php:149
+msgid "Secondary Button Style"
+msgstr ""
+
+#: admin/views/tab-appearance.php:159
+msgid "Outline"
+msgstr ""
+
+#: admin/views/tab-appearance.php:160
+#: admin/views/tab-integrations.php:58
+msgid "Recommended"
+msgstr ""
+
+#: admin/views/tab-appearance.php:163
+msgid "Deny and Preferences buttons appear as outlined buttons alongside Accept."
+msgstr ""
+
+#: admin/views/tab-appearance.php:172
+msgid "Ghost"
+msgstr ""
+
+#: admin/views/tab-appearance.php:175
+msgid "Deny and Preferences appear as text links with underline, keeping the Accept button as the only visual button."
+msgstr ""
+
+#: admin/views/tab-appearance.php:181
+msgid "The Accept button is always filled with the Accent color."
+msgstr ""
+
+#: admin/views/tab-appearance.php:191
+msgid "Logo"
+msgstr ""
+
+#: admin/views/tab-appearance.php:195
+msgid "Logo Source"
+msgstr ""
+
+#: admin/views/tab-appearance.php:202
+msgid "No logo"
+msgstr ""
+
+#: admin/views/tab-appearance.php:207
+msgid "Use site logo (set in Customizer)"
+msgstr ""
+
+#: admin/views/tab-appearance.php:212
+msgid "Custom upload"
+msgstr ""
+
+#: admin/views/tab-appearance.php:221
+msgid "Upload Logo"
+msgstr ""
+
+#: admin/views/tab-appearance.php:228
+msgid "Select Image"
+msgstr ""
+
+#: admin/views/tab-appearance.php:234
+msgid "Remove"
+msgstr ""
+
+#: admin/views/tab-appearance.php:245
+#: admin/views/tab-appearance.php:249
+msgid "Custom CSS"
+msgstr ""
+
+#: admin/views/tab-appearance.php:257
+msgid "Add custom CSS to override the default banner styles."
+msgstr ""
+
+#: admin/views/tab-appearance.php:267
+msgid "Preview"
+msgstr ""
+
+#: admin/views/tab-appearance.php:271
+msgid "Preview Banner"
+msgstr ""
+
+#: admin/views/tab-appearance.php:277
+msgid "Open Preview"
+msgstr ""
+
+#: admin/views/tab-appearance.php:280
+msgid "Opens your site homepage in a new tab and forces the cookie banner to appear, even if you have already given consent. This preview is only visible to logged-in administrators — regular visitors are never affected by this URL parameter."
+msgstr ""
+
+#: admin/views/tab-cookies.php:17
+msgid "Cookie added."
+msgstr ""
+
+#: admin/views/tab-cookies.php:18
+msgid "Cookie updated."
+msgstr ""
+
+#: admin/views/tab-cookies.php:19
+msgid "Cookie deleted."
+msgstr ""
+
+#: admin/views/tab-cookies.php:26
+#: admin/views/tab-integrations.php:114
+#: includes/class-scc-shortcodes.php:63
+#: public/views/modal.php:47
+msgid "Necessary"
+msgstr ""
+
+#: admin/views/tab-cookies.php:27
+#: admin/views/tab-integrations.php:118
+#: includes/class-scc-shortcodes.php:64
+#: public/views/modal.php:52
+msgid "Analytics"
+msgstr ""
+
+#: admin/views/tab-cookies.php:28
+#: admin/views/tab-integrations.php:122
+#: includes/class-scc-shortcodes.php:65
+#: public/views/modal.php:57
+msgid "Marketing"
+msgstr ""
+
+#: admin/views/tab-cookies.php:29
+#: admin/views/tab-integrations.php:126
+#: includes/class-scc-shortcodes.php:66
+#: public/views/modal.php:62
+msgid "Functional"
+msgstr ""
+
+#: admin/views/tab-cookies.php:33
+msgid "Manual"
+msgstr ""
+
+#: admin/views/tab-cookies.php:34
+msgid "Scan"
+msgstr ""
+
+#: admin/views/tab-cookies.php:35
+msgid "Cookie DB"
+msgstr ""
+
+#: admin/views/tab-cookies.php:46
+msgid "Edit Cookie"
+msgstr ""
+
+#: admin/views/tab-cookies.php:46
+#: admin/views/tab-cookies.php:112
+msgid "Add Cookie"
+msgstr ""
+
+#: admin/views/tab-cookies.php:55
+msgid "Cookie Name"
+msgstr ""
+
+#: admin/views/tab-cookies.php:65
+#: admin/views/tab-cookies.php:164
+msgid "Category"
+msgstr ""
+
+#: admin/views/tab-cookies.php:80
+#: admin/views/tab-cookies.php:165
+#: includes/class-scc-shortcodes.php:115
+msgid "Service"
+msgstr ""
+
+#: admin/views/tab-cookies.php:85
+msgid "e.g. Google Analytics"
+msgstr ""
+
+#: admin/views/tab-cookies.php:91
+#: admin/views/tab-cookies.php:166
+#: includes/class-scc-shortcodes.php:116
+msgid "Duration"
+msgstr ""
+
+#: admin/views/tab-cookies.php:96
+msgid "e.g. 2 years"
+msgstr ""
+
+#: admin/views/tab-cookies.php:102
+#: admin/views/tab-help.php:19
+#: admin/views/tab-help.php:43
+#: admin/views/tab-help.php:69
+#: admin/views/tab-help.php:91
+#: admin/views/tab-help.php:123
+#: includes/class-scc-shortcodes.php:117
+msgid "Description"
+msgstr ""
+
+#: admin/views/tab-cookies.php:112
+msgid "Update Cookie"
+msgstr ""
+
+#: admin/views/tab-cookies.php:114
+msgid "Cancel"
+msgstr ""
+
+#. translators: 1: number of cookies, 2: opening <a> tag, 3: closing </a> tag
+#: admin/views/tab-cookies.php:128
+#, php-format
+msgid "Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s."
+msgstr ""
+
+#: admin/views/tab-cookies.php:139
+msgid "Cookie List"
+msgstr ""
+
+#: admin/views/tab-cookies.php:143
+msgid "Run Scanner"
+msgstr ""
+
+#: admin/views/tab-cookies.php:146
+msgid "+ Add Cookie"
+msgstr ""
+
+#: admin/views/tab-cookies.php:157
+msgid "No cookies yet. Add one manually or run the scanner."
+msgstr ""
+
+#: admin/views/tab-cookies.php:163
+msgid "Name"
+msgstr ""
+
+#: admin/views/tab-cookies.php:167
+msgid "Source"
+msgstr ""
+
+#: admin/views/tab-cookies.php:168
+msgid "Actions"
+msgstr ""
+
+#: admin/views/tab-cookies.php:188
+msgid "Edit"
+msgstr ""
+
+#: admin/views/tab-cookies.php:196
+msgid "Delete"
+msgstr ""
+
+#: admin/views/tab-general.php:11
+msgid "Enable Cookie Banner"
+msgstr ""
+
+#: admin/views/tab-general.php:20
+msgid "Show the cookie consent banner on the frontend."
+msgstr ""
+
+#: admin/views/tab-general.php:30
+msgid "Banner Title"
+msgstr ""
+
+#: admin/views/tab-general.php:34
+#: includes/class-scc-activator.php:78
+#: public/class-scc-public.php:180
+msgid "We use cookies"
+msgstr ""
+
+#: admin/views/tab-general.php:41
+msgid "Banner Text"
+msgstr ""
+
+#: admin/views/tab-general.php:45
+#: includes/class-scc-activator.php:79
+#: public/class-scc-public.php:181
+msgid "We use cookies to improve your experience on our website. Please choose your cookie preferences below."
+msgstr ""
+
+#: admin/views/tab-general.php:53
+msgid "Accept Button Label"
+msgstr ""
+
+#: admin/views/tab-general.php:57
+#: includes/class-scc-activator.php:80
+#: public/class-scc-public.php:182
+msgid "Accept All"
+msgstr ""
+
+#: admin/views/tab-general.php:63
+#: admin/views/tab-general.php:119
+msgid "Deny Button Label"
+msgstr ""
+
+#: admin/views/tab-general.php:67
+#: admin/views/tab-general.php:123
+#: includes/class-scc-activator.php:81
+#: includes/class-scc-activator.php:86
+#: public/class-scc-public.php:183
+#: public/class-scc-public.php:231
+msgid "Deny All"
+msgstr ""
+
+#: admin/views/tab-general.php:73
+msgid "Preferences Button Label"
+msgstr ""
+
+#: admin/views/tab-general.php:77
+#: includes/class-scc-activator.php:82
+#: public/class-scc-public.php:184
+msgid "Preferences"
+msgstr ""
+
+#: admin/views/tab-general.php:84
+msgid "Preferences Dialog"
+msgstr ""
+
+#: admin/views/tab-general.php:88
+msgid "Dialog Title"
+msgstr ""
+
+#: admin/views/tab-general.php:92
+#: includes/class-scc-activator.php:83
+#: public/class-scc-public.php:228
+msgid "Cookie Preferences"
+msgstr ""
+
+#: admin/views/tab-general.php:98
+msgid "Dialog Description"
+msgstr ""
+
+#: admin/views/tab-general.php:102
+#: includes/class-scc-activator.php:84
+#: public/class-scc-public.php:229
+msgid "Choose which cookies you allow. You can change your preferences at any time."
+msgstr ""
+
+#: admin/views/tab-general.php:109
+msgid "Save Button Label"
+msgstr ""
+
+#: admin/views/tab-general.php:113
+#: includes/class-scc-activator.php:85
+#: public/class-scc-public.php:230
+msgid "Save Preferences"
+msgstr ""
+
+#: admin/views/tab-general.php:132
+msgid "Privacy Policy Page"
+msgstr ""
+
+#: admin/views/tab-general.php:139
+#: admin/views/tab-general.php:154
+#: admin/views/tab-general.php:169
+msgid "— None —"
+msgstr ""
+
+#: admin/views/tab-general.php:147
+msgid "Cookie Policy Page"
+msgstr ""
+
+#: admin/views/tab-general.php:162
+msgid "Imprint Page"
+msgstr ""
+
+#: admin/views/tab-general.php:180
+msgid "Floating Preferences Icon"
+msgstr ""
+
+#: admin/views/tab-general.php:189
+msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [scc_preferences] shortcode instead."
+msgstr ""
+
+#: admin/views/tab-help.php:11
+msgid "CSS Classes &amp; Custom Properties"
+msgstr ""
+
+#: admin/views/tab-help.php:12
+msgid "Use the Appearance tab's Custom CSS field to target these selectors, or enqueue your own stylesheet."
+msgstr ""
+
+#: admin/views/tab-help.php:14
+msgid "Key selectors"
+msgstr ""
+
+#: admin/views/tab-help.php:18
+msgid "Selector"
+msgstr ""
+
+#: admin/views/tab-help.php:23
+msgid "The main banner container"
+msgstr ""
+
+#: admin/views/tab-help.php:24
+msgid "Banner headline text"
+msgstr ""
+
+#: admin/views/tab-help.php:25
+msgid "Banner body text"
+msgstr ""
+
+#: admin/views/tab-help.php:26
+msgid "Accept All button"
+msgstr ""
+
+#: admin/views/tab-help.php:27
+msgid "Deny All button"
+msgstr ""
+
+#: admin/views/tab-help.php:28
+msgid "Preferences button"
+msgstr ""
+
+#: admin/views/tab-help.php:29
+msgid "Legal page links (Privacy Policy, Cookie Policy, Imprint)"
+msgstr ""
+
+#: admin/views/tab-help.php:30
+msgid "Preferences modal container"
+msgstr ""
+
+#: admin/views/tab-help.php:31
+msgid "Floating cookie icon button"
+msgstr ""
+
+#: admin/views/tab-help.php:32
+msgid "Full-screen backdrop shown behind the center-modal banner position"
+msgstr ""
+
+#: admin/views/tab-help.php:36
+msgid "CSS custom properties"
+msgstr ""
+
+#: admin/views/tab-help.php:37
+msgid "These are set on :root and control the visual theme. Override them in Custom CSS or with the Appearance settings."
+msgstr ""
+
+#: admin/views/tab-help.php:41
+msgid "Property"
+msgstr ""
+
+#: admin/views/tab-help.php:42
+#: admin/views/tab-help.php:68
+#: admin/views/tab-help.php:90
+msgid "Default"
+msgstr ""
+
+#: admin/views/tab-help.php:47
+msgid "Banner background color"
+msgstr ""
+
+#: admin/views/tab-help.php:48
+msgid "Banner text color"
+msgstr ""
+
+#: admin/views/tab-help.php:49
+msgid "Accent color (Accept button, toggles)"
+msgstr ""
+
+#: admin/views/tab-help.php:50
+msgid "Border radius for banner and buttons"
+msgstr ""
+
+#: admin/views/tab-help.php:51
+msgid "Banner border (width + color)"
+msgstr ""
+
+#: admin/views/tab-help.php:60
+msgid "Shortcodes"
+msgstr ""
+
+#: admin/views/tab-help.php:63
+msgid "Renders a table of all cookies grouped by category. Inherits your theme's table styles."
+msgstr ""
+
+#: admin/views/tab-help.php:67
+#: admin/views/tab-help.php:89
+msgid "Attribute"
+msgstr ""
+
+#: admin/views/tab-help.php:75
+msgid "all"
+msgstr ""
+
+#: admin/views/tab-help.php:76
+msgid "Filter to a single category: necessary, analytics, marketing, or functional."
+msgstr ""
+
+#: admin/views/tab-help.php:80
+#: admin/views/tab-help.php:107
+msgid "Examples:"
+msgstr ""
+
+#: admin/views/tab-help.php:85
+msgid "Renders a link (or button) that opens the preferences modal. Useful in footer menus or privacy pages."
+msgstr ""
+
+#: admin/views/tab-help.php:97
+#: includes/class-scc-shortcodes.php:34
+#: public/views/preferences-icon.php:12
+msgid "Cookie Settings"
+msgstr ""
+
+#: admin/views/tab-help.php:98
+msgid "The visible link text."
+msgstr ""
+
+#: admin/views/tab-help.php:102
+msgid "(none)"
+msgstr ""
+
+#: admin/views/tab-help.php:103
+msgid "Additional CSS class(es) to add to the link element."
+msgstr ""
+
+#: admin/views/tab-help.php:116
+msgid "JavaScript API"
+msgstr ""
+
+#: admin/views/tab-help.php:117
+msgid "All methods are available on the global"
+msgstr ""
+
+#: admin/views/tab-help.php:117
+msgid "object."
+msgstr ""
+
+#: admin/views/tab-help.php:122
+msgid "Method / Event"
+msgstr ""
+
+#: admin/views/tab-help.php:129
+msgid "Grant consent for all cookie categories and hide the banner."
+msgstr ""
+
+#: admin/views/tab-help.php:133
+msgid "Deny consent for all non-necessary categories and hide the banner."
+msgstr ""
+
+#: admin/views/tab-help.php:137
+msgid "Save a partial consent object. Example:"
+msgstr ""
+
+#: admin/views/tab-help.php:141
+msgid "Programmatically show the consent banner (e.g. from a \"Review cookie settings\" link)."
+msgstr ""
+
+#: admin/views/tab-help.php:145
+msgid "Programmatically open the preferences modal."
+msgstr ""
+
+#: admin/views/tab-help.php:149
+msgid "Returns true if consent has been granted for the given category (e.g. \"analytics\")."
+msgstr ""
+
+#: admin/views/tab-help.php:153
+msgid "Returns true if the visitor has already made a consent choice (banner was actioned)."
+msgstr ""
+
+#: admin/views/tab-help.php:156
+msgid "(CustomEvent on document)"
+msgstr ""
+
+#: admin/views/tab-help.php:157
+msgid "Fired on document after any consent save. Listen with:"
+msgstr ""
+
+#: admin/views/tab-help.php:164
+msgid "Usage example"
+msgstr ""
+
+#: admin/views/tab-integrations.php:17
+msgid "Google Tag Manager"
+msgstr ""
+
+#: admin/views/tab-integrations.php:23
+msgid "Enable GTM Consent Mode v2"
+msgstr ""
+
+#: admin/views/tab-integrations.php:33
+msgid "Injects gtag consent defaults before GTM loads and updates signals when the visitor makes a choice."
+msgstr ""
+
+#: admin/views/tab-integrations.php:44
+msgid "Consent Mode"
+msgstr ""
+
+#: admin/views/tab-integrations.php:55
+msgid "Basic"
+msgstr ""
+
+#: admin/views/tab-integrations.php:62
+msgid "Google tags do not fire before the visitor consents. Strictest compliance, but no data modelling for non-consenting users."
+msgstr ""
+
+#: admin/views/tab-integrations.php:72
+msgid "Advanced"
+msgstr ""
+
+#: admin/views/tab-integrations.php:76
+msgid "Google tags fire in a limited cookieless mode before consent. Enables statistical modelling for non-consenting users. Requires GTM to be configured accordingly."
+msgstr ""
+
+#: admin/views/tab-integrations.php:87
+msgid "Wait for Update (ms)"
+msgstr ""
+
+#: admin/views/tab-integrations.php:94
+msgid "How long (in milliseconds) GTM waits for a consent update before firing tags. Default: 500."
+msgstr ""
+
+#: admin/views/tab-integrations.php:102
+msgid "Signal Mapping"
+msgstr ""
+
+#: admin/views/tab-integrations.php:108
+msgid "Cookie Category"
+msgstr ""
+
+#: admin/views/tab-integrations.php:109
+msgid "GTM Signals"
+msgstr ""
+
+#: admin/views/tab-integrations.php:142
+msgid "Site Kit by Google"
+msgstr ""
+
+#: admin/views/tab-integrations.php:147
+#: admin/views/tab-integrations.php:173
+#: admin/views/tab-integrations.php:216
+msgid "Compatibility"
+msgstr ""
+
+#: admin/views/tab-integrations.php:152
+msgid "Site Kit is active. Consent is passed automatically via GTM Consent Mode v2 signals and the WP Consent API."
+msgstr ""
+
+#: admin/views/tab-integrations.php:156
+msgid "Site Kit is not active. When installed, it will automatically respect GTM Consent Mode v2 signals set by this plugin."
+msgstr ""
+
+#: admin/views/tab-integrations.php:168
+msgid "WP Consent Level API"
+msgstr ""
+
+#: admin/views/tab-integrations.php:178
+msgid "WP Consent Level API is active. Consent is synced automatically on every page load."
+msgstr ""
+
+#. translators: 1: opening <a> tag, 2: closing </a> tag
+#: admin/views/tab-integrations.php:185
+#, php-format
+msgid "WP Consent Level API is not active. %1$sInstall the plugin%2$s to allow third-party plugins to read consent without extra configuration."
+msgstr ""
+
+#. translators: 1: opening <a> tag, 2: closing </a> tag
+#: admin/views/tab-integrations.php:196
+#, php-format
+msgid "The %1$sWP Consent Level API%2$s is a standard interface that lets plugins like Site Kit read consent without knowing anything about this plugin."
+msgstr ""
+
+#: admin/views/tab-integrations.php:211
+msgid "Polylang"
+msgstr ""
+
+#: admin/views/tab-integrations.php:221
+msgid "Polylang is active. Banner strings are registered for translation under Languages → String Translations."
+msgstr ""
+
+#: admin/views/tab-integrations.php:225
+msgid "Polylang is not active. When installed, banner title, text, and button labels will be translatable per language."
+msgstr ""
+
+#: admin/views/tab-integrations.php:237
+msgid "Debug"
+msgstr ""
+
+#: admin/views/tab-integrations.php:242
+msgid "Debug Mode"
+msgstr ""
+
+#: admin/views/tab-integrations.php:251
+msgid "Log all consent actions to the browser console prefixed with [SCC]. Disable on production."
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:10
+msgid "GDPR — European Union"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:11
+#: admin/views/tab-jurisdiction.php:22
+msgid "Opt-in"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:12
+msgid "Non-essential cookies are blocked until the visitor explicitly accepts them. Required for websites targeting users in the EU/EEA."
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:14
+#: admin/views/tab-jurisdiction.php:25
+msgid "Banner shown on first visit"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:15
+#: admin/views/tab-jurisdiction.php:26
+msgid "Cookies blocked until consent is granted"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:16
+#: admin/views/tab-jurisdiction.php:27
+msgid "Accept All / Deny All / Preferences buttons shown"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:17
+#: admin/views/tab-jurisdiction.php:28
+msgid "Consent stored for 1 year"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:21
+msgid "LGPD — Brazil"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:23
+msgid "Same opt-in model as GDPR. Required for websites targeting users in Brazil."
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:32
+msgid "CCPA — United States (California)"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:33
+msgid "Opt-out"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:34
+msgid "Cookies are allowed by default. Visitors can opt out of the sale of their personal data. Required for businesses targeting California residents above certain thresholds."
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:36
+msgid "Banner shown as an informational notice"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:37
+msgid "Cookies are NOT blocked before interaction"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:38
+msgid "\"Do Not Sell My Personal Information\" opt-out shown"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:39
+msgid "Preferences button hidden"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:48
+msgid "Applicable Law"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:52
+msgid "Select the privacy law that applies to your website. This controls whether the banner uses an opt-in or opt-out model."
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:91
+msgid "\"Do Not Sell\" Button Label"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:95
+#: public/class-scc-public.php:185
+msgid "Do Not Sell My Personal Information"
+msgstr ""
+
+#: admin/views/tab-jurisdiction.php:97
+msgid "Label for the opt-out button shown in the banner when CCPA mode is active."
+msgstr ""
+
+#: includes/class-scc-shortcodes.php:114
+msgid "Cookie"
+msgstr ""
+
+#: includes/class-scc-shortcodes.php:139
+msgid "No cookies have been added yet."
+msgstr ""
+
+#: public/views/banner.php:81
+msgid "Privacy Policy"
+msgstr ""
+
+#: public/views/banner.php:84
+msgid "Cookie Policy"
+msgstr ""
+
+#: public/views/banner.php:87
+msgid "Imprint"
+msgstr ""
+
+#: public/views/modal.php:30
+msgid "Close"
+msgstr ""
+
+#: public/views/modal.php:48
+msgid "Required for the website to function properly. These cookies cannot be disabled."
+msgstr ""
+
+#: public/views/modal.php:53
+msgid "Help us understand how visitors interact with the website by collecting anonymous data."
+msgstr ""
+
+#: public/views/modal.php:58
+msgid "Used to track visitors across websites to display relevant and personalized advertisements."
+msgstr ""
+
+#: public/views/modal.php:63
+msgid "Allow the website to remember your preferences such as language or region."
+msgstr ""
+
+#: public/views/modal.php:78
+msgid "Always active"
+msgstr ""
