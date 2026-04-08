@@ -17,59 +17,54 @@
  *   $ccpa_text    string
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
-<?php if ( 'center-modal' === $position ) : ?>
-<div class="scc-banner-overlay" aria-hidden="true" style="display:none"></div>
+<?php if ('center-modal' === $position): ?>
+	<div class="scc-banner-overlay" aria-hidden="true" style="display:none"></div>
 <?php endif; ?>
-<div id="scc-banner"
-	class="scc-banner scc-position-<?php echo esc_attr( $position ); ?>"
-	role="dialog"
-	aria-modal="true"
-	aria-labelledby="scc-banner-title"
-	tabindex="-1"
-	style="display:none">
+<div id="scc-banner" class="scc-banner scc-position-<?php echo esc_attr($position); ?>" role="dialog"
+	aria-modal="true" aria-labelledby="scc-banner-title" tabindex="-1" style="display:none">
 
 	<div class="scc-banner__inner">
 
 		<div class="scc-banner__content">
 			<div class="scc-banner__header">
-				<?php if ( ! empty( $logo_url ) ) : ?>
-					<img class="scc-banner__logo" src="<?php echo esc_url( $logo_url ); ?>" alt="" aria-hidden="true">
+				<?php if (!empty($logo_url)): ?>
+					<img class="scc-banner__logo" src="<?php echo esc_url($logo_url); ?>" alt="" aria-hidden="true">
 				<?php endif; ?>
-				<p class="scc-banner__title" id="scc-banner-title">
-					<?php echo esc_html( $title ); ?>
-				</p>
+				<div class="scc-banner__title" id="scc-banner-title">
+					<?php echo esc_html($title); ?>
+				</div>
 			</div>
-			<p class="scc-banner__text">
-				<?php echo esc_html( $text ); ?>
-			</p>
+			<div class="scc-banner__text">
+				<?php echo esc_html($text); ?>
+			</div>
 		</div>
 
-		<?php if ( 'ccpa' === $jurisdiction ) : ?>
+		<?php if ('ccpa' === $jurisdiction): ?>
 
 			<div class="scc-banner__actions">
 				<button class="scc-btn scc-btn--deny" id="scc-deny">
-					<?php echo esc_html( $ccpa_text ); ?>
+					<?php echo esc_html($ccpa_text); ?>
 				</button>
 				<button class="scc-btn scc-btn--accept" id="scc-accept">
-					<?php echo esc_html( $accept_label ); ?>
+					<?php echo esc_html($accept_label); ?>
 				</button>
 			</div>
 
-		<?php else : ?>
+		<?php else: ?>
 
 			<div class="scc-banner__actions">
 				<button class="scc-btn scc-btn--accept" id="scc-accept">
-					<?php echo esc_html( $accept_label ); ?>
+					<?php echo esc_html($accept_label); ?>
 				</button>
 				<button class="scc-btn scc-btn--deny" id="scc-deny">
-					<?php echo esc_html( $deny_label ); ?>
+					<?php echo esc_html($deny_label); ?>
 				</button>
 				<button class="scc-btn scc-btn--preferences" id="scc-preferences">
-					<?php echo esc_html( $prefs_label ); ?>
+					<?php echo esc_html($prefs_label); ?>
 				</button>
 			</div>
 
@@ -77,20 +72,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php
 		$links = array();
-		if ( ! empty( $privacy_url ) ) {
-			$links[] = '<a href="' . esc_url( $privacy_url ) . '">' . esc_html__( 'Privacy Policy', 'simple-cookie-consent' ) . '</a>';
+		if (!empty($privacy_url)) {
+			$links[] = '<li><a href="' . esc_url($privacy_url) . '">' . esc_html__('Privacy Policy', 'simple-cookie-consent') . '</a></li>';
 		}
-		if ( ! empty( $cookie_url ) ) {
-			$links[] = '<a href="' . esc_url( $cookie_url ) . '">' . esc_html__( 'Cookie Policy', 'simple-cookie-consent' ) . '</a>';
+		if (!empty($cookie_url)) {
+			$links[] = '<li><a href="' . esc_url($cookie_url) . '">' . esc_html__('Cookie Policy', 'simple-cookie-consent') . '</a></li>';
 		}
-		if ( ! empty( $imprint_url ) ) {
-			$links[] = '<a href="' . esc_url( $imprint_url ) . '">' . esc_html__( 'Imprint', 'simple-cookie-consent' ) . '</a>';
+		if (!empty($imprint_url)) {
+			$links[] = '<li><a href="' . esc_url($imprint_url) . '">' . esc_html__('Imprint', 'simple-cookie-consent') . '</a></li>';
 		}
-		if ( ! empty( $links ) ) :
-		?>
-			<div class="scc-banner__links">
-				<?php echo implode( ' · ', $links ); ?>
-			</div>
+		if (!empty($links)):
+			?>
+			<ul class="scc-banner__links">
+				<?php echo implode( "\n\t\t\t\t", $links ); ?>
+			</ul>
 		<?php endif; ?>
 
 	</div>

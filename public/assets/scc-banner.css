@@ -31,7 +31,8 @@
 	box-shadow: var(--scc-shadow);
 	border: var(--scc-border);
 	box-sizing: border-box;
-	outline: none; /* suppress focus ring — banner is a container, not interactive */
+	outline: none;
+	/* suppress focus ring — banner is a container, not interactive */
 }
 
 .scc-banner:focus-visible {
@@ -42,7 +43,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 12px;
+	gap: 16px;
 	padding: 16px 20px;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -150,7 +151,7 @@
 .scc-banner__title {
 	margin: 0;
 	font-weight: 700;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	color: var(--scc-text);
 }
 
@@ -248,7 +249,13 @@
    ----------------------------------------------------------------------------- */
 
 .scc-banner__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25em 0.75em;
 	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 	font-size: 0.8rem;
 	opacity: .75;
 }
