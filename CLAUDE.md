@@ -102,7 +102,7 @@ simple-cookie-consent/
 
 | Option | Tab | Type | Default |
 |--------|-----|------|---------|
-| `scc_enabled` | General | toggle | `1` |
+| `scc_enabled` | General | toggle | `'1'` |
 | `scc_banner_title` | General | text | `'We use cookies'` |
 | `scc_banner_text` | General | textarea | *(long default)* |
 | `scc_accept_label` | General | text | `'Accept All'` |
@@ -112,14 +112,27 @@ simple-cookie-consent/
 | `scc_modal_intro` | General | textarea | *(long default)* |
 | `scc_modal_save_label` | General | text | `'Save Preferences'` |
 | `scc_modal_deny_label` | General | text | `'Deny All'` |
+| `scc_privacy_policy_page` | General | page selector | `0` |
+| `scc_cookie_policy_page` | General | page selector | `0` |
+| `scc_imprint_page` | General | page selector | `0` |
+| `scc_show_preferences_icon` | General | toggle | `'1'` |
 | `scc_position` | Appearance | select | `'bottom-bar'` |
 | `scc_color_bg` | Appearance | color | `'#ffffff'` |
-| `scc_color_text` | Appearance | color | `'#1d2327'` |
-| `scc_color_accent` | Appearance | color | `'#2271b1'` |
+| `scc_color_text` | Appearance | color | `'#111111'` |
+| `scc_color_accent` | Appearance | color | `'#0073aa'` |
+| `scc_logo_source` | Appearance | select | `'custom'` |
+| `scc_logo_url` | Appearance | URL | `''` |
+| `scc_border_radius` | Appearance | number | `'6'` |
+| `scc_banner_max_width` | Appearance | number | `'200'` |
+| `scc_banner_border_width` | Appearance | number | `'0'` |
+| `scc_banner_border_color` | Appearance | color | `'#dddddd'` |
+| `scc_button_style` | Appearance | select | `'outline'` |
+| `scc_custom_css` | Appearance | textarea | `''` |
 | `scc_jurisdiction` | Jurisdiction | select | `'gdpr'` |
+| `scc_ccpa_opt_out_text` | Jurisdiction | text | *(fallback in render)* |
 | `scc_gtm_enabled` | Integrations | toggle | `'0'` |
 | `scc_gtm_mode` | Integrations | select | `'basic'` |
-| `scc_gtm_wait_for_update` | Integrations | number | `500` |
+| `scc_gtm_wait_for_update` | Integrations | number | `'500'` |
 | `scc_debug` | Integrations | toggle | `'0'` |
 
 ---

@@ -106,6 +106,15 @@
 	// Open when Preferences button fires the custom event
 	document.addEventListener( 'scc:openPreferences', openModal );
 
+	// Delegated listener for [data-scc-action="open-preferences"] links (shortcodes, etc.)
+	document.addEventListener( 'click', function ( e ) {
+		var trigger = e.target.closest( '[data-scc-action="open-preferences"]' );
+		if ( trigger ) {
+			e.preventDefault();
+			openModal();
+		}
+	} );
+
 	// Close on overlay click
 	if ( overlay ) {
 		overlay.addEventListener( 'click', closeModal );

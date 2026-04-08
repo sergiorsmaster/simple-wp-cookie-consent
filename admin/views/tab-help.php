@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<tr><td><code>.scc-btn--accept</code></td><td><?php esc_html_e( 'Accept All button', 'simple-cookie-consent' ); ?></td></tr>
 			<tr><td><code>.scc-btn--deny</code></td><td><?php esc_html_e( 'Deny All button', 'simple-cookie-consent' ); ?></td></tr>
 			<tr><td><code>.scc-btn--preferences</code></td><td><?php esc_html_e( 'Preferences button', 'simple-cookie-consent' ); ?></td></tr>
-			<tr><td><code>.scc-banner__links a</code></td><td><?php esc_html_e( 'Legal page links (Privacy Policy, Cookie Policy, Imprint)', 'simple-cookie-consent' ); ?></td></tr>
+			<tr><td><code>.scc-banner__links</code></td><td><?php esc_html_e( 'Legal page links list (ul). Each link is a li > a.', 'simple-cookie-consent' ); ?></td></tr>
 			<tr><td><code>.scc-modal__box</code></td><td><?php esc_html_e( 'Preferences modal container', 'simple-cookie-consent' ); ?></td></tr>
 			<tr><td><code>.scc-preferences-icon</code></td><td><?php esc_html_e( 'Floating cookie icon button', 'simple-cookie-consent' ); ?></td></tr>
 			<tr><td><code>.scc-banner-overlay</code></td><td><?php esc_html_e( 'Full-screen backdrop shown behind the center-modal banner position', 'simple-cookie-consent' ); ?></td></tr>

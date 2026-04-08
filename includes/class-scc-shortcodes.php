@@ -41,7 +41,7 @@ class SCC_Shortcodes {
 		$classes = trim( 'scc-preferences-link ' . sanitize_html_class( $atts['class'] ) );
 
 		return sprintf(
-			'<a href="#" class="%s" onclick="SimpleCookieConsent.openPreferences();return false;">%s</a>',
+			'<a href="#" class="%s" data-scc-action="open-preferences">%s</a>',
 			esc_attr( $classes ),
 			esc_html( $atts['label'] )
 		);
