@@ -230,36 +230,38 @@ $debug        = get_option( 'scc_debug', '0' );
 
 	<hr>
 
-	<hr>
-
 	<!-- =========================================================
 	     Custom Scripts
 	     ========================================================= -->
 	<h2 class="scc-section-title"><?php esc_html_e( 'Custom Scripts', 'simple-cookie-consent' ); ?></h2>
 
-	<div class="scc-field">
-		<div class="scc-field__control">
-			<div class="notice notice-info inline" style="margin:0; padding: 10px 14px; width:440px;">
-				<p style="margin:0 0 8px;">
-					<strong><?php esc_html_e( 'Need to fire Facebook Pixel, TikTok, Hotjar or other scripts based on consent?', 'simple-cookie-consent' ); ?></strong>
-				</p>
-				<p style="margin:0 0 8px;">
-					<?php esc_html_e( 'This plugin delegates conditional script loading to Google Tag Manager. Add your scripts as GTM tags and use the built-in consent triggers (e.g. "Analytics Storage Consent Granted") to control when they fire.', 'simple-cookie-consent' ); ?>
-					<?php echo wp_kses(
-						sprintf(
-							/* translators: %1$s opening link tag, %2$s closing link tag */
-							__( '%1$sLearn how to use GTM with Consent Mode v2 →%2$s', 'simple-cookie-consent' ),
-							'<a href="https://developers.google.com/tag-platform/security/guides/consent?hl=en#gtm-and-consent-mode" target="_blank" rel="noopener noreferrer">',
-							'</a>'
-						),
-						array( 'a' => array( 'href' => array(), 'target' => array(), 'rel' => array() ) )
-					); ?>
-				</p>
-				<p style="margin:0; color: #646970; font-size: 12px;">
-					<?php esc_html_e( 'A built-in Script Manager (no GTM required) is planned for a future release.', 'simple-cookie-consent' ); ?>
-				</p>
-			</div>
-		</div>
+	<div class="notice notice-info inline" style="margin: 0 0 16px; padding: 10px 14px;">
+		<p style="margin:0 0 10px;">
+			<strong><?php esc_html_e( 'Need to fire Facebook Pixel, TikTok, Hotjar or other scripts based on consent?', 'simple-cookie-consent' ); ?></strong>
+		</p>
+		<p style="margin:0 0 10px;">
+			<?php esc_html_e( 'Do not paste those script tags directly into your WordPress theme or header. Scripts added outside of GTM will not be blocked or controlled by this plugin\'s consent mechanism.', 'simple-cookie-consent' ); ?>
+		</p>
+		<p style="margin:0 0 10px;">
+			<?php esc_html_e( 'Instead, add them as tags inside Google Tag Manager and use the built-in consent triggers (e.g. "Analytics Storage Consent Granted") to control when they fire. This way, scripts only load after the visitor grants consent for the matching category.', 'simple-cookie-consent' ); ?>
+		</p>
+		<p style="margin:0 0 10px;">
+			<?php echo wp_kses(
+				sprintf(
+					/* translators: %1$s opening link tag, %2$s closing link tag */
+					__( '%1$sLearn how to use GTM with Consent Mode v2 →%2$s', 'simple-cookie-consent' ),
+					'<a href="https://developers.google.com/tag-platform/security/guides/consent?hl=en#gtm-and-consent-mode" target="_blank" rel="noopener noreferrer">',
+					'</a>'
+				),
+				array( 'a' => array( 'href' => array(), 'target' => array(), 'rel' => array() ) )
+			); ?>
+		</p>
+		<p style="margin:0 0 10px; color: #646970; font-size: 12px;">
+			<?php esc_html_e( 'You do not need Google Site Kit or the WP Consent API plugin for this to work. Just enable GTM Consent Mode v2 above and paste the standard GTM snippet into your site\'s header — this plugin handles the rest.', 'simple-cookie-consent' ); ?>
+		</p>
+		<p style="margin:0; color: #646970; font-size: 12px;">
+			<?php esc_html_e( 'A built-in Script Manager (no GTM required) is planned for a future release.', 'simple-cookie-consent' ); ?>
+		</p>
 	</div>
 
 	<hr>

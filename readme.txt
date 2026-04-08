@@ -8,7 +8,7 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-The cookie consent plugin that just works — GDPR, LGPD & CCPA ready, GTM Consent Mode v2, cookie scanner. Completely free. No hidden Pro features. No subscription.
+The cookie consent plugin that just works — GDPR, LGPD & CCPA ready, GTM Consent Mode v2, cookie scanner, accessible, translatable. Completely free. No hidden Pro features. No subscription.
 
 == Description ==
 
@@ -27,7 +27,7 @@ Most free cookie consent plugins give you a basic banner and then ask you to upg
 ### Features
 
 **🍪 Cookie Banner & Preferences Modal**
-A clean, accessible cookie banner with a full preferences modal. Visitors can accept all, deny all, or choose category by category — Necessary, Analytics, Marketing, and Functional.
+A clean, accessible cookie banner with a full preferences modal. Visitors can accept all, deny all, or choose category by category — Necessary, Analytics, Marketing, and Functional. All banner text, modal title, description, and button labels are fully editable from the admin.
 
 **⚖️ GDPR, LGPD & CCPA Ready — Free**
 Select your jurisdiction from the admin and the plugin adapts automatically:
@@ -35,7 +35,7 @@ Select your jurisdiction from the admin and the plugin adapts automatically:
 - **CCPA** (opt-out): cookies load by default with a "Do Not Sell My Personal Information" button.
 
 **📡 Google Tag Manager Consent Mode v2 — Free**
-Full GTM Consent Mode v2 support with Basic and Advanced modes. Consent signals (`ad_storage`, `analytics_storage`, `ad_user_data`, `ad_personalization`, `functionality_storage`, `personalization_storage`) are set before GTM loads and updated the moment a visitor makes a choice. Most plugins charge for this. Here it's built in.
+Full GTM Consent Mode v2 support with Basic and Advanced modes. Consent signals (`ad_storage`, `analytics_storage`, `ad_user_data`, `ad_personalization`, `functionality_storage`, `personalization_storage`) are set before GTM loads and updated the moment a visitor makes a choice. Most plugins charge for this. Here it's built in. No extra plugins needed — just enable the integration and paste your standard GTM snippet. Works with any GTM setup, including Google Site Kit.
 
 **🔍 Cookie Scanner — Free**
 Automatically discovers cookies set on your website — both server-side (`Set-Cookie` headers) and client-side (JavaScript cookies). Each found cookie is matched against a bundled database of 2,000+ known cookies (powered by the [Open Cookie Database](https://github.com/jkwakman/Open-Cookie-Database)) to pre-fill the service name, category, and duration. No API keys, no cloud dependency.
@@ -43,8 +43,14 @@ Automatically discovers cookies set on your website — both server-side (`Set-C
 **🎨 Fully Customisable Appearance**
 Choose from 5 banner positions (bottom bar, top bar, bottom-left, bottom-right, centered modal). Customise background, text, and accent colours, or add your own CSS. Upload your logo directly from the Media Library.
 
-**🌍 Polylang Compatible — Free**
-All banner strings (title, text, button labels) are registered with Polylang's String Translations so your multilingual site can show a fully translated banner without any extra work.
+**🌍 Translated & Polylang Compatible — Free**
+Ships with Portuguese (PT and BR) and German translations out of the box. All banner strings are registered with Polylang's String Translations so your multilingual site can show a fully translated banner without any extra work.
+
+**♿ Accessible by Default**
+Focus traps in the banner and modal, proper `aria` attributes, keyboard navigation (Tab, Shift+Tab, Escape), semantic `role="dialog"` markup, and `role="switch"` on toggle inputs. Works well with screen readers and meets WCAG guidelines.
+
+**🛠️ Developer Friendly**
+Full JavaScript API (`SimpleCookieConsent.acceptAll()`, `.denyAll()`, `.openPreferences()`, `.openBanner()`, `.hasConsent()`, `.hasInteracted()`), a `scc:consentUpdated` event for custom integrations, CSS custom properties for theming, and a built-in Help tab with the complete reference.
 
 **🔗 WP Consent Level API — Free**
 Bridges your visitors' consent to the [WP Consent Level API](https://github.com/wordpress/wp-consent-level-api), making it compatible with Google Site Kit and any other plugin that reads the standard consent interface.
@@ -103,6 +109,12 @@ Consent is stored in a first-party cookie named `scc_consent` (JSON, 1 year, Sam
 = How do I add a "Cookie Settings" link to my footer? =
 Use the `[scc_preferences label="Cookie Settings"]` shortcode anywhere on your site.
 
+= How do I add Facebook Pixel, Hotjar, TikTok or other scripts? =
+Do not paste those scripts directly into your WordPress theme or header — they will not be blocked by consent. Instead, add them as tags inside Google Tag Manager and use the built-in consent triggers (e.g. "Analytics Storage Consent Granted") to control when they fire. This plugin sends the consent signals to GTM automatically.
+
+= Does this plugin require Google Site Kit or WP Consent API? =
+No. Both are optional. The plugin works standalone — just enable GTM Consent Mode v2 in the Integrations tab and paste the standard GTM snippet into your site's header. Site Kit and WP Consent API are supported automatically if installed, but not required.
+
 = How do I show a cookie table on my Cookie Policy page? =
 Add `[scc_cookie_list]` to any page. Use the optional `categories` attribute to filter: `[scc_cookie_list categories="analytics,marketing"]`.
 
@@ -120,15 +132,20 @@ Add `[scc_cookie_list]` to any page. Use the optional `categories` attribute to 
 = 0.1.0 =
 * Initial release
 * Cookie banner with 5 positions and full customisation
-* Preferences modal with per-category toggles
+* Preferences modal with per-category toggles and editable text
 * GDPR, LGPD, and CCPA jurisdiction modes
-* GTM Consent Mode v2 — Basic and Advanced
+* GTM Consent Mode v2 — Basic and Advanced (no extra plugins needed)
 * Cookie scanner (server-side + client-side)
 * Bundled Open Cookie Database (2,264 entries)
 * WP Consent Level API integration
 * Polylang compatibility
+* Portuguese (PT + BR) and German translations included
 * [scc_cookie_list] and [scc_preferences] shortcodes
 * Floating preferences icon
+* Full JavaScript API (acceptAll, denyAll, openPreferences, openBanner, hasConsent, hasInteracted)
+* Accessibility: focus traps, keyboard navigation, ARIA attributes
+* Admin Help tab with CSS, shortcode, and JS API reference
+* Banner preview mode for admins (?scc_preview=1)
 * Debug mode for developers
 * Clean uninstall
 

@@ -559,8 +559,8 @@ msgstr "Schaltfläche „Alle ablehnen""
 msgid "Preferences button"
 msgstr "Einstellungsschaltfläche"
 
-msgid "Legal page links (Privacy Policy, Cookie Policy, Imprint)"
-msgstr "Links zu rechtlichen Seiten (Datenschutzerklärung, Cookie-Richtlinie, Impressum)"
+msgid "Legal page links list (ul). Each link is a li > a."
+msgstr "Liste der rechtlichen Links (ul). Jeder Link ist ein li > a."
 
 msgid "Preferences modal container"
 msgstr "Einstellungs-Modal-Container"
@@ -660,3 +660,27 @@ msgstr "Layout"
 
 msgid "This tab is coming soon."
 msgstr "Dieser Reiter wird bald verfügbar sein."
+
+msgid "Custom Scripts"
+msgstr "Benutzerdefinierte Skripte"
+
+msgid "Need to fire Facebook Pixel, TikTok, Hotjar or other scripts based on consent?"
+msgstr "Müssen Sie Facebook Pixel, TikTok, Hotjar oder andere Skripte basierend auf der Einwilligung ausführen?"
+
+msgid "Do not paste those script tags directly into your WordPress theme or header. Scripts added outside of GTM will not be blocked or controlled by this plugin's consent mechanism."
+msgstr "Fügen Sie diese Script-Tags nicht direkt in Ihr WordPress-Theme oder den Header ein. Skripte, die außerhalb von GTM hinzugefügt werden, werden nicht durch den Einwilligungsmechanismus dieses Plugins blockiert oder gesteuert."
+
+msgid "Instead, add them as tags inside Google Tag Manager and use the built-in consent triggers (e.g. \"Analytics Storage Consent Granted\") to control when they fire. This way, scripts only load after the visitor grants consent for the matching category."
+msgstr "Fügen Sie sie stattdessen als Tags im Google Tag Manager hinzu und verwenden Sie die integrierten Einwilligungsauslöser (z. B. „Analytics Storage Consent Granted"), um zu steuern, wann sie ausgelöst werden. So werden Skripte erst geladen, nachdem der Besucher die Einwilligung für die entsprechende Kategorie erteilt hat."
+
+msgid "%1$sLearn how to use GTM with Consent Mode v2 →%2$s"
+msgstr "%1$sErfahren Sie, wie Sie GTM mit Consent Mode v2 verwenden →%2$s"
+
+msgid "You do not need Google Site Kit or the WP Consent API plugin for this to work. Just enable GTM Consent Mode v2 above and paste the standard GTM snippet into your site's header — this plugin handles the rest."
+msgstr "Sie benötigen weder Google Site Kit noch das WP Consent API-Plugin, damit dies funktioniert. Aktivieren Sie einfach oben den GTM Consent Mode v2 und fügen Sie das Standard-GTM-Snippet in den Header Ihrer Website ein — dieses Plugin erledigt den Rest."
+
+msgid "A built-in Script Manager (no GTM required) is planned for a future release."
+msgstr "Ein integrierter Skript-Manager (ohne GTM erforderlich) ist für eine zukünftige Version geplant."
+
+msgid "(none)"
+msgstr "(keiner)"
