@@ -49,6 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<tr><td><code>--scc-accent</code></td><td><code>#0073aa</code></td><td><?php esc_html_e( 'Accent color (Accept button, toggles)', 'simple-cookie-consent' ); ?></td></tr>
 			<tr><td><code>--scc-radius</code></td><td><code>6px</code></td><td><?php esc_html_e( 'Border radius for banner and buttons', 'simple-cookie-consent' ); ?></td></tr>
 			<tr><td><code>--scc-border</code></td><td><code>0px solid #dddddd</code></td><td><?php esc_html_e( 'Banner border (width + color)', 'simple-cookie-consent' ); ?></td></tr>
+			<tr><td><code>--scc-btn-border-width</code></td><td><code>1px</code></td><td><?php esc_html_e( 'Button border width (applies to all banner buttons)', 'simple-cookie-consent' ); ?></td></tr>
 		</tbody>
 	</table>
 

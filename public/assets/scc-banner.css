@@ -12,6 +12,7 @@
 	--scc-shadow: 0 2px 16px rgba(0, 0, 0, .15);
 	--scc-z: 99999;
 	--scc-font: inherit;
+	--scc-btn-border-width: 1px;
 	--scc-secondary-border: currentColor;
 	--scc-secondary-decoration: none;
 }
@@ -179,7 +180,7 @@
 	font-size: 0.85rem;
 	font-weight: 600;
 	cursor: pointer;
-	border: 2px solid transparent;
+	border: var(--scc-btn-border-width) solid transparent;
 	line-height: 1.4;
 	white-space: nowrap;
 	transition: background-color .15s ease, color .15s ease,
@@ -379,7 +380,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 0.5rem;
+	margin-bottom: 6px;
 }
 
 .scc-modal__category-name {
