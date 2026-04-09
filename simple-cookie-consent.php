@@ -3,7 +3,7 @@
  * Plugin Name:       Simple Cookie Consent
  * Plugin URI:        https://github.com/sergiorsmaster/simple-wp-cookie-consent
  * Description:       A simple, free, and open-source cookie consent banner. No hidden Pro features, no subscription.
- * Version:           0.2.0
+ * Version:           0.3.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Sergio Ricardo
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Plugin constants
-define('SCC_VERSION', '0.2.0');
+define('SCC_VERSION', '0.3.0');
 define('SCC_PLUGIN_FILE', __FILE__);
 define('SCC_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SCC_PLUGIN_URL', plugin_dir_url(__FILE__));
