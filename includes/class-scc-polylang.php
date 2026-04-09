@@ -28,15 +28,16 @@ class SCC_Polylang {
 		'scc_accept_label'        => 'Accept button label',
 		'scc_deny_label'          => 'Deny button label',
 		'scc_preferences_label'   => 'Preferences button label',
+		'scc_modal_title'         => 'Modal title',
+		'scc_modal_intro'         => 'Modal description',
+		'scc_modal_save_label'    => 'Modal save button label',
+		'scc_modal_deny_label'    => 'Modal deny button label',
 		'scc_ccpa_opt_out_text'   => 'CCPA opt-out button label',
 	);
 
 	public static function init() {
-		if ( ! function_exists( 'pll_register_string' ) ) {
-			return;
-		}
-
-		add_action( 'init', array( __CLASS__, 'register_strings' ), 5 );
+		// Defer the check — Polylang may not be loaded yet at plugin load time.
+		add_action( 'init', array( __CLASS__, 'register_strings' ), 20 );
 	}
 
 	/**
