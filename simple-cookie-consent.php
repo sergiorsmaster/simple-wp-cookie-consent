@@ -34,11 +34,6 @@ require_once SCC_PLUGIN_DIR . 'includes/class-scc-polylang.php';
 require_once SCC_PLUGIN_DIR . 'public/class-scc-public.php';
 require_once SCC_PLUGIN_DIR . 'admin/class-scc-admin.php';
 
-// Load translations
-add_action('init', function () {
-	load_plugin_textdomain('simple-cookie-consent', false, dirname(plugin_basename(__FILE__)) . '/languages');
-});
-
 // Activation / deactivation hooks
 register_activation_hook(__FILE__, array('SCC_Activator', 'activate'));
 register_deactivation_hook(__FILE__, array('SCC_Deactivator', 'deactivate'));

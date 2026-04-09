@@ -45,7 +45,7 @@ class SCC_Public
 				'functionality_storage': 'denied',
 				'personalization_storage': 'denied',
 				'security_storage': 'granted',
-				'wait_for_update': <?php echo $wait_ms; ?>
+				'wait_for_update': <?php echo (int) $wait_ms; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			});
 
 			gtag('set', 'ads_data_redaction', true);
@@ -73,7 +73,7 @@ class SCC_Public
 		);
 
 		// Pass settings to JS
-		$is_preview = isset( $_GET['scc_preview'] ) && current_user_can( 'manage_options' );
+		$is_preview = isset( $_GET['scc_preview'] ) && current_user_can( 'manage_options' ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		wp_localize_script('scc-consent', 'sccSettings', array(
 			'debug'   => (bool) get_option('scc_debug', '0'),
 			'gtmMode' => get_option('scc_gtm_mode', 'basic'),
@@ -160,7 +160,7 @@ class SCC_Public
 	 */
 	public static function render_banner()
 	{
-		$is_preview = isset( $_GET['scc_preview'] ) && current_user_can( 'manage_options' );
+		$is_preview = isset( $_GET['scc_preview'] ) && current_user_can( 'manage_options' ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		if ( ! $is_preview && ! get_option('scc_enabled', '1') ) {
 			return;
 		}

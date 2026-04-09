@@ -2,13 +2,13 @@
 Contributors: sergiorsmaster
 Tags: cookie consent, GDPR, CCPA, cookie banner, consent mode
 Requires at least: 6.0
-Tested up to: 6.7
+Tested up to: 6.9
 Stable tag: 0.2.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-The cookie consent plugin that just works — GDPR, LGPD & CCPA ready, GTM Consent Mode v2, cookie scanner, accessible, translatable. Completely free. No hidden Pro features. No subscription.
+GDPR, LGPD & CCPA cookie consent with GTM Consent Mode v2, cookie scanner, and full customisation. Free forever.
 
 == Description ==
 

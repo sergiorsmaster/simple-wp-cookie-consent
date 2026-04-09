@@ -46,6 +46,38 @@ Skills are defined in `.claude/skills/` — read the relevant `SKILL.md` for the
 - WordPress Settings API for all admin forms.
 - Enqueue scripts/styles via `wp_enqueue_scripts` / `admin_enqueue_scripts`.
 - No inline styles in PHP templates — use CSS files or `wp_add_inline_style`.
+- Do NOT use `load_plugin_textdomain()` — WordPress.org handles translations automatically since WP 4.6.
+
+### WordPress Security Rules (Plugin Check compliance)
+
+These rules are **mandatory** — Plugin Check will flag violations as errors or warnings.
+
+**Output escaping** — every `echo` must use an escaping function:
+- Text: `esc_html()`, `esc_html_e()`, `esc_html__()`
+- Attributes: `esc_attr()`, `esc_attr_e()`
+- URLs: `esc_url()`
+- HTML fragments built in PHP: `wp_kses_post()`
+- Numbers in inline JS: cast with `(int)` or `intval()`
+
+**Input handling** — always `wp_unslash()` before sanitizing superglobals:
+- `sanitize_text_field( wp_unslash( $_POST['field'] ) )`
+- `sanitize_key( wp_unslash( $_GET['key'] ) )`
+- `absint( $_GET['id'] )` (absint is safe without unslash)
+- Nonces: `wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'action' )`
+
+**Nonce verification** — required before processing any `$_GET` / `$_POST` data:
+- For form submissions: use `wp_nonce_field()` + `wp_verify_nonce()`
+- For read-only display params (e.g. `$_GET['tab']`): add `// phpcs:ignore WordPress.Security.NonceVerification.Recommended` with a comment explaining why
+
+**Redirects** — always use `wp_safe_redirect()` instead of `wp_redirect()`.
+
+**Direct database queries** — our custom table (`scc_cookies`) requires `$wpdb` calls. Add a phpcs ignore comment:
+```php
+// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table uses trusted prefix
+$results = $wpdb->get_results( "SELECT * FROM {$table} WHERE ..." );
+```
+
+**No inline JS event handlers** — use `data-scc-action` attributes + delegated JS listeners instead of `onclick`.
 
 ---
 

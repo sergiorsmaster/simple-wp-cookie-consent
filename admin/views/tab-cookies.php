@@ -6,20 +6,23 @@ if (!defined('ABSPATH')) {
 global $wpdb;
 $table = $wpdb->prefix . 'scc_cookies';
 
-// Editing an existing cookie?
-$edit_id = isset($_GET['action'], $_GET['cookie_id']) && $_GET['action'] === 'edit_cookie'
-	? absint($_GET['cookie_id'])
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display hint, action is nonce-verified in class-scc-admin.php
+$edit_id = isset( $_GET['action'], $_GET['cookie_id'] ) && 'edit_cookie' === sanitize_key( wp_unslash( $_GET['action'] ) )
+	? absint( $_GET['cookie_id'] )
 	: 0;
-$edit_cookie = $edit_id ? $wpdb->get_row($wpdb->prepare("SELECT * FROM {$table} WHERE id = %d", $edit_id)) : null;
+// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table is a trusted prefix + constant
+$edit_cookie = $edit_id ? $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table} WHERE id = %d", $edit_id ) ) : null;
 
 // Status messages
 $messages = array(
-	'added' => __('Cookie added.', 'simple-cookie-consent'),
-	'updated' => __('Cookie updated.', 'simple-cookie-consent'),
-	'deleted' => __('Cookie deleted.', 'simple-cookie-consent'),
+	'added'   => __( 'Cookie added.', 'simple-cookie-consent' ),
+	'updated' => __( 'Cookie updated.', 'simple-cookie-consent' ),
+	'deleted' => __( 'Cookie deleted.', 'simple-cookie-consent' ),
 );
-if (!empty($_GET['scc_msg']) && isset($messages[$_GET['scc_msg']])) {
-	echo '<div class="notice notice-success is-dismissible"><p>' . esc_html($messages[$_GET['scc_msg']]) . '</p></div>';
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display feedback
+$scc_msg = isset( $_GET['scc_msg'] ) ? sanitize_key( wp_unslash( $_GET['scc_msg'] ) ) : '';
+if ( $scc_msg && isset( $messages[ $scc_msg ] ) ) {
+	echo '<div class="notice notice-success is-dismissible"><p>' . esc_html( $messages[ $scc_msg ] ) . '</p></div>';
 }
 
 $categories = array(
@@ -40,7 +43,8 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 <div class="scc-tab-content">
 
 	<!-- Add / Edit form -->
-	<div class="scc-cookie-form-wrap" id="scc-cookie-form-wrap" <?php echo (!$edit_cookie && empty($_GET['add'])) ? 'style="display:none"' : ''; ?>>
+	<?php // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display toggle ?>
+	<div class="scc-cookie-form-wrap" id="scc-cookie-form-wrap" <?php echo ( ! $edit_cookie && empty( $_GET['add'] ) ) ? 'style="display:none"' : ''; ?>>
 
 		<h2 class="scc-section-title">
 			<?php echo $edit_cookie ? esc_html__('Edit Cookie', 'simple-cookie-consent') : esc_html__('Add Cookie', 'simple-cookie-consent'); ?>
@@ -126,7 +130,7 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 		printf(
 			/* translators: 1: number of cookies, 2: opening <a> tag, 3: closing </a> tag */
 			esc_html__( 'Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s.', 'simple-cookie-consent' ),
-			$db_count,
+			intval( $db_count ),
 			'<a href="https://github.com/jkwakman/Open-Cookie-Database" target="_blank" rel="noopener noreferrer">',
 			'</a>'
 		);
@@ -150,7 +154,10 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 	<div id="scc-scan-result" style="display:none;margin-top:8px"></div>
 
 	<!-- Cookie table -->
-	<?php $cookies = $wpdb->get_results("SELECT * FROM {$table} ORDER BY category, cookie_name"); ?>
+	<?php
+	// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table is a trusted prefix + constant
+	$cookies = $wpdb->get_results( "SELECT * FROM {$table} ORDER BY category, cookie_name" );
+	?>
 
 	<?php if (empty($cookies)): ?>
 		<p class="scc-notice scc-notice--info">

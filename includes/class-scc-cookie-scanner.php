@@ -185,6 +185,7 @@ class SCC_Cookie_Scanner {
 		global $wpdb;
 		$table = $wpdb->prefix . 'scc_cookies';
 
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table uses trusted prefix
 		$existing = $wpdb->get_col( "SELECT cookie_name FROM {$table}" );
 
 		$added = 0;
@@ -196,6 +197,7 @@ class SCC_Cookie_Scanner {
 
 			$meta = self::lookup( $name );
 
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->insert( $table, array(
 				'cookie_name' => $name,
 				'category'    => $meta['category'],

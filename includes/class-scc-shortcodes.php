@@ -81,9 +81,10 @@ class SCC_Shortcodes {
 
 		$table   = $wpdb->prefix . 'scc_cookies';
 		$placeholders = implode( ', ', array_fill( 0, count( $categories ), '%s' ) );
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table and $placeholders are trusted
 		$cookies = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT * FROM {$table} WHERE category IN ({$placeholders}) ORDER BY category, cookie_name",
+				"SELECT * FROM {$table} WHERE category IN ({$placeholders}) ORDER BY category, cookie_name", // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare
 				...array_keys( $categories )
 			)
 		);

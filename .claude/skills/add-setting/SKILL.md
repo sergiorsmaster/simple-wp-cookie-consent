@@ -80,6 +80,8 @@ Add the field HTML following the existing `.scc-field` pattern:
 For a toggle, use the `.scc-admin-toggle` pattern (see existing toggles in any tab view).
 For a select, use `<select name="scc_my_option">` with `selected()` helper on each `<option>`.
 
+**Security reminder:** All output must be escaped (`esc_html()`, `esc_attr()`, `esc_url()`). For page selector dropdowns, wrap `selected` with `absint()` and `show_option_none` with `esc_html__()`. See full rules in `CLAUDE.md` under "WordPress Security Rules".
+
 ## Step 4 — Use the value in the frontend (if needed)
 
 **If used in PHP templates** (`public/views/`):

@@ -135,8 +135,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php wp_dropdown_pages( array(
 				'name'             => 'scc_privacy_policy_page',
 				'id'               => 'scc_privacy_policy_page',
-				'selected'         => get_option( 'scc_privacy_policy_page', 0 ),
-				'show_option_none' => __( '— None —', 'simple-cookie-consent' ),
+				'selected'         => absint( get_option( 'scc_privacy_policy_page', 0 ) ),
+				'show_option_none' => esc_html__( '— None —', 'simple-cookie-consent' ),
 				'option_none_value'=> 0,
 			) ); ?>
 		</div>
@@ -150,8 +150,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php wp_dropdown_pages( array(
 				'name'             => 'scc_cookie_policy_page',
 				'id'               => 'scc_cookie_policy_page',
-				'selected'         => get_option( 'scc_cookie_policy_page', 0 ),
-				'show_option_none' => __( '— None —', 'simple-cookie-consent' ),
+				'selected'         => absint( get_option( 'scc_cookie_policy_page', 0 ) ),
+				'show_option_none' => esc_html__( '— None —', 'simple-cookie-consent' ),
 				'option_none_value'=> 0,
 			) ); ?>
 		</div>
@@ -165,8 +165,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php wp_dropdown_pages( array(
 				'name'             => 'scc_imprint_page',
 				'id'               => 'scc_imprint_page',
-				'selected'         => get_option( 'scc_imprint_page', 0 ),
-				'show_option_none' => __( '— None —', 'simple-cookie-consent' ),
+				'selected'         => absint( get_option( 'scc_imprint_page', 0 ) ),
+				'show_option_none' => esc_html__( '— None —', 'simple-cookie-consent' ),
 				'option_none_value'=> 0,
 			) ); ?>
 		</div>

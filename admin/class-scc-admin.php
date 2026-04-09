@@ -60,7 +60,7 @@ class SCC_Admin {
 			wp_send_json_error( 'Forbidden', 403 );
 		}
 
-		$names = isset( $_POST['cookies'] ) ? (array) $_POST['cookies'] : array();
+		$names = isset( $_POST['cookies'] ) ? array_map( 'sanitize_text_field', wp_unslash( (array) $_POST['cookies'] ) ) : array();
 
 		require_once SCC_PLUGIN_DIR . 'includes/class-scc-cookie-scanner.php';
 		$result = SCC_Cookie_Scanner::save_from_client( $names );
@@ -89,40 +89,44 @@ class SCC_Admin {
 
 		// Add or Edit
 		if ( ! empty( $_POST['scc_cookie_nonce'] ) ) {
-			if ( ! wp_verify_nonce( $_POST['scc_cookie_nonce'], 'scc_save_cookie' ) ) {
+			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['scc_cookie_nonce'] ) ), 'scc_save_cookie' ) ) {
 				wp_die( 'Security check failed.' );
 			}
 
 			$data = array(
-				'cookie_name' => sanitize_text_field( $_POST['cookie_name'] ?? '' ),
-				'category'    => sanitize_key( $_POST['category'] ?? 'necessary' ),
-				'service'     => sanitize_text_field( $_POST['service'] ?? '' ),
-				'description' => sanitize_textarea_field( $_POST['description'] ?? '' ),
-				'duration'    => sanitize_text_field( $_POST['duration'] ?? '' ),
+				'cookie_name' => sanitize_text_field( wp_unslash( $_POST['cookie_name'] ?? '' ) ),
+				'category'    => sanitize_key( wp_unslash( $_POST['category'] ?? 'necessary' ) ),
+				'service'     => sanitize_text_field( wp_unslash( $_POST['service'] ?? '' ) ),
+				'description' => sanitize_textarea_field( wp_unslash( $_POST['description'] ?? '' ) ),
+				'duration'    => sanitize_text_field( wp_unslash( $_POST['duration'] ?? '' ) ),
 				'source'      => 'manual',
 			);
 
 			$cookie_id = absint( $_POST['cookie_id'] ?? 0 );
 
 			if ( $cookie_id ) {
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery
 				$wpdb->update( $table, $data, array( 'id' => $cookie_id ) );
 				$redirect .= '&scc_msg=updated';
 			} else {
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery
 				$wpdb->insert( $table, $data );
 				$redirect .= '&scc_msg=added';
 			}
 
-			wp_redirect( $redirect );
+			wp_safe_redirect( $redirect );
 			exit;
 		}
 
 		// Delete
-		if ( ! empty( $_GET['action'] ) && $_GET['action'] === 'delete_cookie' ) {
-			if ( ! wp_verify_nonce( $_GET['_wpnonce'] ?? '', 'scc_delete_cookie' ) ) {
+		if ( ! empty( $_GET['action'] ) && 'delete_cookie' === sanitize_key( wp_unslash( $_GET['action'] ) ) ) {
+			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ?? '' ) ), 'scc_delete_cookie' ) ) {
 				wp_die( 'Security check failed.' );
 			}
-			$wpdb->delete( $table, array( 'id' => absint( $_GET['cookie_id'] ) ) );
-			wp_redirect( $redirect . '&scc_msg=deleted' );
+			$cookie_id = isset( $_GET['cookie_id'] ) ? absint( $_GET['cookie_id'] ) : 0;
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$wpdb->delete( $table, array( 'id' => $cookie_id ) );
+			wp_safe_redirect( $redirect . '&scc_msg=deleted' );
 			exit;
 		}
 	}
@@ -252,8 +256,9 @@ class SCC_Admin {
 			return;
 		}
 
-		$active_tab = isset( $_GET['tab'] ) && array_key_exists( $_GET['tab'], self::TABS )
-			? sanitize_key( $_GET['tab'] )
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- tab navigation, no data processing
+		$active_tab = isset( $_GET['tab'] ) && array_key_exists( sanitize_key( wp_unslash( $_GET['tab'] ) ), self::TABS )
+			? sanitize_key( wp_unslash( $_GET['tab'] ) )
 			: 'general';
 
 		$settings_group = self::TABS[ $active_tab ];

@@ -23,7 +23,7 @@ class SCC_Consent_Store {
 			return null;
 		}
 
-		$data = json_decode( stripslashes( $_COOKIE[ self::COOKIE_NAME ] ), true );
+		$data = json_decode( wp_unslash( $_COOKIE[ self::COOKIE_NAME ] ), true ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 
 		if ( ! is_array( $data ) ) {
 			return null;

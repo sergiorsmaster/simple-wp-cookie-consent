@@ -84,7 +84,7 @@ if (!defined('ABSPATH')) {
 		if (!empty($links)):
 			?>
 			<ul class="scc-banner__links">
-				<?php echo implode( "\n\t\t\t\t", $links ); ?>
+				<?php echo wp_kses_post( implode( "\n\t\t\t\t", $links ) ); ?>
 			</ul>
 		<?php endif; ?>
 

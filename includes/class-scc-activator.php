@@ -49,6 +49,7 @@ class SCC_Activator {
 
 		// Check if the row already exists to avoid duplicate-key errors on
 		// hosts where IGNORE may not suppress all warnings.
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table uses trusted prefix
 		$exists = $wpdb->get_var(
 			$wpdb->prepare( "SELECT id FROM {$table} WHERE cookie_name = %s LIMIT 1", 'scc_consent' )
 		);
@@ -57,6 +58,7 @@ class SCC_Activator {
 			return;
 		}
 
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery
 		$wpdb->insert(
 			$table,
 			array(

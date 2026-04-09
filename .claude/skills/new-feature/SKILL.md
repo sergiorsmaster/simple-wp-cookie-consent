@@ -45,7 +45,7 @@ chore: mark FEAT-XX as in progress
 
 ## Step 4 — Implement
 
-Follow the acceptance criteria from Step 1. Adhere to all code conventions:
+Follow the acceptance criteria from Step 1. Adhere to all code conventions and **WordPress Security Rules** documented in `CLAUDE.md`. Key rules:
 - PHP prefix `scc_` on all functions, classes, hooks, and options
 - JS namespace `window.SimpleCookieConsent`
 - Text domain `simple-cookie-consent` — wrap all user-facing strings with `__()` / `esc_html__()`
@@ -53,6 +53,12 @@ Follow the acceptance criteria from Step 1. Adhere to all code conventions:
 - WordPress Settings API for all admin forms
 - Enqueue via `wp_enqueue_scripts` / `admin_enqueue_scripts`
 - Min WP 6.0 / Min PHP 7.4 — no syntax or functions newer than these
+- **Escape all output** — `esc_html()`, `esc_attr()`, `esc_url()`, `wp_kses_post()`, `(int)` for inline JS
+- **Sanitize all input** — `wp_unslash()` before sanitizing `$_GET`/`$_POST`/`$_COOKIE`
+- **Nonce verification** on all form processing; `// phpcs:ignore` with reason for read-only params
+- **`wp_safe_redirect()`** instead of `wp_redirect()`
+- **No inline JS event handlers** — use `data-scc-action` + delegated listeners
+- **`$wpdb` direct queries** must have `// phpcs:ignore` comments
 
 **Show the user each significant piece of code before committing.**
 
