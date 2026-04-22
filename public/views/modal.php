@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
 	<div class="scc-modal__box">
 
 		<button class="scc-modal__close" id="scc-modal-close"
-			aria-label="<?php esc_attr_e('Close', 'simple-cookie-consent'); ?>">
+			aria-label="<?php esc_attr_e('Close', 'consentric'); ?>">
 			&#10005;
 		</button>
 
@@ -41,23 +41,23 @@ if (!defined('ABSPATH')) {
 			<?php
 			$categories = array(
 				'necessary' => array(
-					'label' => __('Necessary', 'simple-cookie-consent'),
-					'description' => __('Required for the website to function properly. These cookies cannot be disabled.', 'simple-cookie-consent'),
+					'label' => __('Necessary', 'consentric'),
+					'description' => __('Required for the website to function properly. These cookies cannot be disabled.', 'consentric'),
 					'always_on' => true,
 				),
 				'analytics' => array(
-					'label' => __('Analytics', 'simple-cookie-consent'),
-					'description' => __('Help us understand how visitors interact with the website by collecting anonymous data.', 'simple-cookie-consent'),
+					'label' => __('Analytics', 'consentric'),
+					'description' => __('Help us understand how visitors interact with the website by collecting anonymous data.', 'consentric'),
 					'always_on' => false,
 				),
 				'marketing' => array(
-					'label' => __('Marketing', 'simple-cookie-consent'),
-					'description' => __('Used to track visitors across websites to display relevant and personalized advertisements.', 'simple-cookie-consent'),
+					'label' => __('Marketing', 'consentric'),
+					'description' => __('Used to track visitors across websites to display relevant and personalized advertisements.', 'consentric'),
 					'always_on' => false,
 				),
 				'functional' => array(
-					'label' => __('Functional', 'simple-cookie-consent'),
-					'description' => __('Allow the website to remember your preferences such as language or region.', 'simple-cookie-consent'),
+					'label' => __('Functional', 'consentric'),
+					'description' => __('Allow the website to remember your preferences such as language or region.', 'consentric'),
 					'always_on' => false,
 				),
 			);
@@ -72,7 +72,7 @@ if (!defined('ABSPATH')) {
 
 						<?php if ($cat['always_on']): ?>
 							<span class="scc-modal__always-on">
-								<?php esc_html_e('Always active', 'simple-cookie-consent'); ?>
+								<?php esc_html_e('Always active', 'consentric'); ?>
 							</span>
 						<?php else: ?>
 							<label class="scc-toggle" aria-label="<?php echo esc_attr($cat['label']); ?>">

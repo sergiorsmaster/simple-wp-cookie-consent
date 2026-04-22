@@ -1,9 +1,9 @@
-# German translation for Open Cookie Consent
+# German translation for Consentric
 # Copyright (C) 2026 Sergio Ricardo
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Open Cookie Consent 0.1.0\n"
+"Project-Id-Version: Consentric 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-cookie-consent\n"
 "PO-Revision-Date: 2026-04-07 00:00+0000\n"
 "Last-Translator: Sergio Ricardo\n"
@@ -16,8 +16,8 @@ msgstr ""
 "X-Domain: simple-cookie-consent\n"
 
 #. Plugin Name of the plugin
-msgid "Open Cookie Consent"
-msgstr "Open Cookie Consent"
+msgid "Consentric"
+msgstr "Consentric"
 
 #. Plugin URI of the plugin
 msgid "https://github.com/sergiorsmaster/simple-wp-cookie-consent"

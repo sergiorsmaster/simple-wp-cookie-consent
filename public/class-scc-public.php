@@ -8,50 +8,10 @@ class SCC_Public
 
 	public static function init()
 	{
-		add_action('wp_head', array(__CLASS__, 'inject_gtm_consent_defaults'), 1);
 		add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_scripts'));
 		add_action('wp_footer', array(__CLASS__, 'render_banner'));
 		add_action('wp_footer', array(__CLASS__, 'render_modal'));
 		add_action('wp_footer', array(__CLASS__, 'render_preferences_icon'));
-	}
-
-	/**
-	 * Inject gtag('consent', 'default', {...}) as the very first <head> script.
-	 *
-	 * Must fire before GTM / any Google tag so that Consent Mode v2 is active
-	 * from the moment those tags load. Only outputs when GTM integration is enabled.
-	 */
-	public static function inject_gtm_consent_defaults()
-	{
-		if (!get_option('scc_enabled', '1')) {
-			return;
-		}
-
-		if (!get_option('scc_gtm_enabled', '0')) {
-			return;
-		}
-
-		$wait_ms = (int) get_option('scc_gtm_wait_for_update', 500);
-		?>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-
-			gtag('consent', 'default', {
-				'ad_storage': 'denied',
-				'analytics_storage': 'denied',
-				'ad_user_data': 'denied',
-				'ad_personalization': 'denied',
-				'functionality_storage': 'denied',
-				'personalization_storage': 'denied',
-				'security_storage': 'granted',
-				'wait_for_update': <?php echo (int) $wait_ms; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-			});
-
-			gtag('set', 'ads_data_redaction', true);
-			gtag('set', 'url_passthrough', false);
-		</script>
-		<?php
 	}
 
 	/**
@@ -80,8 +40,27 @@ class SCC_Public
 			'preview' => $is_preview,
 		));
 
-		// GTM bridge (only when GTM integration is enabled)
+		// GTM Consent Mode v2 defaults — must run before any Google tag.
 		if (get_option('scc_gtm_enabled', '0')) {
+			$wait_ms = (int) get_option('scc_gtm_wait_for_update', 500);
+
+			$gtm_defaults = "window.dataLayer = window.dataLayer || [];\n"
+				. "function gtag() { dataLayer.push(arguments); }\n"
+				. "gtag('consent', 'default', {\n"
+				. "  'ad_storage': 'denied',\n"
+				. "  'analytics_storage': 'denied',\n"
+				. "  'ad_user_data': 'denied',\n"
+				. "  'ad_personalization': 'denied',\n"
+				. "  'functionality_storage': 'denied',\n"
+				. "  'personalization_storage': 'denied',\n"
+				. "  'security_storage': 'granted',\n"
+				. "  'wait_for_update': " . $wait_ms . "\n"
+				. "});\n"
+				. "gtag('set', 'ads_data_redaction', true);\n"
+				. "gtag('set', 'url_passthrough', false);";
+
+			wp_add_inline_script( 'scc-consent', $gtm_defaults, 'before' );
+
 			wp_enqueue_script(
 				'scc-gtm',
 				SCC_PLUGIN_URL . 'public/assets/scc-gtm.js',
@@ -108,7 +87,6 @@ class SCC_Public
 		$border_color = sanitize_hex_color(get_option('scc_banner_border_color', '#dddddd')) ?: '#dddddd';
 		$max_width = absint(get_option('scc_banner_max_width', '200'));
 		$button_style = sanitize_text_field(get_option('scc_button_style', 'outline'));
-		$custom_css = get_option('scc_custom_css', '');
 
 		// Secondary button vars (Deny + Preferences)
 		$sec_border = ('ghost' === $button_style) ? 'transparent' : 'currentColor';
@@ -128,10 +106,6 @@ class SCC_Public
 		if ($max_width > 0) {
 			$inline_css .= "\n.scc-position-bottom-left,\n.scc-position-bottom-right { width: {$max_width}px; }";
 			$inline_css .= "\n.scc-position-center-modal { width: {$max_width}px; }";
-		}
-
-		if (!empty($custom_css)) {
-			$inline_css .= "\n" . wp_strip_all_tags($custom_css);
 		}
 
 		wp_add_inline_style('scc-banner', $inline_css);
@@ -177,12 +151,12 @@ class SCC_Public
 		$cookie_url = $cookie_page ? get_permalink($cookie_page) : '';
 		$imprint_url = $imprint_page ? get_permalink($imprint_page) : '';
 
-		$title = SCC_Polylang::translate('scc_banner_title', __('We use cookies', 'simple-cookie-consent'));
-		$text = SCC_Polylang::translate('scc_banner_text', __('We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'simple-cookie-consent'));
-		$accept_label = SCC_Polylang::translate('scc_accept_label', __('Accept All', 'simple-cookie-consent'));
-		$deny_label = SCC_Polylang::translate('scc_deny_label', __('Deny All', 'simple-cookie-consent'));
-		$prefs_label = SCC_Polylang::translate('scc_preferences_label', __('Preferences', 'simple-cookie-consent'));
-		$ccpa_text = SCC_Polylang::translate('scc_ccpa_opt_out_text', __('Do Not Sell My Personal Information', 'simple-cookie-consent'));
+		$title = SCC_Polylang::translate('scc_banner_title', __('We use cookies', 'consentric'));
+		$text = SCC_Polylang::translate('scc_banner_text', __('We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'consentric'));
+		$accept_label = SCC_Polylang::translate('scc_accept_label', __('Accept All', 'consentric'));
+		$deny_label = SCC_Polylang::translate('scc_deny_label', __('Deny All', 'consentric'));
+		$prefs_label = SCC_Polylang::translate('scc_preferences_label', __('Preferences', 'consentric'));
+		$ccpa_text = SCC_Polylang::translate('scc_ccpa_opt_out_text', __('Do Not Sell My Personal Information', 'consentric'));
 		$logo_source = get_option('scc_logo_source', 'custom');
 		if ('site' === $logo_source) {
 			$logo_id = get_theme_mod('custom_logo');
@@ -225,10 +199,10 @@ class SCC_Public
 		$privacy_url  = $privacy_page ? get_permalink($privacy_page) : '';
 		$cookie_url   = $cookie_page ? get_permalink($cookie_page) : '';
 
-		$modal_title      = SCC_Polylang::translate( 'scc_modal_title',      __( 'Cookie Preferences', 'simple-cookie-consent' ) );
-		$modal_intro      = SCC_Polylang::translate( 'scc_modal_intro',      __( 'Choose which cookies you allow. You can change your preferences at any time.', 'simple-cookie-consent' ) );
-		$modal_save_label = SCC_Polylang::translate( 'scc_modal_save_label', __( 'Save Preferences', 'simple-cookie-consent' ) );
-		$modal_deny_label = SCC_Polylang::translate( 'scc_modal_deny_label', __( 'Deny All', 'simple-cookie-consent' ) );
+		$modal_title      = SCC_Polylang::translate( 'scc_modal_title',      __( 'Cookie Preferences', 'consentric' ) );
+		$modal_intro      = SCC_Polylang::translate( 'scc_modal_intro',      __( 'Choose which cookies you allow. You can change your preferences at any time.', 'consentric' ) );
+		$modal_save_label = SCC_Polylang::translate( 'scc_modal_save_label', __( 'Save Preferences', 'consentric' ) );
+		$modal_deny_label = SCC_Polylang::translate( 'scc_modal_deny_label', __( 'Deny All', 'consentric' ) );
 
 		include SCC_PLUGIN_DIR . 'public/views/modal.php';
 	}

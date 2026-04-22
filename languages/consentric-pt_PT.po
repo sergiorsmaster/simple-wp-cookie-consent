@@ -1,14 +1,14 @@
-# Portuguese (Brazil) translation for Open Cookie Consent
+# Portuguese (Portugal) translation for Consentric
 # Copyright (C) 2026 Sergio Ricardo
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Open Cookie Consent 0.1.0\n"
+"Project-Id-Version: Consentric 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-cookie-consent\n"
 "PO-Revision-Date: 2026-04-07 00:00+0000\n"
 "Last-Translator: Sergio Ricardo\n"
-"Language-Team: Portuguese (Brazil)\n"
-"Language: pt_BR\n"
+"Language-Team: Portuguese (Portugal)\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,8 +16,8 @@ msgstr ""
 "X-Domain: simple-cookie-consent\n"
 
 #. Plugin Name of the plugin
-msgid "Open Cookie Consent"
-msgstr "Open Cookie Consent"
+msgid "Consentric"
+msgstr "Consentric"
 
 #. Plugin URI of the plugin
 msgid "https://github.com/sergiorsmaster/simple-wp-cookie-consent"
@@ -25,7 +25,7 @@ msgstr "https://github.com/sergiorsmaster/simple-wp-cookie-consent"
 
 #. Description of the plugin
 msgid "A simple, free, and open-source cookie consent banner. No hidden Pro features, no subscription."
-msgstr "Um banner de consentimento de cookies simples, gratuito e de código aberto. Sem versão Pro, sem assinatura."
+msgstr "Um banner de consentimento de cookies simples, gratuito e de código aberto. Sem versão Pro, sem mensalidades."
 
 #. Author of the plugin
 msgid "Sergio Ricardo"
@@ -51,10 +51,10 @@ msgid "Help"
 msgstr "Ajuda"
 
 msgid "We use cookies"
-msgstr "Usamos cookies"
+msgstr "Utilizamos cookies"
 
 msgid "We use cookies to improve your experience on our website. Please choose your cookie preferences below."
-msgstr "Usamos cookies para melhorar sua experiência no nosso site. Por favor, escolha suas preferências abaixo."
+msgstr "Utilizamos cookies para melhorar a sua experiência no nosso website. Por favor escolha as suas preferências abaixo."
 
 msgid "Accept All"
 msgstr "Aceitar Todos"
@@ -69,10 +69,10 @@ msgid "Cookie Preferences"
 msgstr "Preferências de Cookies"
 
 msgid "Choose which cookies you allow. You can change your preferences at any time."
-msgstr "Escolha quais cookies você permite. Você pode alterar suas preferências a qualquer momento."
+msgstr "Escolha quais cookies permite. Pode alterar as suas preferências em qualquer momento."
 
 msgid "Save Preferences"
-msgstr "Salvar Preferências"
+msgstr "Guardar Preferências"
 
 msgid "Always active"
 msgstr "Sempre ativo"
@@ -81,25 +81,25 @@ msgid "Necessary"
 msgstr "Necessários"
 
 msgid "Required for the website to function properly. These cookies cannot be disabled."
-msgstr "Necessários para o funcionamento correto do site. Esses cookies não podem ser desativados."
+msgstr "Necessários para o funcionamento correto do website. Estes cookies não podem ser desativados."
 
 msgid "Analytics"
 msgstr "Análise"
 
 msgid "Help us understand how visitors interact with the website by collecting anonymous data."
-msgstr "Nos ajudam a entender como os visitantes interagem com o site por meio da coleta de dados anônimos."
+msgstr "Ajudam-nos a compreender como os visitantes interagem com o website através da recolha de dados anónimos."
 
 msgid "Marketing"
 msgstr "Marketing"
 
 msgid "Used to track visitors across websites to display relevant and personalized advertisements."
-msgstr "Usados para rastrear visitantes entre sites e exibir publicidade relevante e personalizada."
+msgstr "Utilizados para seguir visitantes entre websites e apresentar publicidade relevante e personalizada."
 
 msgid "Functional"
 msgstr "Funcionais"
 
 msgid "Allow the website to remember your preferences such as language or region."
-msgstr "Permitem que o site lembre suas preferências, como idioma ou região."
+msgstr "Permitem que o website recorde as suas preferências, como idioma ou região."
 
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
@@ -114,13 +114,13 @@ msgid "Close"
 msgstr "Fechar"
 
 msgid "Cookie Settings"
-msgstr "Configurações de Cookies"
+msgstr "Definições de Cookies"
 
 msgid "Do Not Sell My Personal Information"
-msgstr "Não Vender Minhas Informações Pessoais"
+msgstr "Não Vender as Minhas Informações Pessoais"
 
 msgid "Cookie Consent Settings"
-msgstr "Configurações de Consentimento de Cookies"
+msgstr "Definições de Consentimento de Cookies"
 
 msgid "Cookie Consent"
 msgstr "Consentimento de Cookies"
@@ -129,7 +129,7 @@ msgid "Enable Cookie Banner"
 msgstr "Ativar Banner de Cookies"
 
 msgid "Show the cookie consent banner on the frontend."
-msgstr "Exibir o banner de consentimento de cookies no frontend."
+msgstr "Mostrar o banner de consentimento de cookies no frontend."
 
 msgid "Banner Title"
 msgstr "Título do Banner"
@@ -138,25 +138,25 @@ msgid "Banner Text"
 msgstr "Texto do Banner"
 
 msgid "Accept Button Label"
-msgstr "Rótulo do Botão Aceitar"
+msgstr "Etiqueta do Botão Aceitar"
 
 msgid "Deny Button Label"
-msgstr "Rótulo do Botão Recusar"
+msgstr "Etiqueta do Botão Recusar"
 
 msgid "Preferences Button Label"
-msgstr "Rótulo do Botão Preferências"
+msgstr "Etiqueta do Botão Preferências"
 
 msgid "Preferences Dialog"
-msgstr "Caixa de Preferências"
+msgstr "Diálogo de Preferências"
 
 msgid "Dialog Title"
-msgstr "Título da Caixa"
+msgstr "Título do Diálogo"
 
 msgid "Dialog Description"
-msgstr "Descrição da Caixa"
+msgstr "Descrição do Diálogo"
 
 msgid "Save Button Label"
-msgstr "Rótulo do Botão Salvar"
+msgstr "Etiqueta do Botão Guardar"
 
 msgid "Privacy Policy Page"
 msgstr "Página de Política de Privacidade"
@@ -171,7 +171,7 @@ msgid "Floating Preferences Icon"
 msgstr "Ícone Flutuante de Preferências"
 
 msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [scc_preferences] shortcode instead."
-msgstr "Exibir um pequeno ícone de cookie na página após o consentimento ser salvo, para que os visitantes possam alterar suas preferências a qualquer momento. Você também pode usar o shortcode [scc_preferences]."
+msgstr "Mostrar um pequeno ícone de cookie na página após o consentimento ser guardado, para que os visitantes possam alterar as suas preferências em qualquer momento. Também pode utilizar o shortcode [scc_preferences]."
 
 msgid "Banner Position"
 msgstr "Posição do Banner"
@@ -201,7 +201,7 @@ msgid "Accent Color"
 msgstr "Cor de Destaque"
 
 msgid "Used for the Accept button and toggle switch."
-msgstr "Usada para o botão Aceitar e o interruptor."
+msgstr "Utilizada para o botão Aceitar e o interruptor de alternância."
 
 msgid "Applies to banner, modal, and buttons."
 msgstr "Aplica-se ao banner, modal e botões."
@@ -240,28 +240,28 @@ msgid "Deny and Preferences buttons appear as outlined buttons alongside Accept.
 msgstr "Os botões Recusar e Preferências aparecem como botões com contorno ao lado do Aceitar."
 
 msgid "Deny and Preferences appear as text links with underline, keeping the Accept button as the only visual button."
-msgstr "Recusar e Preferências aparecem como links de texto sublinhados, mantendo o botão Aceitar como único botão visual."
+msgstr "Recusar e Preferências aparecem como links de texto com sublinhado, mantendo o botão Aceitar como único botão visual."
 
 msgid "The Accept button is always filled with the Accent color."
 msgstr "O botão Aceitar é sempre preenchido com a cor de destaque."
 
 msgid "Logo"
-msgstr "Logotipo"
+msgstr "Logótipo"
 
 msgid "Logo Source"
-msgstr "Origem do Logotipo"
+msgstr "Fonte do Logótipo"
 
 msgid "No logo"
-msgstr "Sem logotipo"
+msgstr "Sem logótipo"
 
 msgid "Use site logo (set in Customizer)"
-msgstr "Usar logotipo do site (definido no Customizer)"
+msgstr "Usar logótipo do site (definido no Customizer)"
 
 msgid "Custom upload"
 msgstr "Upload personalizado"
 
 msgid "Upload Logo"
-msgstr "Enviar Logotipo"
+msgstr "Carregar Logótipo"
 
 msgid "Select Image"
 msgstr "Selecionar Imagem"
@@ -276,19 +276,19 @@ msgid "Add custom CSS to override the default banner styles."
 msgstr "Adicione CSS personalizado para substituir os estilos padrão do banner."
 
 msgid "Preview Banner"
-msgstr "Visualizar Banner"
+msgstr "Pré-visualizar Banner"
 
 msgid "Preview"
-msgstr "Prévia"
+msgstr "Pré-visualização"
 
 msgid "Open Preview"
-msgstr "Abrir Prévia"
+msgstr "Abrir Pré-visualização"
 
 msgid "Opens your site homepage in a new tab and forces the cookie banner to appear, even if you have already given consent. This preview is only visible to logged-in administrators — regular visitors are never affected by this URL parameter."
-msgstr "Abre a página inicial do seu site em uma nova aba e força a exibição do banner de cookies, mesmo que você já tenha dado consentimento. Esta prévia é visível apenas para administradores logados — visitantes comuns nunca são afetados por este parâmetro."
+msgstr "Abre a página inicial do seu site num novo separador e força a aparição do banner de cookies, mesmo que já tenha dado consentimento. Esta pré-visualização é apenas visível para administradores com sessão iniciada — os visitantes regulares nunca são afetados por este parâmetro."
 
 msgid "GDPR — European Union"
-msgstr "GDPR — União Europeia"
+msgstr "RGPD — União Europeia"
 
 msgid "LGPD — Brazil"
 msgstr "LGPD — Brasil"
@@ -297,19 +297,19 @@ msgid "CCPA — United States (California)"
 msgstr "CCPA — Estados Unidos (Califórnia)"
 
 msgid "Non-essential cookies are blocked until the visitor explicitly accepts them. Required for websites targeting users in the EU/EEA."
-msgstr "Cookies não essenciais são bloqueados até o visitante aceitá-los explicitamente. Obrigatório para sites direcionados a usuários na UE/EEE."
+msgstr "Os cookies não essenciais são bloqueados até o visitante os aceitar explicitamente. Obrigatório para websites direcionados a utilizadores na UE/EEE."
 
 msgid "Same opt-in model as GDPR. Required for websites targeting users in Brazil."
-msgstr "Mesmo modelo de opt-in do GDPR. Obrigatório para sites direcionados a usuários no Brasil."
+msgstr "Mesmo modelo de opt-in que o RGPD. Obrigatório para websites direcionados a utilizadores no Brasil."
 
 msgid "Cookies are allowed by default. Visitors can opt out of the sale of their personal data. Required for businesses targeting California residents above certain thresholds."
-msgstr "Cookies são permitidos por padrão. Os visitantes podem recusar a venda de seus dados pessoais. Obrigatório para empresas que atingem residentes da Califórnia acima de certos limites."
+msgstr "Os cookies são permitidos por defeito. Os visitantes podem optar por não vender os seus dados pessoais. Obrigatório para empresas que visam residentes na Califórnia acima de determinados limites."
 
 msgid "Applicable Law"
 msgstr "Lei Aplicável"
 
 msgid "Select the privacy law that applies to your website. This controls whether the banner uses an opt-in or opt-out model."
-msgstr "Selecione a lei de privacidade aplicável ao seu site. Isso controla se o banner usa um modelo de opt-in ou opt-out."
+msgstr "Selecione a lei de privacidade que se aplica ao seu website. Isto controla se o banner utiliza um modelo de opt-in ou opt-out."
 
 msgid "Opt-in"
 msgstr "Opt-in"
@@ -324,31 +324,31 @@ msgid "Cookies are NOT blocked before interaction"
 msgstr "Cookies NÃO são bloqueados antes da interação"
 
 msgid "Banner shown on first visit"
-msgstr "Banner exibido na primeira visita"
+msgstr "Banner mostrado na primeira visita"
 
 msgid "Banner shown as an informational notice"
-msgstr "Banner exibido como aviso informativo"
+msgstr "Banner mostrado como aviso informativo"
 
 msgid "Preferences button hidden"
-msgstr "Botão de preferências oculto"
+msgstr "Botão de preferências ocultado"
 
 msgid "Accept All / Deny All / Preferences buttons shown"
-msgstr "Botões Aceitar Todos / Recusar Todos / Preferências exibidos"
+msgstr "Botões Aceitar Todos / Recusar Todos / Preferências mostrados"
 
 msgid "\"Do Not Sell My Personal Information\" opt-out shown"
-msgstr "Opt-out \"Não Vender Minhas Informações Pessoais\" exibido"
+msgstr "Opt-out \"Não Vender as Minhas Informações Pessoais\" mostrado"
 
 msgid "\"Do Not Sell\" Button Label"
-msgstr "Rótulo do Botão \"Não Vender\""
+msgstr "Etiqueta do Botão \"Não Vender\""
 
 msgid "Label for the opt-out button shown in the banner when CCPA mode is active."
-msgstr "Rótulo do botão de opt-out exibido no banner quando o modo CCPA está ativo."
+msgstr "Etiqueta para o botão de opt-out mostrado no banner quando o modo CCPA está ativo."
 
 msgid "Enable GTM Consent Mode v2"
 msgstr "Ativar GTM Consent Mode v2"
 
 msgid "Injects gtag consent defaults before GTM loads and updates signals when the visitor makes a choice."
-msgstr "Injeta os padrões de consentimento do gtag antes do GTM carregar e atualiza os sinais quando o visitante faz uma escolha."
+msgstr "Injeta os padrões de consentimento gtag antes do GTM carregar e atualiza os sinais quando o visitante faz uma escolha."
 
 msgid "Consent Mode"
 msgstr "Modo de Consentimento"
@@ -363,10 +363,10 @@ msgid "Recommended"
 msgstr "Recomendado"
 
 msgid "Google tags fire in a limited cookieless mode before consent. Enables statistical modelling for non-consenting users. Requires GTM to be configured accordingly."
-msgstr "As tags do Google disparam em modo limitado sem cookies antes do consentimento. Permite modelagem estatística para usuários que não consentiram. Requer configuração adequada do GTM."
+msgstr "As tags do Google disparam em modo limitado sem cookies antes do consentimento. Permite modelação estatística para utilizadores que não consentiram. Requer configuração adequada do GTM."
 
 msgid "Google tags do not fire before the visitor consents. Strictest compliance, but no data modelling for non-consenting users."
-msgstr "As tags do Google não disparam antes do visitante consentir. Conformidade mais rigorosa, mas sem modelagem de dados para usuários que não consentiram."
+msgstr "As tags do Google não disparam antes do visitante consentir. Conformidade mais estrita, mas sem modelação de dados para utilizadores que não consentiram."
 
 msgid "GTM Signals"
 msgstr "Sinais GTM"
@@ -387,7 +387,7 @@ msgid "Debug Mode"
 msgstr "Modo de Depuração"
 
 msgid "Log all consent actions to the browser console prefixed with [SCC]. Disable on production."
-msgstr "Registrar todas as ações de consentimento no console do navegador com o prefixo [SCC]. Desativar em produção."
+msgstr "Registar todas as ações de consentimento na consola do navegador com o prefixo [SCC]. Desativar em produção."
 
 msgid "Debug"
 msgstr "Depuração"
@@ -399,10 +399,10 @@ msgid "WP Consent Level API"
 msgstr "WP Consent Level API"
 
 msgid "The %1$sWP Consent Level API%2$s is a standard interface that lets plugins like Site Kit read consent without knowing anything about this plugin."
-msgstr "A %1$sWP Consent Level API%2$s é uma interface padrão que permite que plugins como o Site Kit leiam o consentimento sem precisar saber nada sobre este plugin."
+msgstr "A %1$sWP Consent Level API%2$s é uma interface padrão que permite que plugins como o Site Kit leiam o consentimento sem saber nada sobre este plugin."
 
 msgid "WP Consent Level API is active. Consent is synced automatically on every page load."
-msgstr "A WP Consent Level API está ativa. O consentimento é sincronizado automaticamente a cada carregamento de página."
+msgstr "A WP Consent Level API está ativa. O consentimento é sincronizado automaticamente em cada carregamento de página."
 
 msgid "WP Consent Level API is not active. %1$sInstall the plugin%2$s to allow third-party plugins to read consent without extra configuration."
 msgstr "A WP Consent Level API não está ativa. %1$sInstale o plugin%2$s para permitir que plugins de terceiros leiam o consentimento sem configuração adicional."
@@ -411,19 +411,19 @@ msgid "Polylang"
 msgstr "Polylang"
 
 msgid "Polylang is active. Banner strings are registered for translation under Languages → String Translations."
-msgstr "O Polylang está ativo. As strings do banner estão registradas para tradução em Idiomas → Traduções de Strings."
+msgstr "O Polylang está ativo. As strings do banner estão registadas para tradução em Idiomas → Traduções de Strings."
 
 msgid "Polylang is not active. When installed, banner title, text, and button labels will be translatable per language."
-msgstr "O Polylang não está ativo. Quando instalado, o título, texto e rótulos de botões do banner poderão ser traduzidos por idioma."
+msgstr "O Polylang não está ativo. Quando instalado, o título, texto e etiquetas de botões do banner serão traduzíveis por idioma."
 
 msgid "Site Kit by Google"
 msgstr "Site Kit by Google"
 
 msgid "Site Kit is active. Consent is passed automatically via GTM Consent Mode v2 signals and the WP Consent API."
-msgstr "O Site Kit está ativo. O consentimento é transmitido automaticamente pelos sinais do GTM Consent Mode v2 e pela WP Consent API."
+msgstr "O Site Kit está ativo. O consentimento é transmitido automaticamente através dos sinais GTM Consent Mode v2 e da WP Consent API."
 
 msgid "Site Kit is not active. When installed, it will automatically respect GTM Consent Mode v2 signals set by this plugin."
-msgstr "O Site Kit não está ativo. Quando instalado, respeitará automaticamente os sinais do GTM Consent Mode v2 definidos por este plugin."
+msgstr "O Site Kit não está ativo. Quando instalado, respeitará automaticamente os sinais GTM Consent Mode v2 definidos por este plugin."
 
 msgid "Consent stored for 1 year"
 msgstr "Consentimento armazenado por 1 ano"
@@ -444,7 +444,7 @@ msgid "Service"
 msgstr "Serviço"
 
 msgid "Source"
-msgstr "Origem"
+msgstr "Fonte"
 
 msgid "Duration"
 msgstr "Duração"
@@ -462,7 +462,7 @@ msgid "Cookie List"
 msgstr "Lista de Cookies"
 
 msgid "Cookie DB"
-msgstr "Banco de Dados de Cookies"
+msgstr "Base de Dados de Cookies"
 
 msgid "Add Cookie"
 msgstr "Adicionar Cookie"
@@ -477,7 +477,7 @@ msgid "Edit"
 msgstr "Editar"
 
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Eliminar"
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -486,7 +486,7 @@ msgid "Update Cookie"
 msgstr "Atualizar Cookie"
 
 msgid "No cookies have been added yet."
-msgstr "Nenhum cookie foi adicionado ainda."
+msgstr "Ainda não foram adicionados cookies."
 
 msgid "No cookies yet. Add one manually or run the scanner."
 msgstr "Ainda sem cookies. Adicione um manualmente ou execute o scanner."
@@ -498,10 +498,10 @@ msgid "Cookie updated."
 msgstr "Cookie atualizado."
 
 msgid "Cookie deleted."
-msgstr "Cookie excluído."
+msgstr "Cookie eliminado."
 
 msgid "Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s."
-msgstr "Banco de dados de cookies: %1$d entradas carregadas da %2$sOpen Cookie Database%3$s."
+msgstr "Base de dados de cookies: %1$d entradas carregadas da %2$sOpen Cookie Database%3$s."
 
 msgid "Run Scanner"
 msgstr "Executar Scanner"
@@ -510,13 +510,13 @@ msgid "Scan"
 msgstr "Analisar"
 
 msgid "Scanning…"
-msgstr "Analisando…"
+msgstr "A analisar…"
 
 msgid "Scan complete."
 msgstr "Análise concluída."
 
 msgid "Scan failed. Please try again."
-msgstr "Análise falhou. Por favor, tente novamente."
+msgstr "Análise falhou. Por favor tente novamente."
 
 msgid "new cookie(s) found."
 msgstr "novo(s) cookie(s) encontrado(s)."
@@ -555,13 +555,13 @@ msgid "Default"
 msgstr "Padrão"
 
 msgid "Use the Appearance tab's Custom CSS field to target these selectors, or enqueue your own stylesheet."
-msgstr "Use o campo CSS Personalizado da aba Aparência para aplicar esses seletores, ou adicione sua própria folha de estilos."
+msgstr "Utilize o campo CSS Personalizado do separador Aparência para selecionar estes seletores, ou registe a sua própria folha de estilos."
 
 msgid "These are set on :root and control the visual theme. Override them in Custom CSS or with the Appearance settings."
-msgstr "São definidas em :root e controlam o tema visual. Substitua-as em CSS Personalizado ou nas configurações de Aparência."
+msgstr "Estas são definidas em :root e controlam o tema visual. Substitua-as em CSS Personalizado ou nas definições de Aparência."
 
 msgid "The main banner container"
-msgstr "O container principal do banner"
+msgstr "O contentor principal do banner"
 
 msgid "Banner headline text"
 msgstr "Texto do título do banner"
@@ -582,13 +582,13 @@ msgid "Legal page links list (ul). Each link is a li > a."
 msgstr "Lista de links legais (ul). Cada link é um li > a."
 
 msgid "Preferences modal container"
-msgstr "Container do modal de Preferências"
+msgstr "Contentor do modal de Preferências"
 
 msgid "Floating cookie icon button"
 msgstr "Botão ícone de cookie flutuante"
 
 msgid "Full-screen backdrop shown behind the center-modal banner position"
-msgstr "Fundo de tela cheia exibido atrás do banner na posição modal central"
+msgstr "Fundo de ecrã completo mostrado atrás da posição de modal central do banner"
 
 msgid "Banner background color"
 msgstr "Cor de fundo do banner"
@@ -609,7 +609,7 @@ msgid "Shortcodes"
 msgstr "Shortcodes"
 
 msgid "Renders a table of all cookies grouped by category. Inherits your theme's table styles."
-msgstr "Exibe uma tabela com todos os cookies agrupados por categoria. Herda os estilos de tabela do seu tema."
+msgstr "Apresenta uma tabela de todos os cookies agrupados por categoria. Herda os estilos de tabela do seu tema."
 
 msgid "Attribute"
 msgstr "Atributo"
@@ -621,19 +621,19 @@ msgid "Examples:"
 msgstr "Exemplos:"
 
 msgid "Renders a link (or button) that opens the preferences modal. Useful in footer menus or privacy pages."
-msgstr "Exibe um link (ou botão) que abre o modal de preferências. Útil em menus de rodapé ou páginas de privacidade."
+msgstr "Apresenta um link (ou botão) que abre o modal de preferências. Útil em menus de rodapé ou páginas de privacidade."
 
 msgid "The visible link text."
 msgstr "O texto visível do link."
 
 msgid "Additional CSS class(es) to add to the link element."
-msgstr "Classe(s) CSS adicionais para adicionar ao elemento de link."
+msgstr "Classe(s) CSS adicionais a adicionar ao elemento de link."
 
 msgid "JavaScript API"
 msgstr "API JavaScript"
 
 msgid "All methods are available on the global"
-msgstr "Todos os métodos estão disponíveis no objeto global"
+msgstr "Todos os métodos estão disponíveis no global"
 
 msgid "object."
 msgstr "objeto."
@@ -648,58 +648,58 @@ msgid "Deny consent for all non-necessary categories and hide the banner."
 msgstr "Recusar consentimento para todas as categorias não essenciais e ocultar o banner."
 
 msgid "Save a partial consent object. Example:"
-msgstr "Salvar um objeto de consentimento parcial. Exemplo:"
+msgstr "Guardar um objeto de consentimento parcial. Exemplo:"
 
 msgid "Programmatically open the preferences modal."
 msgstr "Abrir o modal de preferências programaticamente."
 
 msgid "Programmatically show the consent banner (e.g. from a \"Review cookie settings\" link)."
-msgstr "Exibir o banner de consentimento programaticamente (ex.: a partir de um link \"Revisar configurações de cookies\")."
+msgstr "Mostrar o banner de consentimento programaticamente (ex.: a partir de um link \"Rever definições de cookies\")."
 
 msgid "Returns true if consent has been granted for the given category (e.g. \"analytics\")."
-msgstr "Retorna verdadeiro se o consentimento foi concedido para a categoria informada (ex.: \"analytics\")."
+msgstr "Retorna verdadeiro se o consentimento foi concedido para a categoria indicada (ex.: \"analytics\")."
 
 msgid "Returns true if the visitor has already made a consent choice (banner was actioned)."
 msgstr "Retorna verdadeiro se o visitante já fez uma escolha de consentimento (o banner foi acionado)."
 
 msgid "Fired on document after any consent save. Listen with:"
-msgstr "Disparado no documento após qualquer salvamento de consentimento. Ouça com:"
+msgstr "Disparado no documento após qualquer gravação de consentimento. Ouça com:"
 
 msgid "(CustomEvent on document)"
 msgstr "(CustomEvent no documento)"
 
 msgid "Usage example"
-msgstr "Exemplo de uso"
+msgstr "Exemplo de utilização"
 
 msgid "Colors"
 msgstr "Cores"
 
 msgid "Layout"
-msgstr "Layout"
+msgstr "Disposição"
 
 msgid "This tab is coming soon."
-msgstr "Esta aba estará disponível em breve."
+msgstr "Este separador estará disponível em breve."
 
 msgid "Custom Scripts"
 msgstr "Scripts Personalizados"
 
 msgid "Need to fire Facebook Pixel, TikTok, Hotjar or other scripts based on consent?"
-msgstr "Precisa ativar o Facebook Pixel, TikTok, Hotjar ou outros scripts com base no consentimento?"
+msgstr "Precisa de ativar o Facebook Pixel, TikTok, Hotjar ou outros scripts com base no consentimento?"
 
 msgid "Do not paste those script tags directly into your WordPress theme or header. Scripts added outside of GTM will not be blocked or controlled by this plugin's consent mechanism."
 msgstr "Não cole esses scripts diretamente no tema WordPress ou no cabeçalho. Scripts adicionados fora do GTM não serão bloqueados nem controlados pelo mecanismo de consentimento deste plugin."
 
 msgid "Instead, add them as tags inside Google Tag Manager and use the built-in consent triggers (e.g. \"Analytics Storage Consent Granted\") to control when they fire. This way, scripts only load after the visitor grants consent for the matching category."
-msgstr "Em vez disso, adicione-os como tags dentro do Google Tag Manager e utilize os gatilhos de consentimento integrados (ex.: \"Analytics Storage Consent Granted\") para controlar quando são executados. Dessa forma, os scripts só carregam depois que o visitante conceder consentimento para a categoria correspondente."
+msgstr "Em vez disso, adicione-os como tags dentro do Google Tag Manager e utilize os acionadores de consentimento integrados (ex.: \"Analytics Storage Consent Granted\") para controlar quando são executados. Desta forma, os scripts só carregam depois de o visitante conceder consentimento para a categoria correspondente."
 
 msgid "%1$sLearn how to use GTM with Consent Mode v2 →%2$s"
 msgstr "%1$sSaiba como usar o GTM com o Consent Mode v2 →%2$s"
 
 msgid "You do not need Google Site Kit or the WP Consent API plugin for this to work. Just enable GTM Consent Mode v2 above and paste the standard GTM snippet into your site's header — this plugin handles the rest."
-msgstr "Você não precisa do Google Site Kit nem do plugin WP Consent API para isso funcionar. Basta ativar o GTM Consent Mode v2 acima e colar o snippet padrão do GTM no cabeçalho do seu site — este plugin cuida do resto."
+msgstr "Não precisa do Google Site Kit nem do plugin WP Consent API para isto funcionar. Basta ativar o GTM Consent Mode v2 acima e colar o snippet padrão do GTM no cabeçalho do seu site — este plugin trata do resto."
 
 msgid "A built-in Script Manager (no GTM required) is planned for a future release."
-msgstr "Um Gerenciador de Scripts integrado (sem necessidade de GTM) está planejado para uma versão futura."
+msgstr "Um Gestor de Scripts integrado (sem necessidade de GTM) está planeado para uma versão futura."
 
 msgid "(none)"
 msgstr "(nenhum)"

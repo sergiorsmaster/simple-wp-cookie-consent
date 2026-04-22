@@ -73,13 +73,13 @@ if (!defined('ABSPATH')) {
 		<?php
 		$links = array();
 		if (!empty($privacy_url)) {
-			$links[] = '<li><a href="' . esc_url($privacy_url) . '">' . esc_html__('Privacy Policy', 'simple-cookie-consent') . '</a></li>';
+			$links[] = '<li><a href="' . esc_url($privacy_url) . '">' . esc_html__('Privacy Policy', 'consentric') . '</a></li>';
 		}
 		if (!empty($cookie_url)) {
-			$links[] = '<li><a href="' . esc_url($cookie_url) . '">' . esc_html__('Cookie Policy', 'simple-cookie-consent') . '</a></li>';
+			$links[] = '<li><a href="' . esc_url($cookie_url) . '">' . esc_html__('Cookie Policy', 'consentric') . '</a></li>';
 		}
 		if (!empty($imprint_url)) {
-			$links[] = '<li><a href="' . esc_url($imprint_url) . '">' . esc_html__('Imprint', 'simple-cookie-consent') . '</a></li>';
+			$links[] = '<li><a href="' . esc_url($imprint_url) . '">' . esc_html__('Imprint', 'consentric') . '</a></li>';
 		}
 		if (!empty($links)):
 			?>

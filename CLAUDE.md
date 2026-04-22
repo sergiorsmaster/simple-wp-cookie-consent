@@ -1,4 +1,4 @@
-# Open Cookie Consent — CLAUDE.md
+# Consentric — CLAUDE.md
 
 ## Working Agreement
 
@@ -30,11 +30,13 @@ Skills are defined in `.claude/skills/` — read the relevant `SKILL.md` for the
 
 ## Plugin Identity
 
-- **Slug:** `simple-cookie-consent`
+- **Display name:** Consentric — Truly Free Cookie Consent
+- **WP.org slug:** `consentric`
+- **Slug (files):** `simple-cookie-consent`
 - **Main file:** `simple-cookie-consent.php`
 - **GitHub:** https://github.com/sergiorsmaster/simple-wp-cookie-consent
 - **Min WP:** 6.0 | **Min PHP:** 7.4
-- **Text domain:** `simple-cookie-consent`
+- **Text domain:** `consentric`
 
 ---
 
@@ -159,7 +161,7 @@ simple-cookie-consent/
 | `scc_banner_border_width` | Appearance | number | `'0'` |
 | `scc_banner_border_color` | Appearance | color | `'#dddddd'` |
 | `scc_button_style` | Appearance | select | `'outline'` |
-| `scc_custom_css` | Appearance | textarea | `''` |
+
 | `scc_jurisdiction` | Jurisdiction | select | `'gdpr'` |
 | `scc_ccpa_opt_out_text` | Jurisdiction | text | *(fallback in render)* |
 | `scc_gtm_enabled` | Integrations | toggle | `'0'` |

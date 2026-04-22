@@ -267,6 +267,6 @@ class SCC_Cookie_Scanner {
 		'_hj'         => array( 'category' => 'analytics',  'service' => 'Hotjar',            'duration' => '1 year',     'description' => 'Sets a unique ID for the session. This allows the website to obtain data on visitor behaviour for statistical purposes.' ),
 		'__cf_bm'     => array( 'category' => 'necessary',  'service' => 'Cloudflare',        'duration' => '30 minutes', 'description' => 'Used by Cloudflare Bot Management to identify legitimate bots.' ),
 		'__cfruid'    => array( 'category' => 'necessary',  'service' => 'Cloudflare',        'duration' => 'Session',    'description' => 'Used by Cloudflare to identify trusted web traffic.' ),
-		'scc_consent' => array( 'category' => 'necessary',  'service' => 'Open Cookie Consent', 'duration' => '1 year', 'description' => 'Stores the visitor\'s cookie consent preferences.' ),
+		'scc_consent' => array( 'category' => 'necessary',  'service' => 'Consentric', 'duration' => '1 year', 'description' => 'Stores the visitor\'s cookie consent preferences.' ),
 	);
 }

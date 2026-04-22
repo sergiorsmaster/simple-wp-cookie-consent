@@ -31,7 +31,7 @@ class SCC_Shortcodes {
 	public static function render_preferences( $atts ) {
 		$atts = shortcode_atts(
 			array(
-				'label' => __( 'Cookie Settings', 'simple-cookie-consent' ),
+				'label' => __( 'Cookie Settings', 'consentric' ),
 				'class' => '',
 			),
 			$atts,
@@ -60,10 +60,10 @@ class SCC_Shortcodes {
 		);
 
 		$all_categories = array(
-			'necessary'  => __( 'Necessary', 'simple-cookie-consent' ),
-			'analytics'  => __( 'Analytics', 'simple-cookie-consent' ),
-			'marketing'  => __( 'Marketing', 'simple-cookie-consent' ),
-			'functional' => __( 'Functional', 'simple-cookie-consent' ),
+			'necessary'  => __( 'Necessary', 'consentric' ),
+			'analytics'  => __( 'Analytics', 'consentric' ),
+			'marketing'  => __( 'Marketing', 'consentric' ),
+			'functional' => __( 'Functional', 'consentric' ),
 		);
 
 		// Filter categories if the attribute is set.
@@ -112,10 +112,10 @@ class SCC_Shortcodes {
 					<table class="scc-cookie-list__table">
 						<thead>
 							<tr>
-								<th><?php esc_html_e( 'Cookie', 'simple-cookie-consent' ); ?></th>
-								<th><?php esc_html_e( 'Service', 'simple-cookie-consent' ); ?></th>
-								<th><?php esc_html_e( 'Duration', 'simple-cookie-consent' ); ?></th>
-								<th><?php esc_html_e( 'Description', 'simple-cookie-consent' ); ?></th>
+								<th><?php esc_html_e( 'Cookie', 'consentric' ); ?></th>
+								<th><?php esc_html_e( 'Service', 'consentric' ); ?></th>
+								<th><?php esc_html_e( 'Duration', 'consentric' ); ?></th>
+								<th><?php esc_html_e( 'Description', 'consentric' ); ?></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -137,7 +137,7 @@ class SCC_Shortcodes {
 		// Empty state — no cookies in any requested category.
 		if ( empty( array_filter( $grouped ) ) ) {
 			echo '<p class="scc-cookie-list__empty">' .
-				esc_html__( 'No cookies have been added yet.', 'simple-cookie-consent' ) .
+				esc_html__( 'No cookies have been added yet.', 'consentric' ) .
 				'</p>';
 		}
 

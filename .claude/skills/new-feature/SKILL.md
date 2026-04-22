@@ -5,7 +5,7 @@ argument-hint: "<FEAT-XX> <short description> (e.g. FEAT-32 Script Manager)"
 allowed-tools: Bash Read Edit Write Glob Grep
 ---
 
-# Start a new feature for Open Cookie Consent
+# Start a new feature for Consentric
 
 The user wants to implement a new feature. Arguments: **$ARGUMENTS**
 

@@ -15,9 +15,9 @@ $edit_cookie = $edit_id ? $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table
 
 // Status messages
 $messages = array(
-	'added'   => __( 'Cookie added.', 'simple-cookie-consent' ),
-	'updated' => __( 'Cookie updated.', 'simple-cookie-consent' ),
-	'deleted' => __( 'Cookie deleted.', 'simple-cookie-consent' ),
+	'added'   => __( 'Cookie added.', 'consentric' ),
+	'updated' => __( 'Cookie updated.', 'consentric' ),
+	'deleted' => __( 'Cookie deleted.', 'consentric' ),
 );
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display feedback
 $scc_msg = isset( $_GET['scc_msg'] ) ? sanitize_key( wp_unslash( $_GET['scc_msg'] ) ) : '';
@@ -26,16 +26,16 @@ if ( $scc_msg && isset( $messages[ $scc_msg ] ) ) {
 }
 
 $categories = array(
-	'necessary' => __('Necessary', 'simple-cookie-consent'),
-	'analytics' => __('Analytics', 'simple-cookie-consent'),
-	'marketing' => __('Marketing', 'simple-cookie-consent'),
-	'functional' => __('Functional', 'simple-cookie-consent'),
+	'necessary' => __('Necessary', 'consentric'),
+	'analytics' => __('Analytics', 'consentric'),
+	'marketing' => __('Marketing', 'consentric'),
+	'functional' => __('Functional', 'consentric'),
 );
 
 $sources = array(
-	'manual' => __('Manual', 'simple-cookie-consent'),
-	'scan' => __('Scan', 'simple-cookie-consent'),
-	'cookiedb' => __('Cookie DB', 'simple-cookie-consent'),
+	'manual' => __('Manual', 'consentric'),
+	'scan' => __('Scan', 'consentric'),
+	'cookiedb' => __('Cookie DB', 'consentric'),
 );
 
 $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies');
@@ -47,7 +47,7 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 	<div class="scc-cookie-form-wrap" id="scc-cookie-form-wrap" <?php echo ( ! $edit_cookie && empty( $_GET['add'] ) ) ? 'style="display:none"' : ''; ?>>
 
 		<h2 class="scc-section-title">
-			<?php echo $edit_cookie ? esc_html__('Edit Cookie', 'simple-cookie-consent') : esc_html__('Add Cookie', 'simple-cookie-consent'); ?>
+			<?php echo $edit_cookie ? esc_html__('Edit Cookie', 'consentric') : esc_html__('Add Cookie', 'consentric'); ?>
 		</h2>
 
 		<form method="post" action="<?php echo esc_url($page_url); ?>">
@@ -56,7 +56,7 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 
 			<div class="scc-field">
 				<label class="scc-field__label" for="scc_cookie_name">
-					<?php esc_html_e('Cookie Name', 'simple-cookie-consent'); ?> <span class="required">*</span>
+					<?php esc_html_e('Cookie Name', 'consentric'); ?> <span class="required">*</span>
 				</label>
 				<div class="scc-field__control">
 					<input type="text" id="scc_cookie_name" name="cookie_name" class="regular-text" required
@@ -66,7 +66,7 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 
 			<div class="scc-field">
 				<label class="scc-field__label" for="scc_category">
-					<?php esc_html_e('Category', 'simple-cookie-consent'); ?>
+					<?php esc_html_e('Category', 'consentric'); ?>
 				</label>
 				<div class="scc-field__control">
 					<select id="scc_category" name="category">
@@ -81,29 +81,29 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 
 			<div class="scc-field">
 				<label class="scc-field__label" for="scc_service">
-					<?php esc_html_e('Service', 'simple-cookie-consent'); ?>
+					<?php esc_html_e('Service', 'consentric'); ?>
 				</label>
 				<div class="scc-field__control">
 					<input type="text" id="scc_service" name="service" class="regular-text"
 						value="<?php echo esc_attr($edit_cookie->service ?? ''); ?>"
-						placeholder="<?php esc_attr_e('e.g. Google Analytics', 'simple-cookie-consent'); ?>">
+						placeholder="<?php esc_attr_e('e.g. Google Analytics', 'consentric'); ?>">
 				</div>
 			</div>
 
 			<div class="scc-field">
 				<label class="scc-field__label" for="scc_duration">
-					<?php esc_html_e('Duration', 'simple-cookie-consent'); ?>
+					<?php esc_html_e('Duration', 'consentric'); ?>
 				</label>
 				<div class="scc-field__control">
 					<input type="text" id="scc_duration" name="duration" class="regular-text"
 						value="<?php echo esc_attr($edit_cookie->duration ?? ''); ?>"
-						placeholder="<?php esc_attr_e('e.g. 2 years', 'simple-cookie-consent'); ?>">
+						placeholder="<?php esc_attr_e('e.g. 2 years', 'consentric'); ?>">
 				</div>
 			</div>
 
 			<div class="scc-field">
 				<label class="scc-field__label" for="scc_description">
-					<?php esc_html_e('Description', 'simple-cookie-consent'); ?>
+					<?php esc_html_e('Description', 'consentric'); ?>
 				</label>
 				<div class="scc-field__control">
 					<textarea id="scc_description" name="description" class="large-text" rows="2"><?php
@@ -113,9 +113,9 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 			</div>
 
 			<div class="scc-form-actions">
-				<?php submit_button($edit_cookie ? __('Update Cookie', 'simple-cookie-consent') : __('Add Cookie', 'simple-cookie-consent'), 'primary', 'submit', false); ?>
+				<?php submit_button($edit_cookie ? __('Update Cookie', 'consentric') : __('Add Cookie', 'consentric'), 'primary', 'submit', false); ?>
 				<a href="<?php echo esc_url($page_url); ?>" class="button">
-					<?php esc_html_e('Cancel', 'simple-cookie-consent'); ?>
+					<?php esc_html_e('Cancel', 'consentric'); ?>
 				</a>
 			</div>
 		</form>
@@ -129,7 +129,7 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 		<?php
 		printf(
 			/* translators: 1: number of cookies, 2: opening <a> tag, 3: closing </a> tag */
-			esc_html__( 'Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s.', 'simple-cookie-consent' ),
+			esc_html__( 'Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s.', 'consentric' ),
 			intval( $db_count ),
 			'<a href="https://github.com/jkwakman/Open-Cookie-Database" target="_blank" rel="noopener noreferrer">',
 			'</a>'
@@ -140,14 +140,14 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 	<!-- Table header -->
 	<div class="scc-table-header">
 		<h2 class="scc-section-title" style="margin-top:0">
-			<?php esc_html_e('Cookie List', 'simple-cookie-consent'); ?>
+			<?php esc_html_e('Cookie List', 'consentric'); ?>
 		</h2>
 		<?php if (!$edit_cookie): ?>
 			<button type="button" class="button" id="scc-scan-btn">
-				<?php esc_html_e('Run Scanner', 'simple-cookie-consent'); ?>
+				<?php esc_html_e('Run Scanner', 'consentric'); ?>
 			</button>
 			<button type="button" class="button button-primary" id="scc-add-cookie-btn">
-				<?php esc_html_e('+ Add Cookie', 'simple-cookie-consent'); ?>
+				<?php esc_html_e('+ Add Cookie', 'consentric'); ?>
 			</button>
 		<?php endif; ?>
 	</div>
@@ -161,18 +161,18 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 
 	<?php if (empty($cookies)): ?>
 		<p class="scc-notice scc-notice--info">
-			<?php esc_html_e('No cookies yet. Add one manually or run the scanner.', 'simple-cookie-consent'); ?>
+			<?php esc_html_e('No cookies yet. Add one manually or run the scanner.', 'consentric'); ?>
 		</p>
 	<?php else: ?>
 		<table class="widefat striped scc-cookie-table">
 			<thead>
 				<tr>
-					<th><?php esc_html_e('Name', 'simple-cookie-consent'); ?></th>
-					<th><?php esc_html_e('Category', 'simple-cookie-consent'); ?></th>
-					<th><?php esc_html_e('Service', 'simple-cookie-consent'); ?></th>
-					<th><?php esc_html_e('Duration', 'simple-cookie-consent'); ?></th>
-					<th><?php esc_html_e('Source', 'simple-cookie-consent'); ?></th>
-					<th><?php esc_html_e('Actions', 'simple-cookie-consent'); ?></th>
+					<th><?php esc_html_e('Name', 'consentric'); ?></th>
+					<th><?php esc_html_e('Category', 'consentric'); ?></th>
+					<th><?php esc_html_e('Service', 'consentric'); ?></th>
+					<th><?php esc_html_e('Duration', 'consentric'); ?></th>
+					<th><?php esc_html_e('Source', 'consentric'); ?></th>
+					<th><?php esc_html_e('Actions', 'consentric'); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -192,7 +192,7 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 								'action' => 'edit_cookie',
 								'cookie_id' => $cookie->id,
 							), $page_url)); ?>">
-								<?php esc_html_e('Edit', 'simple-cookie-consent'); ?>
+								<?php esc_html_e('Edit', 'consentric'); ?>
 							</a>
 							&nbsp;|&nbsp;
 							<a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array(
@@ -200,7 +200,7 @@ $page_url = admin_url('options-general.php?page=scc-cookie-consent&tab=cookies')
 								'cookie_id' => $cookie->id,
 							), $page_url), 'scc_delete_cookie')); ?>" class="scc-delete-link"
 								data-name="<?php echo esc_attr($cookie->cookie_name); ?>">
-								<?php esc_html_e('Delete', 'simple-cookie-consent'); ?>
+								<?php esc_html_e('Delete', 'consentric'); ?>
 							</a>
 						</td>
 					</tr>

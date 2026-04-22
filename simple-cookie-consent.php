@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Open Cookie Consent
+ * Plugin Name:       Consentric — Truly Free Cookie Consent
  * Plugin URI:        https://github.com/sergiorsmaster/simple-wp-cookie-consent
  * Description:       A simple, free, and open-source cookie consent banner. No hidden Pro features, no subscription.
  * Version:           0.4.0
@@ -9,7 +9,7 @@
  * Author:            Sergio Ricardo
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       simple-cookie-consent
+ * Text Domain:       consentric
  * Domain Path:       /languages
  */
 

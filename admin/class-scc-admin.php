@@ -24,12 +24,12 @@ class SCC_Admin {
 	 */
 	public static function get_tab_labels() {
 		return array(
-			'general'      => __( 'General', 'simple-cookie-consent' ),
-			'appearance'   => __( 'Appearance', 'simple-cookie-consent' ),
-			'jurisdiction' => __( 'Jurisdiction', 'simple-cookie-consent' ),
-			'integrations' => __( 'Integrations', 'simple-cookie-consent' ),
-			'cookies'      => __( 'Cookies', 'simple-cookie-consent' ),
-			'help'         => __( 'Help', 'simple-cookie-consent' ),
+			'general'      => __( 'General', 'consentric' ),
+			'appearance'   => __( 'Appearance', 'consentric' ),
+			'jurisdiction' => __( 'Jurisdiction', 'consentric' ),
+			'integrations' => __( 'Integrations', 'consentric' ),
+			'cookies'      => __( 'Cookies', 'consentric' ),
+			'help'         => __( 'Help', 'consentric' ),
 		);
 	}
 
@@ -146,8 +146,8 @@ class SCC_Admin {
 
 	public static function add_menu() {
 		add_options_page(
-			__( 'Cookie Consent Settings', 'simple-cookie-consent' ),
-			__( 'Cookie Consent', 'simple-cookie-consent' ),
+			__( 'Cookie Consent Settings', 'consentric' ),
+			__( 'Cookie Consent', 'consentric' ),
 			'manage_options',
 			'scc-cookie-consent',
 			array( __CLASS__, 'render_page' )
@@ -183,8 +183,8 @@ class SCC_Admin {
 
 		// Appearance
 		foreach ( array(
-			'scc_position'            => 'sanitize_text_field',
-			'scc_logo_source'         => 'sanitize_text_field',
+			'scc_position'            => 'scc_sanitize_position',
+			'scc_logo_source'         => 'scc_sanitize_logo_source',
 			'scc_logo_url'            => 'esc_url_raw',
 			'scc_color_bg'            => 'sanitize_hex_color',
 			'scc_color_text'          => 'sanitize_hex_color',
@@ -193,15 +193,14 @@ class SCC_Admin {
 			'scc_banner_max_width'    => 'scc_sanitize_px',
 			'scc_banner_border_width' => 'scc_sanitize_px',
 			'scc_banner_border_color' => 'sanitize_hex_color',
-			'scc_button_style'        => 'sanitize_text_field',
-			'scc_custom_css'          => 'wp_strip_all_tags',
+			'scc_button_style'        => 'scc_sanitize_button_style',
 		) as $option => $cb ) {
 			register_setting( 'scc_appearance', $option, array( 'sanitize_callback' => $cb ) );
 		}
 
 		// Jurisdiction
 		foreach ( array(
-			'scc_jurisdiction'      => 'sanitize_text_field',
+			'scc_jurisdiction'      => 'scc_sanitize_jurisdiction',
 			'scc_ccpa_opt_out_text' => 'sanitize_text_field',
 		) as $option => $cb ) {
 			register_setting( 'scc_jurisdiction', $option, array( 'sanitize_callback' => $cb ) );
@@ -210,7 +209,7 @@ class SCC_Admin {
 		// Integrations
 		foreach ( array(
 			'scc_gtm_enabled'        => 'scc_sanitize_checkbox',
-			'scc_gtm_mode'           => 'sanitize_text_field',
+			'scc_gtm_mode'           => 'scc_sanitize_gtm_mode',
 			'scc_gtm_wait_for_update'=> 'absint',
 			'scc_debug'              => 'scc_sanitize_checkbox',
 		) as $option => $cb ) {
@@ -248,10 +247,10 @@ class SCC_Admin {
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 			'nonce'   => wp_create_nonce( 'scc_scanner_nonce' ),
 			'i18n'    => array(
-				'scanning'  => __( 'Scanning…', 'simple-cookie-consent' ),
-				'scanDone'  => __( 'Scan complete.', 'simple-cookie-consent' ),
-				'scanError' => __( 'Scan failed. Please try again.', 'simple-cookie-consent' ),
-				'added'     => __( 'new cookie(s) found.', 'simple-cookie-consent' ),
+				'scanning'  => __( 'Scanning…', 'consentric' ),
+				'scanDone'  => __( 'Scan complete.', 'consentric' ),
+				'scanError' => __( 'Scan failed. Please try again.', 'consentric' ),
+				'added'     => __( 'new cookie(s) found.', 'consentric' ),
 			),
 		) );
 	}
@@ -273,7 +272,7 @@ class SCC_Admin {
 		$settings_group = self::TABS[ $active_tab ];
 		?>
 		<div class="wrap scc-admin">
-			<h1><?php esc_html_e( 'Cookie Consent Settings', 'simple-cookie-consent' ); ?></h1>
+			<h1><?php esc_html_e( 'Cookie Consent Settings', 'consentric' ); ?></h1>
 
 			<nav class="nav-tab-wrapper">
 				<?php foreach ( self::get_tab_labels() as $slug => $label ) : ?>
@@ -294,7 +293,7 @@ class SCC_Admin {
 				if ( file_exists( $view ) ) {
 					include $view;
 				} else {
-					echo '<p>' . esc_html__( 'This tab is coming soon.', 'simple-cookie-consent' ) . '</p>';
+					echo '<p>' . esc_html__( 'This tab is coming soon.', 'consentric' ) . '</p>';
 				}
 				?>
 
@@ -317,4 +316,31 @@ function scc_sanitize_checkbox( $value ) {
 function scc_sanitize_px( $value ) {
 	$int = absint( $value );
 	return $int > 0 ? (string) $int : '';
+}
+
+// Whitelist sanitization helpers for enum/select settings.
+
+function scc_sanitize_position( $value ) {
+	$allowed = array( 'bottom-left', 'bottom-right', 'bottom-full', 'top-full', 'center-modal' );
+	return in_array( $value, $allowed, true ) ? $value : 'bottom-left';
+}
+
+function scc_sanitize_logo_source( $value ) {
+	$allowed = array( '', 'site_icon', 'custom' );
+	return in_array( $value, $allowed, true ) ? $value : '';
+}
+
+function scc_sanitize_button_style( $value ) {
+	$allowed = array( 'outline', 'ghost' );
+	return in_array( $value, $allowed, true ) ? $value : 'outline';
+}
+
+function scc_sanitize_jurisdiction( $value ) {
+	$allowed = array( 'gdpr', 'lgpd', 'ccpa', 'notice' );
+	return in_array( $value, $allowed, true ) ? $value : 'gdpr';
+}
+
+function scc_sanitize_gtm_mode( $value ) {
+	$allowed = array( 'basic', 'advanced' );
+	return in_array( $value, $allowed, true ) ? $value : 'basic';
 }

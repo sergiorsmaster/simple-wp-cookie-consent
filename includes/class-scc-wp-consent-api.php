@@ -4,7 +4,7 @@
  *
  * Bridges our scc_consent cookie to the WP Consent Level API so that
  * third-party plugins (e.g. Site Kit) can read consent without knowing
- * anything about Open Cookie Consent.
+ * anything about Consentric.
  *
  * Only active when the WP Consent Level API plugin is installed and running
  * (detected via the WP_CONSENT_API_VERSION constant).

@@ -1,11 +1,11 @@
 ---
 name: release
-description: Cut a new versioned release of Open Cookie Consent. Use when the PO asks to release a new version (e.g. "release 1.2.0").
+description: Cut a new versioned release of Consentric. Use when the PO asks to release a new version (e.g. "release 1.2.0").
 argument-hint: "<version> (e.g. 1.2.0)"
 allowed-tools: Bash Read Edit Glob Grep
 ---
 
-# Release a new version of Open Cookie Consent
+# Release a new version of Consentric
 
 The user has requested a new release. The target version is: **$ARGUMENTS**
 

@@ -54,7 +54,7 @@ Then start the stack:
 docker compose up -d
 ```
 
-3. Visit [http://localhost:8080](http://localhost:8080), complete the WordPress setup, then activate **Open Cookie Consent** from the Plugins screen.
+3. Visit [http://localhost:8080](http://localhost:8080), complete the WordPress setup, then activate **Consentric** from the Plugins screen.
 
 4. The plugin folder is bind-mounted directly into the container — any file you edit is live immediately with no rebuild needed.
 

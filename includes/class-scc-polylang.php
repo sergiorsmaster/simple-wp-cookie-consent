@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class SCC_Polylang {
 
 	/** Polylang string group name. */
-	const GROUP = 'Open Cookie Consent';
+	const GROUP = 'Consentric';
 
 	/**
 	 * Option key → human-readable name for Polylang's UI.
