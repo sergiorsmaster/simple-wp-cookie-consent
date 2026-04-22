@@ -104,7 +104,7 @@ $positions = array(
 		</label>
 		<div class="scc-field__control scc-field__control--inline">
 			<input type="range" id="scc_border_radius" name="scc_border_radius"
-				min="0" max="24" step="1"
+				min="0" max="48" step="1"
 				value="<?php echo esc_attr( get_option( 'scc_border_radius', '6' ) ); ?>"
 				oninput="document.getElementById('scc_radius_val').textContent = this.value + 'px'">
 			<span id="scc_radius_val"><?php echo esc_html( get_option( 'scc_border_radius', '6' ) ); ?>px</span>
