@@ -48,7 +48,7 @@ chore: mark FEAT-XX as in progress
 Follow the acceptance criteria from Step 1. Adhere to all code conventions and **WordPress Security Rules** documented in `CLAUDE.md`. Key rules:
 - PHP prefix `scc_` on all functions, classes, hooks, and options
 - JS namespace `window.SimpleCookieConsent`
-- Text domain `simple-cookie-consent` — wrap all user-facing strings with `__()` / `esc_html__()`
+- Text domain `consentric` — wrap all user-facing strings with `__()` / `esc_html__()`
 - No inline styles in PHP templates — use CSS files or `wp_add_inline_style`
 - WordPress Settings API for all admin forms
 - Enqueue via `wp_enqueue_scripts` / `admin_enqueue_scripts`

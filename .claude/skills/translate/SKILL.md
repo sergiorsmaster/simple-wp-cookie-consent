@@ -22,9 +22,9 @@ Run WP-CLI inside the WordPress container to scan all PHP files and regenerate t
 
 ```bash
 docker compose exec wordpress wp i18n make-pot \
-  /var/www/html/wp-content/plugins/simple-cookie-consent \
-  /var/www/html/wp-content/plugins/simple-cookie-consent/languages/simple-cookie-consent.pot \
-  --domain=simple-cookie-consent \
+  /var/www/html/wp-content/plugins/consentric \
+  /var/www/html/wp-content/plugins/consentric/languages/consentric.pot \
+  --domain=consentric \
   --allow-root
 ```
 
@@ -53,7 +53,7 @@ For each updated PO file, compile the binary MO:
 
 ```bash
 docker compose exec wordpress wp i18n make-mo \
-  /var/www/html/wp-content/plugins/simple-cookie-consent/languages \
+  /var/www/html/wp-content/plugins/consentric/languages \
   --allow-root
 ```
 
@@ -76,7 +76,7 @@ Report to the user which locales were updated and how many new strings were adde
 
 | File | Locale | Notes |
 |------|--------|-------|
-| `simple-cookie-consent.pot` | Template (all strings) | Source of truth |
-| `simple-cookie-consent-pt_PT.po/.mo` | European Portuguese | Guardar/Ecrã/Eliminar |
-| `simple-cookie-consent-pt_BR.po/.mo` | Brazilian Portuguese | Salvar/Tela/Excluir |
-| `simple-cookie-consent-de_DE.po/.mo` | German | Formal register |
+| `consentric.pot` | Template (all strings) | Source of truth |
+| `consentric-pt_PT.po/.mo` | European Portuguese | Guardar/Ecrã/Eliminar |
+| `consentric-pt_BR.po/.mo` | Brazilian Portuguese | Salvar/Tela/Excluir |
+| `consentric-de_DE.po/.mo` | German | Formal register |

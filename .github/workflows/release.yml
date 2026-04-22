@@ -24,21 +24,21 @@ jobs:
       - name: Validate version matches plugin header
         run: |
           TAG_VERSION="${{ steps.version.outputs.VERSION }}"
-          HEADER_VERSION=$(grep -m1 '^\s*\*\s*Version:' simple-cookie-consent.php | sed 's/.*Version:\s*//' | tr -d '[:space:]')
+          HEADER_VERSION=$(grep -m1 '^\s*\*\s*Version:' consentric.php | sed 's/.*Version:\s*//' | tr -d '[:space:]')
           echo "Tag version:    $TAG_VERSION"
           echo "Header version: $HEADER_VERSION"
           if [ "$TAG_VERSION" != "$HEADER_VERSION" ]; then
-            echo "::error::Version mismatch — tag is v$TAG_VERSION but plugin header says $HEADER_VERSION. Bump the version in simple-cookie-consent.php before tagging."
+            echo "::error::Version mismatch — tag is v$TAG_VERSION but plugin header says $HEADER_VERSION. Bump the version in consentric.php before tagging."
             exit 1
           fi
 
       - name: Build plugin zip
         run: |
-          ZIP_NAME="simple-cookie-consent-${{ steps.version.outputs.VERSION }}.zip"
+          ZIP_NAME="consentric-${{ steps.version.outputs.VERSION }}.zip"
           echo "ZIP_NAME=$ZIP_NAME" >> "$GITHUB_ENV"
 
           # Create a staging directory with the correct plugin slug as root folder
-          mkdir -p /tmp/build/simple-cookie-consent
+          mkdir -p /tmp/build/consentric
 
           rsync -a \
             --exclude='.git' \
@@ -51,10 +51,10 @@ jobs:
             --exclude='.env*' \
             --exclude='node_modules' \
             --exclude='*.log' \
-            ./ /tmp/build/simple-cookie-consent/
+            ./ /tmp/build/consentric/
 
           cd /tmp/build
-          zip -r "$ZIP_NAME" simple-cookie-consent/
+          zip -r "$ZIP_NAME" consentric/
           mv "$ZIP_NAME" "$GITHUB_WORKSPACE/"
 
       - name: Create GitHub Release

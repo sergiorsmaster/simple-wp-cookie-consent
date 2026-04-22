@@ -33,7 +33,7 @@ class SCC_WP_Consent_API {
 		}
 
 		// Register our plugin as a consent provider.
-		add_filter( 'wp_consent_api_registered_simple-cookie-consent', '__return_true' );
+		add_filter( 'wp_consent_api_registered_consentric', '__return_true' );
 
 		// Sync consent on every frontend request (reads the cookie).
 		add_action( 'init', array( __CLASS__, 'sync_consent' ), 20 );

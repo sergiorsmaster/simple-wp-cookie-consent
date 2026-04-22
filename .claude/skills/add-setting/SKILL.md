@@ -65,13 +65,13 @@ Add the field HTML following the existing `.scc-field` pattern:
 ```php
 <div class="scc-field">
     <label class="scc-field__label" for="scc_my_option">
-        <?php esc_html_e( 'Field Label', 'simple-cookie-consent' ); ?>
+        <?php esc_html_e( 'Field Label', 'consentric' ); ?>
     </label>
     <div class="scc-field__control">
         <input type="text" id="scc_my_option" name="scc_my_option"
             value="<?php echo esc_attr( $my_option ); ?>">
         <p class="description">
-            <?php esc_html_e( 'Helper text describing this field.', 'simple-cookie-consent' ); ?>
+            <?php esc_html_e( 'Helper text describing this field.', 'consentric' ); ?>
         </p>
     </div>
 </div>

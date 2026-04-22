@@ -1,4 +1,4 @@
-# Simple WP Cookie Consent
+# Consentric — Truly Free Cookie Consent
 
 A free, open-source WordPress cookie consent banner plugin. No Pro tier, no subscription, no tracking.
 
@@ -29,14 +29,14 @@ The `docker-compose.yml` lives **one level above** the plugin folder. The recomm
 
 ```
 my-project/                          ← docker-compose.yml lives here
-└── simple-wp-cookie-consent/        ← git repo root (this folder)
+└── consentric/                      ← git repo root (plugin folder)
 ```
 
 1. Clone the repo inside your project folder:
 
 ```bash
 mkdir my-project && cd my-project
-git clone https://github.com/sergiorsmaster/simple-wp-cookie-consent.git
+git clone https://github.com/sergiorsmaster/consentric.git consentric
 ```
 
 2. Create a `docker-compose.yml` in `my-project/` (see the example below) and a `.env` file with your credentials:
@@ -60,7 +60,7 @@ docker compose up -d
 
    The key volume mapping is:
    ```
-   ./simple-wp-cookie-consent:/var/www/html/wp-content/plugins/simple-cookie-consent
+   ./consentric:/var/www/html/wp-content/plugins/consentric
    ```
    The left side is the repo folder (relative to `docker-compose.yml`); the right side is the plugin slug WordPress expects inside the container.
 
@@ -97,7 +97,7 @@ services:
         define('SCRIPT_DEBUG', true);
         define('SAVEQUERIES', true);
     volumes:
-      - ./simple-wp-cookie-consent:/var/www/html/wp-content/plugins/simple-cookie-consent
+      - ./consentric:/var/www/html/wp-content/plugins/consentric
 
   adminer:
     image: adminer:latest
@@ -115,8 +115,8 @@ An Adminer database UI is available at [http://localhost:8081](http://localhost:
 ## Repository Structure
 
 ```
-simple-wp-cookie-consent/
-├── simple-cookie-consent.php       Main plugin file (header + bootstrap)
+consentric/
+├── consentric.php                  Main plugin file (header + bootstrap)
 ├── uninstall.php                   Cleanup on uninstall
 ├── readme.txt                      WordPress.org listing copy
 ├── CLAUDE.md                       AI developer working agreement + task list

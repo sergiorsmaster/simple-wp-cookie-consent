@@ -27,7 +27,7 @@ git checkout -b release/v$ARGUMENTS
 
 ## Step 3 — Bump the version in exactly three places
 
-Open `simple-cookie-consent.php` and update **both** of these lines:
+Open `consentric.php` and update **both** of these lines:
 - The plugin header comment: `* Version: X.X.X`
 - The PHP constant:          `define('SCC_VERSION', 'X.X.X')`
 
@@ -42,7 +42,7 @@ Use the Read tool to find the current values, then use the Edit tool to replace 
 chore: bump version to X.X.X
 ```
 
-Stage only `simple-cookie-consent.php` and `readme.txt`.
+Stage only `consentric.php` and `readme.txt`.
 
 ## Step 5 — Merge to main
 
@@ -65,13 +65,13 @@ git push origin vX.X.X
 After pushing the tag, check that the release workflow starts and passes:
 
 ```bash
-/opt/homebrew/bin/gh run list --repo sergiorsmaster/simple-wp-cookie-consent --limit 3
+/opt/homebrew/bin/gh run list --repo sergiorsmaster/consentric --limit 3
 ```
 
 Wait for it to complete, then confirm the GitHub Release exists with the zip attached:
 
 ```bash
-/opt/homebrew/bin/gh release view vX.X.X --repo sergiorsmaster/simple-wp-cookie-consent
+/opt/homebrew/bin/gh release view vX.X.X --repo sergiorsmaster/consentric
 ```
 
 Report the release URL to the user when done.
@@ -82,5 +82,5 @@ Report the release URL to the user when done.
 
 The `.github/workflows/release.yml` GitHub Actions workflow:
 1. Validates the tag version matches the `Version:` header — fails loudly if not.
-2. Builds `simple-cookie-consent-X.X.X.zip` (dev files excluded).
+2. Builds `consentric-X.X.X.zip` (dev files excluded).
 3. Creates the GitHub Release with the zip attached and auto-generated notes.

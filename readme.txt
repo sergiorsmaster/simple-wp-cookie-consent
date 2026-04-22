@@ -3,7 +3,7 @@ Contributors: sergiorsmaster
 Tags: cookie consent, GDPR, CCPA, cookie banner, consent mode
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 0.5.0
+Stable tag: 0.6.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -68,13 +68,13 @@ An optional floating icon lets visitors revisit their choices at any time withou
 
 ### Built in the open
 
-This plugin was built in the open, with every line of code visible on [GitHub](https://github.com/sergiorsmaster/simple-wp-cookie-consent). If it helps you, **give it a star** ⭐ — it means a lot. If you find a bug or want to contribute a feature, pull requests are very welcome.
+This plugin was built in the open, with every line of code visible on [GitHub](https://github.com/sergiorsmaster/consentric). If it helps you, **give it a star** ⭐ — it means a lot. If you find a bug or want to contribute a feature, pull requests are very welcome.
 
 *Install and enjoy. It's yours.*
 
 == Installation ==
 
-1. Upload the `simple-cookie-consent` folder to `/wp-content/plugins/`, or install directly via **Plugins → Add New** in your WordPress dashboard.
+1. Upload the `consentric` folder to `/wp-content/plugins/`, or install directly via **Plugins → Add New** in your WordPress dashboard.
 2. Activate the plugin through the **Plugins** menu.
 3. Go to **Settings → Cookie Consent** and configure your banner, jurisdiction, and integrations.
 
@@ -128,6 +128,11 @@ Add `[scc_cookie_list]` to any page. Use the optional `categories` attribute to 
 6. Admin — Cookie list with scanner
 
 == Changelog ==
+
+= 0.6.0 =
+* Renamed plugin slug and main file to `consentric` to match text domain (fixes Plugin Check TextDomainMismatch)
+* Updated WP Consent API registration to use `consentric` identifier
+* Updated release workflow to build zip as `consentric/`
 
 = 0.1.0 =
 * Initial release
