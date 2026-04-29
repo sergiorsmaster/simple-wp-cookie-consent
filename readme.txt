@@ -3,7 +3,7 @@ Contributors: sergiorsmaster
 Tags: cookie consent, GDPR, CCPA, cookie banner, consent mode
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 0.6.0
+Stable tag: 0.7.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -128,6 +128,15 @@ Add `[cscc_cookie_list]` to any page. Use the optional `categories` attribute to
 6. Admin — Cookie list with scanner
 
 == Changelog ==
+
+= 0.7.0 =
+* Fixed all Plugin Check warnings for WP.org compliance
+* Renamed prefix from scc to cscc (4-char minimum required by WP.org)
+* Added nonce verification to all GET/POST data reads
+* Added whitelist sanitization for JSON-decoded cookie values
+* Prefixed all global variables in view templates
+* Added phpcs ignore comments for trusted direct DB queries
+* Excluded hidden files from production zip
 
 = 0.6.0 =
 * Renamed plugin slug and main file to `consentric` to match text domain (fixes Plugin Check TextDomainMismatch)
