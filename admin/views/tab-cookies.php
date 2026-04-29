@@ -4,61 +4,61 @@ if (!defined('ABSPATH')) {
 }
 
 global $wpdb;
-$table = $wpdb->prefix . 'cscc_cookies';
+$cscc_table = $wpdb->prefix . 'cscc_cookies';
 
 // Edit cookie: verify nonce before reading cookie_id from URL.
-$edit_id     = 0;
-$edit_cookie = null;
+$cscc_edit_id     = 0;
+$cscc_edit_cookie = null;
 if ( isset( $_GET['action'], $_GET['cookie_id'], $_GET['_wpnonce'] )
 	&& 'edit_cookie' === sanitize_key( wp_unslash( $_GET['action'] ) )
 	&& wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'cscc_edit_cookie' )
 ) {
-	$edit_id = absint( $_GET['cookie_id'] );
+	$cscc_edit_id = absint( $_GET['cookie_id'] );
 }
-if ( $edit_id ) {
-	// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table is a trusted prefix + constant
-	$edit_cookie = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table} WHERE id = %d", $edit_id ) );
+if ( $cscc_edit_id ) {
+	// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter -- $cscc_table uses trusted prefix
+	$cscc_edit_cookie = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$cscc_table} WHERE id = %d", $cscc_edit_id ) );
 }
 
 // Status messages via transient (set on redirect in class-cscc-admin.php).
-$messages = array(
+$cscc_messages = array(
 	'added'   => __( 'Cookie added.', 'consentric' ),
 	'updated' => __( 'Cookie updated.', 'consentric' ),
 	'deleted' => __( 'Cookie deleted.', 'consentric' ),
 );
 $cscc_msg = get_transient( 'cscc_admin_notice' );
-if ( $cscc_msg && isset( $messages[ $cscc_msg ] ) ) {
+if ( $cscc_msg && isset( $cscc_messages[ $cscc_msg ] ) ) {
 	delete_transient( 'cscc_admin_notice' );
-	echo '<div class="notice notice-success is-dismissible"><p>' . esc_html( $messages[ $cscc_msg ] ) . '</p></div>';
+	echo '<div class="notice notice-success is-dismissible"><p>' . esc_html( $cscc_messages[ $cscc_msg ] ) . '</p></div>';
 }
 
-$categories = array(
+$cscc_categories = array(
 	'necessary' => __('Necessary', 'consentric'),
 	'analytics' => __('Analytics', 'consentric'),
 	'marketing' => __('Marketing', 'consentric'),
 	'functional' => __('Functional', 'consentric'),
 );
 
-$sources = array(
+$cscc_sources = array(
 	'manual' => __('Manual', 'consentric'),
 	'scan' => __('Scan', 'consentric'),
 	'cookiedb' => __('Cookie DB', 'consentric'),
 );
 
-$page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies');
+$cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies');
 ?>
 <div class="cscc-tab-content">
 
 	<!-- Add / Edit form -->
-	<div class="cscc-cookie-form-wrap" id="cscc-cookie-form-wrap" <?php echo ! $edit_cookie ? 'style="display:none"' : ''; ?>>
+	<div class="cscc-cookie-form-wrap" id="cscc-cookie-form-wrap" <?php echo ! $cscc_edit_cookie ? 'style="display:none"' : ''; ?>>
 
 		<h2 class="cscc-section-title">
-			<?php echo $edit_cookie ? esc_html__('Edit Cookie', 'consentric') : esc_html__('Add Cookie', 'consentric'); ?>
+			<?php echo $cscc_edit_cookie ? esc_html__('Edit Cookie', 'consentric') : esc_html__('Add Cookie', 'consentric'); ?>
 		</h2>
 
-		<form method="post" action="<?php echo esc_url($page_url); ?>">
+		<form method="post" action="<?php echo esc_url($cscc_page_url); ?>">
 			<?php wp_nonce_field('cscc_save_cookie', 'cscc_cookie_nonce'); ?>
-			<input type="hidden" name="cookie_id" value="<?php echo esc_attr($edit_id); ?>">
+			<input type="hidden" name="cookie_id" value="<?php echo esc_attr($cscc_edit_id); ?>">
 
 			<div class="cscc-field">
 				<label class="cscc-field__label" for="cscc_cookie_name">
@@ -66,7 +66,7 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 				</label>
 				<div class="cscc-field__control">
 					<input type="text" id="cscc_cookie_name" name="cookie_name" class="regular-text" required
-						value="<?php echo esc_attr($edit_cookie->cookie_name ?? ''); ?>" placeholder="_ga">
+						value="<?php echo esc_attr($cscc_edit_cookie->cookie_name ?? ''); ?>" placeholder="_ga">
 				</div>
 			</div>
 
@@ -76,9 +76,9 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 				</label>
 				<div class="cscc-field__control">
 					<select id="cscc_category" name="category">
-						<?php foreach ($categories as $key => $label): ?>
-							<option value="<?php echo esc_attr($key); ?>" <?php selected($edit_cookie->category ?? 'necessary', $key); ?>>
-								<?php echo esc_html($label); ?>
+						<?php foreach ($cscc_categories as $cscc_key => $cscc_label): ?>
+							<option value="<?php echo esc_attr($cscc_key); ?>" <?php selected($cscc_edit_cookie->category ?? 'necessary', $cscc_key); ?>>
+								<?php echo esc_html($cscc_label); ?>
 							</option>
 						<?php endforeach; ?>
 					</select>
@@ -91,7 +91,7 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 				</label>
 				<div class="cscc-field__control">
 					<input type="text" id="cscc_service" name="service" class="regular-text"
-						value="<?php echo esc_attr($edit_cookie->service ?? ''); ?>"
+						value="<?php echo esc_attr($cscc_edit_cookie->service ?? ''); ?>"
 						placeholder="<?php esc_attr_e('e.g. Google Analytics', 'consentric'); ?>">
 				</div>
 			</div>
@@ -102,7 +102,7 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 				</label>
 				<div class="cscc-field__control">
 					<input type="text" id="cscc_duration" name="duration" class="regular-text"
-						value="<?php echo esc_attr($edit_cookie->duration ?? ''); ?>"
+						value="<?php echo esc_attr($cscc_edit_cookie->duration ?? ''); ?>"
 						placeholder="<?php esc_attr_e('e.g. 2 years', 'consentric'); ?>">
 				</div>
 			</div>
@@ -113,14 +113,14 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 				</label>
 				<div class="cscc-field__control">
 					<textarea id="cscc_description" name="description" class="large-text" rows="2"><?php
-					echo esc_textarea($edit_cookie->description ?? '');
+					echo esc_textarea($cscc_edit_cookie->description ?? '');
 					?></textarea>
 				</div>
 			</div>
 
 			<div class="cscc-form-actions">
-				<?php submit_button($edit_cookie ? __('Update Cookie', 'consentric') : __('Add Cookie', 'consentric'), 'primary', 'submit', false); ?>
-				<a href="<?php echo esc_url($page_url); ?>" class="button">
+				<?php submit_button($cscc_edit_cookie ? __('Update Cookie', 'consentric') : __('Add Cookie', 'consentric'), 'primary', 'submit', false); ?>
+				<a href="<?php echo esc_url($cscc_page_url); ?>" class="button">
 					<?php esc_html_e('Cancel', 'consentric'); ?>
 				</a>
 			</div>
@@ -129,14 +129,14 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 
 	<!-- Cookie DB status -->
 	<?php
-	$db_count = CSCC_Cookie_Scanner::db_count();
+	$cscc_db_count = CSCC_Cookie_Scanner::db_count();
 	?>
 	<p class="cscc-cookie-db-status">
 		<?php
 		printf(
 			/* translators: 1: number of cookies, 2: opening <a> tag, 3: closing </a> tag */
 			esc_html__( 'Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s.', 'consentric' ),
-			intval( $db_count ),
+			intval( $cscc_db_count ),
 			'<a href="https://github.com/jkwakman/Open-Cookie-Database" target="_blank" rel="noopener noreferrer">',
 			'</a>'
 		);
@@ -148,7 +148,7 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 		<h2 class="cscc-section-title" style="margin-top:0">
 			<?php esc_html_e('Cookie List', 'consentric'); ?>
 		</h2>
-		<?php if (!$edit_cookie): ?>
+		<?php if (!$cscc_edit_cookie): ?>
 			<button type="button" class="button" id="cscc-scan-btn">
 				<?php esc_html_e('Run Scanner', 'consentric'); ?>
 			</button>
@@ -161,11 +161,11 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 
 	<!-- Cookie table -->
 	<?php
-	// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table is a trusted prefix + constant
-	$cookies = $wpdb->get_results( "SELECT * FROM {$table} ORDER BY category, cookie_name" );
+	// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter -- $cscc_table is a trusted prefix + constant
+	$cscc_cookies = $wpdb->get_results( "SELECT * FROM {$cscc_table} ORDER BY category, cookie_name" );
 	?>
 
-	<?php if (empty($cookies)): ?>
+	<?php if (empty($cscc_cookies)): ?>
 		<p class="cscc-notice cscc-notice--info">
 			<?php esc_html_e('No cookies yet. Add one manually or run the scanner.', 'consentric'); ?>
 		</p>
@@ -182,30 +182,30 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($cookies as $cookie): ?>
+				<?php foreach ($cscc_cookies as $cscc_cookie): ?>
 					<tr>
-						<td><code><?php echo esc_html($cookie->cookie_name); ?></code></td>
+						<td><code><?php echo esc_html($cscc_cookie->cookie_name); ?></code></td>
 						<td>
-							<span class="cscc-cat-badge cscc-cat-<?php echo esc_attr($cookie->category); ?>">
-								<?php echo esc_html($categories[$cookie->category] ?? $cookie->category); ?>
+							<span class="cscc-cat-badge cscc-cat-<?php echo esc_attr($cscc_cookie->category); ?>">
+								<?php echo esc_html($cscc_categories[$cscc_cookie->category] ?? $cscc_cookie->category); ?>
 							</span>
 						</td>
-						<td><?php echo esc_html($cookie->service); ?></td>
-						<td><?php echo esc_html($cookie->duration); ?></td>
-						<td><?php echo esc_html($sources[$cookie->source] ?? $cookie->source); ?></td>
+						<td><?php echo esc_html($cscc_cookie->service); ?></td>
+						<td><?php echo esc_html($cscc_cookie->duration); ?></td>
+						<td><?php echo esc_html($cscc_sources[$cscc_cookie->source] ?? $cscc_cookie->source); ?></td>
 						<td class="cscc-row-actions">
 							<a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array(
 								'action' => 'edit_cookie',
-								'cookie_id' => $cookie->id,
-							), $page_url), 'cscc_edit_cookie')); ?>">
+								'cookie_id' => $cscc_cookie->id,
+							), $cscc_page_url), 'cscc_edit_cookie')); ?>">
 								<?php esc_html_e('Edit', 'consentric'); ?>
 							</a>
 							&nbsp;|&nbsp;
 							<a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array(
 								'action' => 'delete_cookie',
-								'cookie_id' => $cookie->id,
-							), $page_url), 'cscc_delete_cookie')); ?>" class="cscc-delete-link"
-								data-name="<?php echo esc_attr($cookie->cookie_name); ?>">
+								'cookie_id' => $cscc_cookie->id,
+							), $cscc_page_url), 'cscc_delete_cookie')); ?>" class="cscc-delete-link"
+								data-name="<?php echo esc_attr($cscc_cookie->cookie_name); ?>">
 								<?php esc_html_e('Delete', 'consentric'); ?>
 							</a>
 						</td>

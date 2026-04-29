@@ -71,20 +71,20 @@ if (!defined('ABSPATH')) {
 		<?php endif; ?>
 
 		<?php
-		$links = array();
+		$cscc_links = array();
 		if (!empty($privacy_url)) {
-			$links[] = '<li><a href="' . esc_url($privacy_url) . '">' . esc_html__('Privacy Policy', 'consentric') . '</a></li>';
+			$cscc_links[] = '<li><a href="' . esc_url($privacy_url) . '">' . esc_html__('Privacy Policy', 'consentric') . '</a></li>';
 		}
 		if (!empty($cookie_url)) {
-			$links[] = '<li><a href="' . esc_url($cookie_url) . '">' . esc_html__('Cookie Policy', 'consentric') . '</a></li>';
+			$cscc_links[] = '<li><a href="' . esc_url($cookie_url) . '">' . esc_html__('Cookie Policy', 'consentric') . '</a></li>';
 		}
 		if (!empty($imprint_url)) {
-			$links[] = '<li><a href="' . esc_url($imprint_url) . '">' . esc_html__('Imprint', 'consentric') . '</a></li>';
+			$cscc_links[] = '<li><a href="' . esc_url($imprint_url) . '">' . esc_html__('Imprint', 'consentric') . '</a></li>';
 		}
-		if (!empty($links)):
+		if (!empty($cscc_links)):
 			?>
 			<ul class="cscc-banner__links">
-				<?php echo wp_kses_post( implode( "\n\t\t\t\t", $links ) ); ?>
+				<?php echo wp_kses_post( implode( "\n\t\t\t\t", $cscc_links ) ); ?>
 			</ul>
 		<?php endif; ?>
 

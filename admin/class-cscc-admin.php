@@ -265,10 +265,11 @@ class CSCC_Admin {
 			return;
 		}
 
-		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- tab navigation, no data processing
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- tab navigation, no data processing
 		$active_tab = isset( $_GET['tab'] ) && array_key_exists( sanitize_key( wp_unslash( $_GET['tab'] ) ), self::TABS )
 			? sanitize_key( wp_unslash( $_GET['tab'] ) )
 			: 'general';
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
 		$settings_group = self::TABS[ $active_tab ];
 		?>

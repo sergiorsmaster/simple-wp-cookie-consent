@@ -3,10 +3,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$gtm_enabled  = get_option( 'cscc_gtm_enabled', '0' );
-$gtm_mode     = get_option( 'cscc_gtm_mode', 'basic' );
-$gtm_wait     = get_option( 'cscc_gtm_wait_for_update', '500' );
-$debug        = get_option( 'cscc_debug', '0' );
+$cscc_gtm_enabled = get_option( 'cscc_gtm_enabled', '0' );
+$cscc_gtm_mode    = get_option( 'cscc_gtm_mode', 'basic' );
+$cscc_gtm_wait    = get_option( 'cscc_gtm_wait_for_update', '500' );
+$cscc_debug       = get_option( 'cscc_debug', '0' );
 ?>
 <div class="cscc-tab-content">
 
@@ -26,7 +26,7 @@ $debug        = get_option( 'cscc_debug', '0' );
 			<label class="cscc-admin-toggle">
 				<input type="checkbox" name="cscc_gtm_enabled" value="1"
 					id="cscc_gtm_enabled"
-					<?php checked( '1', $gtm_enabled ); ?>>
+					<?php checked( '1', $cscc_gtm_enabled ); ?>>
 				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
@@ -36,7 +36,7 @@ $debug        = get_option( 'cscc_debug', '0' );
 	</div>
 
 	<!-- GTM options — shown only when enabled -->
-	<div class="cscc-gtm-options" <?php echo $gtm_enabled !== '1' ? 'style="display:none"' : ''; ?>>
+	<div class="cscc-gtm-options" <?php echo $cscc_gtm_enabled !== '1' ? 'style="display:none"' : ''; ?>>
 
 		<!-- Mode -->
 		<div class="cscc-field">
@@ -46,11 +46,11 @@ $debug        = get_option( 'cscc_debug', '0' );
 			<div class="cscc-field__control">
 				<div class="cscc-radio-group">
 
-					<label class="cscc-radio-card <?php echo $gtm_mode === 'basic' ? 'is-selected' : ''; ?>">
+					<label class="cscc-radio-card <?php echo $cscc_gtm_mode === 'basic' ? 'is-selected' : ''; ?>">
 						<div class="cscc-radio-card__header">
 							<input type="radio" name="cscc_gtm_mode" value="basic"
 								class="cscc-gtm-mode-radio"
-								<?php checked( $gtm_mode, 'basic' ); ?>>
+								<?php checked( $cscc_gtm_mode, 'basic' ); ?>>
 							<span class="cscc-radio-card__title">
 								<?php esc_html_e( 'Basic', 'consentric' ); ?>
 							</span>
@@ -63,11 +63,11 @@ $debug        = get_option( 'cscc_debug', '0' );
 						</p>
 					</label>
 
-					<label class="cscc-radio-card <?php echo $gtm_mode === 'advanced' ? 'is-selected' : ''; ?>">
+					<label class="cscc-radio-card <?php echo $cscc_gtm_mode === 'advanced' ? 'is-selected' : ''; ?>">
 						<div class="cscc-radio-card__header">
 							<input type="radio" name="cscc_gtm_mode" value="advanced"
 								class="cscc-gtm-mode-radio"
-								<?php checked( $gtm_mode, 'advanced' ); ?>>
+								<?php checked( $cscc_gtm_mode, 'advanced' ); ?>>
 							<span class="cscc-radio-card__title">
 								<?php esc_html_e( 'Advanced', 'consentric' ); ?>
 							</span>
@@ -88,7 +88,7 @@ $debug        = get_option( 'cscc_debug', '0' );
 			</label>
 			<div class="cscc-field__control">
 				<input type="number" id="cscc_gtm_wait_for_update" name="cscc_gtm_wait_for_update"
-					value="<?php echo esc_attr( $gtm_wait ); ?>"
+					value="<?php echo esc_attr( $cscc_gtm_wait ); ?>"
 					min="0" max="5000" step="100" style="width:100px">
 				<p class="description">
 					<?php esc_html_e( 'How long (in milliseconds) GTM waits for a consent update before firing tags. Default: 500.', 'consentric' ); ?>
@@ -280,7 +280,7 @@ $debug        = get_option( 'cscc_debug', '0' );
 		<div class="cscc-field__control">
 			<label class="cscc-admin-toggle">
 				<input type="checkbox" name="cscc_debug" value="1"
-					<?php checked( '1', $debug ); ?>>
+					<?php checked( '1', $cscc_debug ); ?>>
 				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">

@@ -39,7 +39,7 @@ if (!defined('ABSPATH')) {
 		<div class="cscc-modal__categories">
 
 			<?php
-			$categories = array(
+			$cscc_categories = array(
 				'necessary' => array(
 					'label' => __('Necessary', 'consentric'),
 					'description' => __('Required for the website to function properly. These cookies cannot be disabled.', 'consentric'),
@@ -62,30 +62,30 @@ if (!defined('ABSPATH')) {
 				),
 			);
 
-			foreach ($categories as $key => $cat):
+			foreach ($cscc_categories as $cscc_key => $cscc_cat):
 				?>
 				<div class="cscc-modal__category">
 					<div class="cscc-modal__category-header">
 						<span class="cscc-modal__category-name">
-							<?php echo esc_html($cat['label']); ?>
+							<?php echo esc_html($cscc_cat['label']); ?>
 						</span>
 
-						<?php if ($cat['always_on']): ?>
+						<?php if ($cscc_cat['always_on']): ?>
 							<span class="cscc-modal__always-on">
 								<?php esc_html_e('Always active', 'consentric'); ?>
 							</span>
 						<?php else: ?>
-							<label class="cscc-toggle" aria-label="<?php echo esc_attr($cat['label']); ?>">
+							<label class="cscc-toggle" aria-label="<?php echo esc_attr($cscc_cat['label']); ?>">
 								<input type="checkbox" role="switch" class="cscc-toggle__input"
-									name="cscc_<?php echo esc_attr($key); ?>" value="1"
-									data-category="<?php echo esc_attr($key); ?>">
+									name="cscc_<?php echo esc_attr($cscc_key); ?>" value="1"
+									data-category="<?php echo esc_attr($cscc_key); ?>">
 								<span class="cscc-toggle__slider"></span>
 							</label>
 						<?php endif; ?>
 					</div>
 
 					<p class="cscc-modal__category-desc">
-						<?php echo esc_html($cat['description']); ?>
+						<?php echo esc_html($cscc_cat['description']); ?>
 					</p>
 				</div>
 			<?php endforeach; ?>

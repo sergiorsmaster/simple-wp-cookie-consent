@@ -3,9 +3,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$current = get_option( 'cscc_jurisdiction', 'gdpr' );
+$cscc_current = get_option( 'cscc_jurisdiction', 'gdpr' );
 
-$jurisdictions = array(
+$cscc_jurisdictions = array(
 	'gdpr' => array(
 		'label'   => __( 'GDPR — European Union', 'consentric' ),
 		'model'   => __( 'Opt-in', 'consentric' ),
@@ -53,28 +53,28 @@ $jurisdictions = array(
 			</p>
 
 			<div class="cscc-jurisdiction-options">
-				<?php foreach ( $jurisdictions as $key => $data ) : ?>
-					<label class="cscc-jurisdiction-card <?php echo $current === $key ? 'is-selected' : ''; ?>">
+				<?php foreach ( $cscc_jurisdictions as $cscc_key => $cscc_data ) : ?>
+					<label class="cscc-jurisdiction-card <?php echo $cscc_current === $cscc_key ? 'is-selected' : ''; ?>">
 						<div class="cscc-jurisdiction-card__header">
 							<input
 								type="radio"
 								name="cscc_jurisdiction"
-								value="<?php echo esc_attr( $key ); ?>"
-								<?php checked( $current, $key ); ?>
+								value="<?php echo esc_attr( $cscc_key ); ?>"
+								<?php checked( $cscc_current, $cscc_key ); ?>
 								class="cscc-jurisdiction-radio">
 							<span class="cscc-jurisdiction-card__title">
-								<?php echo esc_html( $data['label'] ); ?>
+								<?php echo esc_html( $cscc_data['label'] ); ?>
 							</span>
-							<span class="cscc-jurisdiction-card__model cscc-model--<?php echo esc_attr( $key ); ?>">
-								<?php echo esc_html( $data['model'] ); ?>
+							<span class="cscc-jurisdiction-card__model cscc-model--<?php echo esc_attr( $cscc_key ); ?>">
+								<?php echo esc_html( $cscc_data['model'] ); ?>
 							</span>
 						</div>
 						<p class="cscc-jurisdiction-card__summary">
-							<?php echo esc_html( $data['summary'] ); ?>
+							<?php echo esc_html( $cscc_data['summary'] ); ?>
 						</p>
 						<ul class="cscc-jurisdiction-card__details">
-							<?php foreach ( $data['details'] as $detail ) : ?>
-								<li><?php echo esc_html( $detail ); ?></li>
+							<?php foreach ( $cscc_data['details'] as $cscc_detail ) : ?>
+								<li><?php echo esc_html( $cscc_detail ); ?></li>
 							<?php endforeach; ?>
 						</ul>
 					</label>
@@ -86,7 +86,7 @@ $jurisdictions = array(
 	<hr>
 
 	<!-- CCPA opt-out text — shown for all jurisdictions but most relevant to CCPA -->
-	<div class="cscc-field cscc-ccpa-field" style="<?php echo $current !== 'ccpa' ? 'display:none' : ''; ?>">
+	<div class="cscc-field cscc-ccpa-field" style="<?php echo $cscc_current !== 'ccpa' ? 'display:none' : ''; ?>">
 		<label class="cscc-field__label" for="cscc_ccpa_opt_out_text">
 			<?php esc_html_e( '"Do Not Sell" Button Label', 'consentric' ); ?>
 		</label>
