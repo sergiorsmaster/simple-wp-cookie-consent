@@ -154,7 +154,7 @@ $positions = array(
 				<label class="cscc-radio-card <?php echo get_option( 'cscc_button_style', 'outline' ) === 'outline' ? 'is-selected' : ''; ?>">
 					<div class="cscc-radio-card__header">
 						<input type="radio" name="cscc_button_style" value="outline"
-							class="ccscc-btn-style-radio"
+							class="cscc-btn-style-radio"
 							<?php checked( get_option( 'cscc_button_style', 'outline' ), 'outline' ); ?>>
 						<span class="cscc-radio-card__title"><?php esc_html_e( 'Outline', 'consentric' ); ?></span>
 						<span class="cscc-badge cscc-badge--blue"><?php esc_html_e( 'Recommended', 'consentric' ); ?></span>
@@ -167,7 +167,7 @@ $positions = array(
 				<label class="cscc-radio-card <?php echo get_option( 'cscc_button_style', 'outline' ) === 'ghost' ? 'is-selected' : ''; ?>">
 					<div class="cscc-radio-card__header">
 						<input type="radio" name="cscc_button_style" value="ghost"
-							class="ccscc-btn-style-radio"
+							class="cscc-btn-style-radio"
 							<?php checked( get_option( 'cscc_button_style', 'outline' ), 'ghost' ); ?>>
 						<span class="cscc-radio-card__title"><?php esc_html_e( 'Ghost', 'consentric' ); ?></span>
 					</div>
@@ -195,20 +195,20 @@ $positions = array(
 			<?php esc_html_e( 'Logo Source', 'consentric' ); ?>
 		</label>
 		<div class="cscc-field__control">
-			<?php $logo_source = get_option( 'ccscc_logo_source', 'custom' ); ?>
+			<?php $logo_source = get_option( 'cscc_logo_source', 'custom' ); ?>
 			<label style="display:block;margin-bottom:6px">
-				<input type="radio" name="ccscc_logo_source" value="none"
-					class="ccscc-logo-source-radio" <?php checked( $logo_source, 'none' ); ?>>
+				<input type="radio" name="cscc_logo_source" value="none"
+					class="cscc-logo-source-radio" <?php checked( $logo_source, 'none' ); ?>>
 				<?php esc_html_e( 'No logo', 'consentric' ); ?>
 			</label>
 			<label style="display:block;margin-bottom:6px">
-				<input type="radio" name="ccscc_logo_source" value="site"
-					class="ccscc-logo-source-radio" <?php checked( $logo_source, 'site' ); ?>>
+				<input type="radio" name="cscc_logo_source" value="site"
+					class="cscc-logo-source-radio" <?php checked( $logo_source, 'site' ); ?>>
 				<?php esc_html_e( 'Use site logo (set in Customizer)', 'consentric' ); ?>
 			</label>
 			<label style="display:block;margin-bottom:10px">
-				<input type="radio" name="ccscc_logo_source" value="custom"
-					class="ccscc-logo-source-radio" <?php checked( $logo_source, 'custom' ); ?>>
+				<input type="radio" name="cscc_logo_source" value="custom"
+					class="cscc-logo-source-radio" <?php checked( $logo_source, 'custom' ); ?>>
 				<?php esc_html_e( 'Custom upload', 'consentric' ); ?>
 			</label>
 		</div>
@@ -216,7 +216,7 @@ $positions = array(
 
 	<!-- Custom logo upload — shown only when source = custom -->
 	<?php $logo_url = get_option( 'cscc_logo_url', '' ); ?>
-	<div class="cscc-field ccscc-logo-custom-field" <?php echo $logo_source !== 'custom' ? 'style="display:none"' : ''; ?>>
+	<div class="cscc-field cscc-logo-custom-field" <?php echo $logo_source !== 'custom' ? 'style="display:none"' : ''; ?>>
 		<label class="cscc-field__label">
 			<?php esc_html_e( 'Upload Logo', 'consentric' ); ?>
 		</label>
@@ -224,12 +224,12 @@ $positions = array(
 			<div class="cscc-media-field">
 				<input type="hidden" id="cscc_logo_url" name="cscc_logo_url"
 					value="<?php echo esc_attr( $logo_url ); ?>">
-				<button type="button" class="button ccscc-media-select" data-target="#cscc_logo_url">
+				<button type="button" class="button cscc-media-select" data-target="#cscc_logo_url">
 					<?php esc_html_e( 'Select Image', 'consentric' ); ?>
 				</button>
-				<img src="<?php echo esc_url( $logo_url ); ?>" class="ccscc-logo-preview" alt=""
+				<img src="<?php echo esc_url( $logo_url ); ?>" class="cscc-logo-preview" alt=""
 					style="max-height:40px;vertical-align:middle;margin-left:8px;<?php echo $logo_url ? '' : 'display:none'; ?>">
-				<button type="button" class="button ccscc-media-remove" data-target="#cscc_logo_url"
+				<button type="button" class="button cscc-media-remove" data-target="#cscc_logo_url"
 					<?php echo $logo_url ? '' : 'style="display:none"'; ?>>
 					<?php esc_html_e( 'Remove', 'consentric' ); ?>
 				</button>

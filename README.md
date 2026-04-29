@@ -201,7 +201,7 @@ do_action( 'cscc_after_scan_complete', $cookies );
 apply_filters( 'cscc_banner_html', $html );
 apply_filters( 'cscc_default_consent', $defaults );      // modify GTM defaults
 apply_filters( 'cscc_cookie_categories', $categories );  // add/remove categories
-apply_filters( 'ccscc_consent_cookie_expiry', 365 );      // days
+apply_filters( 'cscc_consent_cookie_expiry', 365 );      // days
 ```
 
 > These hooks are defined in the architecture plan but not yet implemented in the codebase. PRs welcome.

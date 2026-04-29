@@ -168,7 +168,7 @@ class CSCC_Admin {
 			'cscc_banner_text'           => 'sanitize_textarea_field',
 			'cscc_accept_label'          => 'sanitize_text_field',
 			'cscc_deny_label'            => 'sanitize_text_field',
-			'ccscc_preferences_label'     => 'sanitize_text_field',
+			'cscc_preferences_label'     => 'sanitize_text_field',
 			'cscc_modal_title'           => 'sanitize_text_field',
 			'cscc_modal_intro'           => 'sanitize_textarea_field',
 			'cscc_modal_save_label'      => 'sanitize_text_field',
@@ -184,7 +184,7 @@ class CSCC_Admin {
 		// Appearance
 		foreach ( array(
 			'cscc_position'            => 'cscc_sanitize_position',
-			'ccscc_logo_source'         => 'cscc_sanitize_logo_source',
+			'cscc_logo_source'         => 'cscc_sanitize_logo_source',
 			'cscc_logo_url'            => 'esc_url_raw',
 			'cscc_color_bg'            => 'sanitize_hex_color',
 			'cscc_color_text'          => 'sanitize_hex_color',
@@ -230,14 +230,14 @@ class CSCC_Admin {
 
 		wp_enqueue_style(
 			'cscc-admin',
-			CSCC_PLUGIN_URL . 'admin/assets/admin.css',
+			CSCC_PLUGIN_URL . 'admin/assets/cscc-admin.css',
 			array(),
 			CSCC_VERSION
 		);
 
 		wp_enqueue_script(
 			'cscc-admin',
-			CSCC_PLUGIN_URL . 'admin/assets/admin.js',
+			CSCC_PLUGIN_URL . 'admin/assets/cscc-admin.js',
 			array( 'jquery' ),
 			CSCC_VERSION,
 			true

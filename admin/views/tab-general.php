@@ -11,10 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php esc_html_e( 'Enable Cookie Banner', 'consentric' ); ?>
 		</label>
 		<div class="cscc-field__control">
-			<label class="ccscc-admin-toggle">
+			<label class="cscc-admin-toggle">
 				<input type="checkbox" name="cscc_enabled" value="1"
 					<?php checked( '1', get_option( 'cscc_enabled', '1' ) ); ?>>
-				<span class="ccscc-admin-toggle__slider"></span>
+				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
 				<?php esc_html_e( 'Show the cookie consent banner on the frontend.', 'consentric' ); ?>
@@ -69,12 +69,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 
 	<div class="cscc-field">
-		<label class="cscc-field__label" for="ccscc_preferences_label">
+		<label class="cscc-field__label" for="cscc_preferences_label">
 			<?php esc_html_e( 'Preferences Button Label', 'consentric' ); ?>
 		</label>
 		<div class="cscc-field__control">
-			<input type="text" id="ccscc_preferences_label" name="ccscc_preferences_label" class="regular-text"
-				value="<?php echo esc_attr( get_option( 'ccscc_preferences_label', __( 'Preferences', 'consentric' ) ) ); ?>">
+			<input type="text" id="cscc_preferences_label" name="cscc_preferences_label" class="regular-text"
+				value="<?php echo esc_attr( get_option( 'cscc_preferences_label', __( 'Preferences', 'consentric' ) ) ); ?>">
 		</div>
 	</div>
 
@@ -180,10 +180,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php esc_html_e( 'Floating Preferences Icon', 'consentric' ); ?>
 		</label>
 		<div class="cscc-field__control">
-			<label class="ccscc-admin-toggle">
+			<label class="cscc-admin-toggle">
 				<input type="checkbox" name="cscc_show_preferences_icon" value="1"
 					<?php checked( '1', get_option( 'cscc_show_preferences_icon', '1' ) ); ?>>
-				<span class="ccscc-admin-toggle__slider"></span>
+				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
 				<?php esc_html_e( 'Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [cscc_preferences] shortcode instead.', 'consentric' ); ?>

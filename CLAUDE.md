@@ -141,7 +141,7 @@ consentric/
 | `cscc_banner_text` | General | textarea | *(long default)* |
 | `cscc_accept_label` | General | text | `'Accept All'` |
 | `cscc_deny_label` | General | text | `'Deny All'` |
-| `ccscc_preferences_label` | General | text | `'Preferences'` |
+| `cscc_preferences_label` | General | text | `'Preferences'` |
 | `cscc_modal_title` | General | text | `'Cookie Preferences'` |
 | `cscc_modal_intro` | General | textarea | *(long default)* |
 | `cscc_modal_save_label` | General | text | `'Save Preferences'` |
@@ -154,7 +154,7 @@ consentric/
 | `cscc_color_bg` | Appearance | color | `'#ffffff'` |
 | `cscc_color_text` | Appearance | color | `'#111111'` |
 | `cscc_color_accent` | Appearance | color | `'#0073aa'` |
-| `ccscc_logo_source` | Appearance | select | `'custom'` |
+| `cscc_logo_source` | Appearance | select | `'custom'` |
 | `cscc_logo_url` | Appearance | URL | `''` |
 | `cscc_border_radius` | Appearance | number | `'6'` |
 | `cscc_banner_max_width` | Appearance | number | `'200'` |

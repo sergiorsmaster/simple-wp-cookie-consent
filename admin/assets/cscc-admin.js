@@ -10,13 +10,13 @@
 	var mediaFrame;
 
 	// "Select Image" button — opens the WP media library
-	$( document ).on( 'click', '.ccscc-media-select', function ( e ) {
+	$( document ).on( 'click', '.cscc-media-select', function ( e ) {
 		e.preventDefault();
 
 		var $btn    = $( this );
 		var $input  = $( $btn.data( 'target' ) );
-		var $remove = $btn.siblings( '.ccscc-media-remove' );
-		var $preview = $btn.closest( '.cscc-field__control' ).find( '.ccscc-logo-preview' );
+		var $remove = $btn.siblings( '.cscc-media-remove' );
+		var $preview = $btn.closest( '.cscc-field__control' ).find( '.cscc-logo-preview' );
 
 		if ( mediaFrame ) {
 			mediaFrame.open();
@@ -41,12 +41,12 @@
 	} );
 
 	// "Remove" button — clears the logo field
-	$( document ).on( 'click', '.ccscc-media-remove', function ( e ) {
+	$( document ).on( 'click', '.cscc-media-remove', function ( e ) {
 		e.preventDefault();
 
 		var $btn     = $( this );
 		var $input   = $( $btn.data( 'target' ) );
-		var $preview = $btn.closest( '.cscc-field__control' ).find( '.ccscc-logo-preview' );
+		var $preview = $btn.closest( '.cscc-field__control' ).find( '.cscc-logo-preview' );
 
 		$input.val( '' );
 		$preview.attr( 'src', '' ).hide();
@@ -81,17 +81,17 @@
 	} );
 
 	// Appearance tab — button style radio cards
-	$( document ).on( 'change', '.ccscc-btn-style-radio', function () {
+	$( document ).on( 'change', '.cscc-btn-style-radio', function () {
 		$( '.cscc-radio-card' ).removeClass( 'is-selected' );
 		$( this ).closest( '.cscc-radio-card' ).addClass( 'is-selected' );
 	} );
 
 	// Appearance tab — logo source radio → show/hide custom upload field
-	$( document ).on( 'change', '.ccscc-logo-source-radio', function () {
+	$( document ).on( 'change', '.cscc-logo-source-radio', function () {
 		if ( $( this ).val() === 'custom' ) {
-			$( '.ccscc-logo-custom-field' ).show();
+			$( '.cscc-logo-custom-field' ).show();
 		} else {
-			$( '.ccscc-logo-custom-field' ).hide();
+			$( '.cscc-logo-custom-field' ).hide();
 		}
 	} );
 

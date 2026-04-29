@@ -180,7 +180,7 @@ $page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies'
 					<tr>
 						<td><code><?php echo esc_html($cookie->cookie_name); ?></code></td>
 						<td>
-							<span class="ccscc-cat-badge cscc-cat-<?php echo esc_attr($cookie->category); ?>">
+							<span class="cscc-cat-badge cscc-cat-<?php echo esc_attr($cookie->category); ?>">
 								<?php echo esc_html($categories[$cookie->category] ?? $cookie->category); ?>
 							</span>
 						</td>

@@ -155,9 +155,9 @@ class CSCC_Public
 		$text = CSCC_Polylang::translate('cscc_banner_text', __('We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'consentric'));
 		$accept_label = CSCC_Polylang::translate('cscc_accept_label', __('Accept All', 'consentric'));
 		$deny_label = CSCC_Polylang::translate('cscc_deny_label', __('Deny All', 'consentric'));
-		$prefs_label = CSCC_Polylang::translate('ccscc_preferences_label', __('Preferences', 'consentric'));
+		$prefs_label = CSCC_Polylang::translate('cscc_preferences_label', __('Preferences', 'consentric'));
 		$ccpa_text = CSCC_Polylang::translate('cscc_ccpa_opt_out_text', __('Do Not Sell My Personal Information', 'consentric'));
-		$logo_source = get_option('ccscc_logo_source', 'custom');
+		$logo_source = get_option('cscc_logo_source', 'custom');
 		if ('site' === $logo_source) {
 			$logo_id = get_theme_mod('custom_logo');
 			$logo_url = $logo_id ? wp_get_attachment_image_url($logo_id, 'medium') : '';

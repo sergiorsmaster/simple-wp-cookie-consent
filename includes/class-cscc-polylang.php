@@ -27,7 +27,7 @@ class CSCC_Polylang {
 		'cscc_banner_text'         => 'Banner text',
 		'cscc_accept_label'        => 'Accept button label',
 		'cscc_deny_label'          => 'Deny button label',
-		'ccscc_preferences_label'   => 'Preferences button label',
+		'cscc_preferences_label'   => 'Preferences button label',
 		'cscc_modal_title'         => 'Modal title',
 		'cscc_modal_intro'         => 'Modal description',
 		'cscc_modal_save_label'    => 'Modal save button label',

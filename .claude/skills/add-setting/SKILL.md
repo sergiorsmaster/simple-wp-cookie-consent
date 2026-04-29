@@ -68,7 +68,7 @@ Add the field HTML following the existing `.cscc-field` pattern:
         <?php esc_html_e( 'Field Label', 'consentric' ); ?>
     </label>
     <div class="cscc-field__control">
-        <input type="text" id="cscc_my_option" name="ccscc_my_option"
+        <input type="text" id="cscc_my_option" name="cscc_my_option"
             value="<?php echo esc_attr( $my_option ); ?>">
         <p class="description">
             <?php esc_html_e( 'Helper text describing this field.', 'consentric' ); ?>
@@ -77,8 +77,8 @@ Add the field HTML following the existing `.cscc-field` pattern:
 </div>
 ```
 
-For a toggle, use the `.ccscc-admin-toggle` pattern (see existing toggles in any tab view).
-For a select, use `<select name="ccscc_my_option">` with `selected()` helper on each `<option>`.
+For a toggle, use the `.cscc-admin-toggle` pattern (see existing toggles in any tab view).
+For a select, use `<select name="cscc_my_option">` with `selected()` helper on each `<option>`.
 
 **Security reminder:** All output must be escaped (`esc_html()`, `esc_attr()`, `esc_url()`). For page selector dropdowns, wrap `selected` with `absint()` and `show_option_none` with `esc_html__()`. See full rules in `CLAUDE.md` under "WordPress Security Rules".
 

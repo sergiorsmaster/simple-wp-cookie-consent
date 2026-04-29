@@ -23,11 +23,11 @@ $debug        = get_option( 'cscc_debug', '0' );
 			<?php esc_html_e( 'Enable GTM Consent Mode v2', 'consentric' ); ?>
 		</label>
 		<div class="cscc-field__control">
-			<label class="ccscc-admin-toggle">
+			<label class="cscc-admin-toggle">
 				<input type="checkbox" name="cscc_gtm_enabled" value="1"
 					id="cscc_gtm_enabled"
 					<?php checked( '1', $gtm_enabled ); ?>>
-				<span class="ccscc-admin-toggle__slider"></span>
+				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
 				<?php esc_html_e( 'Injects gtag consent defaults before GTM loads and updates signals when the visitor makes a choice.', 'consentric' ); ?>
@@ -278,10 +278,10 @@ $debug        = get_option( 'cscc_debug', '0' );
 			<?php esc_html_e( 'Debug Mode', 'consentric' ); ?>
 		</label>
 		<div class="cscc-field__control">
-			<label class="ccscc-admin-toggle">
+			<label class="cscc-admin-toggle">
 				<input type="checkbox" name="cscc_debug" value="1"
 					<?php checked( '1', $debug ); ?>>
-				<span class="ccscc-admin-toggle__slider"></span>
+				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
 				<?php esc_html_e( 'Log all consent actions to the browser console prefixed with [SCC]. Disable on production.', 'consentric' ); ?>
