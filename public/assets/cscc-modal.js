@@ -11,15 +11,15 @@
 	'use strict';
 
 	var SCC   = window.SimpleCookieConsent;
-	var modal = document.getElementById( 'scc-modal' );
+	var modal = document.getElementById( 'cscc-modal' );
 
 	if ( ! SCC || ! modal ) return;
 
-	var overlay  = document.getElementById( 'scc-modal-overlay' );
-	var btnClose = document.getElementById( 'scc-modal-close' );
-	var btnSave  = document.getElementById( 'scc-modal-save' );
-	var btnDeny  = document.getElementById( 'scc-modal-deny' );
-	var inputs   = modal.querySelectorAll( '.scc-toggle__input[data-category]' );
+	var overlay  = document.getElementById( 'cscc-modal-overlay' );
+	var btnClose = document.getElementById( 'cscc-modal-close' );
+	var btnSave  = document.getElementById( 'cscc-modal-save' );
+	var btnDeny  = document.getElementById( 'cscc-modal-deny' );
+	var inputs   = modal.querySelectorAll( '.cscc-toggle__input[data-category]' );
 
 	/** Element that had focus before the modal opened — restored on close. */
 	var lastFocusedElement = null;
@@ -106,9 +106,9 @@
 	// Open when Preferences button fires the custom event
 	document.addEventListener( 'scc:openPreferences', openModal );
 
-	// Delegated listener for [data-scc-action="open-preferences"] links (shortcodes, etc.)
+	// Delegated listener for [data-cscc-action="open-preferences"] links (shortcodes, etc.)
 	document.addEventListener( 'click', function ( e ) {
-		var trigger = e.target.closest( '[data-scc-action="open-preferences"]' );
+		var trigger = e.target.closest( '[data-cscc-action="open-preferences"]' );
 		if ( trigger ) {
 			e.preventDefault();
 			openModal();
@@ -135,7 +135,7 @@
 		}
 
 		if ( e.key === 'Tab' ) {
-			var focusable = getFocusable( modal.querySelector( '.scc-modal__box' ) || modal );
+			var focusable = getFocusable( modal.querySelector( '.cscc-modal__box' ) || modal );
 			if ( ! focusable.length ) return;
 
 			var first = focusable[ 0 ];

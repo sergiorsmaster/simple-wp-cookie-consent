@@ -2,7 +2,7 @@
 /**
  * WP Consent Level API integration.
  *
- * Bridges our scc_consent cookie to the WP Consent Level API so that
+ * Bridges our cscc_consent cookie to the WP Consent Level API so that
  * third-party plugins (e.g. Site Kit) can read consent without knowing
  * anything about Consentric.
  *
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class SCC_WP_Consent_API {
+class CSCC_WP_Consent_API {
 
 	/**
 	 * Maps our category slugs to WP Consent API consent types.
@@ -40,15 +40,15 @@ class SCC_WP_Consent_API {
 	}
 
 	/**
-	 * Push current scc_consent cookie values into the WP Consent API.
+	 * Push current cscc_consent cookie values into the WP Consent API.
 	 */
 	public static function sync_consent() {
 		if ( ! function_exists( 'wp_set_consent' ) ) {
 			return;
 		}
 
-		foreach ( self::$category_map as $scc_category => $wp_type ) {
-			$value = SCC_Consent_Store::has_consent( $scc_category ) ? 'allow' : 'deny';
+		foreach ( self::$category_map as $cscc_category => $wp_type ) {
+			$value = CSCC_Consent_Store::has_consent( $cscc_category ) ? 'allow' : 'deny';
 			wp_set_consent( $wp_type, $value );
 		}
 	}

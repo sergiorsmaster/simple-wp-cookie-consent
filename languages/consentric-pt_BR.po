@@ -170,8 +170,8 @@ msgstr "Página de Aviso Legal"
 msgid "Floating Preferences Icon"
 msgstr "Ícone Flutuante de Preferências"
 
-msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [scc_preferences] shortcode instead."
-msgstr "Exibir um pequeno ícone de cookie na página após o consentimento ser salvo, para que os visitantes possam alterar suas preferências a qualquer momento. Você também pode usar o shortcode [scc_preferences]."
+msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [cscc_preferences] shortcode instead."
+msgstr "Exibir um pequeno ícone de cookie na página após o consentimento ser salvo, para que os visitantes possam alterar suas preferências a qualquer momento. Você também pode usar o shortcode [cscc_preferences]."
 
 msgid "Banner Position"
 msgstr "Posição do Banner"

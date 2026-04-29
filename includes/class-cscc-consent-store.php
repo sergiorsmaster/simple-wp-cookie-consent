@@ -2,34 +2,64 @@
 /**
  * Server-side consent reader.
  *
- * Reads the scc_consent cookie set by the JS layer so PHP can gate
+ * Reads the cscc_consent cookie set by the JS layer so PHP can gate
  * server-rendered output (e.g. embeds) on consent status.
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class SCC_Consent_Store {
+class CSCC_Consent_Store {
 
-	const COOKIE_NAME = 'scc_consent';
+	const COOKIE_NAME = 'cscc_consent';
 
 	/**
 	 * Returns the full consent array from the cookie, or null if not set.
 	 *
 	 * @return array|null
 	 */
+	/** Allowed keys in the consent cookie and their sanitization type. */
+	private static $allowed_keys = array(
+		'necessary'  => 'bool',
+		'analytics'  => 'bool',
+		'marketing'  => 'bool',
+		'functional' => 'bool',
+		'timestamp'  => 'int',
+		'version'    => 'string',
+	);
+
 	public static function get_consent() {
 		if ( empty( $_COOKIE[ self::COOKIE_NAME ] ) ) {
 			return null;
 		}
 
-		$data = json_decode( wp_unslash( $_COOKIE[ self::COOKIE_NAME ] ), true ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		$raw  = sanitize_text_field( wp_unslash( $_COOKIE[ self::COOKIE_NAME ] ) );
+		$data = json_decode( $raw, true );
 
 		if ( ! is_array( $data ) ) {
 			return null;
 		}
 
-		return $data;
+		// Whitelist keys and sanitize each value by expected type.
+		$clean = array();
+		foreach ( self::$allowed_keys as $key => $type ) {
+			if ( ! array_key_exists( $key, $data ) ) {
+				continue;
+			}
+			switch ( $type ) {
+				case 'bool':
+					$clean[ $key ] = (bool) $data[ $key ];
+					break;
+				case 'int':
+					$clean[ $key ] = absint( $data[ $key ] );
+					break;
+				case 'string':
+					$clean[ $key ] = sanitize_text_field( (string) $data[ $key ] );
+					break;
+			}
+		}
+
+		return ! empty( $clean ) ? $clean : null;
 	}
 
 	/**

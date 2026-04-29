@@ -1,7 +1,7 @@
 /**
  * SCC Consent Storage
  *
- * Handles reading and writing the scc_consent cookie from the browser.
+ * Handles reading and writing the cscc_consent cookie from the browser.
  * This module is the single source of truth for consent state on the client.
  *
  * Cookie format (JSON, 1 year, SameSite=Lax):
@@ -14,7 +14,7 @@
  *   "version": "1"
  * }
  *
- * Debug mode: set sccSettings.debug = true (passed from PHP via wp_localize_script).
+ * Debug mode: set csccSettings.debug = true (passed from PHP via wp_localize_script).
  * When enabled, all consent actions are logged to the browser console.
  */
 
@@ -22,12 +22,12 @@ window.SimpleCookieConsent = window.SimpleCookieConsent || {};
 
 (function ( SCC ) {
 
-	var COOKIE_NAME    = 'scc_consent';
+	var COOKIE_NAME    = 'cscc_consent';
 	var COOKIE_VERSION = '1';
 	var COOKIE_DAYS    = 365;
 
-	// Debug flag — set by PHP via wp_localize_script as window.sccSettings.debug
-	var debug = window.sccSettings && window.sccSettings.debug;
+	// Debug flag — set by PHP via wp_localize_script as window.csccSettings.debug
+	var debug = window.csccSettings && window.csccSettings.debug;
 
 	/** Internal logger — only outputs when debug mode is on. */
 	SCC.log = function () {
@@ -101,7 +101,7 @@ window.SimpleCookieConsent = window.SimpleCookieConsent || {};
 		_writeCookie( COOKIE_NAME, JSON.stringify( consent ), COOKIE_DAYS );
 		SCC.log( 'saveConsent: saved →', consent );
 
-		document.dispatchEvent( new CustomEvent( 'scc:consentUpdated', { detail: consent } ) );
+		document.dispatchEvent( new CustomEvent( 'cscc:consentUpdated', { detail: consent } ) );
 	};
 
 	/**

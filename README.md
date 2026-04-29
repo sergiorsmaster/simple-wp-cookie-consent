@@ -1,4 +1,4 @@
-# Consentric — Truly Free Cookie Consent
+# Consentric — Simple Cookie Consent
 
 A free, open-source WordPress cookie consent banner plugin. No Pro tier, no subscription, no tracking.
 
@@ -15,8 +15,8 @@ Built for small businesses and developers who need solid GDPR/LGPD/CCPA complian
 - Google Tag Manager Consent Mode v2 (Basic and Advanced)
 - GDPR, LGPD, and CCPA jurisdiction modes
 - Cookie scanner with [Open Cookie Database](https://github.com/jkwakman/Open-Cookie-Database) lookup
-- Floating preferences icon and `[scc_preferences]` shortcode
-- `[scc_cookie_list]` shortcode for displaying scanned cookies
+- Floating preferences icon and `[cscc_preferences]` shortcode
+- `[cscc_cookie_list]` shortcode for displaying scanned cookies
 - WP Consent Level API integration
 - Polylang compatible
 - Accessible (WCAG 2.1 AA): focus trap, `role="dialog"`, `role="switch"`, keyboard navigation
@@ -122,18 +122,18 @@ consentric/
 ├── CLAUDE.md                       AI developer working agreement + task list
 │
 ├── includes/
-│   ├── class-scc-activator.php     Activation: create DB table, seed defaults
-│   ├── class-scc-deactivator.php   Deactivation hook
-│   ├── class-scc-consent-store.php PHP consent cookie reader
-│   ├── class-scc-cookie-scanner.php Cookie detection + Open Cookie Database lookup
-│   ├── class-scc-polylang.php      Polylang string registration/retrieval
-│   ├── class-scc-shortcodes.php    [scc_cookie_list] and [scc_preferences]
-│   ├── class-scc-wp-consent-api.php WP Consent Level API bridge
+│   ├── class-cscc-activator.php     Activation: create DB table, seed defaults
+│   ├── class-cscc-deactivator.php   Deactivation hook
+│   ├── class-cscc-consent-store.php PHP consent cookie reader
+│   ├── class-cscc-cookie-scanner.php Cookie detection + Open Cookie Database lookup
+│   ├── class-cscc-polylang.php      Polylang string registration/retrieval
+│   ├── class-cscc-shortcodes.php    [cscc_cookie_list] and [cscc_preferences]
+│   ├── class-cscc-wp-consent-api.php WP Consent Level API bridge
 │   └── data/
 │       └── open-cookie-database.csv Bundled cookie definitions (2 000+ entries)
 │
 ├── admin/
-│   ├── class-scc-admin.php         Admin menu, settings registration, AJAX handlers
+│   ├── class-cscc-admin.php         Admin menu, settings registration, AJAX handlers
 │   ├── assets/
 │   │   ├── admin.css
 │   │   └── admin.js
@@ -146,13 +146,13 @@ consentric/
 │       └── tab-help.php            CSS reference, shortcode docs, JS API docs
 │
 └── public/
-    ├── class-scc-public.php        Frontend hooks, banner/modal rendering
+    ├── class-cscc-public.php        Frontend hooks, banner/modal rendering
     ├── assets/
-    │   ├── scc-consent.js          Core consent storage (cookie read/write)
-    │   ├── scc-banner.js           Banner show/hide, button wiring, focus management
-    │   ├── scc-modal.js            Preferences modal open/close, focus trap
-    │   ├── scc-gtm.js              GTM Consent Mode v2 bridge
-    │   └── scc-banner.css          All frontend styles (banner + modal + icon)
+    │   ├── cscc-consent.js          Core consent storage (cookie read/write)
+    │   ├── cscc-banner.js           Banner show/hide, button wiring, focus management
+    │   ├── cscc-modal.js            Preferences modal open/close, focus trap
+    │   ├── cscc-gtm.js              GTM Consent Mode v2 bridge
+    │   └── cscc-banner.css          All frontend styles (banner + modal + icon)
     └── views/
         ├── banner.php              Banner HTML template
         ├── modal.php               Preferences modal HTML template
@@ -175,10 +175,10 @@ All methods are available on `window.SimpleCookieConsent`:
 | `hasConsent( category )` | Returns `true` if consent granted for the given category |
 | `hasInteracted()` | Returns `true` if the visitor has made a consent choice |
 
-**`scc:consentUpdated`** — `CustomEvent` fired on `document` after any consent save:
+**`cscc:consentUpdated`** — `CustomEvent` fired on `document` after any consent save:
 
 ```js
-document.addEventListener('scc:consentUpdated', function () {
+document.addEventListener('cscc:consentUpdated', function () {
     if ( SimpleCookieConsent.hasConsent('analytics') ) {
         // initialise analytics
     }
@@ -189,19 +189,19 @@ document.addEventListener('scc:consentUpdated', function () {
 
 ## Hooks & Filters
 
-Custom hooks for extensibility (all prefixed `scc_`):
+Custom hooks for extensibility (all prefixed `cscc_`):
 
 ```php
 // Actions
-do_action( 'scc_before_banner' );
-do_action( 'scc_after_consent_saved', $consent_data );
-do_action( 'scc_after_scan_complete', $cookies );
+do_action( 'cscc_before_banner' );
+do_action( 'cscc_after_consent_saved', $consent_data );
+do_action( 'cscc_after_scan_complete', $cookies );
 
 // Filters
-apply_filters( 'scc_banner_html', $html );
-apply_filters( 'scc_default_consent', $defaults );      // modify GTM defaults
-apply_filters( 'scc_cookie_categories', $categories );  // add/remove categories
-apply_filters( 'scc_consent_cookie_expiry', 365 );      // days
+apply_filters( 'cscc_banner_html', $html );
+apply_filters( 'cscc_default_consent', $defaults );      // modify GTM defaults
+apply_filters( 'cscc_cookie_categories', $categories );  // add/remove categories
+apply_filters( 'cscc_consent_cookie_expiry', 365 );      // days
 ```
 
 > These hooks are defined in the architecture plan but not yet implemented in the codebase. PRs welcome.

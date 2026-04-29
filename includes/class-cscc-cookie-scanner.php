@@ -3,17 +3,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class SCC_Cookie_Scanner {
+class CSCC_Cookie_Scanner {
 
 	/** Transient key for the parsed CSV index. */
-	const DB_TRANSIENT = 'scc_cookie_db_index';
+	const DB_TRANSIENT = 'cscc_cookie_db_index';
 
 	/** How long to cache the parsed index (24 hours). */
 	const DB_TRANSIENT_TTL = DAY_IN_SECONDS;
 
 	/** Path to the bundled CSV. */
 	private static function csv_path() {
-		return SCC_PLUGIN_DIR . 'includes/data/open-cookie-database.csv';
+		return CSCC_PLUGIN_DIR . 'includes/data/open-cookie-database.csv';
 	}
 
 	// -------------------------------------------------------------------------
@@ -183,7 +183,7 @@ class SCC_Cookie_Scanner {
 
 	private static function save_new_cookies( array $names, $source ) {
 		global $wpdb;
-		$table = $wpdb->prefix . 'scc_cookies';
+		$table = $wpdb->prefix . 'cscc_cookies';
 
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table uses trusted prefix
 		$existing = $wpdb->get_col( "SELECT cookie_name FROM {$table}" );
@@ -267,6 +267,6 @@ class SCC_Cookie_Scanner {
 		'_hj'         => array( 'category' => 'analytics',  'service' => 'Hotjar',            'duration' => '1 year',     'description' => 'Sets a unique ID for the session. This allows the website to obtain data on visitor behaviour for statistical purposes.' ),
 		'__cf_bm'     => array( 'category' => 'necessary',  'service' => 'Cloudflare',        'duration' => '30 minutes', 'description' => 'Used by Cloudflare Bot Management to identify legitimate bots.' ),
 		'__cfruid'    => array( 'category' => 'necessary',  'service' => 'Cloudflare',        'duration' => 'Session',    'description' => 'Used by Cloudflare to identify trusted web traffic.' ),
-		'scc_consent' => array( 'category' => 'necessary',  'service' => 'Consentric', 'duration' => '1 year', 'description' => 'Stores the visitor\'s cookie consent preferences.' ),
+		'cscc_consent' => array( 'category' => 'necessary',  'service' => 'Consentric', 'duration' => '1 year', 'description' => 'Stores the visitor\'s cookie consent preferences.' ),
 	);
 }

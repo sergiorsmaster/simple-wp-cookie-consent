@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class SCC_Deactivator {
+class CSCC_Deactivator {
 
 	public static function deactivate() {
 		// Nothing to do on deactivation.

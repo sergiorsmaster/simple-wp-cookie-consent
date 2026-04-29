@@ -1,16 +1,16 @@
 <?php
 /**
  * Floating "cookie settings" icon template.
- * Only rendered when scc_show_preferences_icon is enabled.
+ * Only rendered when cscc_show_preferences_icon is enabled.
  * Visibility is controlled by JS — hidden until consent is stored.
  */
 if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
-<button id="scc-preferences-icon" class="scc-preferences-icon"
+<button id="cscc-preferences-icon" class="cscc-preferences-icon"
 	aria-label="<?php esc_attr_e('Cookie Settings', 'consentric'); ?>" style="display:none"
-	data-scc-action="open-preferences">
+	data-cscc-action="open-preferences">
 	<svg width="20" height="20" fill="currentColor" aria-hidden="true"
 		xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 		viewBox="0 0 120.23 122.88">

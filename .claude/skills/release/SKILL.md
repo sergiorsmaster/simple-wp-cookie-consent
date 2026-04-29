@@ -29,7 +29,7 @@ git checkout -b release/v$ARGUMENTS
 
 Open `consentric.php` and update **both** of these lines:
 - The plugin header comment: `* Version: X.X.X`
-- The PHP constant:          `define('SCC_VERSION', 'X.X.X')`
+- The PHP constant:          `define('CSCC_VERSION', 'X.X.X')`
 
 Open `readme.txt` and update:
 - `Stable tag: X.X.X`

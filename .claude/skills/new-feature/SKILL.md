@@ -46,7 +46,7 @@ chore: mark FEAT-XX as in progress
 ## Step 4 — Implement
 
 Follow the acceptance criteria from Step 1. Adhere to all code conventions and **WordPress Security Rules** documented in `CLAUDE.md`. Key rules:
-- PHP prefix `scc_` on all functions, classes, hooks, and options
+- PHP prefix `cscc_` on all functions, classes, hooks, and options
 - JS namespace `window.SimpleCookieConsent`
 - Text domain `consentric` — wrap all user-facing strings with `__()` / `esc_html__()`
 - No inline styles in PHP templates — use CSS files or `wp_add_inline_style`
@@ -57,7 +57,7 @@ Follow the acceptance criteria from Step 1. Adhere to all code conventions and *
 - **Sanitize all input** — `wp_unslash()` before sanitizing `$_GET`/`$_POST`/`$_COOKIE`
 - **Nonce verification** on all form processing; `// phpcs:ignore` with reason for read-only params
 - **`wp_safe_redirect()`** instead of `wp_redirect()`
-- **No inline JS event handlers** — use `data-scc-action` + delegated listeners
+- **No inline JS event handlers** — use `data-cscc-action` + delegated listeners
 - **`$wpdb` direct queries** must have `// phpcs:ignore` comments
 
 **Show the user each significant piece of code before committing.**

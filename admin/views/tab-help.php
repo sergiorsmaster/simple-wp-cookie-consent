@@ -3,16 +3,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="scc-tab-content">
+<div class="cscc-tab-content">
 
 	<!-- =========================================================
 	     CSS Classes & Custom Properties
 	     ========================================================= -->
-	<h2 class="scc-section-title"><?php esc_html_e( 'CSS Classes &amp; Custom Properties', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'CSS Classes &amp; Custom Properties', 'consentric' ); ?></h2>
 	<p><?php esc_html_e( 'Use the WordPress built-in CSS editor (Appearance → Customize → Additional CSS) or enqueue your own stylesheet to target these selectors.', 'consentric' ); ?></p>
 
 	<h3><?php esc_html_e( 'Key selectors', 'consentric' ); ?></h3>
-	<table class="widefat striped scc-help-table">
+	<table class="widefat striped cscc-help-table">
 		<thead>
 			<tr>
 				<th><?php esc_html_e( 'Selector', 'consentric' ); ?></th>
@@ -20,22 +20,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</tr>
 		</thead>
 		<tbody>
-			<tr><td><code>.scc-banner</code></td><td><?php esc_html_e( 'The main banner container', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-banner__title</code></td><td><?php esc_html_e( 'Banner headline text', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-banner__text</code></td><td><?php esc_html_e( 'Banner body text', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-btn--accept</code></td><td><?php esc_html_e( 'Accept All button', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-btn--deny</code></td><td><?php esc_html_e( 'Deny All button', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-btn--preferences</code></td><td><?php esc_html_e( 'Preferences button', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-banner__links</code></td><td><?php esc_html_e( 'Legal page links list (ul). Each link is a li > a.', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-modal__box</code></td><td><?php esc_html_e( 'Preferences modal container', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-preferences-icon</code></td><td><?php esc_html_e( 'Floating cookie icon button', 'consentric' ); ?></td></tr>
-			<tr><td><code>.scc-banner-overlay</code></td><td><?php esc_html_e( 'Full-screen backdrop shown behind the center-modal banner position', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-banner</code></td><td><?php esc_html_e( 'The main banner container', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-banner__title</code></td><td><?php esc_html_e( 'Banner headline text', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-banner__text</code></td><td><?php esc_html_e( 'Banner body text', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-btn--accept</code></td><td><?php esc_html_e( 'Accept All button', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-btn--deny</code></td><td><?php esc_html_e( 'Deny All button', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-btn--preferences</code></td><td><?php esc_html_e( 'Preferences button', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-banner__links</code></td><td><?php esc_html_e( 'Legal page links list (ul). Each link is a li > a.', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-modal__box</code></td><td><?php esc_html_e( 'Preferences modal container', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-preferences-icon</code></td><td><?php esc_html_e( 'Floating cookie icon button', 'consentric' ); ?></td></tr>
+			<tr><td><code>.cscc-banner-overlay</code></td><td><?php esc_html_e( 'Full-screen backdrop shown behind the center-modal banner position', 'consentric' ); ?></td></tr>
 		</tbody>
 	</table>
 
 	<h3><?php esc_html_e( 'CSS custom properties', 'consentric' ); ?></h3>
 	<p><?php esc_html_e( 'These are set on :root and control the visual theme. Override them in Custom CSS or with the Appearance settings.', 'consentric' ); ?></p>
-	<table class="widefat striped scc-help-table">
+	<table class="widefat striped cscc-help-table">
 		<thead>
 			<tr>
 				<th><?php esc_html_e( 'Property', 'consentric' ); ?></th>
@@ -44,12 +44,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</tr>
 		</thead>
 		<tbody>
-			<tr><td><code>--scc-bg</code></td><td><code>#ffffff</code></td><td><?php esc_html_e( 'Banner background color', 'consentric' ); ?></td></tr>
-			<tr><td><code>--scc-text</code></td><td><code>#111111</code></td><td><?php esc_html_e( 'Banner text color', 'consentric' ); ?></td></tr>
-			<tr><td><code>--scc-accent</code></td><td><code>#0073aa</code></td><td><?php esc_html_e( 'Accent color (Accept button, toggles)', 'consentric' ); ?></td></tr>
-			<tr><td><code>--scc-radius</code></td><td><code>6px</code></td><td><?php esc_html_e( 'Border radius for banner and buttons', 'consentric' ); ?></td></tr>
-			<tr><td><code>--scc-border</code></td><td><code>0px solid #dddddd</code></td><td><?php esc_html_e( 'Banner border (width + color)', 'consentric' ); ?></td></tr>
-			<tr><td><code>--scc-btn-border-width</code></td><td><code>1px</code></td><td><?php esc_html_e( 'Button border width (applies to all banner buttons)', 'consentric' ); ?></td></tr>
+			<tr><td><code>--cscc-bg</code></td><td><code>#ffffff</code></td><td><?php esc_html_e( 'Banner background color', 'consentric' ); ?></td></tr>
+			<tr><td><code>--cscc-text</code></td><td><code>#111111</code></td><td><?php esc_html_e( 'Banner text color', 'consentric' ); ?></td></tr>
+			<tr><td><code>--cscc-accent</code></td><td><code>#0073aa</code></td><td><?php esc_html_e( 'Accent color (Accept button, toggles)', 'consentric' ); ?></td></tr>
+			<tr><td><code>--cscc-radius</code></td><td><code>6px</code></td><td><?php esc_html_e( 'Border radius for banner and buttons', 'consentric' ); ?></td></tr>
+			<tr><td><code>--cscc-border</code></td><td><code>0px solid #dddddd</code></td><td><?php esc_html_e( 'Banner border (width + color)', 'consentric' ); ?></td></tr>
+			<tr><td><code>--cscc-btn-border-width</code></td><td><code>1px</code></td><td><?php esc_html_e( 'Button border width (applies to all banner buttons)', 'consentric' ); ?></td></tr>
 		</tbody>
 	</table>
 
@@ -58,11 +58,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- =========================================================
 	     Shortcodes
 	     ========================================================= -->
-	<h2 class="scc-section-title"><?php esc_html_e( 'Shortcodes', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Shortcodes', 'consentric' ); ?></h2>
 
-	<h3><code>[scc_cookie_list]</code></h3>
+	<h3><code>[cscc_cookie_list]</code></h3>
 	<p><?php esc_html_e( 'Renders a table of all cookies grouped by category. Inherits your theme\'s table styles.', 'consentric' ); ?></p>
-	<table class="widefat striped scc-help-table">
+	<table class="widefat striped cscc-help-table">
 		<thead>
 			<tr>
 				<th><?php esc_html_e( 'Attribute', 'consentric' ); ?></th>
@@ -79,12 +79,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</tbody>
 	</table>
 	<p><?php esc_html_e( 'Examples:', 'consentric' ); ?></p>
-	<pre class="scc-help-pre">[scc_cookie_list]
-[scc_cookie_list category="analytics"]</pre>
+	<pre class="cscc-help-pre">[cscc_cookie_list]
+[cscc_cookie_list category="analytics"]</pre>
 
-	<h3><code>[scc_preferences]</code></h3>
+	<h3><code>[cscc_preferences]</code></h3>
 	<p><?php esc_html_e( 'Renders a link (or button) that opens the preferences modal. Useful in footer menus or privacy pages.', 'consentric' ); ?></p>
-	<table class="widefat striped scc-help-table">
+	<table class="widefat striped cscc-help-table">
 		<thead>
 			<tr>
 				<th><?php esc_html_e( 'Attribute', 'consentric' ); ?></th>
@@ -106,18 +106,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</tbody>
 	</table>
 	<p><?php esc_html_e( 'Examples:', 'consentric' ); ?></p>
-	<pre class="scc-help-pre">[scc_preferences]
-[scc_preferences label="Manage my cookies" class="footer-link"]</pre>
+	<pre class="cscc-help-pre">[cscc_preferences]
+[cscc_preferences label="Manage my cookies" class="footer-link"]</pre>
 
 	<hr>
 
 	<!-- =========================================================
 	     JavaScript API
 	     ========================================================= -->
-	<h2 class="scc-section-title"><?php esc_html_e( 'JavaScript API', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'JavaScript API', 'consentric' ); ?></h2>
 	<p><?php esc_html_e( 'All methods are available on the global', 'consentric' ); ?> <code>window.SimpleCookieConsent</code> <?php esc_html_e( 'object.', 'consentric' ); ?></p>
 
-	<table class="widefat striped scc-help-table">
+	<table class="widefat striped cscc-help-table">
 		<thead>
 			<tr>
 				<th><?php esc_html_e( 'Method / Event', 'consentric' ); ?></th>
@@ -154,17 +154,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<td><?php esc_html_e( 'Returns true if the visitor has already made a consent choice (banner was actioned).', 'consentric' ); ?></td>
 			</tr>
 			<tr>
-				<td><code>scc:consentUpdated</code> <em><?php esc_html_e( '(CustomEvent on document)', 'consentric' ); ?></em></td>
+				<td><code>cscc:consentUpdated</code> <em><?php esc_html_e( '(CustomEvent on document)', 'consentric' ); ?></em></td>
 				<td><?php esc_html_e( 'Fired on document after any consent save. Listen with:', 'consentric' ); ?>
-					<br><code>document.addEventListener('scc:consentUpdated', fn)</code>
+					<br><code>document.addEventListener('cscc:consentUpdated', fn)</code>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 
 	<h3><?php esc_html_e( 'Usage example', 'consentric' ); ?></h3>
-	<pre class="scc-help-pre">// Run analytics code only after consent is granted
-document.addEventListener('scc:consentUpdated', function () {
+	<pre class="cscc-help-pre">// Run analytics code only after consent is granted
+document.addEventListener('cscc:consentUpdated', function () {
     if ( SimpleCookieConsent.hasConsent('analytics') ) {
         // initialise your analytics library here
     }

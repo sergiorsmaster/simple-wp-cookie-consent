@@ -10,7 +10,7 @@
  *   functional → functionality_storage, personalization_storage
  *   necessary  → security_storage (always 'granted')
  *
- * Modes (set via sccSettings.gtmMode):
+ * Modes (set via csccSettings.gtmMode):
  *
  *   basic    — Google tags do NOT fire before consent. After consent,
  *              tags fire normally. Strictest compliance, some data loss
@@ -18,12 +18,12 @@
  *
  *   advanced — Google tags fire immediately in a limited, cookieless mode.
  *              After consent update, full data collection resumes.
- *              Additionally pushes a custom dataLayer event ('scc_consent_update')
+ *              Additionally pushes a custom dataLayer event ('cscc_consent_update')
  *              so GTM triggers can react to consent changes and Google can
  *              use statistical modeling for non-consenting users.
  *
  * The gtag('consent', 'default', {...}) call is handled server-side by PHP
- * (class-scc-public.php) and is injected before this script loads.
+ * (class-cscc-public.php) and is injected before this script loads.
  */
 
 (function () {
@@ -33,8 +33,8 @@
 	var log     = window.SimpleCookieConsent && window.SimpleCookieConsent.log
 		? window.SimpleCookieConsent.log.bind( window.SimpleCookieConsent )
 		: function () {};
-	var gtmMode = window.sccSettings && window.sccSettings.gtmMode
-		? window.sccSettings.gtmMode
+	var gtmMode = window.csccSettings && window.csccSettings.gtmMode
+		? window.csccSettings.gtmMode
 		: 'basic';
 
 	// Ensure dataLayer and gtag are available (GTM may not be present on page).
@@ -77,10 +77,10 @@
 
 		if ( gtmMode === 'advanced' ) {
 			window.dataLayer.push( {
-				event:   'scc_consent_update',
+				event:   'cscc_consent_update',
 				consent: signals,
 			} );
-			log( 'GTM advanced: pushed scc_consent_update event to dataLayer' );
+			log( 'GTM advanced: pushed cscc_consent_update event to dataLayer' );
 		}
 	}
 
@@ -95,8 +95,8 @@
 	}
 
 	// On every future consent change (Accept / Deny / Preferences), update GTM.
-	document.addEventListener( 'scc:consentUpdated', function ( e ) {
-		log( 'GTM: scc:consentUpdated received' );
+	document.addEventListener( 'cscc:consentUpdated', function ( e ) {
+		log( 'GTM: cscc:consentUpdated received' );
 		updateGtmConsent( e.detail );
 	} );
 

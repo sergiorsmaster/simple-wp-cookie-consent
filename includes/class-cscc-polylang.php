@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class SCC_Polylang {
+class CSCC_Polylang {
 
 	/** Polylang string group name. */
 	const GROUP = 'Consentric';
@@ -23,16 +23,16 @@ class SCC_Polylang {
 	 * Option key → human-readable name for Polylang's UI.
 	 */
 	private static $strings = array(
-		'scc_banner_title'        => 'Banner title',
-		'scc_banner_text'         => 'Banner text',
-		'scc_accept_label'        => 'Accept button label',
-		'scc_deny_label'          => 'Deny button label',
-		'scc_preferences_label'   => 'Preferences button label',
-		'scc_modal_title'         => 'Modal title',
-		'scc_modal_intro'         => 'Modal description',
-		'scc_modal_save_label'    => 'Modal save button label',
-		'scc_modal_deny_label'    => 'Modal deny button label',
-		'scc_ccpa_opt_out_text'   => 'CCPA opt-out button label',
+		'cscc_banner_title'        => 'Banner title',
+		'cscc_banner_text'         => 'Banner text',
+		'cscc_accept_label'        => 'Accept button label',
+		'cscc_deny_label'          => 'Deny button label',
+		'cscc_preferences_label'   => 'Preferences button label',
+		'cscc_modal_title'         => 'Modal title',
+		'cscc_modal_intro'         => 'Modal description',
+		'cscc_modal_save_label'    => 'Modal save button label',
+		'cscc_modal_deny_label'    => 'Modal deny button label',
+		'cscc_ccpa_opt_out_text'   => 'CCPA opt-out button label',
 	);
 
 	public static function init() {
@@ -63,7 +63,7 @@ class SCC_Polylang {
 	 * Falls back to get_option() when Polylang is inactive or the string
 	 * hasn't been registered yet.
 	 *
-	 * @param string $option   Option key (e.g. 'scc_banner_title').
+	 * @param string $option   Option key (e.g. 'cscc_banner_title').
 	 * @param string $default  Default value if option is empty.
 	 * @return string
 	 */

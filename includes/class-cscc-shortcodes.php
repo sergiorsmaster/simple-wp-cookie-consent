@@ -2,13 +2,13 @@
 /**
  * SCC Shortcodes
  *
- * [scc_preferences]
+ * [cscc_preferences]
  *   Renders a link that opens the cookie preferences modal.
  *   Attributes:
  *     label  — link text (default: "Cookie Settings")
  *     class  — extra CSS classes on the <a> tag
  *
- * [scc_cookie_list]
+ * [cscc_cookie_list]
  *   Renders a formatted table of cookies grouped by category.
  *   Attributes:
  *     categories — comma-separated list to filter (default: all)
@@ -18,15 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class SCC_Shortcodes {
+class CSCC_Shortcodes {
 
 	public static function init() {
-		add_shortcode( 'scc_preferences',  array( __CLASS__, 'render_preferences' ) );
-		add_shortcode( 'scc_cookie_list',  array( __CLASS__, 'render_cookie_list' ) );
+		add_shortcode( 'cscc_preferences',  array( __CLASS__, 'render_preferences' ) );
+		add_shortcode( 'cscc_cookie_list',  array( __CLASS__, 'render_cookie_list' ) );
 	}
 
 	/**
-	 * [scc_preferences label="Cookie Settings" class=""]
+	 * [cscc_preferences label="Cookie Settings" class=""]
 	 */
 	public static function render_preferences( $atts ) {
 		$atts = shortcode_atts(
@@ -35,20 +35,20 @@ class SCC_Shortcodes {
 				'class' => '',
 			),
 			$atts,
-			'scc_preferences'
+			'cscc_preferences'
 		);
 
-		$classes = trim( 'scc-preferences-link ' . sanitize_html_class( $atts['class'] ) );
+		$classes = trim( 'cscc-preferences-link ' . sanitize_html_class( $atts['class'] ) );
 
 		return sprintf(
-			'<a href="#" class="%s" data-scc-action="open-preferences">%s</a>',
+			'<a href="#" class="%s" data-cscc-action="open-preferences">%s</a>',
 			esc_attr( $classes ),
 			esc_html( $atts['label'] )
 		);
 	}
 
 	/**
-	 * [scc_cookie_list categories="necessary,analytics,marketing,functional"]
+	 * [cscc_cookie_list categories="necessary,analytics,marketing,functional"]
 	 */
 	public static function render_cookie_list( $atts ) {
 		global $wpdb;
@@ -56,7 +56,7 @@ class SCC_Shortcodes {
 		$atts = shortcode_atts(
 			array( 'categories' => '' ),
 			$atts,
-			'scc_cookie_list'
+			'cscc_cookie_list'
 		);
 
 		$all_categories = array(
@@ -79,7 +79,7 @@ class SCC_Shortcodes {
 			return '';
 		}
 
-		$table   = $wpdb->prefix . 'scc_cookies';
+		$table   = $wpdb->prefix . 'cscc_cookies';
 		$placeholders = implode( ', ', array_fill( 0, count( $categories ), '%s' ) );
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table and $placeholders are trusted
 		$cookies = $wpdb->get_results(
@@ -104,12 +104,12 @@ class SCC_Shortcodes {
 				continue;
 			}
 			?>
-			<div class="scc-cookie-list__group">
-				<h3 class="scc-cookie-list__heading scc-cookie-list__heading--<?php echo esc_attr( $slug ); ?>">
+			<div class="cscc-cookie-list__group">
+				<h3 class="cscc-cookie-list__heading cscc-cookie-list__heading--<?php echo esc_attr( $slug ); ?>">
 					<?php echo esc_html( $label ); ?>
 				</h3>
-				<div class="scc-cookie-list__scroll">
-					<table class="scc-cookie-list__table">
+				<div class="cscc-cookie-list__scroll">
+					<table class="cscc-cookie-list__table">
 						<thead>
 							<tr>
 								<th><?php esc_html_e( 'Cookie', 'consentric' ); ?></th>
@@ -121,9 +121,9 @@ class SCC_Shortcodes {
 						<tbody>
 							<?php foreach ( $grouped[ $slug ] as $cookie ) : ?>
 								<tr>
-									<td><code class="scc-cookie-list__name"><?php echo esc_html( $cookie->cookie_name ); ?></code></td>
+									<td><code class="cscc-cookie-list__name"><?php echo esc_html( $cookie->cookie_name ); ?></code></td>
 									<td><?php echo esc_html( $cookie->service ); ?></td>
-									<td class="scc-cookie-list__duration"><?php echo esc_html( $cookie->duration ); ?></td>
+									<td class="cscc-cookie-list__duration"><?php echo esc_html( $cookie->duration ); ?></td>
 									<td><?php echo esc_html( $cookie->description ); ?></td>
 								</tr>
 							<?php endforeach; ?>
@@ -136,7 +136,7 @@ class SCC_Shortcodes {
 
 		// Empty state — no cookies in any requested category.
 		if ( empty( array_filter( $grouped ) ) ) {
-			echo '<p class="scc-cookie-list__empty">' .
+			echo '<p class="cscc-cookie-list__empty">' .
 				esc_html__( 'No cookies have been added yet.', 'consentric' ) .
 				'</p>';
 		}

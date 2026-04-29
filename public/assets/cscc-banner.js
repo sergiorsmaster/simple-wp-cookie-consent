@@ -2,7 +2,7 @@
  * SCC Banner — show/hide logic
  *
  * Reads the consent cookie on page load and decides whether to show the banner.
- * Wires Accept / Deny buttons to SCC_Consent_Store helpers.
+ * Wires Accept / Deny buttons to CSCC_Consent_Store helpers.
  * The Preferences button is wired in FEAT-07 (preferences modal).
  */
 
@@ -13,11 +13,11 @@
 	var SCC = window.SimpleCookieConsent;
 	if ( ! SCC ) return;
 
-	var banner  = document.getElementById( 'scc-banner' );
+	var banner  = document.getElementById( 'cscc-banner' );
 	if ( ! banner ) return;
 
-	var overlay   = document.querySelector( '.scc-banner-overlay' );
-	var isModal   = banner.classList.contains( 'scc-position-center-modal' );
+	var overlay   = document.querySelector( '.cscc-banner-overlay' );
+	var isModal   = banner.classList.contains( 'cscc-position-center-modal' );
 
 	// -------------------------------------------------------------------------
 	// Focus trap helpers (used for center-modal position only)
@@ -55,8 +55,8 @@
 	}
 
 	// Preview mode: force-show banner even if consent is already stored.
-	// Only active for logged-in admins (gated server-side via sccSettings.preview).
-	var isPreview = ( window.sccSettings && window.sccSettings.preview );
+	// Only active for logged-in admins (gated server-side via csccSettings.preview).
+	var isPreview = ( window.csccSettings && window.csccSettings.preview );
 
 	// Show banner (and overlay if present) only if visitor hasn't chosen yet,
 	// or if preview mode is active.
@@ -82,14 +82,14 @@
 	};
 
 	// Hide banner + overlay whenever consent is saved.
-	document.addEventListener( 'scc:consentUpdated', function () {
+	document.addEventListener( 'cscc:consentUpdated', function () {
 		banner.style.display = 'none';
 		if ( overlay ) overlay.style.display = 'none';
 		SCC.log( 'Banner: hidden after consent update' );
 	} );
 
 	// Accept All button
-	var btnAccept = document.getElementById( 'scc-accept' );
+	var btnAccept = document.getElementById( 'cscc-accept' );
 	if ( btnAccept ) {
 		btnAccept.addEventListener( 'click', function () {
 			SCC.log( 'Banner: Accept All clicked' );
@@ -98,7 +98,7 @@
 	}
 
 	// Deny All button
-	var btnDeny = document.getElementById( 'scc-deny' );
+	var btnDeny = document.getElementById( 'cscc-deny' );
 	if ( btnDeny ) {
 		btnDeny.addEventListener( 'click', function () {
 			SCC.log( 'Banner: Deny All clicked' );
@@ -107,7 +107,7 @@
 	}
 
 	// Preferences button — opens modal
-	var btnPrefs = document.getElementById( 'scc-preferences' );
+	var btnPrefs = document.getElementById( 'cscc-preferences' );
 	if ( btnPrefs ) {
 		btnPrefs.addEventListener( 'click', function () {
 			SCC.log( 'Banner: Preferences clicked' );
@@ -116,13 +116,13 @@
 	}
 
 	// Floating preferences icon — show after consent is stored
-	var prefIcon = document.getElementById( 'scc-preferences-icon' );
+	var prefIcon = document.getElementById( 'cscc-preferences-icon' );
 	if ( prefIcon ) {
 		if ( SCC.hasInteracted() ) {
 			prefIcon.style.display = '';
 			SCC.log( 'Preferences icon: visible (consent already stored)' );
 		}
-		document.addEventListener( 'scc:consentUpdated', function () {
+		document.addEventListener( 'cscc:consentUpdated', function () {
 			prefIcon.style.display = '';
 			SCC.log( 'Preferences icon: visible after consent update' );
 		} );

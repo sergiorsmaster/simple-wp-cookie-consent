@@ -1,7 +1,7 @@
 ---
 name: add-setting
 description: Add a new WordPress admin settings field following the plugin's conventions. Covers registration, sanitization, default value, tab view HTML, frontend usage, and uninstall cleanup.
-argument-hint: "<option_name> <tab> <field_type> (e.g. scc_my_option general text)"
+argument-hint: "<option_name> <tab> <field_type> (e.g. cscc_my_option general text)"
 allowed-tools: Bash Read Edit Write Glob Grep
 ---
 
@@ -10,22 +10,22 @@ allowed-tools: Bash Read Edit Write Glob Grep
 The user wants to add a new admin settings field. Details: **$ARGUMENTS**
 
 Clarify with the user if any of the following are not clear from the arguments:
-- **Option name** (e.g. `scc_my_option`) — must use `scc_` prefix
+- **Option name** (e.g. `cscc_my_option`) — must use `cscc_` prefix
 - **Tab** — which settings tab: `general`, `appearance`, `jurisdiction`, `integrations`, `cookies`, `help`
 - **Field type** — text, textarea, checkbox/toggle, select, number, color, page selector
 - **Default value**
-- **Where it is used** — PHP template, JS (`sccSettings`), or both
+- **Where it is used** — PHP template, JS (`csccSettings`), or both
 
 ---
 
 ## Step 1 — Register and sanitize the option
 
-**File:** `admin/class-scc-admin.php`
+**File:** `admin/class-cscc-admin.php`
 
 In `register_settings()`, add inside the correct settings group (tab):
 
 ```php
-register_setting( 'scc_TAB', 'scc_my_option', array(
+register_setting( 'cscc_TAB', 'cscc_my_option', array(
     'sanitize_callback' => 'sanitize_text_field', // or sanitize_textarea_field, absint, etc.
 ) );
 ```
@@ -41,12 +41,12 @@ Sanitization functions by field type:
 
 ## Step 2 — Add a default value on activation
 
-**File:** `includes/class-scc-activator.php`
+**File:** `includes/class-cscc-activator.php`
 
 In `set_defaults()`, add:
 
 ```php
-add_option( 'scc_my_option', 'default_value' );
+add_option( 'cscc_my_option', 'default_value' );
 ```
 
 Use `add_option` (not `update_option`) — it only sets the value if the option does not already exist.
@@ -57,18 +57,18 @@ Use `add_option` (not `update_option`) — it only sets the value if the option 
 
 Read the option at the top of the file:
 ```php
-$my_option = get_option( 'scc_my_option', 'default_value' );
+$my_option = get_option( 'cscc_my_option', 'default_value' );
 ```
 
-Add the field HTML following the existing `.scc-field` pattern:
+Add the field HTML following the existing `.cscc-field` pattern:
 
 ```php
-<div class="scc-field">
-    <label class="scc-field__label" for="scc_my_option">
+<div class="cscc-field">
+    <label class="cscc-field__label" for="cscc_my_option">
         <?php esc_html_e( 'Field Label', 'consentric' ); ?>
     </label>
-    <div class="scc-field__control">
-        <input type="text" id="scc_my_option" name="scc_my_option"
+    <div class="cscc-field__control">
+        <input type="text" id="cscc_my_option" name="cscc_my_option"
             value="<?php echo esc_attr( $my_option ); ?>">
         <p class="description">
             <?php esc_html_e( 'Helper text describing this field.', 'consentric' ); ?>
@@ -77,8 +77,8 @@ Add the field HTML following the existing `.scc-field` pattern:
 </div>
 ```
 
-For a toggle, use the `.scc-admin-toggle` pattern (see existing toggles in any tab view).
-For a select, use `<select name="scc_my_option">` with `selected()` helper on each `<option>`.
+For a toggle, use the `.cscc-admin-toggle` pattern (see existing toggles in any tab view).
+For a select, use `<select name="cscc_my_option">` with `selected()` helper on each `<option>`.
 
 **Security reminder:** All output must be escaped (`esc_html()`, `esc_attr()`, `esc_url()`). For page selector dropdowns, wrap `selected` with `absint()` and `show_option_none` with `esc_html__()`. See full rules in `CLAUDE.md` under "WordPress Security Rules".
 
@@ -86,14 +86,14 @@ For a select, use `<select name="scc_my_option">` with `selected()` helper on ea
 
 **If used in PHP templates** (`public/views/`):
 ```php
-$my_option = get_option( 'scc_my_option', 'default_value' );
+$my_option = get_option( 'cscc_my_option', 'default_value' );
 ```
 
-**If needed in JavaScript**, pass it via `wp_localize_script` in `public/class-scc-public.php`:
+**If needed in JavaScript**, pass it via `wp_localize_script` in `public/class-cscc-public.php`:
 ```php
-'myOption' => get_option( 'scc_my_option', 'default_value' ),
+'myOption' => get_option( 'cscc_my_option', 'default_value' ),
 ```
-Then access in JS as `window.sccSettings.myOption`.
+Then access in JS as `window.csccSettings.myOption`.
 
 ## Step 5 — Add to uninstall cleanup
 
@@ -101,7 +101,7 @@ Then access in JS as `window.sccSettings.myOption`.
 
 Add to the `delete_option` list:
 ```php
-delete_option( 'scc_my_option' );
+delete_option( 'cscc_my_option' );
 ```
 
 ## Step 6 — Update translations
@@ -115,9 +115,9 @@ to regenerate the POT and compile updated MO files.
 
 | Tab | Settings group | PHP file |
 |-----|---------------|----------|
-| General | `scc_general` | `tab-general.php` |
-| Appearance | `scc_appearance` | `tab-appearance.php` |
-| Jurisdiction | `scc_jurisdiction` | `tab-jurisdiction.php` |
-| Integrations | `scc_integrations` | `tab-integrations.php` |
+| General | `cscc_general` | `tab-general.php` |
+| Appearance | `cscc_appearance` | `tab-appearance.php` |
+| Jurisdiction | `cscc_jurisdiction` | `tab-jurisdiction.php` |
+| Integrations | `cscc_integrations` | `tab-integrations.php` |
 | Cookies | *(no Settings API — custom form)* | `tab-cookies.php` |
 | Help | *(read-only — no settings)* | `tab-help.php` |

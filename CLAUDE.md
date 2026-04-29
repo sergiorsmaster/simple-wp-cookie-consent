@@ -30,7 +30,7 @@ Skills are defined in `.claude/skills/` — read the relevant `SKILL.md` for the
 
 ## Plugin Identity
 
-- **Display name:** Consentric — Truly Free Cookie Consent
+- **Display name:** Consentric — Simple Cookie Consent
 - **WP.org slug:** `consentric`
 - **Slug (files):** `consentric`
 - **Main file:** `consentric.php`
@@ -42,7 +42,7 @@ Skills are defined in `.claude/skills/` — read the relevant `SKILL.md` for the
 
 ## Code Conventions
 
-- PHP prefix `scc_` on all functions, classes, hooks, and options.
+- PHP prefix `cscc_` on all functions, classes, hooks, and options.
 - JS namespace `window.SimpleCookieConsent`.
 - Wrap all user-facing strings with `__()` / `esc_html__()` / `esc_html_e()`.
 - WordPress Settings API for all admin forms.
@@ -73,13 +73,13 @@ These rules are **mandatory** — Plugin Check will flag violations as errors or
 
 **Redirects** — always use `wp_safe_redirect()` instead of `wp_redirect()`.
 
-**Direct database queries** — our custom table (`scc_cookies`) requires `$wpdb` calls. Add a phpcs ignore comment:
+**Direct database queries** — our custom table (`cscc_cookies`) requires `$wpdb` calls. Add a phpcs ignore comment:
 ```php
 // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table uses trusted prefix
 $results = $wpdb->get_results( "SELECT * FROM {$table} WHERE ..." );
 ```
 
-**No inline JS event handlers** — use `data-scc-action` attributes + delegated JS listeners instead of `onclick`.
+**No inline JS event handlers** — use `data-cscc-action` attributes + delegated JS listeners instead of `onclick`.
 
 ---
 
@@ -87,42 +87,42 @@ $results = $wpdb->get_results( "SELECT * FROM {$table} WHERE ..." );
 
 ```
 consentric/
-├── consentric.php              ← Main file (plugin header + bootstrap + SCC_VERSION constant)
-├── uninstall.php               ← Drops table + deletes all scc_* options
+├── consentric.php              ← Main file (plugin header + bootstrap + CSCC_VERSION constant)
+├── uninstall.php               ← Drops table + deletes all cscc_* options
 ├── readme.txt                  ← WordPress.org listing
 ├── .github/workflows/
 │   └── release.yml             ← Auto-build zip + GitHub Release on vX.X.X tag push
 ├── .claude/skills/             ← AI slash commands (skills)
 ├── includes/
-│   ├── class-scc-activator.php     ← create_tables(), set_defaults(), seed_own_cookie()
-│   ├── class-scc-deactivator.php
-│   ├── class-scc-consent-store.php ← PHP cookie reader
-│   ├── class-scc-cookie-scanner.php
-│   ├── class-scc-wp-consent-api.php
-│   ├── class-scc-polylang.php
-│   └── class-scc-shortcodes.php    ← [scc_cookie_list], [scc_preferences]
+│   ├── class-cscc-activator.php     ← create_tables(), set_defaults(), seed_own_cookie()
+│   ├── class-cscc-deactivator.php
+│   ├── class-cscc-consent-store.php ← PHP cookie reader
+│   ├── class-cscc-cookie-scanner.php
+│   ├── class-cscc-wp-consent-api.php
+│   ├── class-cscc-polylang.php
+│   └── class-cscc-shortcodes.php    ← [cscc_cookie_list], [cscc_preferences]
 ├── admin/
-│   ├── class-scc-admin.php         ← Menu, tabs, register_settings(), handle_cookie_actions()
+│   ├── class-cscc-admin.php         ← Menu, tabs, register_settings(), handle_cookie_actions()
 │   ├── views/
-│   │   ├── tab-general.php         ← scc_general settings group
-│   │   ├── tab-appearance.php      ← scc_appearance settings group
-│   │   ├── tab-jurisdiction.php    ← scc_jurisdiction settings group
-│   │   ├── tab-integrations.php    ← scc_integrations settings group + Debug
+│   │   ├── tab-general.php         ← cscc_general settings group
+│   │   ├── tab-appearance.php      ← cscc_appearance settings group
+│   │   ├── tab-jurisdiction.php    ← cscc_jurisdiction settings group
+│   │   ├── tab-integrations.php    ← cscc_integrations settings group + Debug
 │   │   ├── tab-cookies.php         ← Cookie list + scanner (custom form, no Settings API)
 │   │   └── tab-help.php            ← Read-only reference (CSS, shortcodes, JS API)
 │   └── assets/
 │       ├── admin.css
 │       └── admin.js
 ├── public/
-│   ├── class-scc-public.php        ← enqueue_scripts(), render_banner(), render_modal()
+│   ├── class-cscc-public.php        ← enqueue_scripts(), render_banner(), render_modal()
 │   ├── views/
 │   │   ├── banner.php
 │   │   ├── modal.php
 │   │   └── preferences-icon.php    ← Cookie SVG icon
 │   └── assets/
-│       ├── scc-banner.css
-│       ├── scc-banner.js           ← SimpleCookieConsent JS API + GTM integration
-│       └── scc-modal.js            ← Focus trap, aria, toggle state
+│       ├── cscc-banner.css
+│       ├── cscc-banner.js           ← SimpleCookieConsent JS API + GTM integration
+│       └── cscc-modal.js            ← Focus trap, aria, toggle state
 └── languages/
     ├── consentric.pot              ← Master template (source of truth)
     ├── consentric-pt_PT.po/.mo
@@ -136,38 +136,38 @@ consentric/
 
 | Option | Tab | Type | Default |
 |--------|-----|------|---------|
-| `scc_enabled` | General | toggle | `'1'` |
-| `scc_banner_title` | General | text | `'We use cookies'` |
-| `scc_banner_text` | General | textarea | *(long default)* |
-| `scc_accept_label` | General | text | `'Accept All'` |
-| `scc_deny_label` | General | text | `'Deny All'` |
-| `scc_preferences_label` | General | text | `'Preferences'` |
-| `scc_modal_title` | General | text | `'Cookie Preferences'` |
-| `scc_modal_intro` | General | textarea | *(long default)* |
-| `scc_modal_save_label` | General | text | `'Save Preferences'` |
-| `scc_modal_deny_label` | General | text | `'Deny All'` |
-| `scc_privacy_policy_page` | General | page selector | `0` |
-| `scc_cookie_policy_page` | General | page selector | `0` |
-| `scc_imprint_page` | General | page selector | `0` |
-| `scc_show_preferences_icon` | General | toggle | `'1'` |
-| `scc_position` | Appearance | select | `'bottom-bar'` |
-| `scc_color_bg` | Appearance | color | `'#ffffff'` |
-| `scc_color_text` | Appearance | color | `'#111111'` |
-| `scc_color_accent` | Appearance | color | `'#0073aa'` |
-| `scc_logo_source` | Appearance | select | `'custom'` |
-| `scc_logo_url` | Appearance | URL | `''` |
-| `scc_border_radius` | Appearance | number | `'6'` |
-| `scc_banner_max_width` | Appearance | number | `'200'` |
-| `scc_banner_border_width` | Appearance | number | `'0'` |
-| `scc_banner_border_color` | Appearance | color | `'#dddddd'` |
-| `scc_button_style` | Appearance | select | `'outline'` |
+| `cscc_enabled` | General | toggle | `'1'` |
+| `cscc_banner_title` | General | text | `'We use cookies'` |
+| `cscc_banner_text` | General | textarea | *(long default)* |
+| `cscc_accept_label` | General | text | `'Accept All'` |
+| `cscc_deny_label` | General | text | `'Deny All'` |
+| `cscc_preferences_label` | General | text | `'Preferences'` |
+| `cscc_modal_title` | General | text | `'Cookie Preferences'` |
+| `cscc_modal_intro` | General | textarea | *(long default)* |
+| `cscc_modal_save_label` | General | text | `'Save Preferences'` |
+| `cscc_modal_deny_label` | General | text | `'Deny All'` |
+| `cscc_privacy_policy_page` | General | page selector | `0` |
+| `cscc_cookie_policy_page` | General | page selector | `0` |
+| `cscc_imprint_page` | General | page selector | `0` |
+| `cscc_show_preferences_icon` | General | toggle | `'1'` |
+| `cscc_position` | Appearance | select | `'bottom-bar'` |
+| `cscc_color_bg` | Appearance | color | `'#ffffff'` |
+| `cscc_color_text` | Appearance | color | `'#111111'` |
+| `cscc_color_accent` | Appearance | color | `'#0073aa'` |
+| `cscc_logo_source` | Appearance | select | `'custom'` |
+| `cscc_logo_url` | Appearance | URL | `''` |
+| `cscc_border_radius` | Appearance | number | `'6'` |
+| `cscc_banner_max_width` | Appearance | number | `'200'` |
+| `cscc_banner_border_width` | Appearance | number | `'0'` |
+| `cscc_banner_border_color` | Appearance | color | `'#dddddd'` |
+| `cscc_button_style` | Appearance | select | `'outline'` |
 
-| `scc_jurisdiction` | Jurisdiction | select | `'gdpr'` |
-| `scc_ccpa_opt_out_text` | Jurisdiction | text | *(fallback in render)* |
-| `scc_gtm_enabled` | Integrations | toggle | `'0'` |
-| `scc_gtm_mode` | Integrations | select | `'basic'` |
-| `scc_gtm_wait_for_update` | Integrations | number | `'500'` |
-| `scc_debug` | Integrations | toggle | `'0'` |
+| `cscc_jurisdiction` | Jurisdiction | select | `'gdpr'` |
+| `cscc_ccpa_opt_out_text` | Jurisdiction | text | *(fallback in render)* |
+| `cscc_gtm_enabled` | Integrations | toggle | `'0'` |
+| `cscc_gtm_mode` | Integrations | select | `'basic'` |
+| `cscc_gtm_wait_for_update` | Integrations | number | `'500'` |
+| `cscc_debug` | Integrations | toggle | `'0'` |
 
 ---
 
@@ -183,7 +183,7 @@ consentric/
 | `hasConsent(category)` | Returns `true/false` for a category |
 | `hasInteracted()` | Returns `true` if visitor has made a choice |
 
-Event: `document.addEventListener('scc:consentUpdated', e => { e.detail /* consent object */ })`
+Event: `document.addEventListener('cscc:consentUpdated', e => { e.detail /* consent object */ })`
 
 ---
 
@@ -219,7 +219,7 @@ Status: `[ ]` pending | `[~]` in progress | `[x]` done
 ### Phase 5 — Integrations & shortcode
 - [x] FEAT-16: WP Consent Level API integration
 - [x] FEAT-17: Polylang compatibility
-- [x] FEAT-18: [scc_cookie_list] shortcode
+- [x] FEAT-18: [cscc_cookie_list] shortcode
 
 ### Phase 6 — Polish & release
 - [x] FEAT-19: Uninstall cleanup
@@ -227,9 +227,9 @@ Status: `[ ]` pending | `[~]` in progress | `[x]` done
 - [x] FEAT-21: Banner & modal style review + expanded appearance settings
 
 ### Phase 7 — Developer experience & repository health
-- [x] FEAT-22: Register scc_consent cookie in DB on activation
+- [x] FEAT-22: Register cscc_consent cookie in DB on activation
 - [x] FEAT-23: Replace preferences icon with cookie SVG
-- [x] FEAT-24: Banner preview via ?scc_preview=1 + admin link
+- [x] FEAT-24: Banner preview via ?cscc_preview=1 + admin link
 - [x] FEAT-25: Admin Help tab
 - [x] FEAT-26: Accessibility review (focus trap, tabindex, aria-checked)
 - [x] FEAT-27: README.md for developers

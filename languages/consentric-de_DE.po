@@ -170,8 +170,8 @@ msgstr "Impressumsseite"
 msgid "Floating Preferences Icon"
 msgstr "Schwebendes Einstellungssymbol"
 
-msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [scc_preferences] shortcode instead."
-msgstr "Nach dem Speichern der Einwilligung ein kleines Cookie-Symbol auf der Seite anzeigen, damit Besucher ihre Einstellungen jederzeit ändern können. Sie können auch den Shortcode [scc_preferences] verwenden."
+msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [cscc_preferences] shortcode instead."
+msgstr "Nach dem Speichern der Einwilligung ein kleines Cookie-Symbol auf der Seite anzeigen, damit Besucher ihre Einstellungen jederzeit ändern können. Sie können auch den Shortcode [cscc_preferences] verwenden."
 
 msgid "Banner Position"
 msgstr "Banner-Position"

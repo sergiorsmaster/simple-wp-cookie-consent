@@ -3,20 +3,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class SCC_Activator {
+class CSCC_Activator {
 
 	public static function activate() {
 		self::create_tables();
 		self::seed_own_cookie();
 		self::set_default_options();
 		// Flush cached cookie DB index so it is rebuilt with the current CSV.
-		delete_transient( 'scc_cookie_db_index' );
+		delete_transient( 'cscc_cookie_db_index' );
 	}
 
 	private static function create_tables() {
 		global $wpdb;
 
-		$table   = $wpdb->prefix . 'scc_cookies';
+		$table   = $wpdb->prefix . 'cscc_cookies';
 		$charset = $wpdb->get_charset_collate();
 
 		$sql = "CREATE TABLE IF NOT EXISTS {$table} (
@@ -34,24 +34,24 @@ class SCC_Activator {
 		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 		dbDelta( $sql );
 
-		update_option( 'scc_db_version', SCC_VERSION );
+		update_option( 'cscc_db_version', CSCC_VERSION );
 	}
 
 	/**
 	 * Seed the plugin's own consent cookie into the cookie list table so it
-	 * always appears in [scc_cookie_list] without requiring a manual scan.
+	 * always appears in [cscc_cookie_list] without requiring a manual scan.
 	 * Uses INSERT IGNORE so re-activation or table upgrades never duplicate it.
 	 */
 	private static function seed_own_cookie() {
 		global $wpdb;
 
-		$table = $wpdb->prefix . 'scc_cookies';
+		$table = $wpdb->prefix . 'cscc_cookies';
 
 		// Check if the row already exists to avoid duplicate-key errors on
 		// hosts where IGNORE may not suppress all warnings.
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $table uses trusted prefix
 		$exists = $wpdb->get_var(
-			$wpdb->prepare( "SELECT id FROM {$table} WHERE cookie_name = %s LIMIT 1", 'scc_consent' )
+			$wpdb->prepare( "SELECT id FROM {$table} WHERE cookie_name = %s LIMIT 1", 'cscc_consent' )
 		);
 
 		if ( $exists ) {
@@ -62,7 +62,7 @@ class SCC_Activator {
 		$wpdb->insert(
 			$table,
 			array(
-				'cookie_name' => 'scc_consent',
+				'cookie_name' => 'cscc_consent',
 				'category'    => 'necessary',
 				'service'     => 'Consentric',
 				'duration'    => '1 year',
@@ -75,32 +75,32 @@ class SCC_Activator {
 
 	private static function set_default_options() {
 		$defaults = array(
-			'scc_enabled'            => '1',
-			'scc_jurisdiction'       => 'gdpr',
-			'scc_banner_title'       => __( 'We use cookies', 'consentric' ),
-			'scc_banner_text'        => __( 'We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'consentric' ),
-			'scc_accept_label'       => __( 'Accept All', 'consentric' ),
-			'scc_deny_label'         => __( 'Deny All', 'consentric' ),
-			'scc_preferences_label'  => __( 'Preferences', 'consentric' ),
-			'scc_modal_title'        => __( 'Cookie Preferences', 'consentric' ),
-			'scc_modal_intro'        => __( 'Choose which cookies you allow. You can change your preferences at any time.', 'consentric' ),
-			'scc_modal_save_label'   => __( 'Save Preferences', 'consentric' ),
-			'scc_modal_deny_label'   => __( 'Deny All', 'consentric' ),
-			'scc_position'               => 'bottom-bar',
-			'scc_color_bg'               => '#ffffff',
-			'scc_color_text'             => '#111111',
-			'scc_color_accent'           => '#0073aa',
-			'scc_border_radius'          => '6',
-			'scc_banner_max_width'       => '200',
-			'scc_banner_border_width'    => '0',
-			'scc_banner_border_color'    => '#dddddd',
-			'scc_button_style'           => 'outline',
-			'scc_logo_source'            => 'custom',
-			'scc_show_preferences_icon'  => '1',
-			'scc_gtm_enabled'        => '0',
-			'scc_gtm_mode'           => 'basic',
-			'scc_gtm_wait_for_update'=> '500',
-			'scc_debug'              => '0',
+			'cscc_enabled'            => '1',
+			'cscc_jurisdiction'       => 'gdpr',
+			'cscc_banner_title'       => __( 'We use cookies', 'consentric' ),
+			'cscc_banner_text'        => __( 'We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'consentric' ),
+			'cscc_accept_label'       => __( 'Accept All', 'consentric' ),
+			'cscc_deny_label'         => __( 'Deny All', 'consentric' ),
+			'cscc_preferences_label'  => __( 'Preferences', 'consentric' ),
+			'cscc_modal_title'        => __( 'Cookie Preferences', 'consentric' ),
+			'cscc_modal_intro'        => __( 'Choose which cookies you allow. You can change your preferences at any time.', 'consentric' ),
+			'cscc_modal_save_label'   => __( 'Save Preferences', 'consentric' ),
+			'cscc_modal_deny_label'   => __( 'Deny All', 'consentric' ),
+			'cscc_position'               => 'bottom-bar',
+			'cscc_color_bg'               => '#ffffff',
+			'cscc_color_text'             => '#111111',
+			'cscc_color_accent'           => '#0073aa',
+			'cscc_border_radius'          => '6',
+			'cscc_banner_max_width'       => '200',
+			'cscc_banner_border_width'    => '0',
+			'cscc_banner_border_color'    => '#dddddd',
+			'cscc_button_style'           => 'outline',
+			'cscc_logo_source'            => 'custom',
+			'cscc_show_preferences_icon'  => '1',
+			'cscc_gtm_enabled'        => '0',
+			'cscc_gtm_mode'           => 'basic',
+			'cscc_gtm_wait_for_update'=> '500',
+			'cscc_debug'              => '0',
 		);
 
 		foreach ( $defaults as $key => $value ) {

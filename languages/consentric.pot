@@ -35,56 +35,56 @@ msgid "Sergio Ricardo"
 msgstr ""
 
 #. Admin tab labels
-#: admin/class-scc-admin.php
+#: admin/class-cscc-admin.php
 msgid "General"
 msgstr ""
 
-#: admin/class-scc-admin.php
+#: admin/class-cscc-admin.php
 msgid "Appearance"
 msgstr ""
 
-#: admin/class-scc-admin.php
+#: admin/class-cscc-admin.php
 msgid "Jurisdiction"
 msgstr ""
 
-#: admin/class-scc-admin.php
+#: admin/class-cscc-admin.php
 msgid "Integrations"
 msgstr ""
 
-#: admin/class-scc-admin.php
+#: admin/class-cscc-admin.php
 msgid "Cookies"
 msgstr ""
 
-#: admin/class-scc-admin.php
+#: admin/class-cscc-admin.php
 msgid "Help"
 msgstr ""
 
-#: admin/class-scc-admin.php:136
-#: admin/class-scc-admin.php:262
+#: admin/class-cscc-admin.php:136
+#: admin/class-cscc-admin.php:262
 msgid "Cookie Consent Settings"
 msgstr ""
 
-#: admin/class-scc-admin.php:137
+#: admin/class-cscc-admin.php:137
 msgid "Cookie Consent"
 msgstr ""
 
-#: admin/class-scc-admin.php:238
+#: admin/class-cscc-admin.php:238
 msgid "Scanning…"
 msgstr ""
 
-#: admin/class-scc-admin.php:239
+#: admin/class-cscc-admin.php:239
 msgid "Scan complete."
 msgstr ""
 
-#: admin/class-scc-admin.php:240
+#: admin/class-cscc-admin.php:240
 msgid "Scan failed. Please try again."
 msgstr ""
 
-#: admin/class-scc-admin.php:241
+#: admin/class-cscc-admin.php:241
 msgid "new cookie(s) found."
 msgstr ""
 
-#: admin/class-scc-admin.php:283
+#: admin/class-cscc-admin.php:283
 msgid "This tab is coming soon."
 msgstr ""
 
@@ -268,28 +268,28 @@ msgstr ""
 
 #: admin/views/tab-cookies.php:26
 #: admin/views/tab-integrations.php:114
-#: includes/class-scc-shortcodes.php:63
+#: includes/class-cscc-shortcodes.php:63
 #: public/views/modal.php:44
 msgid "Necessary"
 msgstr ""
 
 #: admin/views/tab-cookies.php:27
 #: admin/views/tab-integrations.php:118
-#: includes/class-scc-shortcodes.php:64
+#: includes/class-cscc-shortcodes.php:64
 #: public/views/modal.php:49
 msgid "Analytics"
 msgstr ""
 
 #: admin/views/tab-cookies.php:28
 #: admin/views/tab-integrations.php:122
-#: includes/class-scc-shortcodes.php:65
+#: includes/class-cscc-shortcodes.php:65
 #: public/views/modal.php:54
 msgid "Marketing"
 msgstr ""
 
 #: admin/views/tab-cookies.php:29
 #: admin/views/tab-integrations.php:126
-#: includes/class-scc-shortcodes.php:66
+#: includes/class-cscc-shortcodes.php:66
 #: public/views/modal.php:59
 msgid "Functional"
 msgstr ""
@@ -326,7 +326,7 @@ msgstr ""
 
 #: admin/views/tab-cookies.php:80
 #: admin/views/tab-cookies.php:165
-#: includes/class-scc-shortcodes.php:115
+#: includes/class-cscc-shortcodes.php:115
 msgid "Service"
 msgstr ""
 
@@ -336,7 +336,7 @@ msgstr ""
 
 #: admin/views/tab-cookies.php:91
 #: admin/views/tab-cookies.php:166
-#: includes/class-scc-shortcodes.php:116
+#: includes/class-cscc-shortcodes.php:116
 msgid "Duration"
 msgstr ""
 
@@ -350,7 +350,7 @@ msgstr ""
 #: admin/views/tab-help.php:69
 #: admin/views/tab-help.php:91
 #: admin/views/tab-help.php:123
-#: includes/class-scc-shortcodes.php:117
+#: includes/class-cscc-shortcodes.php:117
 msgid "Description"
 msgstr ""
 
@@ -417,8 +417,8 @@ msgid "Banner Title"
 msgstr ""
 
 #: admin/views/tab-general.php:34
-#: includes/class-scc-activator.php:78
-#: public/class-scc-public.php:180
+#: includes/class-cscc-activator.php:78
+#: public/class-cscc-public.php:180
 msgid "We use cookies"
 msgstr ""
 
@@ -427,8 +427,8 @@ msgid "Banner Text"
 msgstr ""
 
 #: admin/views/tab-general.php:45
-#: includes/class-scc-activator.php:79
-#: public/class-scc-public.php:181
+#: includes/class-cscc-activator.php:79
+#: public/class-cscc-public.php:181
 msgid "We use cookies to improve your experience on our website. Please choose your cookie preferences below."
 msgstr ""
 
@@ -437,8 +437,8 @@ msgid "Accept Button Label"
 msgstr ""
 
 #: admin/views/tab-general.php:57
-#: includes/class-scc-activator.php:80
-#: public/class-scc-public.php:182
+#: includes/class-cscc-activator.php:80
+#: public/class-cscc-public.php:182
 msgid "Accept All"
 msgstr ""
 
@@ -449,10 +449,10 @@ msgstr ""
 
 #: admin/views/tab-general.php:67
 #: admin/views/tab-general.php:123
-#: includes/class-scc-activator.php:81
-#: includes/class-scc-activator.php:86
-#: public/class-scc-public.php:183
-#: public/class-scc-public.php:231
+#: includes/class-cscc-activator.php:81
+#: includes/class-cscc-activator.php:86
+#: public/class-cscc-public.php:183
+#: public/class-cscc-public.php:231
 msgid "Deny All"
 msgstr ""
 
@@ -461,8 +461,8 @@ msgid "Preferences Button Label"
 msgstr ""
 
 #: admin/views/tab-general.php:77
-#: includes/class-scc-activator.php:82
-#: public/class-scc-public.php:184
+#: includes/class-cscc-activator.php:82
+#: public/class-cscc-public.php:184
 msgid "Preferences"
 msgstr ""
 
@@ -475,8 +475,8 @@ msgid "Dialog Title"
 msgstr ""
 
 #: admin/views/tab-general.php:92
-#: includes/class-scc-activator.php:83
-#: public/class-scc-public.php:228
+#: includes/class-cscc-activator.php:83
+#: public/class-cscc-public.php:228
 msgid "Cookie Preferences"
 msgstr ""
 
@@ -485,8 +485,8 @@ msgid "Dialog Description"
 msgstr ""
 
 #: admin/views/tab-general.php:102
-#: includes/class-scc-activator.php:84
-#: public/class-scc-public.php:229
+#: includes/class-cscc-activator.php:84
+#: public/class-cscc-public.php:229
 msgid "Choose which cookies you allow. You can change your preferences at any time."
 msgstr ""
 
@@ -495,8 +495,8 @@ msgid "Save Button Label"
 msgstr ""
 
 #: admin/views/tab-general.php:113
-#: includes/class-scc-activator.php:85
-#: public/class-scc-public.php:230
+#: includes/class-cscc-activator.php:85
+#: public/class-cscc-public.php:230
 msgid "Save Preferences"
 msgstr ""
 
@@ -523,7 +523,7 @@ msgid "Floating Preferences Icon"
 msgstr ""
 
 #: admin/views/tab-general.php:189
-msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [scc_preferences] shortcode instead."
+msgid "Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [cscc_preferences] shortcode instead."
 msgstr ""
 
 #: admin/views/tab-help.php:11
@@ -651,7 +651,7 @@ msgid "Renders a link (or button) that opens the preferences modal. Useful in fo
 msgstr ""
 
 #: admin/views/tab-help.php:97
-#: includes/class-scc-shortcodes.php:34
+#: includes/class-cscc-shortcodes.php:34
 #: public/views/preferences-icon.php:12
 msgid "Cookie Settings"
 msgstr ""
@@ -950,7 +950,7 @@ msgid "\"Do Not Sell\" Button Label"
 msgstr ""
 
 #: admin/views/tab-jurisdiction.php:95
-#: public/class-scc-public.php:185
+#: public/class-cscc-public.php:185
 msgid "Do Not Sell My Personal Information"
 msgstr ""
 
@@ -958,11 +958,11 @@ msgstr ""
 msgid "Label for the opt-out button shown in the banner when CCPA mode is active."
 msgstr ""
 
-#: includes/class-scc-shortcodes.php:114
+#: includes/class-cscc-shortcodes.php:114
 msgid "Cookie"
 msgstr ""
 
-#: includes/class-scc-shortcodes.php:139
+#: includes/class-cscc-shortcodes.php:139
 msgid "No cookies have been added yet."
 msgstr ""
 

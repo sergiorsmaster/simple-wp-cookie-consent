@@ -4,43 +4,43 @@
    ============================================================================= */
 
 :root {
-	--scc-bg: #ffffff;
-	--scc-text: #111111;
-	--scc-accent: #0073aa;
-	--scc-radius: 6px;
-	--scc-border: 0px solid #dddddd;
-	--scc-shadow: 0 2px 16px rgba(0, 0, 0, .15);
-	--scc-z: 99999;
-	--scc-font: inherit;
-	--scc-btn-border-width: 1px;
-	--scc-secondary-border: currentColor;
-	--scc-secondary-decoration: none;
+	--cscc-bg: #ffffff;
+	--cscc-text: #111111;
+	--cscc-accent: #0073aa;
+	--cscc-radius: 6px;
+	--cscc-border: 0px solid #dddddd;
+	--cscc-shadow: 0 2px 16px rgba(0, 0, 0, .15);
+	--cscc-z: 99999;
+	--cscc-font: inherit;
+	--cscc-btn-border-width: 1px;
+	--cscc-secondary-border: currentColor;
+	--cscc-secondary-decoration: none;
 }
 
 /* -----------------------------------------------------------------------------
    Base banner
    ----------------------------------------------------------------------------- */
 
-.scc-banner {
+.cscc-banner {
 	position: fixed;
-	z-index: var(--scc-z);
-	background: var(--scc-bg);
-	color: var(--scc-text);
+	z-index: var(--cscc-z);
+	background: var(--cscc-bg);
+	color: var(--cscc-text);
 	/* font-family intentionally not set — inherits from theme */
 	font-size: 1rem;
 	line-height: 1.5;
-	box-shadow: var(--scc-shadow);
-	border: var(--scc-border);
+	box-shadow: var(--cscc-shadow);
+	border: var(--cscc-border);
 	box-sizing: border-box;
 	outline: none;
 	/* suppress focus ring — banner is a container, not interactive */
 }
 
-.scc-banner:focus-visible {
+.cscc-banner:focus-visible {
 	outline: none;
 }
 
-.scc-banner__inner {
+.cscc-banner__inner {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -56,90 +56,90 @@
    ----------------------------------------------------------------------------- */
 
 /* Full-width bars */
-.scc-position-bottom-bar {
+.cscc-position-bottom-bar {
 	bottom: 0;
 	left: 0;
 	right: 0;
 }
 
-.scc-position-top-bar {
+.cscc-position-top-bar {
 	top: 0;
 	left: 0;
 	right: 0;
 }
 
 /* Corner boxes */
-.scc-position-bottom-left,
-.scc-position-bottom-right {
+.cscc-position-bottom-left,
+.cscc-position-bottom-right {
 	bottom: 20px;
 	width: 360px;
 	max-width: calc(100vw - 40px);
-	border-radius: var(--scc-radius);
+	border-radius: var(--cscc-radius);
 }
 
-.scc-position-bottom-left {
+.cscc-position-bottom-left {
 	left: 20px;
 }
 
-.scc-position-bottom-right {
+.cscc-position-bottom-right {
 	right: 20px;
 }
 
 /* Corner boxes stack content vertically */
-.scc-position-bottom-left .scc-banner__inner,
-.scc-position-bottom-right .scc-banner__inner {
+.cscc-position-bottom-left .cscc-banner__inner,
+.cscc-position-bottom-right .cscc-banner__inner {
 	flex-direction: column;
 	align-items: flex-start;
 }
 
 /* In column layouts content should not stretch — fix excess banner height */
-.scc-position-bottom-left .scc-banner__content,
-.scc-position-bottom-right .scc-banner__content,
-.scc-position-center-modal .scc-banner__content {
+.cscc-position-bottom-left .cscc-banner__content,
+.cscc-position-bottom-right .cscc-banner__content,
+.cscc-position-center-modal .cscc-banner__content {
 	flex: none;
 	width: 100%;
 }
 
 /* Center modal */
-.scc-position-center-modal {
+.cscc-position-center-modal {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 480px;
 	max-width: calc(100vw - 40px);
-	border-radius: var(--scc-radius);
+	border-radius: var(--cscc-radius);
 }
 
-.scc-position-center-modal .scc-banner__inner {
+.cscc-position-center-modal .cscc-banner__inner {
 	flex-direction: column;
 	align-items: flex-start;
 }
 
 /* Overlay backdrop for center modal — separate element, not ::before */
-.scc-banner-overlay {
+.cscc-banner-overlay {
 	position: fixed;
 	inset: 0;
 	background: rgba(0, 0, 0, .45);
-	z-index: calc(var(--scc-z) - 1);
+	z-index: calc(var(--cscc-z) - 1);
 }
 
 /* -----------------------------------------------------------------------------
    Content
    ----------------------------------------------------------------------------- */
 
-.scc-banner__content {
+.cscc-banner__content {
 	flex: 1 1 260px;
 }
 
 /* Logo + title on the same line */
-.scc-banner__header {
+.cscc-banner__header {
 	display: flex;
 	align-items: center;
 	gap: 8px;
 	margin-bottom: 6px;
 }
 
-.scc-banner__logo {
+.cscc-banner__logo {
 	max-height: 28px;
 	max-width: 120px;
 	width: auto;
@@ -149,38 +149,38 @@
 	object-fit: contain;
 }
 
-.scc-banner__title {
+.cscc-banner__title {
 	margin: 0;
 	font-weight: 700;
 	font-size: 1.2rem;
-	color: var(--scc-text);
+	color: var(--cscc-text);
 }
 
-.scc-banner__text {
+.cscc-banner__text {
 	margin: 0;
 	font-size: 0.9rem;
-	color: var(--scc-text);
+	color: var(--cscc-text);
 }
 
 /* -----------------------------------------------------------------------------
    Buttons
    ----------------------------------------------------------------------------- */
 
-.scc-banner__actions {
+.cscc-banner__actions {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
 	flex-shrink: 0;
 }
 
-.scc-btn {
+.cscc-btn {
 	display: inline-block;
 	padding: 8px 16px;
-	border-radius: var(--scc-radius);
+	border-radius: var(--cscc-radius);
 	font-size: 0.85rem;
 	font-weight: 600;
 	cursor: pointer;
-	border: var(--scc-btn-border-width) solid transparent;
+	border: var(--cscc-btn-border-width) solid transparent;
 	line-height: 1.4;
 	white-space: nowrap;
 	transition: background-color .15s ease, color .15s ease,
@@ -192,56 +192,56 @@
 }
 
 /* Accept */
-.scc-btn--accept {
-	background: var(--scc-accent);
+.cscc-btn--accept {
+	background: var(--cscc-accent);
 	color: #fff !important;
-	border-color: var(--scc-accent);
+	border-color: var(--cscc-accent);
 }
 
-.scc-btn--accept:hover,
-.scc-btn--accept:focus {
-	background: var(--scc-accent);
+.cscc-btn--accept:hover,
+.cscc-btn--accept:focus {
+	background: var(--cscc-accent);
 	color: #fff !important;
-	border-color: var(--scc-accent);
+	border-color: var(--cscc-accent);
 	opacity: .85;
 }
 
 /* Deny */
-.scc-btn--deny {
+.cscc-btn--deny {
 	background: transparent;
-	color: var(--scc-text) !important;
-	border-color: var(--scc-secondary-border);
-	text-decoration: var(--scc-secondary-decoration);
+	color: var(--cscc-text) !important;
+	border-color: var(--cscc-secondary-border);
+	text-decoration: var(--cscc-secondary-decoration);
 }
 
-.scc-btn--deny:hover,
-.scc-btn--deny:focus {
+.cscc-btn--deny:hover,
+.cscc-btn--deny:focus {
 	background: rgba(0, 0, 0, .05);
-	color: var(--scc-text) !important;
-	border-color: var(--scc-secondary-border);
+	color: var(--cscc-text) !important;
+	border-color: var(--cscc-secondary-border);
 	opacity: 1;
 }
 
 /* Preferences — outline button, same weight as deny */
-.scc-btn--preferences {
+.cscc-btn--preferences {
 	background: transparent;
-	color: var(--scc-text) !important;
-	border-color: var(--scc-secondary-border);
-	text-decoration: var(--scc-secondary-decoration);
+	color: var(--cscc-text) !important;
+	border-color: var(--cscc-secondary-border);
+	text-decoration: var(--cscc-secondary-decoration);
 }
 
-.scc-btn--preferences:hover,
-.scc-btn--preferences:focus {
+.cscc-btn--preferences:hover,
+.cscc-btn--preferences:focus {
 	background: rgba(0, 0, 0, .05);
-	color: var(--scc-text) !important;
-	border-color: var(--scc-secondary-border);
+	color: var(--cscc-text) !important;
+	border-color: var(--cscc-secondary-border);
 	opacity: 1;
 }
 
 /* In column layouts actions take full width so buttons don't truncate */
-.scc-position-bottom-left .scc-banner__actions,
-.scc-position-bottom-right .scc-banner__actions,
-.scc-position-center-modal .scc-banner__actions {
+.cscc-position-bottom-left .cscc-banner__actions,
+.cscc-position-bottom-right .cscc-banner__actions,
+.cscc-position-center-modal .cscc-banner__actions {
 	width: 100%;
 }
 
@@ -249,7 +249,7 @@
    Legal links
    ----------------------------------------------------------------------------- */
 
-.scc-banner__links {
+.cscc-banner__links {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.25em 0.75em;
@@ -262,7 +262,7 @@
 }
 
 /* Let theme control link colour and decoration */
-.scc-banner__links a {
+.cscc-banner__links a {
 	text-decoration: inherit;
 }
 
@@ -271,22 +271,22 @@
    ----------------------------------------------------------------------------- */
 
 @media (max-width: 600px) {
-	.scc-banner__inner {
+	.cscc-banner__inner {
 		flex-direction: column;
 		align-items: flex-start;
 	}
 
-	.scc-banner__actions {
+	.cscc-banner__actions {
 		width: 100%;
 	}
 
-	.scc-btn {
+	.cscc-btn {
 		flex: 1 1 auto;
 		text-align: center;
 	}
 
-	.scc-position-bottom-left,
-	.scc-position-bottom-right {
+	.cscc-position-bottom-left,
+	.cscc-position-bottom-right {
 		left: 0;
 		right: 0;
 		bottom: 0;
@@ -300,23 +300,23 @@
    SCC Preferences Modal
    ============================================================================= */
 
-.scc-modal__overlay {
+.cscc-modal__overlay {
 	position: fixed;
 	inset: 0;
 	background: rgba(0, 0, 0, .5);
-	z-index: calc(var(--scc-z) + 1);
+	z-index: calc(var(--cscc-z) + 1);
 }
 
-.scc-modal__box {
+.cscc-modal__box {
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: calc(var(--scc-z) + 2);
-	background: var(--scc-bg);
-	color: var(--scc-text);
-	border-radius: var(--scc-radius);
-	box-shadow: var(--scc-shadow);
+	z-index: calc(var(--cscc-z) + 2);
+	background: var(--cscc-bg);
+	color: var(--cscc-text);
+	border-radius: var(--cscc-radius);
+	box-shadow: var(--cscc-shadow);
 	width: 520px;
 	max-width: calc(100vw - 32px);
 	max-height: calc(100vh - 40px);
@@ -325,17 +325,17 @@
 	box-sizing: border-box;
 }
 
-.scc-modal__close {
+.cscc-modal__close {
 	position: absolute;
 	top: 12px;
 	right: 14px;
 	background: transparent !important;
-	border: var(--scc-btn-border-width) solid var(--scc-secondary-border) !important;
-	border-radius: var(--scc-radius);
+	border: var(--cscc-btn-border-width) solid var(--cscc-secondary-border) !important;
+	border-radius: var(--cscc-radius);
 	font-size: 18px;
 	font-weight: 600;
 	cursor: pointer;
-	color: var(--scc-text) !important;
+	color: var(--cscc-text) !important;
 	line-height: 1;
 	padding: 4px 8px;
 	box-shadow: none !important;
@@ -344,30 +344,30 @@
 	transition: background-color .15s ease, color .15s ease, opacity .15s ease;
 }
 
-.scc-modal__close:focus,
-.scc-modal__close:focus-visible {
+.cscc-modal__close:focus,
+.cscc-modal__close:focus-visible {
 	background: transparent !important;
-	color: var(--scc-text) !important;
-	border-color: var(--scc-secondary-border) !important;
+	color: var(--cscc-text) !important;
+	border-color: var(--cscc-secondary-border) !important;
 	box-shadow: none !important;
 	outline: none;
 }
 
-.scc-modal__close:hover {
+.cscc-modal__close:hover {
 	background: rgba(0, 0, 0, .05) !important;
-	color: var(--scc-text) !important;
-	border-color: var(--scc-secondary-border) !important;
+	color: var(--cscc-text) !important;
+	border-color: var(--cscc-secondary-border) !important;
 	opacity: 1;
 }
 
-.scc-modal__title {
+.cscc-modal__title {
 	margin: 0 0 8px;
 	font-size: 1.2rem;
 	font-weight: 600;
-	color: var(--scc-text);
+	color: var(--cscc-text);
 }
 
-.scc-modal__intro {
+.cscc-modal__intro {
 	margin: 0 0 20px;
 	font-size: 0.9rem;
 	opacity: .8;
@@ -377,51 +377,51 @@
    Categories
    ----------------------------------------------------------------------------- */
 
-.scc-modal__categories {
+.cscc-modal__categories {
 	display: flex;
 	flex-direction: column;
 	gap: 0;
 	margin-bottom: 20px;
 }
 
-.scc-modal__category {
+.cscc-modal__category {
 	padding: 0.9rem 0;
 	border-bottom: 1px solid rgba(0, 0, 0, .08);
 }
 
-.scc-modal__category:last-child {
+.cscc-modal__category:last-child {
 	border-bottom: none;
 }
 
-.scc-modal__category-header {
+.cscc-modal__category-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 6px;
 }
 
-.scc-modal__category-name {
+.cscc-modal__category-name {
 	font-weight: 600;
 	font-size: 1rem;
 }
 
-.scc-modal__category-desc {
+.cscc-modal__category-desc {
 	margin: 0;
 	font-size: 0.9rem;
 	opacity: .75;
 }
 
-.scc-modal__always-on {
+.cscc-modal__always-on {
 	font-size: 0.8rem;
 	font-weight: 600;
-	color: var(--scc-accent);
+	color: var(--cscc-accent);
 }
 
 /* -----------------------------------------------------------------------------
    Toggle switch
    ----------------------------------------------------------------------------- */
 
-.scc-toggle {
+.cscc-toggle {
 	position: relative;
 	display: inline-block;
 	width: 40px;
@@ -430,14 +430,14 @@
 	cursor: pointer;
 }
 
-.scc-toggle__input {
+.cscc-toggle__input {
 	opacity: 0;
 	width: 0;
 	height: 0;
 	position: absolute;
 }
 
-.scc-toggle__slider {
+.cscc-toggle__slider {
 	position: absolute;
 	inset: 0;
 	background: #ccc;
@@ -445,7 +445,7 @@
 	transition: background .2s ease;
 }
 
-.scc-toggle__slider::before {
+.cscc-toggle__slider::before {
 	content: '';
 	position: absolute;
 	width: 16px;
@@ -457,16 +457,16 @@
 	transition: transform .2s ease;
 }
 
-.scc-toggle__input:checked+.scc-toggle__slider {
-	background: var(--scc-accent);
+.cscc-toggle__input:checked+.cscc-toggle__slider {
+	background: var(--cscc-accent);
 }
 
-.scc-toggle__input:checked+.scc-toggle__slider::before {
+.cscc-toggle__input:checked+.cscc-toggle__slider::before {
 	transform: translateX(18px);
 }
 
-.scc-toggle__input:focus-visible+.scc-toggle__slider {
-	outline: 2px solid var(--scc-accent);
+.cscc-toggle__input:focus-visible+.cscc-toggle__slider {
+	outline: 2px solid var(--cscc-accent);
 	outline-offset: 2px;
 }
 
@@ -474,7 +474,7 @@
    Modal footer
    ----------------------------------------------------------------------------- */
 
-.scc-modal__footer {
+.cscc-modal__footer {
 	display: flex;
 	justify-content: flex-end;
 	gap: 8px;
@@ -485,15 +485,15 @@
    Floating preferences icon
    ============================================================================= */
 
-.scc-preferences-icon {
+.cscc-preferences-icon {
 	position: fixed;
 	bottom: 20px;
 	left: 20px;
-	z-index: var(--scc-z);
+	z-index: var(--cscc-z);
 	width: 40px;
 	height: 40px;
 	border-radius: 50% !important;
-	background: var(--scc-accent) !important;
+	background: var(--cscc-accent) !important;
 	color: #fff !important;
 	border: none !important;
 	cursor: pointer;
@@ -506,37 +506,37 @@
 	outline: none;
 }
 
-.scc-preferences-icon:hover,
-.scc-preferences-icon:focus {
+.cscc-preferences-icon:hover,
+.cscc-preferences-icon:focus {
 	opacity: .9;
 	transform: scale(1.08);
-	background: var(--scc-accent) !important;
+	background: var(--cscc-accent) !important;
 	color: #fff !important;
 	border: none !important;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, .25) !important;
 }
 
-.scc-preferences-icon svg {
+.cscc-preferences-icon svg {
 	display: block;
 }
 
 /* Shortcode link — no default styling, inherits theme */
-.scc-preferences-link {
+.cscc-preferences-link {
 	cursor: pointer;
 }
 
 /* =============================================================================
-   [scc_cookie_list] shortcode
+   [cscc_cookie_list] shortcode
    Intentionally minimal — table appearance is inherited from the active theme.
    Only structural/functional rules are defined here.
    ============================================================================= */
 
-.scc-cookie-list__group {
+.cscc-cookie-list__group {
 	margin-bottom: 2em;
 }
 
 /* Category badge headings */
-.scc-cookie-list__heading {
+.cscc-cookie-list__heading {
 	font-size: 1em;
 	font-weight: 700;
 	padding: .3em .7em;
@@ -545,48 +545,48 @@
 	display: inline-block;
 }
 
-.scc-cookie-list__heading--necessary {
+.cscc-cookie-list__heading--necessary {
 	background: #d7f0e0;
 	color: #1a6b3c;
 }
 
-.scc-cookie-list__heading--analytics {
+.cscc-cookie-list__heading--analytics {
 	background: #d0e8f8;
 	color: #0a4b78;
 }
 
-.scc-cookie-list__heading--marketing {
+.cscc-cookie-list__heading--marketing {
 	background: #fde8c8;
 	color: #7a4500;
 }
 
-.scc-cookie-list__heading--functional {
+.cscc-cookie-list__heading--functional {
 	background: #ede8fd;
 	color: #3a1a7a;
 }
 
 /* Scroll wrapper — horizontal scroll on narrow viewports */
-.scc-cookie-list__scroll {
+.cscc-cookie-list__scroll {
 	width: 100%;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 }
 
 /* min-width triggers the scroll before columns become unreadable */
-.scc-cookie-list__table {
+.cscc-cookie-list__table {
 	min-width: 520px;
 }
 
 /* Duration cell — never break mid-value */
-.scc-cookie-list__duration {
+.cscc-cookie-list__duration {
 	white-space: nowrap;
 }
 
 /* Cookie name — allow long names to break so they don't blow the layout */
-.scc-cookie-list__name {
+.cscc-cookie-list__name {
 	word-break: break-all;
 }
 
-.scc-cookie-list__empty {
+.cscc-cookie-list__empty {
 	font-style: italic;
 }

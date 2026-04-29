@@ -3,31 +3,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$gtm_enabled  = get_option( 'scc_gtm_enabled', '0' );
-$gtm_mode     = get_option( 'scc_gtm_mode', 'basic' );
-$gtm_wait     = get_option( 'scc_gtm_wait_for_update', '500' );
-$debug        = get_option( 'scc_debug', '0' );
+$gtm_enabled  = get_option( 'cscc_gtm_enabled', '0' );
+$gtm_mode     = get_option( 'cscc_gtm_mode', 'basic' );
+$gtm_wait     = get_option( 'cscc_gtm_wait_for_update', '500' );
+$debug        = get_option( 'cscc_debug', '0' );
 ?>
-<div class="scc-tab-content">
+<div class="cscc-tab-content">
 
 	<!-- =========================================================
 	     Google Tag Manager
 	     ========================================================= -->
-	<h2 class="scc-section-title">
+	<h2 class="cscc-section-title">
 		<?php esc_html_e( 'Google Tag Manager', 'consentric' ); ?>
 	</h2>
 
 	<!-- Enable GTM integration -->
-	<div class="scc-field">
-		<label class="scc-field__label">
+	<div class="cscc-field">
+		<label class="cscc-field__label">
 			<?php esc_html_e( 'Enable GTM Consent Mode v2', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<label class="scc-admin-toggle">
-				<input type="checkbox" name="scc_gtm_enabled" value="1"
-					id="scc_gtm_enabled"
+		<div class="cscc-field__control">
+			<label class="cscc-admin-toggle">
+				<input type="checkbox" name="cscc_gtm_enabled" value="1"
+					id="cscc_gtm_enabled"
 					<?php checked( '1', $gtm_enabled ); ?>>
-				<span class="scc-admin-toggle__slider"></span>
+				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
 				<?php esc_html_e( 'Injects gtag consent defaults before GTM loads and updates signals when the visitor makes a choice.', 'consentric' ); ?>
@@ -36,43 +36,43 @@ $debug        = get_option( 'scc_debug', '0' );
 	</div>
 
 	<!-- GTM options — shown only when enabled -->
-	<div class="scc-gtm-options" <?php echo $gtm_enabled !== '1' ? 'style="display:none"' : ''; ?>>
+	<div class="cscc-gtm-options" <?php echo $gtm_enabled !== '1' ? 'style="display:none"' : ''; ?>>
 
 		<!-- Mode -->
-		<div class="scc-field">
-			<label class="scc-field__label">
+		<div class="cscc-field">
+			<label class="cscc-field__label">
 				<?php esc_html_e( 'Consent Mode', 'consentric' ); ?>
 			</label>
-			<div class="scc-field__control">
-				<div class="scc-radio-group">
+			<div class="cscc-field__control">
+				<div class="cscc-radio-group">
 
-					<label class="scc-radio-card <?php echo $gtm_mode === 'basic' ? 'is-selected' : ''; ?>">
-						<div class="scc-radio-card__header">
-							<input type="radio" name="scc_gtm_mode" value="basic"
-								class="scc-gtm-mode-radio"
+					<label class="cscc-radio-card <?php echo $gtm_mode === 'basic' ? 'is-selected' : ''; ?>">
+						<div class="cscc-radio-card__header">
+							<input type="radio" name="cscc_gtm_mode" value="basic"
+								class="cscc-gtm-mode-radio"
 								<?php checked( $gtm_mode, 'basic' ); ?>>
-							<span class="scc-radio-card__title">
+							<span class="cscc-radio-card__title">
 								<?php esc_html_e( 'Basic', 'consentric' ); ?>
 							</span>
-							<span class="scc-badge scc-badge--blue">
+							<span class="cscc-badge cscc-badge--blue">
 								<?php esc_html_e( 'Recommended', 'consentric' ); ?>
 							</span>
 						</div>
-						<p class="scc-radio-card__desc">
+						<p class="cscc-radio-card__desc">
 							<?php esc_html_e( 'Google tags do not fire before the visitor consents. Strictest compliance, but no data modelling for non-consenting users.', 'consentric' ); ?>
 						</p>
 					</label>
 
-					<label class="scc-radio-card <?php echo $gtm_mode === 'advanced' ? 'is-selected' : ''; ?>">
-						<div class="scc-radio-card__header">
-							<input type="radio" name="scc_gtm_mode" value="advanced"
-								class="scc-gtm-mode-radio"
+					<label class="cscc-radio-card <?php echo $gtm_mode === 'advanced' ? 'is-selected' : ''; ?>">
+						<div class="cscc-radio-card__header">
+							<input type="radio" name="cscc_gtm_mode" value="advanced"
+								class="cscc-gtm-mode-radio"
 								<?php checked( $gtm_mode, 'advanced' ); ?>>
-							<span class="scc-radio-card__title">
+							<span class="cscc-radio-card__title">
 								<?php esc_html_e( 'Advanced', 'consentric' ); ?>
 							</span>
 						</div>
-						<p class="scc-radio-card__desc">
+						<p class="cscc-radio-card__desc">
 							<?php esc_html_e( 'Google tags fire in a limited cookieless mode before consent. Enables statistical modelling for non-consenting users. Requires GTM to be configured accordingly.', 'consentric' ); ?>
 						</p>
 					</label>
@@ -82,12 +82,12 @@ $debug        = get_option( 'scc_debug', '0' );
 		</div>
 
 		<!-- Wait for update (ms) -->
-		<div class="scc-field">
-			<label class="scc-field__label" for="scc_gtm_wait_for_update">
+		<div class="cscc-field">
+			<label class="cscc-field__label" for="cscc_gtm_wait_for_update">
 				<?php esc_html_e( 'Wait for Update (ms)', 'consentric' ); ?>
 			</label>
-			<div class="scc-field__control">
-				<input type="number" id="scc_gtm_wait_for_update" name="scc_gtm_wait_for_update"
+			<div class="cscc-field__control">
+				<input type="number" id="cscc_gtm_wait_for_update" name="cscc_gtm_wait_for_update"
 					value="<?php echo esc_attr( $gtm_wait ); ?>"
 					min="0" max="5000" step="100" style="width:100px">
 				<p class="description">
@@ -97,12 +97,12 @@ $debug        = get_option( 'scc_debug', '0' );
 		</div>
 
 		<!-- Signal mapping info -->
-		<div class="scc-field">
-			<label class="scc-field__label">
+		<div class="cscc-field">
+			<label class="cscc-field__label">
 				<?php esc_html_e( 'Signal Mapping', 'consentric' ); ?>
 			</label>
-			<div class="scc-field__control">
-				<table class="scc-signal-table widefat striped">
+			<div class="cscc-field__control">
+				<table class="cscc-signal-table widefat striped">
 					<thead>
 						<tr>
 							<th><?php esc_html_e( 'Cookie Category', 'consentric' ); ?></th>
@@ -131,28 +131,28 @@ $debug        = get_option( 'scc_debug', '0' );
 			</div>
 		</div>
 
-	</div><!-- .scc-gtm-options -->
+	</div><!-- .cscc-gtm-options -->
 
 	<hr>
 
 	<!-- =========================================================
 	     Site Kit by Google
 	     ========================================================= -->
-	<h2 class="scc-section-title">
+	<h2 class="cscc-section-title">
 		<?php esc_html_e( 'Site Kit by Google', 'consentric' ); ?>
 	</h2>
 
-	<div class="scc-field">
-		<label class="scc-field__label">
+	<div class="cscc-field">
+		<label class="cscc-field__label">
 			<?php esc_html_e( 'Compatibility', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
+		<div class="cscc-field__control">
 			<?php if ( defined( 'GOOGLESITEKIT_VERSION' ) ) : ?>
-				<p class="scc-notice scc-notice--success">
+				<p class="cscc-notice cscc-notice--success">
 					&#10003; <?php esc_html_e( 'Site Kit is active. Consent is passed automatically via GTM Consent Mode v2 signals and the WP Consent API.', 'consentric' ); ?>
 				</p>
 			<?php else : ?>
-				<p class="scc-notice scc-notice--info">
+				<p class="cscc-notice cscc-notice--info">
 					<?php esc_html_e( 'Site Kit is not active. When installed, it will automatically respect GTM Consent Mode v2 signals set by this plugin.', 'consentric' ); ?>
 				</p>
 			<?php endif; ?>
@@ -164,21 +164,21 @@ $debug        = get_option( 'scc_debug', '0' );
 	<!-- =========================================================
 	     WP Consent Level API
 	     ========================================================= -->
-	<h2 class="scc-section-title">
+	<h2 class="cscc-section-title">
 		<?php esc_html_e( 'WP Consent Level API', 'consentric' ); ?>
 	</h2>
 
-	<div class="scc-field">
-		<label class="scc-field__label">
+	<div class="cscc-field">
+		<label class="cscc-field__label">
 			<?php esc_html_e( 'Compatibility', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<?php if ( SCC_WP_Consent_API::is_active() ) : ?>
-				<p class="scc-notice scc-notice--success">
+		<div class="cscc-field__control">
+			<?php if ( CSCC_WP_Consent_API::is_active() ) : ?>
+				<p class="cscc-notice cscc-notice--success">
 					&#10003; <?php esc_html_e( 'WP Consent Level API is active. Consent is synced automatically on every page load.', 'consentric' ); ?>
 				</p>
 			<?php else : ?>
-				<p class="scc-notice scc-notice--info">
+				<p class="cscc-notice cscc-notice--info">
 					<?php
 					printf(
 						/* translators: 1: opening <a> tag, 2: closing </a> tag */
@@ -207,21 +207,21 @@ $debug        = get_option( 'scc_debug', '0' );
 	<!-- =========================================================
 	     Polylang
 	     ========================================================= -->
-	<h2 class="scc-section-title">
+	<h2 class="cscc-section-title">
 		<?php esc_html_e( 'Polylang', 'consentric' ); ?>
 	</h2>
 
-	<div class="scc-field">
-		<label class="scc-field__label">
+	<div class="cscc-field">
+		<label class="cscc-field__label">
 			<?php esc_html_e( 'Compatibility', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<?php if ( SCC_Polylang::is_active() ) : ?>
-				<p class="scc-notice scc-notice--success">
+		<div class="cscc-field__control">
+			<?php if ( CSCC_Polylang::is_active() ) : ?>
+				<p class="cscc-notice cscc-notice--success">
 					&#10003; <?php esc_html_e( 'Polylang is active. Banner strings are registered for translation under Languages → String Translations.', 'consentric' ); ?>
 				</p>
 			<?php else : ?>
-				<p class="scc-notice scc-notice--info">
+				<p class="cscc-notice cscc-notice--info">
 					<?php esc_html_e( 'Polylang is not active. When installed, banner title, text, and button labels will be translatable per language.', 'consentric' ); ?>
 				</p>
 			<?php endif; ?>
@@ -233,7 +233,7 @@ $debug        = get_option( 'scc_debug', '0' );
 	<!-- =========================================================
 	     Custom Scripts
 	     ========================================================= -->
-	<h2 class="scc-section-title"><?php esc_html_e( 'Custom Scripts', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Custom Scripts', 'consentric' ); ?></h2>
 
 	<div class="notice notice-info inline" style="margin: 0 0 16px; padding: 10px 14px;">
 		<p style="margin:0 0 10px;">
@@ -269,19 +269,19 @@ $debug        = get_option( 'scc_debug', '0' );
 	<!-- =========================================================
 	     Debug
 	     ========================================================= -->
-	<h2 class="scc-section-title">
+	<h2 class="cscc-section-title">
 		<?php esc_html_e( 'Debug', 'consentric' ); ?>
 	</h2>
 
-	<div class="scc-field">
-		<label class="scc-field__label">
+	<div class="cscc-field">
+		<label class="cscc-field__label">
 			<?php esc_html_e( 'Debug Mode', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<label class="scc-admin-toggle">
-				<input type="checkbox" name="scc_debug" value="1"
+		<div class="cscc-field__control">
+			<label class="cscc-admin-toggle">
+				<input type="checkbox" name="cscc_debug" value="1"
 					<?php checked( '1', $debug ); ?>>
-				<span class="scc-admin-toggle__slider"></span>
+				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
 				<?php esc_html_e( 'Log all consent actions to the browser console prefixed with [SCC]. Disable on production.', 'consentric' ); ?>

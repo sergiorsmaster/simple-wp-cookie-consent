@@ -2,7 +2,7 @@
 /**
  * Cookie preferences modal template.
  *
- * Variables available (set by SCC_Public::render_modal()):
+ * Variables available (set by CSCC_Public::render_modal()):
  *   $jurisdiction     string  'gdpr' | 'lgpd' | 'ccpa'
  *   $privacy_url      string  (may be empty)
  *   $cookie_url       string  (may be empty)
@@ -16,27 +16,27 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
-<div id="scc-modal" class="scc-modal" role="dialog" aria-modal="true" aria-labelledby="scc-modal-title"
+<div id="cscc-modal" class="cscc-modal" role="dialog" aria-modal="true" aria-labelledby="cscc-modal-title"
 	style="display:none">
 
-	<div class="scc-modal__overlay" id="scc-modal-overlay" aria-hidden="true" tabindex="-1"></div>
+	<div class="cscc-modal__overlay" id="cscc-modal-overlay" aria-hidden="true" tabindex="-1"></div>
 
-	<div class="scc-modal__box">
+	<div class="cscc-modal__box">
 
-		<button class="scc-modal__close" id="scc-modal-close"
+		<button class="cscc-modal__close" id="cscc-modal-close"
 			aria-label="<?php esc_attr_e('Close', 'consentric'); ?>">
 			&#10005;
 		</button>
 
-		<div class="scc-modal__title" id="scc-modal-title">
+		<div class="cscc-modal__title" id="cscc-modal-title">
 			<?php echo esc_html($modal_title); ?>
 		</div>
 
-		<div class="scc-modal__intro">
+		<div class="cscc-modal__intro">
 			<?php echo esc_html($modal_intro); ?>
 		</div>
 
-		<div class="scc-modal__categories">
+		<div class="cscc-modal__categories">
 
 			<?php
 			$categories = array(
@@ -64,27 +64,27 @@ if (!defined('ABSPATH')) {
 
 			foreach ($categories as $key => $cat):
 				?>
-				<div class="scc-modal__category">
-					<div class="scc-modal__category-header">
-						<span class="scc-modal__category-name">
+				<div class="cscc-modal__category">
+					<div class="cscc-modal__category-header">
+						<span class="cscc-modal__category-name">
 							<?php echo esc_html($cat['label']); ?>
 						</span>
 
 						<?php if ($cat['always_on']): ?>
-							<span class="scc-modal__always-on">
+							<span class="cscc-modal__always-on">
 								<?php esc_html_e('Always active', 'consentric'); ?>
 							</span>
 						<?php else: ?>
-							<label class="scc-toggle" aria-label="<?php echo esc_attr($cat['label']); ?>">
-								<input type="checkbox" role="switch" class="scc-toggle__input"
-									name="scc_<?php echo esc_attr($key); ?>" value="1"
+							<label class="cscc-toggle" aria-label="<?php echo esc_attr($cat['label']); ?>">
+								<input type="checkbox" role="switch" class="cscc-toggle__input"
+									name="cscc_<?php echo esc_attr($key); ?>" value="1"
 									data-category="<?php echo esc_attr($key); ?>">
-								<span class="scc-toggle__slider"></span>
+								<span class="cscc-toggle__slider"></span>
 							</label>
 						<?php endif; ?>
 					</div>
 
-					<p class="scc-modal__category-desc">
+					<p class="cscc-modal__category-desc">
 						<?php echo esc_html($cat['description']); ?>
 					</p>
 				</div>
@@ -92,11 +92,11 @@ if (!defined('ABSPATH')) {
 
 		</div>
 
-		<div class="scc-modal__footer">
-			<button class="scc-btn scc-btn--deny" id="scc-modal-deny">
+		<div class="cscc-modal__footer">
+			<button class="cscc-btn cscc-btn--deny" id="cscc-modal-deny">
 				<?php echo esc_html($modal_deny_label); ?>
 			</button>
-			<button class="scc-btn scc-btn--accept" id="scc-modal-save">
+			<button class="cscc-btn cscc-btn--accept" id="cscc-modal-save">
 				<?php echo esc_html($modal_save_label); ?>
 			</button>
 		</div>

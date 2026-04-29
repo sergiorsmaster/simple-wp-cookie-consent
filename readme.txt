@@ -1,4 +1,4 @@
-=== Consentric — Truly Free Cookie Consent ===
+=== Consentric — Simple Cookie Consent ===
 Contributors: sergiorsmaster
 Tags: cookie consent, GDPR, CCPA, cookie banner, consent mode
 Requires at least: 6.0
@@ -50,16 +50,16 @@ Ships with Portuguese (PT and BR) and German translations out of the box. All ba
 Focus traps in the banner and modal, proper `aria` attributes, keyboard navigation (Tab, Shift+Tab, Escape), semantic `role="dialog"` markup, and `role="switch"` on toggle inputs. Works well with screen readers and meets WCAG guidelines.
 
 **🛠️ Developer Friendly**
-Full JavaScript API (`SimpleCookieConsent.acceptAll()`, `.denyAll()`, `.openPreferences()`, `.openBanner()`, `.hasConsent()`, `.hasInteracted()`), a `scc:consentUpdated` event for custom integrations, CSS custom properties for theming, and a built-in Help tab with the complete reference.
+Full JavaScript API (`SimpleCookieConsent.acceptAll()`, `.denyAll()`, `.openPreferences()`, `.openBanner()`, `.hasConsent()`, `.hasInteracted()`), a `cscc:consentUpdated` event for custom integrations, CSS custom properties for theming, and a built-in Help tab with the complete reference.
 
 **🔗 WP Consent Level API — Free**
 Bridges your visitors' consent to the [WP Consent Level API](https://github.com/wordpress/wp-consent-level-api), making it compatible with Google Site Kit and any other plugin that reads the standard consent interface.
 
 **📋 Cookie List Shortcode**
-Add `[scc_cookie_list]` to any page to render a formatted, accessible table of your cookies grouped by category — perfect for your Cookie Policy page. Filter by category with `[scc_cookie_list categories="analytics,marketing"]`.
+Add `[cscc_cookie_list]` to any page to render a formatted, accessible table of your cookies grouped by category — perfect for your Cookie Policy page. Filter by category with `[cscc_cookie_list categories="analytics,marketing"]`.
 
 **⚙️ Preferences Shortcode**
-Use `[scc_preferences label="Cookie Settings"]` anywhere to let visitors re-open the preferences modal from a link in your footer or cookie policy page.
+Use `[cscc_preferences label="Cookie Settings"]` anywhere to let visitors re-open the preferences modal from a link in your footer or cookie policy page.
 
 **🚩 Floating Preferences Icon**
 An optional floating icon lets visitors revisit their choices at any time without hunting for a link.
@@ -104,10 +104,10 @@ Click **Run Scanner** on the Cookies tab. The plugin fetches your homepage serve
 Yes. Use the **+ Add Cookie** button on the Cookies tab to add cookies manually with a name, category, service, duration, and description.
 
 = Where is the consent stored? =
-Consent is stored in a first-party cookie named `scc_consent` (JSON, 1 year, SameSite=Lax). No data is sent to any external server.
+Consent is stored in a first-party cookie named `cscc_consent` (JSON, 1 year, SameSite=Lax). No data is sent to any external server.
 
 = How do I add a "Cookie Settings" link to my footer? =
-Use the `[scc_preferences label="Cookie Settings"]` shortcode anywhere on your site.
+Use the `[cscc_preferences label="Cookie Settings"]` shortcode anywhere on your site.
 
 = How do I add Facebook Pixel, Hotjar, TikTok or other scripts? =
 Do not paste those scripts directly into your WordPress theme or header — they will not be blocked by consent. Instead, add them as tags inside Google Tag Manager and use the built-in consent triggers (e.g. "Analytics Storage Consent Granted") to control when they fire. This plugin sends the consent signals to GTM automatically.
@@ -116,7 +116,7 @@ Do not paste those scripts directly into your WordPress theme or header — they
 No. Both are optional. The plugin works standalone — just enable GTM Consent Mode v2 in the Integrations tab and paste the standard GTM snippet into your site's header. Site Kit and WP Consent API are supported automatically if installed, but not required.
 
 = How do I show a cookie table on my Cookie Policy page? =
-Add `[scc_cookie_list]` to any page. Use the optional `categories` attribute to filter: `[scc_cookie_list categories="analytics,marketing"]`.
+Add `[cscc_cookie_list]` to any page. Use the optional `categories` attribute to filter: `[cscc_cookie_list categories="analytics,marketing"]`.
 
 == Screenshots ==
 
@@ -145,12 +145,12 @@ Add `[scc_cookie_list]` to any page. Use the optional `categories` attribute to 
 * WP Consent Level API integration
 * Polylang compatibility
 * Portuguese (PT + BR) and German translations included
-* [scc_cookie_list] and [scc_preferences] shortcodes
+* [cscc_cookie_list] and [cscc_preferences] shortcodes
 * Floating preferences icon
 * Full JavaScript API (acceptAll, denyAll, openPreferences, openBanner, hasConsent, hasInteracted)
 * Accessibility: focus traps, keyboard navigation, ARIA attributes
 * Admin Help tab with CSS, shortcode, and JS API reference
-* Banner preview mode for admins (?scc_preview=1)
+* Banner preview mode for admins (?cscc_preview=1)
 * Debug mode for developers
 * Clean uninstall
 

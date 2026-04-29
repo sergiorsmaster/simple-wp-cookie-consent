@@ -3,18 +3,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="scc-tab-content">
+<div class="cscc-tab-content">
 
 	<!-- Enable banner -->
-	<div class="scc-field">
-		<label class="scc-field__label">
+	<div class="cscc-field">
+		<label class="cscc-field__label">
 			<?php esc_html_e( 'Enable Cookie Banner', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<label class="scc-admin-toggle">
-				<input type="checkbox" name="scc_enabled" value="1"
-					<?php checked( '1', get_option( 'scc_enabled', '1' ) ); ?>>
-				<span class="scc-admin-toggle__slider"></span>
+		<div class="cscc-field__control">
+			<label class="cscc-admin-toggle">
+				<input type="checkbox" name="cscc_enabled" value="1"
+					<?php checked( '1', get_option( 'cscc_enabled', '1' ) ); ?>>
+				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
 				<?php esc_html_e( 'Show the cookie consent banner on the frontend.', 'consentric' ); ?>
@@ -25,147 +25,147 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<hr>
 
 	<!-- Banner title -->
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_banner_title">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_banner_title">
 			<?php esc_html_e( 'Banner Title', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<input type="text" id="scc_banner_title" name="scc_banner_title" class="regular-text"
-				value="<?php echo esc_attr( get_option( 'scc_banner_title', __( 'We use cookies', 'consentric' ) ) ); ?>">
+		<div class="cscc-field__control">
+			<input type="text" id="cscc_banner_title" name="cscc_banner_title" class="regular-text"
+				value="<?php echo esc_attr( get_option( 'cscc_banner_title', __( 'We use cookies', 'consentric' ) ) ); ?>">
 		</div>
 	</div>
 
 	<!-- Banner text -->
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_banner_text">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_banner_text">
 			<?php esc_html_e( 'Banner Text', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<textarea id="scc_banner_text" name="scc_banner_text" class="large-text" rows="3"><?php
-				echo esc_textarea( get_option( 'scc_banner_text', __( 'We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'consentric' ) ) );
+		<div class="cscc-field__control">
+			<textarea id="cscc_banner_text" name="cscc_banner_text" class="large-text" rows="3"><?php
+				echo esc_textarea( get_option( 'cscc_banner_text', __( 'We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'consentric' ) ) );
 			?></textarea>
 		</div>
 	</div>
 
 	<!-- Button labels -->
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_accept_label">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_accept_label">
 			<?php esc_html_e( 'Accept Button Label', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<input type="text" id="scc_accept_label" name="scc_accept_label" class="regular-text"
-				value="<?php echo esc_attr( get_option( 'scc_accept_label', __( 'Accept All', 'consentric' ) ) ); ?>">
+		<div class="cscc-field__control">
+			<input type="text" id="cscc_accept_label" name="cscc_accept_label" class="regular-text"
+				value="<?php echo esc_attr( get_option( 'cscc_accept_label', __( 'Accept All', 'consentric' ) ) ); ?>">
 		</div>
 	</div>
 
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_deny_label">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_deny_label">
 			<?php esc_html_e( 'Deny Button Label', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<input type="text" id="scc_deny_label" name="scc_deny_label" class="regular-text"
-				value="<?php echo esc_attr( get_option( 'scc_deny_label', __( 'Deny All', 'consentric' ) ) ); ?>">
+		<div class="cscc-field__control">
+			<input type="text" id="cscc_deny_label" name="cscc_deny_label" class="regular-text"
+				value="<?php echo esc_attr( get_option( 'cscc_deny_label', __( 'Deny All', 'consentric' ) ) ); ?>">
 		</div>
 	</div>
 
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_preferences_label">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_preferences_label">
 			<?php esc_html_e( 'Preferences Button Label', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<input type="text" id="scc_preferences_label" name="scc_preferences_label" class="regular-text"
-				value="<?php echo esc_attr( get_option( 'scc_preferences_label', __( 'Preferences', 'consentric' ) ) ); ?>">
+		<div class="cscc-field__control">
+			<input type="text" id="cscc_preferences_label" name="cscc_preferences_label" class="regular-text"
+				value="<?php echo esc_attr( get_option( 'cscc_preferences_label', __( 'Preferences', 'consentric' ) ) ); ?>">
 		</div>
 	</div>
 
 	<hr>
 
 	<!-- Preferences dialog text -->
-	<h2 class="scc-section-title"><?php esc_html_e( 'Preferences Dialog', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Preferences Dialog', 'consentric' ); ?></h2>
 
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_modal_title">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_modal_title">
 			<?php esc_html_e( 'Dialog Title', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<input type="text" id="scc_modal_title" name="scc_modal_title" class="regular-text"
-				value="<?php echo esc_attr( get_option( 'scc_modal_title', __( 'Cookie Preferences', 'consentric' ) ) ); ?>">
+		<div class="cscc-field__control">
+			<input type="text" id="cscc_modal_title" name="cscc_modal_title" class="regular-text"
+				value="<?php echo esc_attr( get_option( 'cscc_modal_title', __( 'Cookie Preferences', 'consentric' ) ) ); ?>">
 		</div>
 	</div>
 
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_modal_intro">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_modal_intro">
 			<?php esc_html_e( 'Dialog Description', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<textarea id="scc_modal_intro" name="scc_modal_intro" class="large-text" rows="2"><?php
-				echo esc_textarea( get_option( 'scc_modal_intro', __( 'Choose which cookies you allow. You can change your preferences at any time.', 'consentric' ) ) );
+		<div class="cscc-field__control">
+			<textarea id="cscc_modal_intro" name="cscc_modal_intro" class="large-text" rows="2"><?php
+				echo esc_textarea( get_option( 'cscc_modal_intro', __( 'Choose which cookies you allow. You can change your preferences at any time.', 'consentric' ) ) );
 			?></textarea>
 		</div>
 	</div>
 
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_modal_save_label">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_modal_save_label">
 			<?php esc_html_e( 'Save Button Label', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<input type="text" id="scc_modal_save_label" name="scc_modal_save_label" class="regular-text"
-				value="<?php echo esc_attr( get_option( 'scc_modal_save_label', __( 'Save Preferences', 'consentric' ) ) ); ?>">
+		<div class="cscc-field__control">
+			<input type="text" id="cscc_modal_save_label" name="cscc_modal_save_label" class="regular-text"
+				value="<?php echo esc_attr( get_option( 'cscc_modal_save_label', __( 'Save Preferences', 'consentric' ) ) ); ?>">
 		</div>
 	</div>
 
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_modal_deny_label">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_modal_deny_label">
 			<?php esc_html_e( 'Deny Button Label', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<input type="text" id="scc_modal_deny_label" name="scc_modal_deny_label" class="regular-text"
-				value="<?php echo esc_attr( get_option( 'scc_modal_deny_label', __( 'Deny All', 'consentric' ) ) ); ?>">
+		<div class="cscc-field__control">
+			<input type="text" id="cscc_modal_deny_label" name="cscc_modal_deny_label" class="regular-text"
+				value="<?php echo esc_attr( get_option( 'cscc_modal_deny_label', __( 'Deny All', 'consentric' ) ) ); ?>">
 		</div>
 	</div>
 
 	<hr>
 
 	<!-- Legal pages -->
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_privacy_policy_page">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_privacy_policy_page">
 			<?php esc_html_e( 'Privacy Policy Page', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
+		<div class="cscc-field__control">
 			<?php wp_dropdown_pages( array(
-				'name'             => 'scc_privacy_policy_page',
-				'id'               => 'scc_privacy_policy_page',
-				'selected'         => absint( get_option( 'scc_privacy_policy_page', 0 ) ),
+				'name'             => 'cscc_privacy_policy_page',
+				'id'               => 'cscc_privacy_policy_page',
+				'selected'         => absint( get_option( 'cscc_privacy_policy_page', 0 ) ),
 				'show_option_none' => esc_html__( '— None —', 'consentric' ),
 				'option_none_value'=> 0,
 			) ); ?>
 		</div>
 	</div>
 
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_cookie_policy_page">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_cookie_policy_page">
 			<?php esc_html_e( 'Cookie Policy Page', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
+		<div class="cscc-field__control">
 			<?php wp_dropdown_pages( array(
-				'name'             => 'scc_cookie_policy_page',
-				'id'               => 'scc_cookie_policy_page',
-				'selected'         => absint( get_option( 'scc_cookie_policy_page', 0 ) ),
+				'name'             => 'cscc_cookie_policy_page',
+				'id'               => 'cscc_cookie_policy_page',
+				'selected'         => absint( get_option( 'cscc_cookie_policy_page', 0 ) ),
 				'show_option_none' => esc_html__( '— None —', 'consentric' ),
 				'option_none_value'=> 0,
 			) ); ?>
 		</div>
 	</div>
 
-	<div class="scc-field">
-		<label class="scc-field__label" for="scc_imprint_page">
+	<div class="cscc-field">
+		<label class="cscc-field__label" for="cscc_imprint_page">
 			<?php esc_html_e( 'Imprint Page', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
+		<div class="cscc-field__control">
 			<?php wp_dropdown_pages( array(
-				'name'             => 'scc_imprint_page',
-				'id'               => 'scc_imprint_page',
-				'selected'         => absint( get_option( 'scc_imprint_page', 0 ) ),
+				'name'             => 'cscc_imprint_page',
+				'id'               => 'cscc_imprint_page',
+				'selected'         => absint( get_option( 'cscc_imprint_page', 0 ) ),
 				'show_option_none' => esc_html__( '— None —', 'consentric' ),
 				'option_none_value'=> 0,
 			) ); ?>
@@ -175,18 +175,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<hr>
 
 	<!-- Floating icon -->
-	<div class="scc-field">
-		<label class="scc-field__label">
+	<div class="cscc-field">
+		<label class="cscc-field__label">
 			<?php esc_html_e( 'Floating Preferences Icon', 'consentric' ); ?>
 		</label>
-		<div class="scc-field__control">
-			<label class="scc-admin-toggle">
-				<input type="checkbox" name="scc_show_preferences_icon" value="1"
-					<?php checked( '1', get_option( 'scc_show_preferences_icon', '1' ) ); ?>>
-				<span class="scc-admin-toggle__slider"></span>
+		<div class="cscc-field__control">
+			<label class="cscc-admin-toggle">
+				<input type="checkbox" name="cscc_show_preferences_icon" value="1"
+					<?php checked( '1', get_option( 'cscc_show_preferences_icon', '1' ) ); ?>>
+				<span class="cscc-admin-toggle__slider"></span>
 			</label>
 			<p class="description">
-				<?php esc_html_e( 'Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [scc_preferences] shortcode instead.', 'consentric' ); ?>
+				<?php esc_html_e( 'Show a small cookie icon on the page after consent is saved, so visitors can change their preferences at any time. You can also use the [cscc_preferences] shortcode instead.', 'consentric' ); ?>
 			</p>
 		</div>
 	</div>

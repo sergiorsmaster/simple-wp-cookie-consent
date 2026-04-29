@@ -2,7 +2,7 @@
 /**
  * Cookie consent banner template.
  *
- * Variables available (set by SCC_Public::render_banner()):
+ * Variables available (set by CSCC_Public::render_banner()):
  *   $position     string  e.g. 'bottom-bar'
  *   $jurisdiction string  'gdpr' | 'lgpd' | 'ccpa'
  *   $title        string
@@ -22,48 +22,48 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <?php if ('center-modal' === $position): ?>
-	<div class="scc-banner-overlay" aria-hidden="true" style="display:none"></div>
+	<div class="cscc-banner-overlay" aria-hidden="true" style="display:none"></div>
 <?php endif; ?>
-<div id="scc-banner" class="scc-banner scc-position-<?php echo esc_attr($position); ?>" role="dialog"
-	aria-modal="true" aria-labelledby="scc-banner-title" tabindex="-1" style="display:none">
+<div id="cscc-banner" class="cscc-banner cscc-position-<?php echo esc_attr($position); ?>" role="dialog"
+	aria-modal="true" aria-labelledby="cscc-banner-title" tabindex="-1" style="display:none">
 
-	<div class="scc-banner__inner">
+	<div class="cscc-banner__inner">
 
-		<div class="scc-banner__content">
-			<div class="scc-banner__header">
+		<div class="cscc-banner__content">
+			<div class="cscc-banner__header">
 				<?php if (!empty($logo_url)): ?>
-					<img class="scc-banner__logo" src="<?php echo esc_url($logo_url); ?>" alt="" aria-hidden="true">
+					<img class="cscc-banner__logo" src="<?php echo esc_url($logo_url); ?>" alt="" aria-hidden="true">
 				<?php endif; ?>
-				<div class="scc-banner__title" id="scc-banner-title">
+				<div class="cscc-banner__title" id="cscc-banner-title">
 					<?php echo esc_html($title); ?>
 				</div>
 			</div>
-			<div class="scc-banner__text">
+			<div class="cscc-banner__text">
 				<?php echo esc_html($text); ?>
 			</div>
 		</div>
 
 		<?php if ('ccpa' === $jurisdiction): ?>
 
-			<div class="scc-banner__actions">
-				<button class="scc-btn scc-btn--deny" id="scc-deny">
+			<div class="cscc-banner__actions">
+				<button class="cscc-btn cscc-btn--deny" id="cscc-deny">
 					<?php echo esc_html($ccpa_text); ?>
 				</button>
-				<button class="scc-btn scc-btn--accept" id="scc-accept">
+				<button class="cscc-btn cscc-btn--accept" id="cscc-accept">
 					<?php echo esc_html($accept_label); ?>
 				</button>
 			</div>
 
 		<?php else: ?>
 
-			<div class="scc-banner__actions">
-				<button class="scc-btn scc-btn--accept" id="scc-accept">
+			<div class="cscc-banner__actions">
+				<button class="cscc-btn cscc-btn--accept" id="cscc-accept">
 					<?php echo esc_html($accept_label); ?>
 				</button>
-				<button class="scc-btn scc-btn--deny" id="scc-deny">
+				<button class="cscc-btn cscc-btn--deny" id="cscc-deny">
 					<?php echo esc_html($deny_label); ?>
 				</button>
-				<button class="scc-btn scc-btn--preferences" id="scc-preferences">
+				<button class="cscc-btn cscc-btn--preferences" id="cscc-preferences">
 					<?php echo esc_html($prefs_label); ?>
 				</button>
 			</div>
@@ -83,7 +83,7 @@ if (!defined('ABSPATH')) {
 		}
 		if (!empty($links)):
 			?>
-			<ul class="scc-banner__links">
+			<ul class="cscc-banner__links">
 				<?php echo wp_kses_post( implode( "\n\t\t\t\t", $links ) ); ?>
 			</ul>
 		<?php endif; ?>
