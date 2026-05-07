@@ -24,11 +24,11 @@ jobs:
       - name: Validate version matches plugin header
         run: |
           TAG_VERSION="${{ steps.version.outputs.VERSION }}"
-          HEADER_VERSION=$(grep -m1 '^\s*\*\s*Version:' consentric.php | sed 's/.*Version:\s*//' | tr -d '[:space:]')
+          HEADER_VERSION=$(grep -m1 '^\s*\*\s*Version:' consentric-cookie-consent.php | sed 's/.*Version:\s*//' | tr -d '[:space:]')
           echo "Tag version:    $TAG_VERSION"
           echo "Header version: $HEADER_VERSION"
           if [ "$TAG_VERSION" != "$HEADER_VERSION" ]; then
-            echo "::error::Version mismatch — tag is v$TAG_VERSION but plugin header says $HEADER_VERSION. Bump the version in consentric.php before tagging."
+            echo "::error::Version mismatch — tag is v$TAG_VERSION but plugin header says $HEADER_VERSION. Bump the version in consentric-cookie-consent.php before tagging."
             exit 1
           fi
 
