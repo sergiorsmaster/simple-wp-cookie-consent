@@ -865,7 +865,7 @@ msgid "Debug Mode"
 msgstr ""
 
 #: admin/views/tab-integrations.php:287
-msgid "Log all consent actions to the browser console prefixed with [SCC]. Disable on production."
+msgid "Log all consent actions to the browser console prefixed with [CSCC]. Disable on production."
 msgstr ""
 
 #: admin/views/tab-jurisdiction.php:10

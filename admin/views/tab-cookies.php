@@ -22,9 +22,9 @@ if ( $cscc_edit_id ) {
 
 // Status messages via transient (set on redirect in class-cscc-admin.php).
 $cscc_messages = array(
-	'added'   => __( 'Cookie added.', 'consentric' ),
-	'updated' => __( 'Cookie updated.', 'consentric' ),
-	'deleted' => __( 'Cookie deleted.', 'consentric' ),
+	'added'   => __( 'Cookie added.', 'consentric-cookie-consent' ),
+	'updated' => __( 'Cookie updated.', 'consentric-cookie-consent' ),
+	'deleted' => __( 'Cookie deleted.', 'consentric-cookie-consent' ),
 );
 $cscc_msg = get_transient( 'cscc_admin_notice' );
 if ( $cscc_msg && isset( $cscc_messages[ $cscc_msg ] ) ) {
@@ -33,16 +33,16 @@ if ( $cscc_msg && isset( $cscc_messages[ $cscc_msg ] ) ) {
 }
 
 $cscc_categories = array(
-	'necessary' => __('Necessary', 'consentric'),
-	'analytics' => __('Analytics', 'consentric'),
-	'marketing' => __('Marketing', 'consentric'),
-	'functional' => __('Functional', 'consentric'),
+	'necessary' => __('Necessary', 'consentric-cookie-consent'),
+	'analytics' => __('Analytics', 'consentric-cookie-consent'),
+	'marketing' => __('Marketing', 'consentric-cookie-consent'),
+	'functional' => __('Functional', 'consentric-cookie-consent'),
 );
 
 $cscc_sources = array(
-	'manual' => __('Manual', 'consentric'),
-	'scan' => __('Scan', 'consentric'),
-	'cookiedb' => __('Cookie DB', 'consentric'),
+	'manual' => __('Manual', 'consentric-cookie-consent'),
+	'scan' => __('Scan', 'consentric-cookie-consent'),
+	'cookiedb' => __('Cookie DB', 'consentric-cookie-consent'),
 );
 
 $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=cookies');
@@ -53,7 +53,7 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 	<div class="cscc-cookie-form-wrap" id="cscc-cookie-form-wrap" <?php echo ! $cscc_edit_cookie ? 'style="display:none"' : ''; ?>>
 
 		<h2 class="cscc-section-title">
-			<?php echo $cscc_edit_cookie ? esc_html__('Edit Cookie', 'consentric') : esc_html__('Add Cookie', 'consentric'); ?>
+			<?php echo $cscc_edit_cookie ? esc_html__('Edit Cookie', 'consentric-cookie-consent') : esc_html__('Add Cookie', 'consentric-cookie-consent'); ?>
 		</h2>
 
 		<form method="post" action="<?php echo esc_url($cscc_page_url); ?>">
@@ -62,7 +62,7 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 
 			<div class="cscc-field">
 				<label class="cscc-field__label" for="cscc_cookie_name">
-					<?php esc_html_e('Cookie Name', 'consentric'); ?> <span class="required">*</span>
+					<?php esc_html_e('Cookie Name', 'consentric-cookie-consent'); ?> <span class="required">*</span>
 				</label>
 				<div class="cscc-field__control">
 					<input type="text" id="cscc_cookie_name" name="cookie_name" class="regular-text" required
@@ -72,7 +72,7 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 
 			<div class="cscc-field">
 				<label class="cscc-field__label" for="cscc_category">
-					<?php esc_html_e('Category', 'consentric'); ?>
+					<?php esc_html_e('Category', 'consentric-cookie-consent'); ?>
 				</label>
 				<div class="cscc-field__control">
 					<select id="cscc_category" name="category">
@@ -87,29 +87,29 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 
 			<div class="cscc-field">
 				<label class="cscc-field__label" for="cscc_service">
-					<?php esc_html_e('Service', 'consentric'); ?>
+					<?php esc_html_e('Service', 'consentric-cookie-consent'); ?>
 				</label>
 				<div class="cscc-field__control">
 					<input type="text" id="cscc_service" name="service" class="regular-text"
 						value="<?php echo esc_attr($cscc_edit_cookie->service ?? ''); ?>"
-						placeholder="<?php esc_attr_e('e.g. Google Analytics', 'consentric'); ?>">
+						placeholder="<?php esc_attr_e('e.g. Google Analytics', 'consentric-cookie-consent'); ?>">
 				</div>
 			</div>
 
 			<div class="cscc-field">
 				<label class="cscc-field__label" for="cscc_duration">
-					<?php esc_html_e('Duration', 'consentric'); ?>
+					<?php esc_html_e('Duration', 'consentric-cookie-consent'); ?>
 				</label>
 				<div class="cscc-field__control">
 					<input type="text" id="cscc_duration" name="duration" class="regular-text"
 						value="<?php echo esc_attr($cscc_edit_cookie->duration ?? ''); ?>"
-						placeholder="<?php esc_attr_e('e.g. 2 years', 'consentric'); ?>">
+						placeholder="<?php esc_attr_e('e.g. 2 years', 'consentric-cookie-consent'); ?>">
 				</div>
 			</div>
 
 			<div class="cscc-field">
 				<label class="cscc-field__label" for="cscc_description">
-					<?php esc_html_e('Description', 'consentric'); ?>
+					<?php esc_html_e('Description', 'consentric-cookie-consent'); ?>
 				</label>
 				<div class="cscc-field__control">
 					<textarea id="cscc_description" name="description" class="large-text" rows="2"><?php
@@ -119,9 +119,9 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 			</div>
 
 			<div class="cscc-form-actions">
-				<?php submit_button($cscc_edit_cookie ? __('Update Cookie', 'consentric') : __('Add Cookie', 'consentric'), 'primary', 'submit', false); ?>
+				<?php submit_button($cscc_edit_cookie ? __('Update Cookie', 'consentric-cookie-consent') : __('Add Cookie', 'consentric-cookie-consent'), 'primary', 'submit', false); ?>
 				<a href="<?php echo esc_url($cscc_page_url); ?>" class="button">
-					<?php esc_html_e('Cancel', 'consentric'); ?>
+					<?php esc_html_e('Cancel', 'consentric-cookie-consent'); ?>
 				</a>
 			</div>
 		</form>
@@ -135,7 +135,7 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 		<?php
 		printf(
 			/* translators: 1: number of cookies, 2: opening <a> tag, 3: closing </a> tag */
-			esc_html__( 'Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s.', 'consentric' ),
+			esc_html__( 'Cookie database: %1$d entries loaded from the %2$sOpen Cookie Database%3$s.', 'consentric-cookie-consent' ),
 			intval( $cscc_db_count ),
 			'<a href="https://github.com/jkwakman/Open-Cookie-Database" target="_blank" rel="noopener noreferrer">',
 			'</a>'
@@ -146,14 +146,14 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 	<!-- Table header -->
 	<div class="cscc-table-header">
 		<h2 class="cscc-section-title" style="margin-top:0">
-			<?php esc_html_e('Cookie List', 'consentric'); ?>
+			<?php esc_html_e('Cookie List', 'consentric-cookie-consent'); ?>
 		</h2>
 		<?php if (!$cscc_edit_cookie): ?>
 			<button type="button" class="button" id="cscc-scan-btn">
-				<?php esc_html_e('Run Scanner', 'consentric'); ?>
+				<?php esc_html_e('Run Scanner', 'consentric-cookie-consent'); ?>
 			</button>
 			<button type="button" class="button button-primary" id="cscc-add-cookie-btn">
-				<?php esc_html_e('+ Add Cookie', 'consentric'); ?>
+				<?php esc_html_e('+ Add Cookie', 'consentric-cookie-consent'); ?>
 			</button>
 		<?php endif; ?>
 	</div>
@@ -167,18 +167,18 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 
 	<?php if (empty($cscc_cookies)): ?>
 		<p class="cscc-notice cscc-notice--info">
-			<?php esc_html_e('No cookies yet. Add one manually or run the scanner.', 'consentric'); ?>
+			<?php esc_html_e('No cookies yet. Add one manually or run the scanner.', 'consentric-cookie-consent'); ?>
 		</p>
 	<?php else: ?>
 		<table class="widefat striped cscc-cookie-table">
 			<thead>
 				<tr>
-					<th><?php esc_html_e('Name', 'consentric'); ?></th>
-					<th><?php esc_html_e('Category', 'consentric'); ?></th>
-					<th><?php esc_html_e('Service', 'consentric'); ?></th>
-					<th><?php esc_html_e('Duration', 'consentric'); ?></th>
-					<th><?php esc_html_e('Source', 'consentric'); ?></th>
-					<th><?php esc_html_e('Actions', 'consentric'); ?></th>
+					<th><?php esc_html_e('Name', 'consentric-cookie-consent'); ?></th>
+					<th><?php esc_html_e('Category', 'consentric-cookie-consent'); ?></th>
+					<th><?php esc_html_e('Service', 'consentric-cookie-consent'); ?></th>
+					<th><?php esc_html_e('Duration', 'consentric-cookie-consent'); ?></th>
+					<th><?php esc_html_e('Source', 'consentric-cookie-consent'); ?></th>
+					<th><?php esc_html_e('Actions', 'consentric-cookie-consent'); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -198,7 +198,7 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 								'action' => 'edit_cookie',
 								'cookie_id' => $cscc_cookie->id,
 							), $cscc_page_url), 'cscc_edit_cookie')); ?>">
-								<?php esc_html_e('Edit', 'consentric'); ?>
+								<?php esc_html_e('Edit', 'consentric-cookie-consent'); ?>
 							</a>
 							&nbsp;|&nbsp;
 							<a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array(
@@ -206,7 +206,7 @@ $cscc_page_url = admin_url('options-general.php?page=cscc-cookie-consent&tab=coo
 								'cookie_id' => $cscc_cookie->id,
 							), $cscc_page_url), 'cscc_delete_cookie')); ?>" class="cscc-delete-link"
 								data-name="<?php echo esc_attr($cscc_cookie->cookie_name); ?>">
-								<?php esc_html_e('Delete', 'consentric'); ?>
+								<?php esc_html_e('Delete', 'consentric-cookie-consent'); ?>
 							</a>
 						</td>
 					</tr>

@@ -1,25 +1,25 @@
 /**
- * SCC Preferences Modal
+ * CSCC Preferences Modal
  *
- * Opens on scc:openPreferences event (dispatched by the Preferences button).
+ * Opens on cscc:openPreferences event (dispatched by the Preferences button).
  * Pre-populates toggles from existing consent cookie.
- * Save button calls SCC.saveConsent() with selected categories.
+ * Save button calls CSCC.saveConsent() with selected categories.
  */
 
 (function () {
 
 	'use strict';
 
-	var SCC   = window.SimpleCookieConsent;
-	var modal = document.getElementById( 'cscc-modal' );
+	var CSCC = window.SimpleCookieConsent;
+	var modal = document.getElementById('cscc-modal');
 
-	if ( ! SCC || ! modal ) return;
+	if (!CSCC || !modal) return;
 
-	var overlay  = document.getElementById( 'cscc-modal-overlay' );
-	var btnClose = document.getElementById( 'cscc-modal-close' );
-	var btnSave  = document.getElementById( 'cscc-modal-save' );
-	var btnDeny  = document.getElementById( 'cscc-modal-deny' );
-	var inputs   = modal.querySelectorAll( '.cscc-toggle__input[data-category]' );
+	var overlay = document.getElementById('cscc-modal-overlay');
+	var btnClose = document.getElementById('cscc-modal-close');
+	var btnSave = document.getElementById('cscc-modal-save');
+	var btnDeny = document.getElementById('cscc-modal-deny');
+	var inputs = modal.querySelectorAll('.cscc-toggle__input[data-category]');
 
 	/** Element that had focus before the modal opened — restored on close. */
 	var lastFocusedElement = null;
@@ -31,9 +31,9 @@
 	var FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), ' +
 		'select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-	function getFocusable( container ) {
-		return Array.prototype.slice.call( container.querySelectorAll( FOCUSABLE ) )
-			.filter( function ( el ) { return el.offsetParent !== null; } );
+	function getFocusable(container) {
+		return Array.prototype.slice.call(container.querySelectorAll(FOCUSABLE))
+			.filter(function (el) { return el.offsetParent !== null; });
 	}
 
 	// -------------------------------------------------------------------------
@@ -45,19 +45,19 @@
 		populateToggles();
 		modal.style.display = '';
 		document.body.style.overflow = 'hidden';
-		SCC.log( 'Modal: opened' );
+		CSCC.log('Modal: opened');
 
 		// Move focus to the close button (first interactive element)
-		if ( btnClose ) btnClose.focus();
+		if (btnClose) btnClose.focus();
 	}
 
 	function closeModal() {
 		modal.style.display = 'none';
 		document.body.style.overflow = '';
-		SCC.log( 'Modal: closed' );
+		CSCC.log('Modal: closed');
 
 		// Return focus to the element that triggered the modal
-		if ( lastFocusedElement && typeof lastFocusedElement.focus === 'function' ) {
+		if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
 			lastFocusedElement.focus();
 		}
 	}
@@ -67,17 +67,17 @@
 	// -------------------------------------------------------------------------
 
 	function populateToggles() {
-		var consent = SCC.getConsent();
+		var consent = CSCC.getConsent();
 
-		inputs.forEach( function ( input ) {
-			var cat = input.getAttribute( 'data-category' );
-			if ( consent && typeof consent[ cat ] !== 'undefined' ) {
-				input.checked = !! consent[ cat ];
+		inputs.forEach(function (input) {
+			var cat = input.getAttribute('data-category');
+			if (consent && typeof consent[cat] !== 'undefined') {
+				input.checked = !!consent[cat];
 			} else {
 				// No prior consent — default all to unchecked (opt-in)
 				input.checked = false;
 			}
-		} );
+		});
 	}
 
 	// -------------------------------------------------------------------------
@@ -87,12 +87,12 @@
 	function savePreferences() {
 		var categories = {};
 
-		inputs.forEach( function ( input ) {
-			categories[ input.getAttribute( 'data-category' ) ] = input.checked;
-		} );
+		inputs.forEach(function (input) {
+			categories[input.getAttribute('data-category')] = input.checked;
+		});
 
-		SCC.log( 'Modal: saving preferences →', categories );
-		SCC.saveConsent( categories );
+		CSCC.log('Modal: saving preferences →', categories);
+		CSCC.saveConsent(categories);
 		closeModal();
 	}
 
@@ -101,74 +101,74 @@
 	// -------------------------------------------------------------------------
 
 	// Expose on public API so it can be called from JS or a footer link
-	SCC.openPreferences = openModal;
+	CSCC.openPreferences = openModal;
 
 	// Open when Preferences button fires the custom event
-	document.addEventListener( 'scc:openPreferences', openModal );
+	document.addEventListener('cscc:openPreferences', openModal);
 
 	// Delegated listener for [data-cscc-action="open-preferences"] links (shortcodes, etc.)
-	document.addEventListener( 'click', function ( e ) {
-		var trigger = e.target.closest( '[data-cscc-action="open-preferences"]' );
-		if ( trigger ) {
+	document.addEventListener('click', function (e) {
+		var trigger = e.target.closest('[data-cscc-action="open-preferences"]');
+		if (trigger) {
 			e.preventDefault();
 			openModal();
 		}
-	} );
+	});
 
 	// Close on overlay click
-	if ( overlay ) {
-		overlay.addEventListener( 'click', closeModal );
+	if (overlay) {
+		overlay.addEventListener('click', closeModal);
 	}
 
 	// Close on ✕ button
-	if ( btnClose ) {
-		btnClose.addEventListener( 'click', closeModal );
+	if (btnClose) {
+		btnClose.addEventListener('click', closeModal);
 	}
 
 	// Close on Escape key + focus trap (Tab / Shift+Tab cycles within modal)
-	document.addEventListener( 'keydown', function ( e ) {
-		if ( modal.style.display === 'none' ) return;
+	document.addEventListener('keydown', function (e) {
+		if (modal.style.display === 'none') return;
 
-		if ( e.key === 'Escape' ) {
+		if (e.key === 'Escape') {
 			closeModal();
 			return;
 		}
 
-		if ( e.key === 'Tab' ) {
-			var focusable = getFocusable( modal.querySelector( '.cscc-modal__box' ) || modal );
-			if ( ! focusable.length ) return;
+		if (e.key === 'Tab') {
+			var focusable = getFocusable(modal.querySelector('.cscc-modal__box') || modal);
+			if (!focusable.length) return;
 
-			var first = focusable[ 0 ];
-			var last  = focusable[ focusable.length - 1 ];
+			var first = focusable[0];
+			var last = focusable[focusable.length - 1];
 
-			if ( e.shiftKey ) {
+			if (e.shiftKey) {
 				// Shift+Tab — wrap backwards
-				if ( document.activeElement === first ) {
+				if (document.activeElement === first) {
 					e.preventDefault();
 					last.focus();
 				}
 			} else {
 				// Tab — wrap forwards
-				if ( document.activeElement === last ) {
+				if (document.activeElement === last) {
 					e.preventDefault();
 					first.focus();
 				}
 			}
 		}
-	} );
+	});
 
 	// Save preferences
-	if ( btnSave ) {
-		btnSave.addEventListener( 'click', savePreferences );
+	if (btnSave) {
+		btnSave.addEventListener('click', savePreferences);
 	}
 
 	// Deny all from modal
-	if ( btnDeny ) {
-		btnDeny.addEventListener( 'click', function () {
-			SCC.log( 'Modal: Deny All clicked' );
-			SCC.denyAll();
+	if (btnDeny) {
+		btnDeny.addEventListener('click', function () {
+			CSCC.log('Modal: Deny All clicked');
+			CSCC.denyAll();
 			closeModal();
-		} );
+		});
 	}
 
-} )();
+})();

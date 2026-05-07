@@ -73,13 +73,13 @@ if (!defined('ABSPATH')) {
 		<?php
 		$cscc_links = array();
 		if (!empty($privacy_url)) {
-			$cscc_links[] = '<li><a href="' . esc_url($privacy_url) . '">' . esc_html__('Privacy Policy', 'consentric') . '</a></li>';
+			$cscc_links[] = '<li><a href="' . esc_url($privacy_url) . '">' . esc_html__('Privacy Policy', 'consentric-cookie-consent') . '</a></li>';
 		}
 		if (!empty($cookie_url)) {
-			$cscc_links[] = '<li><a href="' . esc_url($cookie_url) . '">' . esc_html__('Cookie Policy', 'consentric') . '</a></li>';
+			$cscc_links[] = '<li><a href="' . esc_url($cookie_url) . '">' . esc_html__('Cookie Policy', 'consentric-cookie-consent') . '</a></li>';
 		}
 		if (!empty($imprint_url)) {
-			$cscc_links[] = '<li><a href="' . esc_url($imprint_url) . '">' . esc_html__('Imprint', 'consentric') . '</a></li>';
+			$cscc_links[] = '<li><a href="' . esc_url($imprint_url) . '">' . esc_html__('Imprint', 'consentric-cookie-consent') . '</a></li>';
 		}
 		if (!empty($cscc_links)):
 			?>

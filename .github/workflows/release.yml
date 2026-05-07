@@ -34,11 +34,11 @@ jobs:
 
       - name: Build plugin zip
         run: |
-          ZIP_NAME="consentric-${{ steps.version.outputs.VERSION }}.zip"
+          ZIP_NAME="consentric-cookie-consent-${{ steps.version.outputs.VERSION }}.zip"
           echo "ZIP_NAME=$ZIP_NAME" >> "$GITHUB_ENV"
 
           # Create a staging directory with the correct plugin slug as root folder
-          mkdir -p /tmp/build/consentric
+          mkdir -p /tmp/build/consentric-cookie-consent
 
           rsync -a \
             --exclude='.git' \
@@ -52,10 +52,10 @@ jobs:
             --exclude='.env*' \
             --exclude='node_modules' \
             --exclude='*.log' \
-            ./ /tmp/build/consentric/
+            ./ /tmp/build/consentric-cookie-consent/
 
           cd /tmp/build
-          zip -r "$ZIP_NAME" consentric/
+          zip -r "$ZIP_NAME" consentric-cookie-consent/
           mv "$ZIP_NAME" "$GITHUB_WORKSPACE/"
 
       - name: Create GitHub Release

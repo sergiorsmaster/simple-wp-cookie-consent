@@ -138,13 +138,13 @@ msgid "Banner Text"
 msgstr "Banner-Text"
 
 msgid "Accept Button Label"
-msgstr "Beschriftung der Schaltfläche „Akzeptieren""
+msgstr "Beschriftung der Schaltfläche „Akzeptieren”"
 
 msgid "Deny Button Label"
-msgstr "Beschriftung der Schaltfläche „Ablehnen""
+msgstr "Beschriftung der Schaltfläche „Ablehnen”"
 
 msgid "Preferences Button Label"
-msgstr "Beschriftung der Schaltfläche „Einstellungen""
+msgstr "Beschriftung der Schaltfläche „Einstellungen”"
 
 msgid "Preferences Dialog"
 msgstr "Einstellungs-Dialog"
@@ -156,7 +156,7 @@ msgid "Dialog Description"
 msgstr "Dialog-Beschreibung"
 
 msgid "Save Button Label"
-msgstr "Beschriftung der Schaltfläche „Speichern""
+msgstr "Beschriftung der Schaltfläche „Speichern”"
 
 msgid "Privacy Policy Page"
 msgstr "Datenschutzseite"
@@ -201,7 +201,7 @@ msgid "Accent Color"
 msgstr "Akzentfarbe"
 
 msgid "Used for the Accept button and toggle switch."
-msgstr "Wird für die Schaltfläche „Akzeptieren" und den Umschalter verwendet."
+msgstr "Wird für die Schaltfläche „Akzeptieren” und den Umschalter verwendet."
 
 msgid "Applies to banner, modal, and buttons."
 msgstr "Gilt für Banner, Modal und Schaltflächen."
@@ -237,13 +237,13 @@ msgid "Ghost"
 msgstr "Geist"
 
 msgid "Deny and Preferences buttons appear as outlined buttons alongside Accept."
-msgstr "Die Schaltflächen „Ablehnen" und „Einstellungen" erscheinen als umrandete Schaltflächen neben „Akzeptieren"."
+msgstr "Die Schaltflächen „Ablehnen” und „Einstellungen” erscheinen als umrandete Schaltflächen neben „Akzeptieren”."
 
 msgid "Deny and Preferences appear as text links with underline, keeping the Accept button as the only visual button."
-msgstr "„Ablehnen" und „Einstellungen" erscheinen als unterstrichene Textlinks, wobei „Akzeptieren" die einzige visuelle Schaltfläche bleibt."
+msgstr "„Ablehnen” und „Einstellungen” erscheinen als unterstrichene Textlinks, wobei „Akzeptieren” die einzige visuelle Schaltfläche bleibt."
 
 msgid "The Accept button is always filled with the Accent color."
-msgstr "Die Schaltfläche „Akzeptieren" ist immer mit der Akzentfarbe gefüllt."
+msgstr "Die Schaltfläche „Akzeptieren” ist immer mit der Akzentfarbe gefüllt."
 
 msgid "Logo"
 msgstr "Logo"
@@ -333,13 +333,13 @@ msgid "Preferences button hidden"
 msgstr "Einstellungsschaltfläche ausgeblendet"
 
 msgid "Accept All / Deny All / Preferences buttons shown"
-msgstr "Schaltflächen „Alle akzeptieren" / „Alle ablehnen" / „Einstellungen" werden angezeigt"
+msgstr "Schaltflächen „Alle akzeptieren” / „Alle ablehnen” / „Einstellungen” werden angezeigt"
 
 msgid "\"Do Not Sell My Personal Information\" opt-out shown"
-msgstr "Opt-out „Meine persönlichen Daten nicht verkaufen" wird angezeigt"
+msgstr "Opt-out „Meine persönlichen Daten nicht verkaufen” wird angezeigt"
 
 msgid "\"Do Not Sell\" Button Label"
-msgstr "Beschriftung der Schaltfläche „Nicht verkaufen""
+msgstr "Beschriftung der Schaltfläche „Nicht verkaufen”"
 
 msgid "Label for the opt-out button shown in the banner when CCPA mode is active."
 msgstr "Beschriftung für die Opt-out-Schaltfläche, die im Banner angezeigt wird, wenn der CCPA-Modus aktiv ist."
@@ -386,8 +386,8 @@ msgstr "Google Tag Manager"
 msgid "Debug Mode"
 msgstr "Debug-Modus"
 
-msgid "Log all consent actions to the browser console prefixed with [SCC]. Disable on production."
-msgstr "Alle Einwilligungsaktionen in der Browser-Konsole mit dem Präfix [SCC] protokollieren. In der Produktion deaktivieren."
+msgid "Log all consent actions to the browser console prefixed with [CSCC]. Disable on production."
+msgstr "Alle Einwilligungsaktionen in der Browser-Konsole mit dem Präfix [CSCC] protokollieren. In der Produktion deaktivieren."
 
 msgid "Debug"
 msgstr "Fehlersuche"
@@ -555,7 +555,7 @@ msgid "Default"
 msgstr "Standard"
 
 msgid "Use the Appearance tab's Custom CSS field to target these selectors, or enqueue your own stylesheet."
-msgstr "Verwenden Sie das Feld „Benutzerdefiniertes CSS" im Reiter „Erscheinungsbild", um diese Selektoren anzusprechen, oder fügen Sie Ihr eigenes Stylesheet ein."
+msgstr "Verwenden Sie das Feld „Benutzerdefiniertes CSS” im Reiter „Erscheinungsbild”, um diese Selektoren anzusprechen, oder fügen Sie Ihr eigenes Stylesheet ein."
 
 msgid "These are set on :root and control the visual theme. Override them in Custom CSS or with the Appearance settings."
 msgstr "Diese sind auf :root gesetzt und steuern das visuelle Thema. Überschreiben Sie sie in benutzerdefiniertem CSS oder in den Erscheinungsbild-Einstellungen."
@@ -570,10 +570,10 @@ msgid "Banner body text"
 msgstr "Banner-Fließtext"
 
 msgid "Accept All button"
-msgstr "Schaltfläche „Alle akzeptieren""
+msgstr "Schaltfläche „Alle akzeptieren”"
 
 msgid "Deny All button"
-msgstr "Schaltfläche „Alle ablehnen""
+msgstr "Schaltfläche „Alle ablehnen”"
 
 msgid "Preferences button"
 msgstr "Einstellungsschaltfläche"
@@ -597,7 +597,7 @@ msgid "Banner text color"
 msgstr "Banner-Textfarbe"
 
 msgid "Accent color (Accept button, toggles)"
-msgstr "Akzentfarbe (Schaltfläche „Akzeptieren", Umschalter)"
+msgstr "Akzentfarbe (Schaltfläche „Akzeptieren”, Umschalter)"
 
 msgid "Border radius for banner and buttons"
 msgstr "Eckenradius für Banner und Schaltflächen"
@@ -654,13 +654,13 @@ msgid "Programmatically open the preferences modal."
 msgstr "Das Einstellungs-Modal programmgesteuert öffnen."
 
 msgid "Programmatically show the consent banner (e.g. from a \"Review cookie settings\" link)."
-msgstr "Das Einwilligungs-Banner programmgesteuert anzeigen (z.B. über einen Link „Cookie-Einstellungen überprüfen")."
+msgstr "Das Einwilligungs-Banner programmgesteuert anzeigen (z.B. über einen Link „Cookie-Einstellungen überprüfen”)."
 
 msgid "Returns true if consent has been granted for the given category (e.g. \"analytics\")."
-msgstr "Gibt „true" zurück, wenn die Einwilligung für die angegebene Kategorie erteilt wurde (z.B. „analytics")."
+msgstr "Gibt „true” zurück, wenn die Einwilligung für die angegebene Kategorie erteilt wurde (z.B. „analytics”)."
 
 msgid "Returns true if the visitor has already made a consent choice (banner was actioned)."
-msgstr "Gibt „true" zurück, wenn der Besucher bereits eine Einwilligungsentscheidung getroffen hat (Banner wurde bedient)."
+msgstr "Gibt „true” zurück, wenn der Besucher bereits eine Einwilligungsentscheidung getroffen hat (Banner wurde bedient)."
 
 msgid "Fired on document after any consent save. Listen with:"
 msgstr "Wird nach jedem Speichern einer Einwilligung am Dokument ausgelöst. Abhören mit:"
@@ -690,7 +690,7 @@ msgid "Do not paste those script tags directly into your WordPress theme or head
 msgstr "Fügen Sie diese Script-Tags nicht direkt in Ihr WordPress-Theme oder den Header ein. Skripte, die außerhalb von GTM hinzugefügt werden, werden nicht durch den Einwilligungsmechanismus dieses Plugins blockiert oder gesteuert."
 
 msgid "Instead, add them as tags inside Google Tag Manager and use the built-in consent triggers (e.g. \"Analytics Storage Consent Granted\") to control when they fire. This way, scripts only load after the visitor grants consent for the matching category."
-msgstr "Fügen Sie sie stattdessen als Tags im Google Tag Manager hinzu und verwenden Sie die integrierten Einwilligungsauslöser (z. B. „Analytics Storage Consent Granted"), um zu steuern, wann sie ausgelöst werden. So werden Skripte erst geladen, nachdem der Besucher die Einwilligung für die entsprechende Kategorie erteilt hat."
+msgstr "Fügen Sie sie stattdessen als Tags im Google Tag Manager hinzu und verwenden Sie die integrierten Einwilligungsauslöser (z. B. „Analytics Storage Consent Granted”), um zu steuern, wann sie ausgelöst werden. So werden Skripte erst geladen, nachdem der Besucher die Einwilligung für die entsprechende Kategorie erteilt hat."
 
 msgid "%1$sLearn how to use GTM with Consent Mode v2 →%2$s"
 msgstr "%1$sErfahren Sie, wie Sie GTM mit Consent Mode v2 verwenden →%2$s"

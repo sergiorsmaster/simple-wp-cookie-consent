@@ -1,7 +1,7 @@
 /**
- * SCC — GTM Consent Mode v2 bridge (Basic + Advanced mode)
+ * CSCC — GTM Consent Mode v2 bridge (Basic + Advanced mode)
  *
- * Translates SCC consent categories into GTM consent signals and calls
+ * Translates CSCC consent categories into GTM consent signals and calls
  * gtag('consent', 'update', ...) whenever the visitor's choices change.
  *
  * Signal mapping:
@@ -30,36 +30,36 @@
 
 	'use strict';
 
-	var log     = window.SimpleCookieConsent && window.SimpleCookieConsent.log
-		? window.SimpleCookieConsent.log.bind( window.SimpleCookieConsent )
-		: function () {};
+	var log = window.SimpleCookieConsent && window.SimpleCookieConsent.log
+		? window.SimpleCookieConsent.log.bind(window.SimpleCookieConsent)
+		: function () { };
 	var gtmMode = window.csccSettings && window.csccSettings.gtmMode
 		? window.csccSettings.gtmMode
 		: 'basic';
 
 	// Ensure dataLayer and gtag are available (GTM may not be present on page).
 	window.dataLayer = window.dataLayer || [];
-	function gtag() { window.dataLayer.push( arguments ); }
+	function gtag() { window.dataLayer.push(arguments); }
 
-	log( 'GTM mode:', gtmMode );
+	log('GTM mode:', gtmMode);
 
 	/**
-	 * Convert SCC consent categories to GTM signal map.
+	 * Convert CSCC consent categories to GTM signal map.
 	 *
 	 * @param  {Object} consent  e.g. { necessary: true, analytics: false, ... }
 	 * @return {Object}          GTM consent signals
 	 */
-	function toGtmSignals( consent ) {
-		function v( granted ) { return granted ? 'granted' : 'denied'; }
+	function toGtmSignals(consent) {
+		function v(granted) { return granted ? 'granted' : 'denied'; }
 
 		return {
-			analytics_storage:       v( consent.analytics ),
-			ad_storage:              v( consent.marketing ),
-			ad_user_data:            v( consent.marketing ),
-			ad_personalization:      v( consent.marketing ),
-			functionality_storage:   v( consent.functional ),
-			personalization_storage: v( consent.functional ),
-			security_storage:        'granted',
+			analytics_storage: v(consent.analytics),
+			ad_storage: v(consent.marketing),
+			ad_user_data: v(consent.marketing),
+			ad_personalization: v(consent.marketing),
+			functionality_storage: v(consent.functional),
+			personalization_storage: v(consent.functional),
+			security_storage: 'granted',
 		};
 	}
 
@@ -68,36 +68,36 @@
 	 * In Advanced mode, also pushes a custom dataLayer event so GTM triggers
 	 * can react and Google can model data for non-consenting users.
 	 *
-	 * @param {Object} consent  SCC consent object
+	 * @param {Object} consent  CSCC consent object
 	 */
-	function updateGtmConsent( consent ) {
-		var signals = toGtmSignals( consent );
-		log( 'GTM consent update →', signals );
-		gtag( 'consent', 'update', signals );
+	function updateGtmConsent(consent) {
+		var signals = toGtmSignals(consent);
+		log('GTM consent update →', signals);
+		gtag('consent', 'update', signals);
 
-		if ( gtmMode === 'advanced' ) {
-			window.dataLayer.push( {
-				event:   'cscc_consent_update',
+		if (gtmMode === 'advanced') {
+			window.dataLayer.push({
+				event: 'cscc_consent_update',
 				consent: signals,
-			} );
-			log( 'GTM advanced: pushed cscc_consent_update event to dataLayer' );
+			});
+			log('GTM advanced: pushed cscc_consent_update event to dataLayer');
 		}
 	}
 
 	// On page load: if the visitor already has a stored consent, update GTM
 	// immediately so Google tags reflect their previous choice without waiting.
 	var existing = window.SimpleCookieConsent && window.SimpleCookieConsent.getConsent();
-	if ( existing ) {
-		log( 'GTM: restoring consent from cookie on page load' );
-		updateGtmConsent( existing );
+	if (existing) {
+		log('GTM: restoring consent from cookie on page load');
+		updateGtmConsent(existing);
 	} else {
-		log( 'GTM: no existing consent cookie — defaults remain (all denied)' );
+		log('GTM: no existing consent cookie — defaults remain (all denied)');
 	}
 
 	// On every future consent change (Accept / Deny / Preferences), update GTM.
-	document.addEventListener( 'cscc:consentUpdated', function ( e ) {
-		log( 'GTM: cscc:consentUpdated received' );
-		updateGtmConsent( e.detail );
-	} );
+	document.addEventListener('cscc:consentUpdated', function (e) {
+		log('GTM: cscc:consentUpdated received');
+		updateGtmConsent(e.detail);
+	});
 
-} )();
+})();

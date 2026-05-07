@@ -31,12 +31,12 @@ Skills are defined in `.claude/skills/` — read the relevant `SKILL.md` for the
 ## Plugin Identity
 
 - **Display name:** Consentric — Simple Cookie Consent
-- **WP.org slug:** `consentric`
-- **Slug (files):** `consentric`
-- **Main file:** `consentric.php`
+- **WP.org slug:** `consentric-cookie-consent`
+- **Slug (files):** `consentric-cookie-consent`
+- **Main file:** `consentric-cookie-consent.php`
 - **GitHub:** https://github.com/sergiorsmaster/consentric
 - **Min WP:** 6.0 | **Min PHP:** 7.4
-- **Text domain:** `consentric`
+- **Text domain:** `consentric-cookie-consent`
 
 ---
 
@@ -87,7 +87,7 @@ $results = $wpdb->get_results( "SELECT * FROM {$table} WHERE ..." );
 
 ```
 consentric/
-├── consentric.php              ← Main file (plugin header + bootstrap + CSCC_VERSION constant)
+├── consentric-cookie-consent.php ← Main file (plugin header + bootstrap + CSCC_VERSION constant)
 ├── uninstall.php               ← Drops table + deletes all cscc_* options
 ├── readme.txt                  ← WordPress.org listing
 ├── .github/workflows/
@@ -124,10 +124,10 @@ consentric/
 │       ├── cscc-banner.js           ← SimpleCookieConsent JS API + GTM integration
 │       └── cscc-modal.js            ← Focus trap, aria, toggle state
 └── languages/
-    ├── consentric.pot              ← Master template (source of truth)
-    ├── consentric-pt_PT.po/.mo
-    ├── consentric-pt_BR.po/.mo
-    └── consentric-de_DE.po/.mo
+    ├── consentric-cookie-consent.pot              ← Master template (source of truth)
+    ├── consentric-cookie-consent-pt_PT.po/.mo
+    ├── consentric-cookie-consent-pt_BR.po/.mo
+    └── consentric-cookie-consent-de_DE.po/.mo
 ```
 
 ---

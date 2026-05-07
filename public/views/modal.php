@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
 	<div class="cscc-modal__box">
 
 		<button class="cscc-modal__close" id="cscc-modal-close"
-			aria-label="<?php esc_attr_e('Close', 'consentric'); ?>">
+			aria-label="<?php esc_attr_e('Close', 'consentric-cookie-consent'); ?>">
 			&#10005;
 		</button>
 
@@ -41,23 +41,23 @@ if (!defined('ABSPATH')) {
 			<?php
 			$cscc_categories = array(
 				'necessary' => array(
-					'label' => __('Necessary', 'consentric'),
-					'description' => __('Required for the website to function properly. These cookies cannot be disabled.', 'consentric'),
+					'label' => __('Necessary', 'consentric-cookie-consent'),
+					'description' => __('Required for the website to function properly. These cookies cannot be disabled.', 'consentric-cookie-consent'),
 					'always_on' => true,
 				),
 				'analytics' => array(
-					'label' => __('Analytics', 'consentric'),
-					'description' => __('Help us understand how visitors interact with the website by collecting anonymous data.', 'consentric'),
+					'label' => __('Analytics', 'consentric-cookie-consent'),
+					'description' => __('Help us understand how visitors interact with the website by collecting anonymous data.', 'consentric-cookie-consent'),
 					'always_on' => false,
 				),
 				'marketing' => array(
-					'label' => __('Marketing', 'consentric'),
-					'description' => __('Used to track visitors across websites to display relevant and personalized advertisements.', 'consentric'),
+					'label' => __('Marketing', 'consentric-cookie-consent'),
+					'description' => __('Used to track visitors across websites to display relevant and personalized advertisements.', 'consentric-cookie-consent'),
 					'always_on' => false,
 				),
 				'functional' => array(
-					'label' => __('Functional', 'consentric'),
-					'description' => __('Allow the website to remember your preferences such as language or region.', 'consentric'),
+					'label' => __('Functional', 'consentric-cookie-consent'),
+					'description' => __('Allow the website to remember your preferences such as language or region.', 'consentric-cookie-consent'),
 					'always_on' => false,
 				),
 			);
@@ -72,7 +72,7 @@ if (!defined('ABSPATH')) {
 
 						<?php if ($cscc_cat['always_on']): ?>
 							<span class="cscc-modal__always-on">
-								<?php esc_html_e('Always active', 'consentric'); ?>
+								<?php esc_html_e('Always active', 'consentric-cookie-consent'); ?>
 							</span>
 						<?php else: ?>
 							<label class="cscc-toggle" aria-label="<?php echo esc_attr($cscc_cat['label']); ?>">

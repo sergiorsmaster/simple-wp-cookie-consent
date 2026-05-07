@@ -386,8 +386,8 @@ msgstr "Google Tag Manager"
 msgid "Debug Mode"
 msgstr "Modo de Depuração"
 
-msgid "Log all consent actions to the browser console prefixed with [SCC]. Disable on production."
-msgstr "Registrar todas as ações de consentimento no console do navegador com o prefixo [SCC]. Desativar em produção."
+msgid "Log all consent actions to the browser console prefixed with [CSCC]. Disable on production."
+msgstr "Registrar todas as ações de consentimento no console do navegador com o prefixo [CSCC]. Desativar em produção."
 
 msgid "Debug"
 msgstr "Depuração"

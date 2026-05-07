@@ -4,11 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $cscc_positions = array(
-	'bottom-bar'   => __( 'Bottom Bar (full width)', 'consentric' ),
-	'top-bar'      => __( 'Top Bar (full width)', 'consentric' ),
-	'bottom-left'  => __( 'Bottom Left (corner box)', 'consentric' ),
-	'bottom-right' => __( 'Bottom Right (corner box)', 'consentric' ),
-	'center-modal' => __( 'Center Modal', 'consentric' ),
+	'bottom-bar'   => __( 'Bottom Bar (full width)', 'consentric-cookie-consent' ),
+	'top-bar'      => __( 'Top Bar (full width)', 'consentric-cookie-consent' ),
+	'bottom-left'  => __( 'Bottom Left (corner box)', 'consentric-cookie-consent' ),
+	'bottom-right' => __( 'Bottom Right (corner box)', 'consentric-cookie-consent' ),
+	'center-modal' => __( 'Center Modal', 'consentric-cookie-consent' ),
 );
 ?>
 <div class="cscc-tab-content">
@@ -16,12 +16,12 @@ $cscc_positions = array(
 	<!-- =========================================================
 	     Layout
 	     ========================================================= -->
-	<h2 class="cscc-section-title"><?php esc_html_e( 'Layout', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Layout', 'consentric-cookie-consent' ); ?></h2>
 
 	<!-- Position -->
 	<div class="cscc-field">
 		<label class="cscc-field__label" for="cscc_position">
-			<?php esc_html_e( 'Banner Position', 'consentric' ); ?>
+			<?php esc_html_e( 'Banner Position', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<select id="cscc_position" name="cscc_position">
@@ -38,14 +38,14 @@ $cscc_positions = array(
 	<!-- Max width -->
 	<div class="cscc-field">
 		<label class="cscc-field__label" for="cscc_banner_max_width">
-			<?php esc_html_e( 'Banner Width (px)', 'consentric' ); ?>
+			<?php esc_html_e( 'Banner Width (px)', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<input type="number" id="cscc_banner_max_width" name="cscc_banner_max_width"
 				value="<?php echo esc_attr( get_option( 'cscc_banner_max_width', '200' ) ); ?>"
 				min="0" max="1200" step="10" style="width:100px">
 			<p class="description">
-				<?php esc_html_e( 'Applies to corner and center modal positions (px). Set to 0 or leave empty to use the default width.', 'consentric' ); ?>
+				<?php esc_html_e( 'Applies to corner and center modal positions (px). Set to 0 or leave empty to use the default width.', 'consentric-cookie-consent' ); ?>
 			</p>
 		</div>
 	</div>
@@ -55,11 +55,11 @@ $cscc_positions = array(
 	<!-- =========================================================
 	     Colors
 	     ========================================================= -->
-	<h2 class="cscc-section-title"><?php esc_html_e( 'Colors', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Colors', 'consentric-cookie-consent' ); ?></h2>
 
 	<div class="cscc-field">
 		<label class="cscc-field__label" for="cscc_color_bg">
-			<?php esc_html_e( 'Background Color', 'consentric' ); ?>
+			<?php esc_html_e( 'Background Color', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<input type="color" id="cscc_color_bg" name="cscc_color_bg"
@@ -69,7 +69,7 @@ $cscc_positions = array(
 
 	<div class="cscc-field">
 		<label class="cscc-field__label" for="cscc_color_text">
-			<?php esc_html_e( 'Text Color', 'consentric' ); ?>
+			<?php esc_html_e( 'Text Color', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<input type="color" id="cscc_color_text" name="cscc_color_text"
@@ -79,13 +79,13 @@ $cscc_positions = array(
 
 	<div class="cscc-field">
 		<label class="cscc-field__label" for="cscc_color_accent">
-			<?php esc_html_e( 'Accent Color', 'consentric' ); ?>
+			<?php esc_html_e( 'Accent Color', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<input type="color" id="cscc_color_accent" name="cscc_color_accent"
 				value="<?php echo esc_attr( get_option( 'cscc_color_accent', '#0073aa' ) ?: '#0073aa' ); ?>">
 			<p class="description">
-				<?php esc_html_e( 'Used for the Accept button and toggle switch.', 'consentric' ); ?>
+				<?php esc_html_e( 'Used for the Accept button and toggle switch.', 'consentric-cookie-consent' ); ?>
 			</p>
 		</div>
 	</div>
@@ -95,12 +95,12 @@ $cscc_positions = array(
 	<!-- =========================================================
 	     Border & Shape
 	     ========================================================= -->
-	<h2 class="cscc-section-title"><?php esc_html_e( 'Border & Shape', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Border & Shape', 'consentric-cookie-consent' ); ?></h2>
 
 	<!-- Border radius -->
 	<div class="cscc-field">
 		<label class="cscc-field__label" for="cscc_border_radius">
-			<?php esc_html_e( 'Corner Radius (px)', 'consentric' ); ?>
+			<?php esc_html_e( 'Corner Radius (px)', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control cscc-field__control--inline">
 			<input type="range" id="cscc_border_radius" name="cscc_border_radius"
@@ -109,7 +109,7 @@ $cscc_positions = array(
 				oninput="document.getElementById('cscc_radius_val').textContent = this.value + 'px'">
 			<span id="cscc_radius_val"><?php echo esc_html( get_option( 'cscc_border_radius', '6' ) ); ?>px</span>
 			<p class="description">
-				<?php esc_html_e( 'Applies to banner, modal, and buttons.', 'consentric' ); ?>
+				<?php esc_html_e( 'Applies to banner, modal, and buttons.', 'consentric-cookie-consent' ); ?>
 			</p>
 		</div>
 	</div>
@@ -117,7 +117,7 @@ $cscc_positions = array(
 	<!-- Border width -->
 	<div class="cscc-field">
 		<label class="cscc-field__label" for="cscc_banner_border_width">
-			<?php esc_html_e( 'Border Width (px)', 'consentric' ); ?>
+			<?php esc_html_e( 'Border Width (px)', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<input type="number" id="cscc_banner_border_width" name="cscc_banner_border_width"
@@ -129,7 +129,7 @@ $cscc_positions = array(
 	<!-- Border color -->
 	<div class="cscc-field">
 		<label class="cscc-field__label" for="cscc_banner_border_color">
-			<?php esc_html_e( 'Border Color', 'consentric' ); ?>
+			<?php esc_html_e( 'Border Color', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<input type="color" id="cscc_banner_border_color" name="cscc_banner_border_color"
@@ -142,11 +142,11 @@ $cscc_positions = array(
 	<!-- =========================================================
 	     Buttons
 	     ========================================================= -->
-	<h2 class="cscc-section-title"><?php esc_html_e( 'Buttons', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Buttons', 'consentric-cookie-consent' ); ?></h2>
 
 	<div class="cscc-field">
 		<label class="cscc-field__label">
-			<?php esc_html_e( 'Secondary Button Style', 'consentric' ); ?>
+			<?php esc_html_e( 'Secondary Button Style', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<div class="cscc-radio-group">
@@ -156,11 +156,11 @@ $cscc_positions = array(
 						<input type="radio" name="cscc_button_style" value="outline"
 							class="cscc-btn-style-radio"
 							<?php checked( get_option( 'cscc_button_style', 'outline' ), 'outline' ); ?>>
-						<span class="cscc-radio-card__title"><?php esc_html_e( 'Outline', 'consentric' ); ?></span>
-						<span class="cscc-badge cscc-badge--blue"><?php esc_html_e( 'Recommended', 'consentric' ); ?></span>
+						<span class="cscc-radio-card__title"><?php esc_html_e( 'Outline', 'consentric-cookie-consent' ); ?></span>
+						<span class="cscc-badge cscc-badge--blue"><?php esc_html_e( 'Recommended', 'consentric-cookie-consent' ); ?></span>
 					</div>
 					<p class="cscc-radio-card__desc">
-						<?php esc_html_e( 'Deny and Preferences buttons appear as outlined buttons alongside Accept.', 'consentric' ); ?>
+						<?php esc_html_e( 'Deny and Preferences buttons appear as outlined buttons alongside Accept.', 'consentric-cookie-consent' ); ?>
 					</p>
 				</label>
 
@@ -169,16 +169,16 @@ $cscc_positions = array(
 						<input type="radio" name="cscc_button_style" value="ghost"
 							class="cscc-btn-style-radio"
 							<?php checked( get_option( 'cscc_button_style', 'outline' ), 'ghost' ); ?>>
-						<span class="cscc-radio-card__title"><?php esc_html_e( 'Ghost', 'consentric' ); ?></span>
+						<span class="cscc-radio-card__title"><?php esc_html_e( 'Ghost', 'consentric-cookie-consent' ); ?></span>
 					</div>
 					<p class="cscc-radio-card__desc">
-						<?php esc_html_e( 'Deny and Preferences appear as text links with underline, keeping the Accept button as the only visual button.', 'consentric' ); ?>
+						<?php esc_html_e( 'Deny and Preferences appear as text links with underline, keeping the Accept button as the only visual button.', 'consentric-cookie-consent' ); ?>
 					</p>
 				</label>
 
 			</div>
 			<p class="description" style="margin-top:8px">
-				<?php esc_html_e( 'The Accept button is always filled with the Accent color.', 'consentric' ); ?>
+				<?php esc_html_e( 'The Accept button is always filled with the Accent color.', 'consentric-cookie-consent' ); ?>
 			</p>
 		</div>
 	</div>
@@ -188,28 +188,28 @@ $cscc_positions = array(
 	<!-- =========================================================
 	     Logo
 	     ========================================================= -->
-	<h2 class="cscc-section-title"><?php esc_html_e( 'Logo', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Logo', 'consentric-cookie-consent' ); ?></h2>
 
 	<div class="cscc-field">
 		<label class="cscc-field__label">
-			<?php esc_html_e( 'Logo Source', 'consentric' ); ?>
+			<?php esc_html_e( 'Logo Source', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<?php $cscc_logo_source = get_option( 'cscc_logo_source', 'custom' ); ?>
 			<label style="display:block;margin-bottom:6px">
 				<input type="radio" name="cscc_logo_source" value="none"
 					class="cscc-logo-source-radio" <?php checked( $cscc_logo_source, 'none' ); ?>>
-				<?php esc_html_e( 'No logo', 'consentric' ); ?>
+				<?php esc_html_e( 'No logo', 'consentric-cookie-consent' ); ?>
 			</label>
 			<label style="display:block;margin-bottom:6px">
 				<input type="radio" name="cscc_logo_source" value="site"
 					class="cscc-logo-source-radio" <?php checked( $cscc_logo_source, 'site' ); ?>>
-				<?php esc_html_e( 'Use site logo (set in Customizer)', 'consentric' ); ?>
+				<?php esc_html_e( 'Use site logo (set in Customizer)', 'consentric-cookie-consent' ); ?>
 			</label>
 			<label style="display:block;margin-bottom:10px">
 				<input type="radio" name="cscc_logo_source" value="custom"
 					class="cscc-logo-source-radio" <?php checked( $cscc_logo_source, 'custom' ); ?>>
-				<?php esc_html_e( 'Custom upload', 'consentric' ); ?>
+				<?php esc_html_e( 'Custom upload', 'consentric-cookie-consent' ); ?>
 			</label>
 		</div>
 	</div>
@@ -218,20 +218,20 @@ $cscc_positions = array(
 	<?php $cscc_logo_url = get_option( 'cscc_logo_url', '' ); ?>
 	<div class="cscc-field cscc-logo-custom-field" <?php echo $cscc_logo_source !== 'custom' ? 'style="display:none"' : ''; ?>>
 		<label class="cscc-field__label">
-			<?php esc_html_e( 'Upload Logo', 'consentric' ); ?>
+			<?php esc_html_e( 'Upload Logo', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<div class="cscc-media-field">
 				<input type="hidden" id="cscc_logo_url" name="cscc_logo_url"
 					value="<?php echo esc_attr( $cscc_logo_url ); ?>">
 				<button type="button" class="button cscc-media-select" data-target="#cscc_logo_url">
-					<?php esc_html_e( 'Select Image', 'consentric' ); ?>
+					<?php esc_html_e( 'Select Image', 'consentric-cookie-consent' ); ?>
 				</button>
 				<img src="<?php echo esc_url( $cscc_logo_url ); ?>" class="cscc-logo-preview" alt=""
 					style="max-height:40px;vertical-align:middle;margin-left:8px;<?php echo $cscc_logo_url ? '' : 'display:none'; ?>">
 				<button type="button" class="button cscc-media-remove" data-target="#cscc_logo_url"
 					<?php echo $cscc_logo_url ? '' : 'style="display:none"'; ?>>
-					<?php esc_html_e( 'Remove', 'consentric' ); ?>
+					<?php esc_html_e( 'Remove', 'consentric-cookie-consent' ); ?>
 				</button>
 			</div>
 		</div>
@@ -242,17 +242,17 @@ $cscc_positions = array(
 	<!-- =========================================================
 	     Custom CSS tip
 	     ========================================================= -->
-	<h2 class="cscc-section-title"><?php esc_html_e( 'Custom CSS', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Custom CSS', 'consentric-cookie-consent' ); ?></h2>
 
 	<div class="notice notice-info inline" style="margin:0 0 16px;">
 		<p>
 			<?php
 			printf(
 				/* translators: 1: opening <strong> tag, 2: closing </strong> tag, 3: Appearance → Customize → Additional CSS path */
-				esc_html__( 'To add custom CSS overrides, use the %1$sWordPress built-in CSS editor%2$s at %3$s. You can target selectors listed in the Help tab.', 'consentric' ),
+				esc_html__( 'To add custom CSS overrides, use the %1$sWordPress built-in CSS editor%2$s at %3$s. You can target selectors listed in the Help tab.', 'consentric-cookie-consent' ),
 				'<strong>',
 				'</strong>',
-				'<code>' . esc_html__( 'Appearance → Customize → Additional CSS', 'consentric' ) . '</code>'
+				'<code>' . esc_html__( 'Appearance → Customize → Additional CSS', 'consentric-cookie-consent' ) . '</code>'
 			);
 			?>
 		</p>
@@ -263,20 +263,20 @@ $cscc_positions = array(
 	<!-- =========================================================
 	     Banner Preview
 	     ========================================================= -->
-	<h2 class="cscc-section-title"><?php esc_html_e( 'Preview', 'consentric' ); ?></h2>
+	<h2 class="cscc-section-title"><?php esc_html_e( 'Preview', 'consentric-cookie-consent' ); ?></h2>
 
 	<div class="cscc-field">
 		<label class="cscc-field__label">
-			<?php esc_html_e( 'Preview Banner', 'consentric' ); ?>
+			<?php esc_html_e( 'Preview Banner', 'consentric-cookie-consent' ); ?>
 		</label>
 		<div class="cscc-field__control">
 			<a href="<?php echo esc_url( add_query_arg( 'cscc_preview', '1', home_url( '/' ) ) ); ?>"
 				target="_blank"
 				class="button button-secondary">
-				<?php esc_html_e( 'Open Preview', 'consentric' ); ?>
+				<?php esc_html_e( 'Open Preview', 'consentric-cookie-consent' ); ?>
 			</a>
 			<p class="description">
-				<?php esc_html_e( 'Opens your site homepage in a new tab and forces the cookie banner to appear, even if you have already given consent. This preview is only visible to logged-in administrators — regular visitors are never affected by this URL parameter.', 'consentric' ); ?>
+				<?php esc_html_e( 'Opens your site homepage in a new tab and forces the cookie banner to appear, even if you have already given consent. This preview is only visible to logged-in administrators — regular visitors are never affected by this URL parameter.', 'consentric-cookie-consent' ); ?>
 			</p>
 		</div>
 	</div>

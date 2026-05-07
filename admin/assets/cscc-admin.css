@@ -1,5 +1,5 @@
 /* =============================================================================
-   SCC Admin Styles
+   Consentric Cookie Consent Admin Styles
    ============================================================================= */
 
 .cscc-admin .cscc-settings-form {
@@ -12,11 +12,11 @@
    ----------------------------------------------------------------------------- */
 
 .cscc-field {
-	display:       grid;
+	display: grid;
 	grid-template-columns: 220px 1fr;
-	gap:           12px;
-	align-items:   start;
-	padding:       14px 0;
+	gap: 12px;
+	align-items: start;
+	padding: 14px 0;
 	border-bottom: 1px solid #f0f0f1;
 }
 
@@ -25,15 +25,15 @@
 }
 
 .cscc-field__label {
-	font-weight:  600;
-	padding-top:  4px;
-	color:        #1d2327;
-	font-size:    13px;
+	font-weight: 600;
+	padding-top: 4px;
+	color: #1d2327;
+	font-size: 13px;
 }
 
 .cscc-field__control .description {
 	margin-top: 6px;
-	color:      #646970;
+	color: #646970;
 }
 
 hr {
@@ -47,47 +47,47 @@ hr {
    ----------------------------------------------------------------------------- */
 
 .cscc-admin-toggle {
-	position:    relative;
-	display:     inline-block;
-	width:       44px;
-	height:      24px;
-	cursor:      pointer;
+	position: relative;
+	display: inline-block;
+	width: 44px;
+	height: 24px;
+	cursor: pointer;
 	flex-shrink: 0;
 }
 
 .cscc-admin-toggle input {
-	opacity:  0;
-	width:    0;
-	height:   0;
+	opacity: 0;
+	width: 0;
+	height: 0;
 	position: absolute;
 }
 
 .cscc-admin-toggle__slider {
-	position:      absolute;
-	inset:         0;
-	background:    #ccc;
+	position: absolute;
+	inset: 0;
+	background: #ccc;
 	border-radius: 24px;
-	transition:    background .2s ease;
+	transition: background .2s ease;
 }
 
 .cscc-admin-toggle__slider::before {
-	content:       '';
-	position:      absolute;
-	width:         18px;
-	height:        18px;
-	left:          3px;
-	top:           3px;
-	background:    #fff;
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 3px;
+	top: 3px;
+	background: #fff;
 	border-radius: 50%;
-	transition:    transform .2s ease;
-	box-shadow:    0 1px 3px rgba(0,0,0,.2);
+	transition: transform .2s ease;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
 
-.cscc-admin-toggle input:checked + .cscc-admin-toggle__slider {
+.cscc-admin-toggle input:checked+.cscc-admin-toggle__slider {
 	background: #2271b1;
 }
 
-.cscc-admin-toggle input:checked + .cscc-admin-toggle__slider::before {
+.cscc-admin-toggle input:checked+.cscc-admin-toggle__slider::before {
 	transform: translateX(20px);
 }
 
@@ -96,10 +96,10 @@ hr {
    ----------------------------------------------------------------------------- */
 
 .cscc-media-field {
-	display:     flex;
-	gap:         8px;
+	display: flex;
+	gap: 8px;
 	align-items: center;
-	flex-wrap:   wrap;
+	flex-wrap: wrap;
 }
 
 .cscc-media-field .regular-text {
@@ -107,14 +107,14 @@ hr {
 }
 
 .cscc-logo-preview {
-	display:       block;
-	max-height:    60px;
-	max-width:     200px;
-	margin-top:    10px;
-	border:        1px solid #ddd;
+	display: block;
+	max-height: 60px;
+	max-width: 200px;
+	margin-top: 10px;
+	border: 1px solid #ddd;
 	border-radius: 4px;
-	padding:       4px;
-	background:    #fafafa;
+	padding: 4px;
+	background: #fafafa;
 }
 
 /* -----------------------------------------------------------------------------
@@ -126,53 +126,53 @@ hr {
 }
 
 .cscc-jurisdiction-options {
-	display:        flex;
+	display: flex;
 	flex-direction: column;
-	gap:            12px;
+	gap: 12px;
 }
 
 .cscc-jurisdiction-card {
-	display:       block;
-	border:        2px solid #dcdcde;
+	display: block;
+	border: 2px solid #dcdcde;
 	border-radius: 6px;
-	padding:       14px 16px;
-	cursor:        pointer;
-	transition:    border-color .15s ease, background .15s ease;
-	background:    #fff;
+	padding: 14px 16px;
+	cursor: pointer;
+	transition: border-color .15s ease, background .15s ease;
+	background: #fff;
 }
 
 .cscc-jurisdiction-card:hover {
 	border-color: #2271b1;
-	background:   #f6f7f7;
+	background: #f6f7f7;
 }
 
 .cscc-jurisdiction-card.is-selected {
 	border-color: #2271b1;
-	background:   #f0f6fc;
+	background: #f0f6fc;
 }
 
 .cscc-jurisdiction-card__header {
-	display:     flex;
+	display: flex;
 	align-items: center;
-	gap:         10px;
+	gap: 10px;
 	margin-bottom: 6px;
 }
 
 .cscc-jurisdiction-radio {
 	flex-shrink: 0;
-	margin:      0;
+	margin: 0;
 }
 
 .cscc-jurisdiction-card__title {
 	font-weight: 600;
-	font-size:   14px;
-	flex:        1;
+	font-size: 14px;
+	flex: 1;
 }
 
 .cscc-jurisdiction-card__model {
-	font-size:     11px;
-	font-weight:   600;
-	padding:       2px 8px;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 2px 8px;
 	border-radius: 20px;
 	text-transform: uppercase;
 	letter-spacing: .04em;
@@ -181,25 +181,25 @@ hr {
 .cscc-model--gdpr,
 .cscc-model--lgpd {
 	background: #d7f0e0;
-	color:      #1a6b3c;
+	color: #1a6b3c;
 }
 
 .cscc-model--ccpa {
 	background: #fde8c8;
-	color:      #7a4500;
+	color: #7a4500;
 }
 
 .cscc-jurisdiction-card__summary {
-	margin:    0 0 8px 24px;
+	margin: 0 0 8px 24px;
 	font-size: 13px;
-	color:     #50575e;
+	color: #50575e;
 }
 
 .cscc-jurisdiction-card__details {
-	margin:     0 0 0 24px;
-	padding:    0 0 0 16px;
-	font-size:  12px;
-	color:      #646970;
+	margin: 0 0 0 24px;
+	padding: 0 0 0 16px;
+	font-size: 12px;
+	color: #646970;
 }
 
 .cscc-jurisdiction-card__details li {
@@ -211,28 +211,28 @@ hr {
    ----------------------------------------------------------------------------- */
 
 .cscc-section-title {
-	font-size:     14px;
-	font-weight:   600;
-	margin:        20px 0 4px;
+	font-size: 14px;
+	font-weight: 600;
+	margin: 20px 0 4px;
 	padding-bottom: 6px;
 	border-bottom: 1px solid #dcdcde;
-	color:         #1d2327;
+	color: #1d2327;
 }
 
 .cscc-radio-group {
-	display:        flex;
+	display: flex;
 	flex-direction: column;
-	gap:            10px;
+	gap: 10px;
 }
 
 .cscc-radio-card {
-	display:       block;
-	border:        2px solid #dcdcde;
+	display: block;
+	border: 2px solid #dcdcde;
 	border-radius: 6px;
-	padding:       12px 14px;
-	cursor:        pointer;
-	transition:    border-color .15s ease, background .15s ease;
-	background:    #fff;
+	padding: 12px 14px;
+	cursor: pointer;
+	transition: border-color .15s ease, background .15s ease;
+	background: #fff;
 }
 
 .cscc-radio-card:hover {
@@ -241,40 +241,40 @@ hr {
 
 .cscc-radio-card.is-selected {
 	border-color: #2271b1;
-	background:   #f0f6fc;
+	background: #f0f6fc;
 }
 
 .cscc-radio-card__header {
-	display:       flex;
-	align-items:   center;
-	gap:           8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 	margin-bottom: 4px;
 }
 
 .cscc-radio-card__title {
 	font-weight: 600;
-	font-size:   13px;
-	flex:        1;
+	font-size: 13px;
+	flex: 1;
 }
 
 .cscc-radio-card__desc {
-	margin:    0 0 0 22px;
+	margin: 0 0 0 22px;
 	font-size: 12px;
-	color:     #50575e;
+	color: #50575e;
 }
 
 .cscc-badge {
-	font-size:      11px;
-	font-weight:    600;
-	padding:        2px 7px;
-	border-radius:  20px;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 2px 7px;
+	border-radius: 20px;
 	text-transform: uppercase;
 	letter-spacing: .04em;
 }
 
 .cscc-badge--blue {
 	background: #d0e8f8;
-	color:      #0a4b78;
+	color: #0a4b78;
 }
 
 /* Signal mapping table */
@@ -289,26 +289,26 @@ hr {
 
 /* Status notices */
 .cscc-notice {
-	display:       inline-block;
-	padding:       8px 12px;
+	display: inline-block;
+	padding: 8px 12px;
 	border-radius: 4px;
-	font-size:     13px;
-	margin:        0;
+	font-size: 13px;
+	margin: 0;
 }
 
 .cscc-notice--success {
 	background: #d7f0e0;
-	color:      #1a6b3c;
+	color: #1a6b3c;
 }
 
 .cscc-notice--info {
 	background: #e8f0fb;
-	color:      #0a4b78;
+	color: #0a4b78;
 }
 
 .cscc-notice--error {
 	background: #fce8e8;
-	color:      #7a1a1a;
+	color: #7a1a1a;
 }
 
 /* -----------------------------------------------------------------------------
@@ -327,10 +327,10 @@ hr {
    ----------------------------------------------------------------------------- */
 
 .cscc-field__control--inline {
-	display:     flex;
+	display: flex;
 	align-items: center;
-	gap:         10px;
-	flex-wrap:   wrap;
+	gap: 10px;
+	flex-wrap: wrap;
 }
 
 .cscc-field__control--inline p.description {
@@ -339,35 +339,35 @@ hr {
 }
 
 .cscc-cookie-db-status {
-	color:       #646970;
-	font-size:   12px;
-	margin-top:  16px;
+	color: #646970;
+	font-size: 12px;
+	margin-top: 16px;
 	margin-bottom: 0;
 }
 
 .cscc-table-header {
-	display:     flex;
+	display: flex;
 	align-items: center;
-	gap:         12px;
-	margin-top:  24px;
+	gap: 12px;
+	margin-top: 24px;
 }
 
 .cscc-table-header .cscc-section-title {
-	flex:   1;
+	flex: 1;
 	margin: 0;
 }
 
 .cscc-cookie-form-wrap {
-	background:    #fff;
-	border:        1px solid #dcdcde;
+	background: #fff;
+	border: 1px solid #dcdcde;
 	border-radius: 4px;
-	padding:       20px 24px;
+	padding: 20px 24px;
 	margin-bottom: 24px;
 }
 
 .cscc-form-actions {
-	display:    flex;
-	gap:        8px;
+	display: flex;
+	gap: 8px;
 	margin-top: 16px;
 	padding-top: 16px;
 	border-top: 1px solid #f0f0f1;
@@ -397,19 +397,34 @@ hr {
 /* Category badges */
 
 .cscc-cat-badge {
-	display:        inline-block;
-	font-size:      11px;
-	font-weight:    600;
-	padding:        2px 8px;
-	border-radius:  20px;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 2px 8px;
+	border-radius: 20px;
 	text-transform: capitalize;
 	letter-spacing: .03em;
 }
 
-.cscc-cat-necessary  { background: #d7f0e0; color: #1a6b3c; }
-.cscc-cat-analytics  { background: #d0e8f8; color: #0a4b78; }
-.cscc-cat-marketing  { background: #fde8c8; color: #7a4500; }
-.cscc-cat-functional { background: #ede8fd; color: #3a1a7a; }
+.cscc-cat-necessary {
+	background: #d7f0e0;
+	color: #1a6b3c;
+}
+
+.cscc-cat-analytics {
+	background: #d0e8f8;
+	color: #0a4b78;
+}
+
+.cscc-cat-marketing {
+	background: #fde8c8;
+	color: #7a4500;
+}
+
+.cscc-cat-functional {
+	background: #ede8fd;
+	color: #3a1a7a;
+}
 
 /* Help tab */
 

@@ -24,12 +24,12 @@ class CSCC_Admin {
 	 */
 	public static function get_tab_labels() {
 		return array(
-			'general'      => __( 'General', 'consentric' ),
-			'appearance'   => __( 'Appearance', 'consentric' ),
-			'jurisdiction' => __( 'Jurisdiction', 'consentric' ),
-			'integrations' => __( 'Integrations', 'consentric' ),
-			'cookies'      => __( 'Cookies', 'consentric' ),
-			'help'         => __( 'Help', 'consentric' ),
+			'general'      => __( 'General', 'consentric-cookie-consent' ),
+			'appearance'   => __( 'Appearance', 'consentric-cookie-consent' ),
+			'jurisdiction' => __( 'Jurisdiction', 'consentric-cookie-consent' ),
+			'integrations' => __( 'Integrations', 'consentric-cookie-consent' ),
+			'cookies'      => __( 'Cookies', 'consentric-cookie-consent' ),
+			'help'         => __( 'Help', 'consentric-cookie-consent' ),
 		);
 	}
 
@@ -147,8 +147,8 @@ class CSCC_Admin {
 
 	public static function add_menu() {
 		add_options_page(
-			__( 'Cookie Consent Settings', 'consentric' ),
-			__( 'Cookie Consent', 'consentric' ),
+			__( 'Cookie Consent Settings', 'consentric-cookie-consent' ),
+			__( 'Cookie Consent', 'consentric-cookie-consent' ),
 			'manage_options',
 			'cscc-cookie-consent',
 			array( __CLASS__, 'render_page' )
@@ -248,10 +248,10 @@ class CSCC_Admin {
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 			'nonce'   => wp_create_nonce( 'cscc_scanner_nonce' ),
 			'i18n'    => array(
-				'scanning'  => __( 'Scanning…', 'consentric' ),
-				'scanDone'  => __( 'Scan complete.', 'consentric' ),
-				'scanError' => __( 'Scan failed. Please try again.', 'consentric' ),
-				'added'     => __( 'new cookie(s) found.', 'consentric' ),
+				'scanning'  => __( 'Scanning…', 'consentric-cookie-consent' ),
+				'scanDone'  => __( 'Scan complete.', 'consentric-cookie-consent' ),
+				'scanError' => __( 'Scan failed. Please try again.', 'consentric-cookie-consent' ),
+				'added'     => __( 'new cookie(s) found.', 'consentric-cookie-consent' ),
 			),
 		) );
 	}
@@ -274,7 +274,7 @@ class CSCC_Admin {
 		$settings_group = self::TABS[ $active_tab ];
 		?>
 		<div class="wrap cscc-admin">
-			<h1><?php esc_html_e( 'Cookie Consent Settings', 'consentric' ); ?></h1>
+			<h1><?php esc_html_e( 'Cookie Consent Settings', 'consentric-cookie-consent' ); ?></h1>
 
 			<nav class="nav-tab-wrapper">
 				<?php foreach ( self::get_tab_labels() as $slug => $label ) : ?>
@@ -295,7 +295,7 @@ class CSCC_Admin {
 				if ( file_exists( $view ) ) {
 					include $view;
 				} else {
-					echo '<p>' . esc_html__( 'This tab is coming soon.', 'consentric' ) . '</p>';
+					echo '<p>' . esc_html__( 'This tab is coming soon.', 'consentric-cookie-consent' ) . '</p>';
 				}
 				?>
 

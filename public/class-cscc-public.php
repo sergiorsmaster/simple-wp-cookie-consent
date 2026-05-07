@@ -151,12 +151,12 @@ class CSCC_Public
 		$cookie_url = $cookie_page ? get_permalink($cookie_page) : '';
 		$imprint_url = $imprint_page ? get_permalink($imprint_page) : '';
 
-		$title = CSCC_Polylang::translate('cscc_banner_title', __('We use cookies', 'consentric'));
-		$text = CSCC_Polylang::translate('cscc_banner_text', __('We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'consentric'));
-		$accept_label = CSCC_Polylang::translate('cscc_accept_label', __('Accept All', 'consentric'));
-		$deny_label = CSCC_Polylang::translate('cscc_deny_label', __('Deny All', 'consentric'));
-		$prefs_label = CSCC_Polylang::translate('cscc_preferences_label', __('Preferences', 'consentric'));
-		$ccpa_text = CSCC_Polylang::translate('cscc_ccpa_opt_out_text', __('Do Not Sell My Personal Information', 'consentric'));
+		$title = CSCC_Polylang::translate('cscc_banner_title', __('We use cookies', 'consentric-cookie-consent'));
+		$text = CSCC_Polylang::translate('cscc_banner_text', __('We use cookies to improve your experience on our website. Please choose your cookie preferences below.', 'consentric-cookie-consent'));
+		$accept_label = CSCC_Polylang::translate('cscc_accept_label', __('Accept All', 'consentric-cookie-consent'));
+		$deny_label = CSCC_Polylang::translate('cscc_deny_label', __('Deny All', 'consentric-cookie-consent'));
+		$prefs_label = CSCC_Polylang::translate('cscc_preferences_label', __('Preferences', 'consentric-cookie-consent'));
+		$ccpa_text = CSCC_Polylang::translate('cscc_ccpa_opt_out_text', __('Do Not Sell My Personal Information', 'consentric-cookie-consent'));
 		$logo_source = get_option('cscc_logo_source', 'custom');
 		if ('site' === $logo_source) {
 			$logo_id = get_theme_mod('custom_logo');
@@ -199,10 +199,10 @@ class CSCC_Public
 		$privacy_url  = $privacy_page ? get_permalink($privacy_page) : '';
 		$cookie_url   = $cookie_page ? get_permalink($cookie_page) : '';
 
-		$modal_title      = CSCC_Polylang::translate( 'cscc_modal_title',      __( 'Cookie Preferences', 'consentric' ) );
-		$modal_intro      = CSCC_Polylang::translate( 'cscc_modal_intro',      __( 'Choose which cookies you allow. You can change your preferences at any time.', 'consentric' ) );
-		$modal_save_label = CSCC_Polylang::translate( 'cscc_modal_save_label', __( 'Save Preferences', 'consentric' ) );
-		$modal_deny_label = CSCC_Polylang::translate( 'cscc_modal_deny_label', __( 'Deny All', 'consentric' ) );
+		$modal_title      = CSCC_Polylang::translate( 'cscc_modal_title',      __( 'Cookie Preferences', 'consentric-cookie-consent' ) );
+		$modal_intro      = CSCC_Polylang::translate( 'cscc_modal_intro',      __( 'Choose which cookies you allow. You can change your preferences at any time.', 'consentric-cookie-consent' ) );
+		$modal_save_label = CSCC_Polylang::translate( 'cscc_modal_save_label', __( 'Save Preferences', 'consentric-cookie-consent' ) );
+		$modal_deny_label = CSCC_Polylang::translate( 'cscc_modal_deny_label', __( 'Deny All', 'consentric-cookie-consent' ) );
 
 		include CSCC_PLUGIN_DIR . 'public/views/modal.php';
 	}

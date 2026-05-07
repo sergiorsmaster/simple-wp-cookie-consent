@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <button id="cscc-preferences-icon" class="cscc-preferences-icon"
-	aria-label="<?php esc_attr_e('Cookie Settings', 'consentric'); ?>" style="display:none"
+	aria-label="<?php esc_attr_e('Cookie Settings', 'consentric-cookie-consent'); ?>" style="display:none"
 	data-cscc-action="open-preferences">
 	<svg width="20" height="20" fill="currentColor" aria-hidden="true"
 		xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
